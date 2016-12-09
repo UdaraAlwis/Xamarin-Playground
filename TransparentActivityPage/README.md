@@ -1,0 +1,1 @@
+Creating an Android Activity that is Transparent with Xamarin

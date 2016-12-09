@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFFlipViewNative"
+             x:Class="XFFlipViewNative.MainPage" Padding="0,20,0,0">
+
+      <!--<StackLayout>
+  
+        <local:FlipViewControl Padding="20,20,20,20" x:Name="FlipControl">
+      
+        </local:FlipViewControl>
+        
+         <Button Text="Animate"  Clicked="Button_OnClicked" />
+      </StackLayout>-->
+  
+    <RelativeLayout>
+      
+    <local:FilppableContentViewXF x:Name="FilppableContentViewXfControl"
+        BackgroundColor="Lime"
+        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+        RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}">
+      
+        <local:FilppableContentViewXF.FrontView>
+        <RelativeLayout BackgroundColor="Red">
+          <Label Text="This is Front View"
+                 HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+          </Label>
+          <Button Text="Front View"
+                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+          </Button>
+          <ActivityIndicator IsRunning="True"
+                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+          </ActivityIndicator>
+        </RelativeLayout>
+      </local:FilppableContentViewXF.FrontView>
+      
+     <local:FilppableContentViewXF.BackView>
+        <RelativeLayout BackgroundColor="Blue">
+          <Label Text="This is Back View"  
+                 HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+          </Label>
+          <Button Text="Back View"
+                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+          </Button>
+          <ActivityIndicator IsRunning="True"
+                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.7}"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+          </ActivityIndicator>
+        </RelativeLayout>
+      </local:FilppableContentViewXF.BackView>
+    </local:FilppableContentViewXF>
+    
+    <Button Text="Animate" 
+        RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}"
+        RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            Clicked="Button_OnClicked" />
+    
+   </RelativeLayout>
+
+</ContentPage>

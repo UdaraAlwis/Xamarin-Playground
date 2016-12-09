@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:CoolCustomPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:PageTranslucentLayerXF"
+             x:Class="PageTranslucentLayerXF.MainPage">
+  
+  <local:CoolCustomPage.ToolbarItems>
+    <ToolbarItem Text="Item1" Order="Primary">
+    </ToolbarItem>
+    <ToolbarItem Text="Item2" Order="Primary">
+    </ToolbarItem>
+  </local:CoolCustomPage.ToolbarItems>
+  
+  <RelativeLayout>
+    
+    <StackLayout>
+
+      <Label Text="Welcome to Xamarin Forms!"
+               VerticalOptions="Center"
+               HorizontalOptions="Center" />
+
+      <!--Can not display over the Navigation bar-->
+      <Button Text="Activate Relative Layout Translucent Layer"
+              BackgroundColor="Blue" 
+              x:Name="RelativeLayoutPageBlock"
+              Clicked="RelativeLayoutPageBlock_OnClicked" />
+
+      <!--Can not pop up anything from top of the view-->
+      <Button Text="Activate Translucent Page Block"
+              BackgroundColor="Blue"
+              Clicked="NewPageOverlayBlock_OnClicked" />
+
+    </StackLayout>
+    
+    <local:CoolImage
+      x:Name="CoolImageControl" IsVisible="False"
+      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"            
+      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width}">
+    </local:CoolImage>
+    
+  </RelativeLayout>
+</local:CoolCustomPage>

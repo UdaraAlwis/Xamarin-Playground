@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFAnimatingTextColorButton"
+             x:Class="XFAnimatingTextColorButton.MainPage" Padding="0,20,0,0">
+
+  <StackLayout VerticalOptions="CenterAndExpand" Padding="20,0,20,0">
+
+    <Label Text="Welcome to Xamarin Forms!" 
+             HorizontalOptions="Center" />
+
+    <local:AnimatingTextColorButton BorderWidth="1" BorderColor="Silver" FontSize="20" 
+                                    Text="Click to see blinky blinky" WidthRequest="300"
+                                    Clicked="BlinkyTextButton_OnClicked" x:Name="BlinkyTextButton"
+             HorizontalOptions="CenterAndExpand">
+    </local:AnimatingTextColorButton>
+    
+  </StackLayout>
+</ContentPage>

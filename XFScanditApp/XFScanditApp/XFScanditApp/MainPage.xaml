@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:CustomContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFScanditApp"
+             x:Class="XFScanditApp.MainPage">
+
+  <RelativeLayout>
+
+    <Label Text="Welcome to Xamarin Forms!"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+    
+    <local:CustomStackLayout Padding="30,0,30,0"
+               
+      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.24}"
+      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.015}"
+      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.53}"
+      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.97}" 
+                             
+      WidthRequest="100" 
+      HeightRequest="320" 
+      BackgroundColor="Red">
+      
+    </local:CustomStackLayout>
+
+  </RelativeLayout>
+
+</local:CustomContentPage>

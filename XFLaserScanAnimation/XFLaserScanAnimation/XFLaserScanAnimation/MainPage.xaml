@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFLaserScanAnimation"
+             x:Class="XFLaserScanAnimation.MainPage" Padding="0,20,0,0">
+
+  <StackLayout>
+
+    <!--<StackLayout VerticalOptions="StartAndExpand" Spacing="0" x:Name="ParentLayout1">
+      <BoxView Color="Green" Opacity="0.1" x:Name="Ray10" HeightRequest="5" />
+      <BoxView Color="Green" Opacity="0.3" x:Name="Ray9" HeightRequest="5" />
+      <BoxView Color="Green" Opacity="0.5" x:Name="Ray8" HeightRequest="5" />
+      <BoxView Color="Green" Opacity="0.7" x:Name="Ray7" HeightRequest="5" />
+      <BoxView Color="Green" Opacity="1" x:Name="Ray6" HeightRequest="7" />
+    </StackLayout>-->
+    
+    <Label Text="behold ze awesome animation!" />
+
+    <local:LaserScanAnimation 
+      HeightRequest="200">
+    </local:LaserScanAnimation>
+    
+  </StackLayout>
+</ContentPage>

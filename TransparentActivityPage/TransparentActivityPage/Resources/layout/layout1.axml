@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeLayout1"
+        android:background="@android:color/white"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginTop="50dp">
+        <ImageView
+            android:src="@drawable/testcrabimagewide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView1"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true" />
+        <ImageView
+            android:src="@drawable/circletick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:adjustViewBounds="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/imageView1"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="-50dp" />
+        <TextView
+            android:text="Tipp successfully shared!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView2"
+            android:id="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_marginTop="15dp" />
+        <TextView
+            android:text="Tipp has been shared with:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:id="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:layout_marginTop="15dp" />
+        <TextView
+            android:text="097263216"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:layout_below="@id/textView2"
+            android:layout_marginTop="15dp" />
+        <Button
+            android:text="Return Home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView3"
+            android:id="@+id/button1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp" />
+    </RelativeLayout>
+</RelativeLayout>

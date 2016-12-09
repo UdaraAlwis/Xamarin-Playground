@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFCarouselControl"
+             xmlns:cv="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:controls="clr-namespace:XFCarouselControl.Controls;assembly=XFCarouselControl"
+             x:Class="XFCarouselControl.MainPage">
+
+  <Grid RowSpacing="0" Padding="10,50,10,0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height=".3*"/>
+      <RowDefinition Height="40"/>
+      <RowDefinition Height=".7*"/>
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="90"/>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="90"/>
+    </Grid.ColumnDefinitions>
+
+    <controls:CustomCarouselView 
+        ItemsSource="{Binding Zoos}" x:Name="CarouselZoos" 
+        Grid.Row="0" Grid.ColumnSpan="3">
+      <controls:CustomCarouselView.ItemTemplate>
+        <DataTemplate>
+          
+          <Grid Padding="10,0,10,0" >
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Image Grid.RowSpan="2" Aspect="AspectFill" Source="{Binding ImageUrl}"/>
+            <StackLayout Grid.Row="1" BackgroundColor="#80000000" Padding="12">
+              <Label TextColor="White" Text="{Binding Name}" 
+                     FontSize="16" HorizontalOptions="Center" 
+                     VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+          </Grid>
+          
+        </DataTemplate>
+      </controls:CustomCarouselView.ItemTemplate>
+    </controls:CustomCarouselView>
+    <!--List of Monkeys below-->
+    
+    <Button Text="Previous" BackgroundColor="#ff8000" TextColor="White"
+            Grid.Row="1" Grid.Column="0" Clicked="Previous_OnClicked" ></Button>
+
+    <Button Text="Next" BackgroundColor="#ff00bf"  TextColor="White"
+            Grid.Row="1" Grid.Column="2" Clicked="Next_OnClicked"></Button>
+    
+  </Grid>
+  
+
+</ContentPage>

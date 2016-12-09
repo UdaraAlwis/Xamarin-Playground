@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFAnimatingDotsControl"
+             x:Class="XFAnimatingDotsControl.MainPage" BackgroundColor="Gray" Padding="0,20,0,0">
+
+    <StackLayout VerticalOptions="Center" Spacing="10" Orientation="Vertical" Padding="10,0,10,0">
+      
+      <Label Text="Welcome to Animating Dots Progressive Control"
+             HorizontalTextAlignment="Center"
+             TextColor="White"
+             FontSize="18"/>
+      
+      <Button Text="Open Loading Screen"  
+              x:Name="OpenLoadingScreenButton"
+              Clicked="OpenLoadingScreenButton_OnClicked"
+              TextColor="White"
+              BorderColor="White"
+              BorderWidth="2"></Button>
+    </StackLayout>
+  
+</ContentPage>

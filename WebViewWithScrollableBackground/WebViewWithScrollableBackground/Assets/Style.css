@@ -1,0 +1,160 @@
+﻿/* Popup sheet & Balance sheet */
+.popupsheet-body, 
+.balancesheet-body {
+    color: black;
+    font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+}
+
+.popupsheet-body {
+    /* ReSharper disable once InvalidValue */
+    margin: 13 10 8 10;
+}
+
+/* Popup sheet */
+.popupsheet-body h4 {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    line-height: 14px;
+}
+
+.popupsheet-body p {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+/* Balance sheet */
+.balancesheet-body {
+    /* ReSharper disable once InvalidValue */
+     margin: 6;
+}
+
+/* Balance header */
+
+.balance-header-table {
+    font-size: 14px;
+}
+
+.balance-caption {
+    font-size: 17px;
+    font-weight: bolder;
+    height: 20px;
+    width: 73%;
+}
+
+.balance-subcaption { 
+	height: 27px; 
+}
+
+/* Balance sections */
+
+.balance-section-table {
+    font-size: 14px;
+    /* ReSharper disable once InvalidValue */
+    margin: 4 auto 4 auto;
+    width: 100%;
+}
+
+.balance-section-table td { 
+	vertical-align: top; 
+}
+
+.balance-section-table .balance-caption { 
+	font-size: 14px;
+	font-weight: bolder; 
+	height: auto;
+}
+
+.balance-section-table .balance-caption td { 
+	padding-bottom: 4px; 
+}
+
+.balance-text td,
+.balance-shared td {
+    line-height: 16px;
+    padding-bottom: 7px;
+}
+
+.balance-shared{
+    color: black;
+}
+
+.balance-shared td:first-child {
+	/*text-decoration: underline;*/
+}
+
+.balance-withdraw {
+    color: #cba135;
+    font-weight: bold;
+}
+
+.balance-withdraw td { 
+	padding-bottom: 6px; 
+}
+
+.balance-value {
+    text-align: right;
+    width: 27%;
+}
+
+.balance-divider {
+    border: none !important;
+    height: 1px;
+    /* ReSharper disable once InvalidValue */
+    margin: 0 0 2 4;
+    padding: 0;
+}
+
+.balance-empty-table {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 17px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.balance-empty-image td{
+    text-align: center;
+    padding-top: 61px;
+    padding-bottom: 16px;
+}
+
+.balance-empty-image img{
+    height: 50%;
+}
+
+.balance-empty-caption {
+    line-height: 18px;
+}
+
+/* TERMS AND CONDITIONS */
+ol { 
+    list-style-position: inside;
+    padding-left: 0;
+}​
+
+ul { 
+    list-style-position: inside;
+    padding-left: 0;
+}​
+
+ol.sections > li > ol > li > ol {list-style-type:lower-alpha}
+
+ol.sections > li > ol > li > ol > li > ol {list-style-type:lower-roman}
+
+ol.sections > li {
+    counter-increment: root;
+}
+
+ol.sections > li > ol {
+    counter-reset: subsection;
+    list-style-type: none;
+}
+
+ol.sections > li > ol > li {
+    counter-increment: subsection;
+}
+
+ol.sections > li > ol > li:before {
+    content: counter(root) "." counter(subsection) " ";
+}
+
