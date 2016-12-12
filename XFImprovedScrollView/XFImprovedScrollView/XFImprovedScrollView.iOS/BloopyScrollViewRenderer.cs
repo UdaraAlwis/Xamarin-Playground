@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using CoreGraphics;
@@ -14,6 +16,8 @@ namespace XFImprovedScrollView.iOS
 {
     class BloopyScrollViewRenderer : ScrollViewRenderer
     {
+        private UIImage _uiImageImageBackground;
+
         protected override async void OnElementChanged(VisualElementChangedEventArgs e)
         {
             base.OnElementChanged(e);
@@ -31,29 +35,45 @@ namespace XFImprovedScrollView.iOS
 
                 if (((BloopyScrollView)e.NewElement).BackgroundImage != null)
                 {
-                    //var uiImageBackground = await
-                    //    IosImageHelpers.GetUIImageAsync(((BloopyScrollView)e.NewElement).BackgroundImage);
-
-                    //// Scaling down the image hence Forms9Patch scales up the image for @2x
-                    //uiImageBackground = new UIImage(uiImageBackground.CGImage, 2, uiImageBackground.Orientation);
-
-                    //UIImageView scrollViewBackgroundImageView = new UIImageView(uiImageBackground.
-                    //    CreateResizableImage(new UIEdgeInsets(200f, 0f, 0f, 0f), UIImageResizingMode.Stretch));
-
-                    //CGRect rectForbackgroundImageView = new CGRect(
-                    //    0, 30,
-                    //    this.ContentSize.Width,
-                    //    this.ContentSize.Height + 150);
-
-                    //scrollViewBackgroundImageView.Frame = rectForbackgroundImageView;
-
-                    //this.AddSubview(scrollViewBackgroundImageView);
-                    //this.SendSubviewToBack(scrollViewBackgroundImageView);
+                    _uiImageImageBackground = await
+                        IosImageHelper.GetUIImageFromImageSourceAsync(((BloopyScrollView)e.NewElement).BackgroundImage);
                 }
+
+                ((BloopyScrollView)e.NewElement).PropertyChanged += OnPropertyChanged;
             }
 
             this.UserInteractionEnabled = true; // Otherwise we children touch events won't work
 
+        }
+
+        private void OnPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        {
+            if (propertyChangedEventArgs.PropertyName == BloopyScrollView.HeightProperty.PropertyName)
+            {
+                if (((BloopyScrollView)sender).Height > 0)
+                {
+                    this.BackgroundColor = UIColor.FromPatternImage(
+                        MaxResizeImage(_uiImageImageBackground, 
+                        (float)((BloopyScrollView)sender).Width,
+                        (float)((BloopyScrollView)sender).Height));
+                }
+            }
+        }
+
+        //https://forums.xamarin.com/discussion/comment/175585/#Comment_175585
+        // resize the image to be contained within a maximum width and height, keeping aspect ratio
+        public UIImage MaxResizeImage(UIImage sourceImage, float maxWidth, float maxHeight)
+        {
+            var sourceSize = sourceImage.Size;
+            var maxResizeFactor = Math.Max(maxWidth / sourceSize.Width, maxHeight / sourceSize.Height);
+            if (maxResizeFactor > 1) return sourceImage;
+            var width = maxResizeFactor * sourceSize.Width;
+            var height = maxResizeFactor * sourceSize.Height;
+            UIGraphics.BeginImageContext(new CGSize(width, height));
+            sourceImage.Draw(new CGRect(0, 0, width, height));
+            var resultImage = UIGraphics.GetImageFromCurrentImageContext();
+            UIGraphics.EndImageContext();
+            return resultImage;
         }
     }
 }
