@@ -10,7 +10,9 @@ Background Image - Of course who wouldn't like a background Image on a Scroll vi
 
 Yes behold, me, myself and I presenting the "BloopyScrollView" why the name "BloopyScrollView"? I don't even know. lol :P
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFImprovedScrollView/screenshots/BloopScrollView on Android lowq.gif"  height="350" />
 
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFImprovedScrollView/screenshots/Nexus 4 (Lollipop) Screenshot 1.png"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFImprovedScrollView/screenshots/Simulator Screen Shot 13 Dec 2016, 11.30.50 PM.png"  height="350" />
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFImprovedScrollView/screenshots/BloopScrollView on iOS lowq.gif"  height="350" />
+<br />
+
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFImprovedScrollView/screenshots/BloopScrollView on Android lowq.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFImprovedScrollView/screenshots/BloopScrollView on iOS lowq.gif"  height="350" />
