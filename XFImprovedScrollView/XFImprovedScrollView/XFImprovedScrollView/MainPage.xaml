@@ -11,7 +11,10 @@
            VerticalOptions="Center"
            HorizontalOptions="Center" />
     
-  <local:BloopyScrollView>
+  <local:BloopyScrollView 
+    IsNativeBouncyEffectEnabled="True"
+    IsVerticalScrollbarEnabled="False"
+    IsHorizontalScrollbarEnabled="False">
     <local:BloopyScrollView.BackgroundImage>
       <FileImageSource File="xamarinBackgroundImage.png"/>
     </local:BloopyScrollView.BackgroundImage>

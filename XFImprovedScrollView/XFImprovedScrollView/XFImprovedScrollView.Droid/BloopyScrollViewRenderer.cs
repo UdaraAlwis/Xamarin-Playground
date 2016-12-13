@@ -21,7 +21,7 @@ namespace XFImprovedScrollView.Droid
 {
     public class BloopyScrollViewRenderer : ScrollViewRenderer
     {
-        private Bitmap bitmapImageBackground;
+        private Bitmap _bitmapImageBackground;
 
         protected override async void OnElementChanged(VisualElementChangedEventArgs e)
         {
@@ -37,25 +37,27 @@ namespace XFImprovedScrollView.Droid
 
             if (((BloopyScrollView) e.NewElement).BackgroundImage != null)
             {
-                bitmapImageBackground = await
+                // retrieving the Bitmap Image from the ImageSource by converting
+                _bitmapImageBackground = await
                        AndroidImageHelper.GetBitmapFromImageSourceAsync(((BloopyScrollView)e.NewElement).BackgroundImage, this.Context);
-                
-                this.Background = new BitmapDrawable(ResizeBitmap(bitmapImageBackground, this.Width, this.Height));
-            }
 
-            this.Focusable = false; // Otherwise we children touch events won't work
-            this.Clickable = false; // Otherwise we children touch events won't work
+                // resize the Bitmap to fit the current ScrollView's width and height
+                var _resizedBitmapImageBackground = new BitmapDrawable(ResizeBitmap(_bitmapImageBackground, this.Width, this.Height));
+
+                // Set the background Image
+                this.Background = _resizedBitmapImageBackground;
+            }
         }
 
-        //http://stackoverflow.com/a/8224161
-        private Bitmap ResizeBitmap(Bitmap originalImage, int widthToScae, int heightToScale)
+        // Resize the Bitmap
+        private Bitmap ResizeBitmap(Bitmap originalImage, int widthToScale, int heightToScale)
         {
-            Bitmap background = Bitmap.CreateBitmap(widthToScae, heightToScale, Bitmap.Config.Argb8888);
+            Bitmap resizedBitmap = Bitmap.CreateBitmap(widthToScale, heightToScale, Bitmap.Config.Argb8888);
 
             float originalWidth = originalImage.Width;
             float originalHeight = originalImage.Height;
 
-            Canvas canvas = new Canvas(background);
+            Canvas canvas = new Canvas(resizedBitmap);
 
             float scale = this.Width / originalWidth;
 
@@ -71,7 +73,7 @@ namespace XFImprovedScrollView.Droid
 
             canvas.DrawBitmap(originalImage, transformation, paint);
 
-            return background;
+            return resizedBitmap;
         }
     }
 }
