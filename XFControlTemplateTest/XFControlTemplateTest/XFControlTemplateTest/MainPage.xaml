@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFControlTemplateTest"
+             x:Class="XFControlTemplateTest.MainPage">
+  <ContentView x:Name="contentView" 
+               ControlTemplate="{StaticResource MyTemplate1}">
+    <ContentView.Padding>
+      <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentView.Padding>
+    
+      <StackLayout VerticalOptions="CenterAndExpand" Padding="10,0,10,0">
+            
+        <Label Text="Welcome to the Dynamic Theme Changer app!" 
+               HorizontalTextAlignment="Center"
+               FontSize="20"
+               VerticalOptions="Start"
+               HorizontalOptions="Center" />
+        
+        <Grid Padding="0,20,0,20">
+          <Label Text="click below to change the theme on the go" 
+                 HorizontalTextAlignment="Center"
+                 HorizontalOptions="Center" />
+          <Button Text="change current theme template" Grid.Row="1"
+                      Clicked="OnButtonClicked" />
+        
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="40" ></RowDefinition>
+          </Grid.RowDefinitions>
+        </Grid>
+        
+        <Grid Padding="0,20,0,20">
+          
+          <Label Text="click below to change the theme color on the go" 
+                 HorizontalTextAlignment="Center"
+                 HorizontalOptions="Center" 
+                 Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="10"/>
+          
+          <Button BackgroundColor="#ff0000" Grid.Row="1" Grid.Column="0" Clicked="OnColorChangeButtonClicked" />
+          <Button BackgroundColor="#ff8000" Grid.Row="1" Grid.Column="1"  Clicked="OnColorChangeButtonClicked" />
+          <Button BackgroundColor="#ffff00" Grid.Row="1" Grid.Column="2" Clicked="OnColorChangeButtonClicked" />
+          <Button BackgroundColor="#00ff40" Grid.Row="1" Grid.Column="3" Clicked="OnColorChangeButtonClicked" />
+          <Button BackgroundColor="#00ffff" Grid.Row="1" Grid.Column="4" Clicked="OnColorChangeButtonClicked" />
+          <Button BackgroundColor="#0080ff" Grid.Row="1" Grid.Column="5" Clicked="OnColorChangeButtonClicked" />
+          <Button BackgroundColor="#4000ff" Grid.Row="1" Grid.Column="6" Clicked="OnColorChangeButtonClicked" />
+          <Button BackgroundColor="#bf00ff" Grid.Row="1" Grid.Column="7" Clicked="OnColorChangeButtonClicked" />
+          <Button BackgroundColor="#ff0080" Grid.Row="1" Grid.Column="8" Clicked="OnColorChangeButtonClicked" />
+          <Button BackgroundColor="#ff0040" Grid.Row="1" Grid.Column="9" Clicked="OnColorChangeButtonClicked" />
+              
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="0.1*" />
+          <ColumnDefinition Width="0.1*" />
+          <ColumnDefinition Width="0.1*" />
+          <ColumnDefinition Width="0.1*" />
+          <ColumnDefinition Width="0.1*" />
+          <ColumnDefinition Width="0.1*" />
+          <ColumnDefinition Width="0.1*" />
+          <ColumnDefinition Width="0.1*" />
+          <ColumnDefinition Width="0.1*" />
+          <ColumnDefinition Width="0.1*" />
+        </Grid.ColumnDefinitions>
+      </Grid>
+      
+      </StackLayout>
+    
+  </ContentView>
+</ContentPage>
