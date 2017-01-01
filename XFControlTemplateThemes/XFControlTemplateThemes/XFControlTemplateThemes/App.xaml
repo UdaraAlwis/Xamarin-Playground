@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFControlTemplateThemes.App">
+  <Application.Resources>
+    <ResourceDictionary>
+
+      <!--template theme 1-->
+      <ControlTemplate x:Key="MyTemplate1">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="0.1*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.05*" />
+            <ColumnDefinition Width="0.95*" />
+          </Grid.ColumnDefinitions>
+
+          <!--template binding-->
+          <BoxView Grid.ColumnSpan="2" Color="{TemplateBinding Parent.ThemeColor}" />
+          <Label Grid.Row="0" Grid.Column="1"
+                 Text="this is my theme style 1"
+                 TextColor="White"
+                 VerticalOptions="Center" />
+
+          <!--your page content goes in here-->
+          <ContentPresenter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+
+          <!--template binding-->
+          <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Color="{TemplateBinding Parent.ThemeColor}" />
+          <Label Grid.Row="2" Grid.Column="1"
+                 Text="template 1 (c) Udara Alwis 2016"
+                 TextColor="White"
+                 VerticalOptions="Center" />
+        </Grid>
+      </ControlTemplate>
+
+      <!--template theme 2-->
+      <ControlTemplate x:Key="MyTemplate2">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="0.1*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.05*" />
+            <ColumnDefinition Width="0.35*" />
+            <ColumnDefinition Width="0.55*" />
+            <ColumnDefinition Width="0.05*" />
+          </Grid.ColumnDefinitions>
+
+          <!--template binding-->
+          <BoxView Grid.ColumnSpan="4" Color="{TemplateBinding Parent.ThemeColor}" />
+          <Label Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"
+                 Text="this is my theme style 2"
+                 TextColor="Black"
+                 BackgroundColor="White"
+                 VerticalOptions="Center" />
+
+          <!--your page content goes in here-->
+          <ContentPresenter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" />
+
+          <!--template binding-->
+          <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Color="{TemplateBinding Parent.ThemeColor}" />
+          <Label Grid.Row="2" Grid.Column="1"
+                 Text="template 2"
+                 TextColor="Black"
+                 BackgroundColor="White"
+                 VerticalOptions="Center" />
+          <Label Grid.Row="2" Grid.Column="2"
+                 Text="(c) Udara Alwis 2016"
+                 TextColor="Black"
+                 BackgroundColor="White"
+                 VerticalOptions="Center"/>
+        </Grid>
+      </ControlTemplate>
+
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
