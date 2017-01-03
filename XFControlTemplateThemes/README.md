@@ -7,4 +7,4 @@ This uses the Xamarin Forms Control Templates to change the app theme styles at 
 
 <br />
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFControlTemplateThemes/Screenshots/Simulator Screen Shot 1 Jan 2017, 2.53.32 PM.png"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFControlTemplateThemes/Screenshots/Simulator Screen Shot 1 Jan 2017, 2.53.45 PM"  height="350" />
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFControlTemplateThemes/Screenshots/Simulator Screen Shot 1 Jan 2017, 2.53.32 PM.png"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFControlTemplateThemes/Screenshots/Simulator Screen Shot 1 Jan 2017, 2.53.45 PM.png"  height="350" />

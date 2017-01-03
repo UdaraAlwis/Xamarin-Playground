@@ -18,22 +18,26 @@
             <ColumnDefinition Width="0.95*" />
           </Grid.ColumnDefinitions>
 
-          <!--template binding-->
+          <!--template header-->
+          <!--use of template binding for color-->
           <BoxView Grid.ColumnSpan="2" Color="{TemplateBinding Parent.ThemeColor}" />
           <Label Grid.Row="0" Grid.Column="1"
                  Text="this is my theme style 1"
                  TextColor="White"
                  VerticalOptions="Center" />
+          <!--template header-->
 
           <!--your page content goes in here-->
           <ContentPresenter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
 
-          <!--template binding-->
+          <!--template footer-->
+          <!--use of template binding for color-->
           <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Color="{TemplateBinding Parent.ThemeColor}" />
           <Label Grid.Row="2" Grid.Column="1"
                  Text="template 1 (c) Udara Alwis 2016"
                  TextColor="White"
                  VerticalOptions="Center" />
+          <!--template footer-->
         </Grid>
       </ControlTemplate>
 
@@ -52,18 +56,21 @@
             <ColumnDefinition Width="0.05*" />
           </Grid.ColumnDefinitions>
 
-          <!--template binding-->
+          <!--template header-->
+          <!--use of template binding for color-->
           <BoxView Grid.ColumnSpan="4" Color="{TemplateBinding Parent.ThemeColor}" />
           <Label Grid.Row="0" Grid.Column="1"  Grid.ColumnSpan="2"
                  Text="this is my theme style 2"
                  TextColor="Black"
                  BackgroundColor="White"
                  VerticalOptions="Center" />
+          <!--template header-->
 
           <!--your page content goes in here-->
           <ContentPresenter Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" />
 
-          <!--template binding-->
+          <!--template footer-->
+          <!--use of template binding for color-->
           <BoxView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Color="{TemplateBinding Parent.ThemeColor}" />
           <Label Grid.Row="2" Grid.Column="1"
                  Text="template 2"
@@ -75,6 +82,7 @@
                  TextColor="Black"
                  BackgroundColor="White"
                  VerticalOptions="Center"/>
+          <!--template footer-->
         </Grid>
       </ControlTemplate>
 
