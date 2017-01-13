@@ -30,7 +30,7 @@ namespace XFAnimatingDotsControl
 
         private bool animationStarted;
 
-        protected override async void OnSizeAllocated(double width, double height)
+        protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
 
@@ -38,15 +38,19 @@ namespace XFAnimatingDotsControl
             if (!animationStarted && Dot1!= null)
             {
                 animationStarted = true;
-                
-                await Task.Factory.StartNew(RunAnimations);
 
-                Device.StartTimer(TimeSpan.FromSeconds(1.1), () =>
+                CancellationTokenSource cancelConnectionAnimation = new CancellationTokenSource();
+
+                Task.Run(async () =>
                 {
-                    Task.Factory.StartNew(RunAnimations, CancellationToken.None, TaskCreationOptions.None, TaskScheduler.FromCurrentSynchronizationContext());
-                    
-                    return true; // repeat the animation
-                });
+                    while (!cancelConnectionAnimation.Token.IsCancellationRequested)
+                    {
+                        Xamarin.Forms.Device.BeginInvokeOnMainThread(RunAnimations);
+
+                        await Task.Delay(1200, cancelConnectionAnimation.Token);
+                    }
+
+                }, cancelConnectionAnimation.Token);
             }
         }
 
