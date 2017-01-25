@@ -11,7 +11,13 @@
 
     <local:AnimatingTextColorButton BorderWidth="1" BorderColor="Silver" FontSize="20" 
                                     Text="Click to see blinky blinky" WidthRequest="300"
-                                    Clicked="BlinkyTextButton_OnClicked" x:Name="BlinkyTextButton"
+                                    Clicked="BlinkyTextButton1_OnClicked" x:Name="BlinkyTextButton1"
+             HorizontalOptions="CenterAndExpand">
+    </local:AnimatingTextColorButton>
+    
+    <local:AnimatingTextColorButton BorderWidth="1" BorderColor="Silver" FontSize="20" 
+                                    Text="Click to see blinky blinky" WidthRequest="300"
+                                    Clicked="BlinkyTextButton2_OnClicked" x:Name="BlinkyTextButton2"
              HorizontalOptions="CenterAndExpand">
     </local:AnimatingTextColorButton>
     
