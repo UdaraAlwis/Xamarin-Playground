@@ -9,13 +9,15 @@ namespace CoolBreadcrumbsBar
 {
     public class HomePage : ContentPage
     {
-        private StackLayout _animatedStack;
+        private StackLayout _breadcrumbStackLayout;
         private ScrollView _breadCrumbsScrollView;
         private Button _addNewBreadcrumbButton;
+        private Button _clearAllBreadcrumbsButton;
 
         public HomePage()
         {
-            _animatedStack = new StackLayout()
+            // le animated breadcrumbs bar
+            _breadcrumbStackLayout = new StackLayout()
             {
                 Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -31,69 +33,110 @@ namespace CoolBreadcrumbsBar
                     },
                 },
                 Padding = new Thickness(10,0,10,0),
-                HeightRequest = 40,
+                HeightRequest = 30,
             };
-            _animatedStack.ChildAdded += _animatedStack_ChildAdded;
+            _breadcrumbStackLayout.ChildAdded += AnimatedStack_ChildAdded;
 
+            // let's add that breadcrumbs stacklayout inside a scrollview
             _breadCrumbsScrollView = new ScrollView
             {
-                Content = _animatedStack,
+                Content = _breadcrumbStackLayout,
                 Orientation = ScrollOrientation.Horizontal,
-                VerticalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.StartAndExpand,
             };
 
+
+            // Button for adding and removing breadcrumbs 
             _addNewBreadcrumbButton =
                 new Button()
                 {
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
                     Text = "Add a Breadcrumb",
+                    TextColor = Color.Black,
+                    BackgroundColor = Color.White,
+                    BorderColor = Color.Gray,
+                    BorderWidth = 2,
                 };
-            _addNewBreadcrumbButton.Clicked += AddNewBreadcrumbButton_Clicked;
+            _addNewBreadcrumbButton.Clicked += AddNewBreadcrumbButtonOnClicked;
+
+            _clearAllBreadcrumbsButton =
+                new Button()
+                {
+                    Text = "Clear Breadcrumbs",
+                    TextColor = Color.Black,
+                    BackgroundColor = Color.White,
+                    BorderColor = Color.Gray,
+                    BorderWidth = 2,
+                };
+            _clearAllBreadcrumbsButton.Clicked += ClearAllBreadcrumbsButtonOnClicked;
 
 
+            // Now put em all together on the screen
             Content =
             new StackLayout()
             {
-                Padding = new Thickness(0,20,0,0),
+                Padding = Device.OnPlatform(new Thickness(5, 40, 5, 0), new Thickness(0, 20, 0, 0), new Thickness(0, 20, 0, 0)),
+                Orientation = StackOrientation.Vertical,
                 Children =
                 {
+                    _breadCrumbsScrollView,
+                    
                     new Label()
                     {
+                        VerticalOptions = LayoutOptions.EndAndExpand,
                         HorizontalTextAlignment = TextAlignment.Center,
-                        Text = "Welcome to the Cool Breadcrumbs Bar!",
-                        FontSize = 20,
-                        HeightRequest = 80,
+                        Text = "Welcome to the Breadcrumbs Bar with Xamarin Forms !",
+                        FontSize = 25,
                         TextColor = Color.Black,
                     },
 
-                    _breadCrumbsScrollView,
-
-                    _addNewBreadcrumbButton,
+                    new StackLayout() { 
+                        Children = { 
+                            _addNewBreadcrumbButton,
+                            _clearAllBreadcrumbsButton,
+                        },
+                        VerticalOptions = LayoutOptions.End,
+                        Padding = new Thickness(10,10,10,10),
+                    }
                 }
             };
 
             BackgroundColor = Color.White;
-            
+        }
+        
+
+        private void ClearAllBreadcrumbsButtonOnClicked(object sender, EventArgs eventArgs)
+        {
+            _breadcrumbStackLayout.Children.Clear();
+
+            _breadcrumbStackLayout.Children.Add(
+            new Label
+            {
+                HorizontalOptions = LayoutOptions.Start,
+                Text = "Welcome!",
+                FontSize = 15,
+                FontAttributes = FontAttributes.Bold,
+                TextColor = Color.Black,
+            });
         }
 
-        private void _animatedStack_ChildAdded(object sender, ElementEventArgs e)
+        private void AnimatedStack_ChildAdded(object sender, ElementEventArgs e)
         {
             Device.BeginInvokeOnMainThread(() =>
             {
                 var width = Application.Current.MainPage.Width;
 
                 var storyboard = new Animation();
-                var enterRight = new Animation(callback: d => _animatedStack.Children.Last().TranslationX = d,
+                var enterRight = new Animation(callback: d => _breadcrumbStackLayout.Children.Last().TranslationX = d,
                                                start: width,
                                                end: 0,
                                                easing: Easing.Linear);
 
                 storyboard.Add(0, 1, enterRight);
-                storyboard.Commit(_animatedStack.Children.Last(), "LeftToRightAnimation", length: 700);
+                storyboard.Commit(_breadcrumbStackLayout.Children.Last(), "LeftToRightAnimation", length: 700);
             });
         }
 
-        private void AddNewBreadcrumbButton_Clicked(object sender, EventArgs e)
+        private void AddNewBreadcrumbButtonOnClicked(object sender, EventArgs e)
         {
             _addNewBreadcrumbButton.IsEnabled = false;
 
@@ -101,18 +144,17 @@ namespace CoolBreadcrumbsBar
             var width = Application.Current.MainPage.Width;
 
             // Add the new Breadcrumb Label
-            _animatedStack.Children.Add(new Label
+            _breadcrumbStackLayout.Children.Add(new Label
             {
                 HorizontalOptions = LayoutOptions.End,
-                Text = "\\ " + RandomWordGenerator.WordFinder2(new Random().Next(5, 10)),
+                Text = "/ " + RandomWordGenerator.GetMeaninglessRandomString(new Random().Next(5, 10)),
                 FontSize = 15,
-                FontAttributes = FontAttributes.Bold,
                 TextColor = Color.Black,
                 TranslationX = width,
             });
 
             // Scroll to the end of the StackLayout
-            _breadCrumbsScrollView.ScrollToAsync(_animatedStack,
+            _breadCrumbsScrollView.ScrollToAsync(_breadcrumbStackLayout,
                 ScrollToPosition.End, true);
 
             _addNewBreadcrumbButton.IsEnabled = true;

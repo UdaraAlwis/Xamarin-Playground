@@ -9,14 +9,15 @@ namespace CoolBreadcrumbsBar
     public static class RandomWordGenerator
     {
         /// <summary>
-        /// Just to generate some random words lah! :P
+        /// Just to generate some random words! :P
         /// </summary>
         /// <param name="requestedLength"></param>
         /// <returns></returns>
-        public static string WordFinder2(int requestedLength)
+        public static string GetMeaninglessRandomString(int requestedLength)
         {
             Random rnd = new Random();
-            string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z" };
+            string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k",
+                "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z" };
             string[] vowels = { "a", "e", "i", "o", "u" };
 
             string word = "";
@@ -29,10 +30,13 @@ namespace CoolBreadcrumbsBar
             {
                 for (int i = 0; i < requestedLength; i += 2)
                 {
-                    word += GetRandomLetter(rnd, consonants) + GetRandomLetter(rnd, vowels);
+                    word += GetRandomLetter(rnd, consonants) + 
+                        GetRandomLetter(rnd, vowels);
                 }
 
-                word = word.Replace("q", "qu").Substring(0, requestedLength); // We may generate a string longer than requested length, but it doesn't matter if cut off the excess.
+                word = word.Replace("q", "qu").Substring(0, requestedLength);
+                // We may generate a string longer than requested length, 
+                // but it doesn't matter if cut off the excess.
             }
 
             return word;
