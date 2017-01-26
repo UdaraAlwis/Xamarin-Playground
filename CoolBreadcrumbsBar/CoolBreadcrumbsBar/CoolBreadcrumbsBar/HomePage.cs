@@ -9,12 +9,13 @@ namespace CoolBreadcrumbsBar
 {
     public class HomePage : ContentPage
     {
-        private StackLayout animatedStack;
-        private ScrollView breadCrumbsScrollView;
+        private StackLayout _animatedStack;
+        private ScrollView _breadCrumbsScrollView;
+        private Button _addNewBreadcrumbButton;
 
         public HomePage()
         {
-            animatedStack = new StackLayout()
+            _animatedStack = new StackLayout()
             {
                 Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -23,119 +24,87 @@ namespace CoolBreadcrumbsBar
                     new Label
                     {
                         HorizontalOptions = LayoutOptions.Start,
-                        Text = "Welcome",
+                        Text = "Welcome!",
                         FontSize = 15,
                     },
                 },
                 Padding = new Thickness(10,0,10,0)
             };
-            
-            animatedStack.ChildAdded += (sender, args) =>
+            _animatedStack.ChildAdded += _animatedStack_ChildAdded;
+
+            _breadCrumbsScrollView = new ScrollView
             {
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    var width = Application.Current.MainPage.Width;
-
-                    var storyboard = new Animation();
-                    var enterRight = new Animation(callback: d => animatedStack.Children.Last().TranslationX = d,
-                                                   start: width,
-                                                   end: 0,
-                                                   easing: Easing.Linear);
-
-                    storyboard.Add(0, 1, enterRight);
-                    storyboard.Commit(animatedStack.Children.Last(), "Loop", length: 700);
-                });
-            };
-
-            var addNewBreadcrumbButton =
-                new Button()
-                {
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                    Text = "Add a Breadcrumb!",
-                };
-
-            addNewBreadcrumbButton.Clicked += (sender, args) =>
-            {
-                addNewBreadcrumbButton.IsEnabled = false;
-
-                var width = Application.Current.MainPage.Width;
-
-                animatedStack.Children.Add(new Label
-                {
-                    HorizontalOptions = LayoutOptions.End,
-                    Text = "\\ " + WordFinder2(new Random().Next(5, 10)),
-                    FontSize = 15,
-                    TranslationX = width,
-                });
-
-                breadCrumbsScrollView.ScrollToAsync(animatedStack,
-                    ScrollToPosition.End, true);
-
-                addNewBreadcrumbButton.IsEnabled = true;
-            };
-
-            breadCrumbsScrollView = new ScrollView
-            {
-                Content = animatedStack,
+                Content = _animatedStack,
                 Orientation = ScrollOrientation.Horizontal,
                 VerticalOptions = LayoutOptions.Center,
             };
 
-            Content =
-
-                new StackLayout()
+            _addNewBreadcrumbButton =
+                new Button()
                 {
-                    Children =
-                    {
-                        new Label()
-                        {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to the Cool Breadcrumbs Bar!",
-                            FontSize = 20,
-                            HeightRequest = 80,
-                        },
-
-                        breadCrumbsScrollView,
-
-                        addNewBreadcrumbButton,
-                    }
+                    HorizontalOptions = LayoutOptions.CenterAndExpand,
+                    Text = "Add a Breadcrumb",
                 };
+            _addNewBreadcrumbButton.Clicked += AddNewBreadcrumbButton_Clicked;
+
+
+            Content =
+            new StackLayout()
+            {
+                Padding = new Thickness(0,20,0,0),
+                Children =
+                {
+                    new Label()
+                    {
+                        HorizontalTextAlignment = TextAlignment.Center,
+                        Text = "Welcome to the Cool Breadcrumbs Bar!",
+                        FontSize = 20,
+                        HeightRequest = 80,
+                    },
+
+                    _breadCrumbsScrollView,
+
+                    _addNewBreadcrumbButton,
+                }
+            };
             
         }
-        
-        /// <summary>
-        /// Just to generate some random words lah! :P
-        /// </summary>
-        /// <param name="requestedLength"></param>
-        /// <returns></returns>
-        public string WordFinder2(int requestedLength)
+
+        private void _animatedStack_ChildAdded(object sender, ElementEventArgs e)
         {
-            Random rnd = new Random();
-            string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z" };
-            string[] vowels = { "a", "e", "i", "o", "u" };
-
-            string word = "";
-
-            if (requestedLength == 1)
+            Device.BeginInvokeOnMainThread(() =>
             {
-                word = GetRandomLetter(rnd, vowels);
-            }
-            else
-            {
-                for (int i = 0; i < requestedLength; i += 2)
-                {
-                    word += GetRandomLetter(rnd, consonants) + GetRandomLetter(rnd, vowels);
-                }
+                var width = Application.Current.MainPage.Width;
 
-                word = word.Replace("q", "qu").Substring(0, requestedLength); // We may generate a string longer than requested length, but it doesn't matter if cut off the excess.
-            }
+                var storyboard = new Animation();
+                var enterRight = new Animation(callback: d => _animatedStack.Children.Last().TranslationX = d,
+                                               start: width,
+                                               end: 0,
+                                               easing: Easing.Linear);
 
-            return word;
+                storyboard.Add(0, 1, enterRight);
+                storyboard.Commit(_animatedStack.Children.Last(), "LeftToRightAnimation", length: 700);
+            });
         }
 
-        private static string GetRandomLetter(Random rnd, string[] letters)
+        private void AddNewBreadcrumbButton_Clicked(object sender, EventArgs e)
         {
-            return letters[rnd.Next(0, letters.Length - 1)];
+            _addNewBreadcrumbButton.IsEnabled = false;
+
+            var width = Application.Current.MainPage.Width;
+
+            _animatedStack.Children.Add(new Label
+            {
+                HorizontalOptions = LayoutOptions.End,
+                Text = "\\ " + RandomWordGenerator.WordFinder2(new Random().Next(5, 10)),
+                FontSize = 15,
+                TranslationX = width,
+            });
+
+            _breadCrumbsScrollView.ScrollToAsync(_animatedStack,
+                ScrollToPosition.End, true);
+
+            _addNewBreadcrumbButton.IsEnabled = true;
         }
     }
 }
