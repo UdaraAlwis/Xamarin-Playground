@@ -21,7 +21,7 @@ namespace XFAnimatingDotsControl
 
             await Task.Factory.StartNew(async () =>
             {
-                await Task.Delay(6000);
+                await Task.Delay(7000);
 
                 Device.BeginInvokeOnMainThread(async () =>
                 {

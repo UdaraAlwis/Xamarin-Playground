@@ -14,9 +14,13 @@ namespace XFAnimatingTextColorButton
             InitializeComponent();
         }
 
-        private void BlinkyTextButton_OnClicked(object sender, EventArgs e)
+        private void BlinkyTextButton1_OnClicked(object sender, EventArgs e)
         {
-            BlinkyTextButton.IsTextColorAnimating = !BlinkyTextButton.IsTextColorAnimating;
+            BlinkyTextButton1.IsTextColorAnimating = !BlinkyTextButton1.IsTextColorAnimating;
+        }
+        private void BlinkyTextButton2_OnClicked(object sender, EventArgs e)
+        {
+            BlinkyTextButton2.IsTextColorAnimating = !BlinkyTextButton2.IsTextColorAnimating;
         }
     }
 }

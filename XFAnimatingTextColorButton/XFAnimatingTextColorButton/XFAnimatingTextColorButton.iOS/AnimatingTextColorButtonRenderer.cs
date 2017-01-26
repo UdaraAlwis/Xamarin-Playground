@@ -21,7 +21,7 @@ namespace XFAnimatingTextColorButton.iOS
         private bool _isTextColorAnimationEnabled;
 
         private UILabel _pulseLabel;
-
+        
         protected override void OnElementChanged(ElementChangedEventArgs<Button> e)
         {
             base.OnElementChanged(e);
@@ -34,6 +34,7 @@ namespace XFAnimatingTextColorButton.iOS
                 {
                     StartTextColorAnimation();
                 }
+                
             }
             
             if (e.OldElement != null)
@@ -81,9 +82,8 @@ namespace XFAnimatingTextColorButton.iOS
                 Alpha = 0,
                 TextAlignment = UITextAlignment.Center,
             };
-            _pulseLabel.AccessibilityLabel = "PulseLabel";
             _pulseLabel.UserInteractionEnabled = true;
-            
+
             // adding a touch event to UILabel since it covers UIButton touch area
             UITapGestureRecognizer tapGestureRecognizer = new UITapGestureRecognizer(
                 () =>
@@ -95,27 +95,18 @@ namespace XFAnimatingTextColorButton.iOS
 
             Add(_pulseLabel);
 
-            UIView.Animate(1, 0, 
-            UIViewAnimationOptions.Autoreverse | 
-            UIViewAnimationOptions.Repeat, 
+            UIView.Animate(1, 0,
+            UIViewAnimationOptions.Autoreverse |
+            UIViewAnimationOptions.Repeat |
+            UIViewAnimationOptions.AllowUserInteraction,
             () =>
             {
                 _pulseLabel.Alpha = 1;
-            }, 
+            },
             () =>
             {
                 return;
             });
-            
-            //BeginAnimations(null);
-            //SetAnimationDelay(0.1);
-            //SetAnimationDuration(0.9);
-            //SetAnimationRepeatCount(1000);
-            //SetAnimationRepeatAutoreverses(true);
-            //SetAnimationCurve(UIViewAnimationCurve.Linear);
-            //pulseLabel.Alpha = 1;
-            //SetAnimationDelegate(this.ViewController);
-            //CommitAnimations();
         }
 
         public void StopPulse()
