@@ -26,9 +26,12 @@ namespace CoolBreadcrumbsBar
                         HorizontalOptions = LayoutOptions.Start,
                         Text = "Welcome!",
                         FontSize = 15,
+                        FontAttributes = FontAttributes.Bold,
+                        TextColor = Color.Black,
                     },
                 },
-                Padding = new Thickness(10,0,10,0)
+                Padding = new Thickness(10,0,10,0),
+                HeightRequest = 40,
             };
             _animatedStack.ChildAdded += _animatedStack_ChildAdded;
 
@@ -60,6 +63,7 @@ namespace CoolBreadcrumbsBar
                         Text = "Welcome to the Cool Breadcrumbs Bar!",
                         FontSize = 20,
                         HeightRequest = 80,
+                        TextColor = Color.Black,
                     },
 
                     _breadCrumbsScrollView,
@@ -67,6 +71,8 @@ namespace CoolBreadcrumbsBar
                     _addNewBreadcrumbButton,
                 }
             };
+
+            BackgroundColor = Color.White;
             
         }
 
@@ -91,16 +97,21 @@ namespace CoolBreadcrumbsBar
         {
             _addNewBreadcrumbButton.IsEnabled = false;
 
+            // retrieve the page width
             var width = Application.Current.MainPage.Width;
 
+            // Add the new Breadcrumb Label
             _animatedStack.Children.Add(new Label
             {
                 HorizontalOptions = LayoutOptions.End,
                 Text = "\\ " + RandomWordGenerator.WordFinder2(new Random().Next(5, 10)),
                 FontSize = 15,
+                FontAttributes = FontAttributes.Bold,
+                TextColor = Color.Black,
                 TranslationX = width,
             });
 
+            // Scroll to the end of the StackLayout
             _breadCrumbsScrollView.ScrollToAsync(_animatedStack,
                 ScrollToPosition.End, true);
 
