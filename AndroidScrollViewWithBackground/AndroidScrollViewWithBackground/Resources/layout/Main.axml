@@ -17,20 +17,10 @@
             android:layout_height="match_parent"
             android:background="@drawable/tipp_slip">
             <TextView
-              android:text="Hello"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:textSize="25dp" />
-            <TextView
                 android:text="Hello"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25dp" />
-            <TextView
-               android:text="Hello"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:textSize="25dp" />
             <TextView
                 android:text="Hello"
                 android:layout_width="match_parent"
@@ -47,10 +37,20 @@
                 android:layout_height="wrap_content"
                 android:textSize="25dp" />
             <TextView
-               android:text="Hello"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:textSize="25dp" />
+                android:text="Hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp" />
+            <TextView
+                android:text="Hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp" />
+            <TextView
+                android:text="Hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp" />
             <TextView
                 android:text="Hello"
                 android:layout_width="match_parent"
@@ -67,40 +67,40 @@
                 android:layout_height="wrap_content"
                 android:textSize="25dp" />
             <TextView
-               android:text="Hello"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:textSize="25dp" />
+                android:text="Hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp" />
             <TextView
                 android:text="Hello"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25dp" />
             <TextView
-                 android:text="Hello"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:textSize="25dp" />
+                android:text="Hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp" />
             <TextView
                 android:text="Hello"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25dp" />
             <TextView
-                 android:text="Hello"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:textSize="25dp" />
+                android:text="Hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp" />
             <TextView
                 android:text="Hello"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25dp" />
             <TextView
-                 android:text="Hello"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 android:textSize="25dp" />
+                android:text="Hello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp" />
             <TextView
                 android:text="Hello"
                 android:layout_width="match_parent"
