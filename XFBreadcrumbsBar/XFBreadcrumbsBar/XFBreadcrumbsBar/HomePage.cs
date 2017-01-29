@@ -126,13 +126,15 @@ namespace XFBreadcrumbsBar
                 var width = Application.Current.MainPage.Width;
 
                 var storyboard = new Animation();
-                var enterRight = new Animation(callback: d => _breadcrumbStackLayout.Children.Last().TranslationX = d,
-                                               start: width,
-                                               end: 0,
-                                               easing: Easing.Linear);
+                var enterRight = new Animation(callback: d =>
+                _breadcrumbStackLayout.Children.Last().TranslationX = d,
+                start: width,
+                end: 0,
+                easing: Easing.Linear);
 
                 storyboard.Add(0, 1, enterRight);
-                storyboard.Commit(_breadcrumbStackLayout.Children.Last(), "LeftToRightAnimation", length: 700);
+                storyboard.Commit(_breadcrumbStackLayout.Children.Last(), 
+                    "RightToLeftAnimation", length: 800);
             });
         }
 
@@ -146,8 +148,10 @@ namespace XFBreadcrumbsBar
             // Add the new Breadcrumb Label
             _breadcrumbStackLayout.Children.Add(new Label
             {
-                HorizontalOptions = LayoutOptions.End,
-                Text = "/ " + RandomWordGenerator.GetMeaninglessRandomString(new Random().Next(5, 10)),
+                // Grab some random text (as in insert whatever 
+                // the text you want for your new breadrumb)
+                Text = "/ " + 
+                RandomWordGenerator.GetMeaninglessRandomString(new Random().Next(5, 10)),
                 FontSize = 15,
                 TextColor = Color.Black,
                 TranslationX = width,
