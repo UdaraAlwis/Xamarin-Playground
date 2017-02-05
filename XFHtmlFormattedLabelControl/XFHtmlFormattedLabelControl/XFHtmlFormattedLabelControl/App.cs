@@ -22,22 +22,29 @@ namespace XFHtmlFormattedLabelControl
                     Children = {
                         new Label {
                             HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to the awesome HTML Formatter Label Control by ÇøŋfuzëÐ SøurcëÇødë !"
+                            TextColor = Color.Black,
+                            Text = "Welcome to the awesome HTML Formatter Label Control by ÇøŋfuzëÐ SøurcëÇødë!"
                         },
                         new HtmlFormattedLabel()
                         {
-                            FontSize = 14,
+                            FontSize = Device.OnPlatform(14,20,20),
+                            TextColor = Color.Black,
                             Text = "<html><body><Center>" +
                                    "<font size='6'>" +
-                                   "This is normal text, but this is <b>bold text</b>... " +
+                                   "This is a html formatted text, so this is <b>bold text</b>... " +
                                    "and this is <u>underline text</u>... " +
                                    "and this is <strike>strike through text</strike>... " +
                                    "and finally this is <i>italic text</i>... " +
+                                   "<br />" +
+                                   "Ops this is html line break..." +
+                                   "<br />" +
+                                   "And this is <sup>superscripted</sup> html text."+
                                    "</font>" +
                                    "<Center></body></html>",
                         }
                     }
-                }
+                },
+                BackgroundColor = Color.White,
             };
         }
 
