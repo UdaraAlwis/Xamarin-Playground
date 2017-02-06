@@ -2,17 +2,48 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XFTextShadowButtonControl"
-             x:Class="XFTextShadowButtonControl.MainPage">
+             x:Class="XFTextShadowButtonControl.MainPage"
+             Padding="10,20,10,0">
   <StackLayout>
     
-    <Label Text="Welcome to Xamarin Forms!"
-             VerticalOptions="Center"
+    <Label Text="Welcome to the cool Text Shadow Button!"
+             VerticalOptions="Start"
              HorizontalOptions="Center" />
     
-    <Button Text="This is normal Button"/>
-      
-    <local:TextShadowButton Text="This is my awesome Button"/>
-  
+    <ScrollView VerticalOptions="EndAndExpand" >
+      <StackLayout>
+        <Button Text="This is normal Button" BackgroundColor="#f8c220" TextColor="White"/>
+        <local:TextShadowButton Text="Awesome Button with Shadow" BackgroundColor="#f8c220" HeightRequest="35" TextColor="White"/>
+
+        <Button Text="This is normal Button" BackgroundColor="#f88c20" TextColor="White"/>
+        <local:TextShadowButton Text="Awesome Button with Shadow" BackgroundColor="#f88c20" HeightRequest="35"  TextColor="White"/>
+
+        <Button Text="This is normal Button" BackgroundColor="#ff4000" TextColor="White"/>
+        <local:TextShadowButton Text="Awesome Button with Shadow" BackgroundColor="#ff4000" HeightRequest="35"  TextColor="White"/>
+
+        <Button Text="This is normal Button" BackgroundColor="#ff0080" TextColor="White"/>
+        <local:TextShadowButton Text="Awesome Button with Shadow" BackgroundColor="#ff0080" HeightRequest="35" TextColor="White"/>
+
+        <Button Text="This is normal Button" BackgroundColor="#ff00ff" TextColor="White"/>
+        <local:TextShadowButton Text="Awesome Button with Shadow" BackgroundColor="#ff00ff" HeightRequest="35" TextColor="White"/>
+
+        <Button Text="This is normal Button" BackgroundColor="#8000ff" TextColor="White"/>
+        <local:TextShadowButton Text="Awesome Button with Shadow" BackgroundColor="#8000ff" HeightRequest="35" TextColor="White"/>
+
+        <Button Text="This is normal Button" BackgroundColor="#0080ff" TextColor="White"/>
+        <local:TextShadowButton Text="Awesome Button with Shadow" BackgroundColor="#0080ff" HeightRequest="35"  TextColor="White"/>
+
+        <Button Text="This is normal Button" BackgroundColor="#00ffff" TextColor="White"/>
+        <local:TextShadowButton Text="Awesome Button with Shadow" BackgroundColor="#00ffff" HeightRequest="35" TextColor="White"/>
+
+        <Button Text="This is normal Button" BackgroundColor="#00ff80" TextColor="White"/>
+        <local:TextShadowButton Text="Awesome Button with Shadow" BackgroundColor="#00ff80" HeightRequest="35" TextColor="White"/>
+
+        <Button Text="This is normal Button" BackgroundColor="#00ff00" TextColor="White"/>
+        <local:TextShadowButton Text="Awesome Button with Shadow" BackgroundColor="#00ff00" HeightRequest="35"  TextColor="White"/>
+      </StackLayout>
+    </ScrollView>
+    
   </StackLayout>
     
 </ContentPage>

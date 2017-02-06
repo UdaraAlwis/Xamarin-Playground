@@ -23,7 +23,7 @@ namespace XFTextShadowButtonControl.iOS
             
             // Adding the Button text shadow effect
             Control.TitleLabel.ShadowOffset = new CGSize(0, 0.25);
-            Control.SetTitleShadowColor(UIColor.DarkGray, UIControlState.Normal);
+            Control.SetTitleShadowColor(((TextShadowButton)Element).TextShadowColor.ToUIColor(), UIControlState.Normal);
         }
     }
 }

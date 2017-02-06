@@ -28,7 +28,7 @@ namespace XFTextShadowButtonControl.Droid
             if (view == null) return;
 
             // Adding the Button text shadow effect
-            Control.SetShadowLayer(4, 0, 2, Android.Graphics.Color.DarkGray);
+            Control.SetShadowLayer(4, 0, 2, ((TextShadowButton)Element).TextShadowColor.ToAndroid());
         }
     }
 }
