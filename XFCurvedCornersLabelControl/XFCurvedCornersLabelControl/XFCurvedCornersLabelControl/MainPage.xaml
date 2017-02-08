@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFCurvedCornersLabelControl"
+             x:Class="XFCurvedCornersLabelControl.MainPage"
+             Padding="10,20,10,10">
+  <StackLayout VerticalOptions="CenterAndExpand">
+    
+    <Label 
+      Text="Welcome to the Label with Curved Corners for Xamarin Forms!" 
+      FontSize="20"
+      HorizontalTextAlignment="Center"/>
+
+    
+    <Label
+      Text="this is a normal Label"
+      HorizontalTextAlignment="Center"
+      VerticalTextAlignment="Center"
+      FontSize="14.5"
+      HeightRequest="30"
+      BackgroundColor="#20a9f8"
+      TextColor="White"/>
+
+    <local:CurvedCornersLabel
+      Text="this is a rounded Label"
+      HorizontalTextAlignment="Center"
+      VerticalTextAlignment="Center"
+      FontSize="14.5"
+      HeightRequest="30"
+      CurvedBackgroundColor="#0040ff"
+      TextColor="White">
+      <local:CurvedCornersLabel.CurvedCornerRadius>
+        <OnPlatform x:TypeArguments="x:Double" Android="40" iOS="15" />
+      </local:CurvedCornersLabel.CurvedCornerRadius>
+    </local:CurvedCornersLabel>
+    
+    
+    <Label 
+      Text="this is a normal Label" 
+      HorizontalTextAlignment="Center" 
+      VerticalTextAlignment="Center" 
+      FontSize="14.5"
+      HeightRequest="30"
+      BackgroundColor="#8000ff"
+      TextColor="White"/>
+    
+    <local:CurvedCornersLabel 
+      Text="this is a rounded Label" 
+      HorizontalTextAlignment="Center" 
+      VerticalTextAlignment="Center" 
+      FontSize="14.5"
+      HeightRequest="30"
+      CurvedBackgroundColor="#ff00ff"
+      TextColor="White">
+      <local:CurvedCornersLabel.CurvedCornerRadius>
+        <OnPlatform x:TypeArguments="x:Double" Android="40" iOS="15" />
+      </local:CurvedCornersLabel.CurvedCornerRadius>
+    </local:CurvedCornersLabel>
+    
+  </StackLayout>  
+</ContentPage>
