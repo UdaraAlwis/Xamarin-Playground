@@ -8,6 +8,7 @@ using Android.Content;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Xamarin.Forms;
@@ -38,10 +39,24 @@ namespace XFCurvedCornersLabelControl.Droid
             _gradientBackground.SetStroke(4, view.CurvedBackgroundColor.ToAndroid());
             
             // Radius for the curves
-            _gradientBackground.SetCornerRadius((float)view.CurvedCornerRadius);
+            _gradientBackground.SetCornerRadius(
+                DpToPixels(this.Context,
+                Convert.ToSingle(view.CurvedCornerRadius)));
 
             // set the background of the label
             Control.SetBackground(_gradientBackground);
+        }
+
+        /// <summary>
+        /// Device Independent Pixels to Actual Pixles conversion
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="valueInDp"></param>
+        /// <returns></returns>
+        public static float DpToPixels(Context context, float valueInDp)
+        {
+            DisplayMetrics metrics = context.Resources.DisplayMetrics;
+            return TypedValue.ApplyDimension(ComplexUnitType.Dip, valueInDp, metrics);
         }
     }
 }

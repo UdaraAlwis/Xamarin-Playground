@@ -28,10 +28,8 @@
       FontSize="14.5"
       HeightRequest="30"
       CurvedBackgroundColor="#0040ff"
-      TextColor="White">
-      <local:CurvedCornersLabel.CurvedCornerRadius>
-        <OnPlatform x:TypeArguments="x:Double" Android="40" iOS="15" />
-      </local:CurvedCornersLabel.CurvedCornerRadius>
+      TextColor="White"
+      CurvedCornerRadius="15">
     </local:CurvedCornersLabel>
     
     
@@ -51,10 +49,8 @@
       FontSize="14.5"
       HeightRequest="30"
       CurvedBackgroundColor="#ff00ff"
-      TextColor="White">
-      <local:CurvedCornersLabel.CurvedCornerRadius>
-        <OnPlatform x:TypeArguments="x:Double" Android="40" iOS="15" />
-      </local:CurvedCornersLabel.CurvedCornerRadius>
+      TextColor="White"
+      CurvedCornerRadius="15">
     </local:CurvedCornersLabel>
     
   </StackLayout>  
