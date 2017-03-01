@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xfNavBarBackBtnClickOverride:CoolContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xfNavBarBackBtnClickOverride="clr-namespace:XFNavBarBackBtnClickOverride;assembly=XFNavBarBackBtnClickOverride"
+             x:Class="XFNavBarBackBtnClickOverride.Page1"
+             Title="Page 2"
+             EnableBackButtonOverride="False">
+  <StackLayout
+    Padding="20,10,20,10"
+    VerticalOptions="Center"
+    HorizontalOptions="Center" >
+
+    <Label Text="Ok, this is just a normal Page! Click next Page to see the Navigation Bar Back button click overridden behavior..."
+           FontSize="20"
+           HorizontalTextAlignment="Center"/>
+
+    <Button Text="Open Next Page" FontSize="20" Clicked="OpenPageButton_OnClicked"></Button>
+
+  </StackLayout>
+</xfNavBarBackBtnClickOverride:CoolContentPage>
