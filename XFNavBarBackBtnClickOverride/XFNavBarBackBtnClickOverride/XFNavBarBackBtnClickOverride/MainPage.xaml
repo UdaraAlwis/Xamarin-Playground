@@ -4,17 +4,20 @@
              xmlns:local="clr-namespace:XFNavBarBackBtnClickOverride"
              x:Class="XFNavBarBackBtnClickOverride.MainPage"
              EnableBackButtonOverride="False"
-             Title="Home Page">
+             Title="Home Page"
+             BackgroundColor="#00bfff">
   <StackLayout
+    Spacing="20"
     Padding="20,10,20,10"
     VerticalOptions="Center"
     HorizontalOptions="Center" >
   
     <Label Text="Welcome to Navigation Bar Back button Click overriding in Xamarin Forms!"
            FontSize="20"
-           HorizontalTextAlignment="Center"/>
+           HorizontalTextAlignment="Center"
+           TextColor="White"/>
   
-    <Button Text="Open Next Page" FontSize="20" Clicked="OpenPageButton_OnClicked"></Button>
+    <Button Text="Open Next Page" FontSize="15" BackgroundColor="White" Clicked="OpenPageButton_OnClicked"></Button>
   
   </StackLayout>
 </local:CoolContentPage>

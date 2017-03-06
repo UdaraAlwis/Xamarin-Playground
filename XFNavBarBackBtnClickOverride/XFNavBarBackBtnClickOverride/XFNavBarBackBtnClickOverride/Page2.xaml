@@ -4,15 +4,18 @@
              xmlns:xfNavBarBackBtnClickOverride="clr-namespace:XFNavBarBackBtnClickOverride;assembly=XFNavBarBackBtnClickOverride"
              x:Class="XFNavBarBackBtnClickOverride.Page2"             
              Title="Page 3"
-             EnableBackButtonOverride="True">
+             EnableBackButtonOverride="True"
+             BackgroundColor="#00bfff">
   <StackLayout
+    Spacing="20"
     Padding="20,10,20,10"
     VerticalOptions="Center"
     HorizontalOptions="Center" >
 
     <Label Text="This is the cool page, which has the Navigation Bar Back button click overriden. How go ahead and click that Back button! ;)"
            FontSize="20"
-           HorizontalTextAlignment="Center"/>
+           HorizontalTextAlignment="Center"
+           TextColor="White"/>
     
   </StackLayout>
 </xfNavBarBackBtnClickOverride:CoolContentPage>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+
+  <Identity Name="4dd3e664-9909-4a8c-9a53-0e86e75e5d9e"
+            Publisher="CN=UdaraAlwis"
+            Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="4dd3e664-9909-4a8c-9a53-0e86e75e5d9e" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>XFEntryWithCurvedCorners.WinPhone</DisplayName>
+    <PublisherDisplayName>UdaraAlwis</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+        Executable="$targetnametoken$.exe"
+        EntryPoint="XFEntryWithCurvedCorners.WinPhone.App">
+      <m3:VisualElements
+          DisplayName="XFEntryWithCurvedCorners.WinPhone"
+          Square150x150Logo="Assets\Logo.png"
+          Square44x44Logo="Assets\SmallLogo.png"
+          Description="XFEntryWithCurvedCorners.WinPhone"
+          ForegroundText="light"
+          BackgroundColor="transparent">
+        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png"/>
+        <m3:SplashScreen Image="Assets\SplashScreen.png"/>
+      </m3:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+  </Capabilities>
+</Package>
