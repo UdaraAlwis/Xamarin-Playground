@@ -8,9 +8,11 @@
              VerticalOptions="Center"
              HorizontalOptions="Center">
 
-    <Label Text="Welcome to Xamarin Forms!" FontSize="16" />
-    
-    <local:AwesomeSlider   />
+    <Label Text="Welcome to Xamarin Forms!" HorizontalTextAlignment="Center" FontSize="16" />
+
+    <Slider HeightRequest="25" WidthRequest="350" HorizontalOptions="FillAndExpand" />
+
+    <local:AwesomeSlider HeightRequest="20" WidthRequest="350" HorizontalOptions="FillAndExpand" />
 
   </StackLayout>
     
