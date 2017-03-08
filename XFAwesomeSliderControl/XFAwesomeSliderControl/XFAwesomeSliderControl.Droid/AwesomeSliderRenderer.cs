@@ -32,14 +32,39 @@ namespace XFAwesomeSliderControl.Droid
                 // Set custom drawable resource
                 Control.SetProgressDrawableTiled(Resources.GetDrawable(Resource.Drawable.custom_progressbar_style, (this.Context).Theme));
 
+
                 //// Hide thumb
                 //Control.SetThumb(new ColorDrawable(Color.Transparent));
+
+
+
+                // Set Progress bar Thumb color
+                //Control.Thumb.SetColorFilter(Xamarin.Forms.Color.FromHex("#d0a436").ToAndroid(), PorterDuff.Mode.SrcIn);
+
+
 
                 //// progressbar and progressbar background color
                 //Control.ProgressDrawable.SetColorFilter(
                 //    new PorterDuffColorFilter(
                 //    Xamarin.Forms.Color.FromHex("#ff0066").ToAndroid(),
                 //    PorterDuff.Mode.SrcIn));
+
+
+
+                ////Different colors for ProgressBar components
+                //// Set Progress bar color
+                //Control.ProgressTintList = ColorStateList.ValueOf(Color.Red);
+                //Control.ProgressTintMode = PorterDuff.Mode.SrcIn;
+
+                //// Set Seconday Progress bar color
+                //Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.Gray);
+                //Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
+
+                //// Set Background Progress bar color
+                //Control.ProgressBackgroundTintList = ColorStateList.ValueOf(Color.Silver);
+                //Control.ProgressBackgroundTintMode = PorterDuff.Mode.SrcIn;
+
+                // try this out : https://github.com/Redth/FlatUI.Xamarin.Android/blob/master/FlatUI/FlatSeekBar.cs
             }
         }
     }
