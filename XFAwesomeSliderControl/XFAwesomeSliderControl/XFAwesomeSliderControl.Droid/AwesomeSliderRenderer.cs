@@ -29,8 +29,8 @@ namespace XFAwesomeSliderControl.Droid
 
             if (e.NewElement != null)
             {
-                // Set custom drawable resource
-                Control.SetProgressDrawableTiled(Resources.GetDrawable(Resource.Drawable.custom_progressbar_style, (this.Context).Theme));
+                //// Set custom drawable resource
+                //Control.SetProgressDrawableTiled(Resources.GetDrawable(Resource.Drawable.custom_progressbar_style, (this.Context).Theme));
 
 
                 //// Hide thumb
@@ -60,11 +60,15 @@ namespace XFAwesomeSliderControl.Droid
                 //Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.Gray);
                 //Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
 
+                Control.SecondaryProgress =
+                (int)((50 - ((AwesomeSlider)Element).Minimum) 
+                / (((AwesomeSlider)Element).Maximum - ((AwesomeSlider)Element).Minimum) * 1000.0); ;
+
                 //// Set Background Progress bar color
                 //Control.ProgressBackgroundTintList = ColorStateList.ValueOf(Color.Silver);
                 //Control.ProgressBackgroundTintMode = PorterDuff.Mode.SrcIn;
 
-                // try this out : https://github.com/Redth/FlatUI.Xamarin.Android/blob/master/FlatUI/FlatSeekBar.cs
+                //// try this out : https://github.com/Redth/FlatUI.Xamarin.Android/blob/master/FlatUI/FlatSeekBar.cs
             }
         }
     }
