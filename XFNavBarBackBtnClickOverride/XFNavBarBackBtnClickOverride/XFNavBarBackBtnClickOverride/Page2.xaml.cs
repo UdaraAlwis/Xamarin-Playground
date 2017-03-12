@@ -19,7 +19,8 @@ namespace XFNavBarBackBtnClickOverride
                 this.CustomBackButtonAction = async () =>
                 {
                     var result = await this.DisplayAlert(null,
-                        "Hey wait now! are you sure you want to go back?",
+                        "Hey wait now! are you sure " +
+                        "you want to go back?",
                         "Yes go back", "Nope");
 
                     if (result)

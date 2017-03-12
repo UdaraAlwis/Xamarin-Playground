@@ -21,6 +21,7 @@ namespace XFNavBarBackBtnClickOverride
                typeof(bool),
                typeof(CoolContentPage),
                false);
+
         /// <summary>
         /// Gets or Sets Custom Back button overriding state
         /// </summary>

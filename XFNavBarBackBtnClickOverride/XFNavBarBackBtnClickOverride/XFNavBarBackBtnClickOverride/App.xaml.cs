@@ -13,7 +13,11 @@ namespace XFNavBarBackBtnClickOverride
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new XFNavBarBackBtnClickOverride.MainPage());
+            MainPage = new NavigationPage(new XFNavBarBackBtnClickOverride.MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("#0081f9"),
+                BarTextColor = Color.White,
+            };
         }
 
         protected override void OnStart()

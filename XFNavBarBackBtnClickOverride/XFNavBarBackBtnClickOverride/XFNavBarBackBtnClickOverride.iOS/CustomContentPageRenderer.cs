@@ -45,7 +45,7 @@ namespace XFNavBarBackBtnClickOverride.iOS
             // You could set any Text as you wish here
             backBtn.SetTitle("Back", UIControlState.Normal);
             // use the default blue color in ios back button text
-            backBtn.SetTitleColor(UIColor.FromRGB(0, 129, 249), UIControlState.Normal); 
+            backBtn.SetTitleColor(UIColor.White, UIControlState.Normal); 
             backBtn.SetTitleColor(UIColor.LightGray, UIControlState.Highlighted);
             backBtn.Font = UIFont.FromName("HelveticaNeue", (nfloat)17);
 
