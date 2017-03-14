@@ -57,8 +57,8 @@ namespace XFAwesomeSliderControl.Droid
                 //Control.ProgressTintMode = PorterDuff.Mode.SrcIn;
 
                 // Set Seconday Progress bar color
-                Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.Gray);
-                Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
+                //Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.DarkGray);
+                //Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
 
                 Control.SecondaryProgress =
                 (int)((50 - ((AwesomeSlider)Element).Minimum) 
@@ -69,6 +69,10 @@ namespace XFAwesomeSliderControl.Droid
                 //Control.ProgressBackgroundTintMode = PorterDuff.Mode.SrcIn;
 
                 //// try this out : https://github.com/Redth/FlatUI.Xamarin.Android/blob/master/FlatUI/FlatSeekBar.cs
+
+                // for a floating progress bubble
+                //https://github.com/thinkSky1206/SeekBarHint/blob/master/library/src/main/java/com/liuwp/seekbarhint/SeekBarHint.java  
+
             }
         }
     }

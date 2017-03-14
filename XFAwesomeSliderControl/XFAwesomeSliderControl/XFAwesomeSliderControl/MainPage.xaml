@@ -13,7 +13,7 @@
     <Slider HeightRequest="25" WidthRequest="350" 
             Minimum="0" Maximum="100" />
 
-    <local:AwesomeSlider HeightRequest="20" WidthRequest="350" 
+    <local:AwesomeSlider HeightRequest="25" WidthRequest="350" 
             Minimum="0" Maximum="100" />
 
   </StackLayout>
