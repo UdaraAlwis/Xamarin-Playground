@@ -56,9 +56,9 @@ namespace XFAwesomeSliderControl.Droid
                 //Control.ProgressTintList = ColorStateList.ValueOf(Color.Red);
                 //Control.ProgressTintMode = PorterDuff.Mode.SrcIn;
 
-                //// Set Seconday Progress bar color
-                //Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.Gray);
-                //Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
+                // Set Seconday Progress bar color
+                Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.Gray);
+                Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
 
                 Control.SecondaryProgress =
                 (int)((50 - ((AwesomeSlider)Element).Minimum) 
