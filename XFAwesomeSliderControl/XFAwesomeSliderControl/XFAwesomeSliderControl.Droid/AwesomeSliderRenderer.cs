@@ -60,9 +60,13 @@ namespace XFAwesomeSliderControl.Droid
                 //Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.DarkGray);
                 //Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
 
-                Control.SecondaryProgress =
-                (int)((50 - ((AwesomeSlider)Element).Minimum) 
-                / (((AwesomeSlider)Element).Maximum - ((AwesomeSlider)Element).Minimum) * 1000.0); ;
+                int secondaryProgressValue = 50;
+
+                int secondaryProgressValueInAndroidUnits =
+                (int)((secondaryProgressValue - ((AwesomeSlider)Element).Minimum) /
+                (((AwesomeSlider)Element).Maximum - ((AwesomeSlider)Element).Minimum) * 1000.0);
+
+                Control.SecondaryProgress = secondaryProgressValueInAndroidUnits;
 
                 //// Set Background Progress bar color
                 //Control.ProgressBackgroundTintList = ColorStateList.ValueOf(Color.Silver);

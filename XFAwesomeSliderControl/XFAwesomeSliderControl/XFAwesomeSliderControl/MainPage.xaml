@@ -5,16 +5,17 @@
              x:Class="XFAwesomeSliderControl.MainPage">
 
   <StackLayout Padding="10,20,10,20"
+             Spacing="25"
              VerticalOptions="Center"
              HorizontalOptions="Center">
 
-    <Label Text="Welcome to Xamarin Forms!" HorizontalTextAlignment="Center" FontSize="16" />
+    <Label Text="Welcome to decorating Xamarin Forms Slider in Android..." HorizontalTextAlignment="Center" FontSize="22" />
 
-    <Slider HeightRequest="25" WidthRequest="350" 
+    <Slider HeightRequest="25" WidthRequest="350" HorizontalOptions="Center"
             Minimum="0" Maximum="100" />
 
-    <local:AwesomeSlider HeightRequest="25" WidthRequest="350" 
-            Minimum="0" Maximum="100" />
+    <local:AwesomeSlider HeightRequest="25" WidthRequest="350"  HorizontalOptions="Center"
+        Minimum="0" Maximum="100" />
 
   </StackLayout>
     
