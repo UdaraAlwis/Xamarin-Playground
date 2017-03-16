@@ -56,16 +56,19 @@ namespace XFAwesomeSliderControl.Droid
                 //Control.ProgressTintList = ColorStateList.ValueOf(Color.Red);
                 //Control.ProgressTintMode = PorterDuff.Mode.SrcIn;
 
-                // Set Seconday Progress bar color
-                //Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.DarkGray);
-                //Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
+                //Set Seconday Progress bar color
+                Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.DarkGray);
+                Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
 
+                // secondary progress value in Xamarin Forms units
                 int secondaryProgressValue = 50;
-
+                
+                // secondary progress value in Android native Seekbar units
                 int secondaryProgressValueInAndroidUnits =
                 (int)((secondaryProgressValue - ((AwesomeSlider)Element).Minimum) /
                 (((AwesomeSlider)Element).Maximum - ((AwesomeSlider)Element).Minimum) * 1000.0);
 
+                // set the secondary progress value
                 Control.SecondaryProgress = secondaryProgressValueInAndroidUnits;
 
                 //// Set Background Progress bar color
