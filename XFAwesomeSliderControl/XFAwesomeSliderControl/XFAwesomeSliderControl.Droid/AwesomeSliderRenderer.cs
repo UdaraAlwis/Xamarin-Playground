@@ -39,7 +39,9 @@ namespace XFAwesomeSliderControl.Droid
 
 
                 // Set Progress bar Thumb color
-                //Control.Thumb.SetColorFilter(Xamarin.Forms.Color.FromHex("#d0a436").ToAndroid(), PorterDuff.Mode.SrcIn);
+                Control.Thumb.SetColorFilter(
+                    Xamarin.Forms.Color.FromHex("#8000ff").ToAndroid(), 
+                    PorterDuff.Mode.SrcIn);
 
 
 
@@ -56,20 +58,20 @@ namespace XFAwesomeSliderControl.Droid
                 //Control.ProgressTintList = ColorStateList.ValueOf(Color.Red);
                 //Control.ProgressTintMode = PorterDuff.Mode.SrcIn;
 
-                //Set Seconday Progress bar color
-                Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.DarkGray);
-                Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
+                ////Set Seconday Progress bar color
+                //Control.SecondaryProgressTintList = ColorStateList.ValueOf(Color.DarkGray);
+                //Control.SecondaryProgressTintMode = PorterDuff.Mode.SrcIn;
 
-                // secondary progress value in Xamarin Forms units
-                int secondaryProgressValue = 50;
+                //// secondary progress value in Xamarin Forms units
+                //int secondaryProgressValue = 50;
                 
-                // secondary progress value in Android native Seekbar units
-                int secondaryProgressValueInAndroidUnits =
-                (int)((secondaryProgressValue - ((AwesomeSlider)Element).Minimum) /
-                (((AwesomeSlider)Element).Maximum - ((AwesomeSlider)Element).Minimum) * 1000.0);
+                //// secondary progress value in Android native Seekbar units
+                //int secondaryProgressValueInAndroidUnits =
+                //(int)((secondaryProgressValue - ((AwesomeSlider)Element).Minimum) /
+                //(((AwesomeSlider)Element).Maximum - ((AwesomeSlider)Element).Minimum) * 1000.0);
 
-                // set the secondary progress value
-                Control.SecondaryProgress = secondaryProgressValueInAndroidUnits;
+                //// set the secondary progress value
+                //Control.SecondaryProgress = secondaryProgressValueInAndroidUnits;
 
                 //// Set Background Progress bar color
                 //Control.ProgressBackgroundTintList = ColorStateList.ValueOf(Color.Silver);
