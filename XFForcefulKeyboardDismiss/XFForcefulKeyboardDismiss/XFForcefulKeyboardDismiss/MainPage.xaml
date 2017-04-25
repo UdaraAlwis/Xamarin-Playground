@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFForcefulKeyboardDismiss"
+             x:Class="XFForcefulKeyboardDismiss.MainPage">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <On Platform="iOS">0,20,0,0</On>
+    </OnPlatform>
+  </ContentPage.Padding>
+  <StackLayout Padding="10,10,10,0">
+  
+    <Label Text="Let's forcefully dismiss the Keyboard like a BOWSS..."
+           FontSize="20" FontAttributes="Bold" />
+    <Label Text="Click below to begin..." TextColor="Silver" />
+  
+    <Button Text="Start Keyboard Dismissal Timer" x:Name="ButtonDismissalTimerStart"
+            Clicked="ButtonDismissalTimerStart_OnClicked" />
+  
+    <Label Text="" x:Name="LabelCountDown" FontSize="20"  FontAttributes="Bold"/>
+    
+    <Label Text="Now start typing below..." TextColor="Silver" />
+
+    <Entry Placeholder="Type something here..." />
+    
+  </StackLayout>
+</ContentPage>
