@@ -15,4 +15,4 @@ Up on the Entry's Completed event I would first of all call up on my custom Keyb
 
 read up the full story: https://theconfuzedsourcecode.wordpress.com/2017/04/30/forcefully-dismissing-keyboard-in-xamarin-forms/
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFForcefulKeyboardDismiss/screenshots/keyboard dismiss android.gif"  height="450" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFForcefulKeyboardDismiss/screenshots/keyboard dismiss ios.gif"  height="650" />
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFForcefulKeyboardDismiss/screenshots/keyboard dismiss android.gif"  height="650" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFForcefulKeyboardDismiss/screenshots/keyboard dismiss ios.gif"  height="650" />
