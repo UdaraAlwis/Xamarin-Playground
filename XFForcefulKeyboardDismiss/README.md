@@ -13,6 +13,6 @@ Sounds pretty simple eh? nah it wasn't. lol
 
 Up on the Entry's Completed event I would first of all call up on my custom Keyboard dismissal service and then perform the screen capture and blurring view effect and so on. Which worked out pretty nicely!
 
-read up the full story: https://theconfuzedsourcecode.wordpress.com/
+read up the full story: https://theconfuzedsourcecode.wordpress.com/2017/04/30/forcefully-dismissing-keyboard-in-xamarin-forms/
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFForcefulKeyboardDismiss/screenshots/keyboard dismiss android.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFForcefulKeyboardDismiss/screenshots/keyboard dismiss ios.gif"  height="350" />
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFForcefulKeyboardDismiss/screenshots/keyboard dismiss android.gif"  height="450" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFForcefulKeyboardDismiss/screenshots/keyboard dismiss ios.gif"  height="450" />
