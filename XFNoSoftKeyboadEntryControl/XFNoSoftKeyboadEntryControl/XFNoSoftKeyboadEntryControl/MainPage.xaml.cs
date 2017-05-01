@@ -13,5 +13,15 @@ namespace XFNoSoftKeyboadEntryControl
         {
             InitializeComponent();
         }
+
+        private void Button_OnClicked(object sender, EventArgs e)
+        {
+            SoftkeyboardDisabledEntry.Text += ((Button) sender).Text;
+        }
+
+        private void ButtonClear_OnClicked(object sender, EventArgs e)
+        {
+            SoftkeyboardDisabledEntry.Text = "";
+        }
     }
 }
