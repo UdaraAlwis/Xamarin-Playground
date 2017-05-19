@@ -43,7 +43,8 @@ namespace XFNoSoftKeyboadEntryControl.Droid
             // Check if the view is about to get Focus
             if (propertyChangingEventArgs.PropertyName == VisualElement.IsFocusedProperty.PropertyName)
             {
-                // Forcefully disable the Keyboard popping up
+                // incase if the focus was moved from another Entry
+                // Forcefully dismiss the Keyboard 
                 InputMethodManager imm = (InputMethodManager)this.Context.GetSystemService(Context.InputMethodService);
                 imm.HideSoftInputFromWindow(this.Control.WindowToken, 0);
             }
