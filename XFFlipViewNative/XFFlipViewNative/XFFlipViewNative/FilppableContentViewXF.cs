@@ -134,41 +134,41 @@ namespace XFFlipViewNative
         /// </summary>
         private async void FlipFromFrontToBack()
         {
-            if (Device.OS == TargetPlatform.Android)
-            {
+            //if (Device.OS == TargetPlatform.Android)
+            //{
                 FrontToBackRotateAndroid();
-            }
-            else
-            {
-                await FrontToBackRotate();
+            //}
+            //else
+            //{
+            //    await FrontToBackRotate();
 
-                // Change the visible content
-                this.FrontView.IsVisible = false;
-                this.BackView.IsVisible = true;
+            //    // Change the visible content
+            //    this.FrontView.IsVisible = false;
+            //    this.BackView.IsVisible = true;
 
-                await BackToFrontRotate();
-            }
+            //    await BackToFrontRotate();
+            //}
         }
 
         /// <summary>
         /// Performs the flip
         /// </summary>
-        private async void FlipFromBackToFront()
+        private void FlipFromBackToFront()
         {
-            if (Device.OS == TargetPlatform.Android)
-            {
-                BackToFrontRotateAndroid();
-            }
-            else
-            {
-                await FrontToBackRotate();
+            //if (Device.OS == TargetPlatform.Android)
+            //{
+            BackToFrontRotateAndroid();
+            //}
+            //else
+            //{
+            //    await FrontToBackRotate();
 
-                // Change the visible content
-                this.BackView.IsVisible = false;
-                this.FrontView.IsVisible = true;
+            //    // Change the visible content
+            //    this.BackView.IsVisible = false;
+            //    this.FrontView.IsVisible = true;
 
-                await BackToFrontRotate();
-            }
+            //    await BackToFrontRotate();
+            //}
         }
 
 
