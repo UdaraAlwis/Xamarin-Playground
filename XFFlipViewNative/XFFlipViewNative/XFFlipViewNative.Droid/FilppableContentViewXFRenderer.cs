@@ -49,8 +49,8 @@ namespace XFFlipViewNative.Droid
             {
                 SetCameraDistance(_cameraDistance);
 
-                ObjectAnimator animateYAxis0To90 = ObjectAnimator.OfFloat(this, "RotationY", 0.0f, 90f);
-                animateYAxis0To90.SetDuration(300);
+                ObjectAnimator animateYAxis0To90 = ObjectAnimator.OfFloat(this, "RotationY", 0.0f, -90f);
+                animateYAxis0To90.SetDuration(500);
 
                 animateYAxis0To90.Start();
                 animateYAxis0To90.Update += (sender, args) =>
@@ -64,8 +64,8 @@ namespace XFFlipViewNative.Droid
                     newElementInstance.
                         SwitchViewsFlipFromFrontToBack();
 
-                    ObjectAnimator animateYAxis90To180 = ObjectAnimator.OfFloat(this, "RotationY", 90f, 180f);
-                    animateYAxis90To180.SetDuration(300);
+                    ObjectAnimator animateYAxis90To180 = ObjectAnimator.OfFloat(this, "RotationY", -90f, -180f);
+                    animateYAxis90To180.SetDuration(500);
                     animateYAxis90To180.Start();
                     animateYAxis90To180.Update += (sender1, args1) =>
                     {
@@ -83,8 +83,8 @@ namespace XFFlipViewNative.Droid
             {
                 SetCameraDistance(_cameraDistance);
 
-                ObjectAnimator animateYAxis180To270 = ObjectAnimator.OfFloat(this, "RotationY", 180f, 270f);
-                animateYAxis180To270.SetDuration(300);
+                ObjectAnimator animateYAxis180To270 = ObjectAnimator.OfFloat(this, "RotationY", -180f, -270f);
+                animateYAxis180To270.SetDuration(500);
 
                 animateYAxis180To270.Start();
                 animateYAxis180To270.Update += (sender, args) =>
@@ -98,8 +98,8 @@ namespace XFFlipViewNative.Droid
                     newElementInstance.
                         SwitchViewsFlipFromBackToFront();
 
-                    ObjectAnimator animateYAxis270To360 = ObjectAnimator.OfFloat(this, "RotationY", 270f, 360f);
-                    animateYAxis270To360.SetDuration(300);
+                    ObjectAnimator animateYAxis270To360 = ObjectAnimator.OfFloat(this, "RotationY", -270f, -360f);
+                    animateYAxis270To360.SetDuration(500);
                     animateYAxis270To360.Start();
                     animateYAxis270To360.Update += (sender1, args1) =>
                     {
