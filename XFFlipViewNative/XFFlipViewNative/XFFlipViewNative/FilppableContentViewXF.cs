@@ -129,73 +129,27 @@ namespace XFFlipViewNative
             }
         }
 
-        /// <summary>
-        /// Performs the flip
-        /// </summary>
-        private async void FlipFromFrontToBack()
-        {
-            //if (Device.OS == TargetPlatform.Android)
-            //{
-                FrontToBackRotateAndroid();
-            //}
-            //else
-            //{
-            //    await FrontToBackRotate();
-
-            //    // Change the visible content
-            //    this.FrontView.IsVisible = false;
-            //    this.BackView.IsVisible = true;
-
-            //    await BackToFrontRotate();
-            //}
-        }
-
-        /// <summary>
-        /// Performs the flip
-        /// </summary>
-        private void FlipFromBackToFront()
-        {
-            //if (Device.OS == TargetPlatform.Android)
-            //{
-            BackToFrontRotateAndroid();
-            //}
-            //else
-            //{
-            //    await FrontToBackRotate();
-
-            //    // Change the visible content
-            //    this.BackView.IsVisible = false;
-            //    this.FrontView.IsVisible = true;
-
-            //    await BackToFrontRotate();
-            //}
-        }
-
 
         #region Android Animation Stuff
 
         public void SwitchViewsFlipFromFrontToBack()
         {
             this.FrontView.IsVisible = false;
-
-            this.BackView.RotationY = 180;
             this.BackView.IsVisible = true;
         }
 
         public void SwitchViewsFlipFromBackToFront()
         {
             this.FrontView.IsVisible = true;
-
-            this.BackView.RotationY = 0;
             this.BackView.IsVisible = false;
         }
 
-        private void FrontToBackRotateAndroid()
+        private void FlipFromFrontToBack()
         {
             FlipThisShyiatFrontToBack?.Execute(null);
         }
 
-        private void BackToFrontRotateAndroid()
+        private void FlipFromBackToFront()
         {
             FlipThisShyiatBackToFront?.Execute(null);
         }

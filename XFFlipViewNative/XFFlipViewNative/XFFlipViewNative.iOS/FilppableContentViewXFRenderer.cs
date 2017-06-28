@@ -39,58 +39,12 @@ namespace XFFlipViewNative.iOS
         {
             return new Command(() =>
             {
-                var visualElement = Element as VisualElement;
-
-                if (visualElement != null)
+                AnimateFlipHorizontally(NativeView, false, 0.5, () =>
                 {
-                    var m34 = (nfloat)(-1 * 0.001);
-                    
-                    var minTransform = CATransform3D.Identity;
-                    minTransform.m34 = m34;
-                    minTransform = minTransform.Rotate((nfloat)((-1) * Math.PI * 0.5), (nfloat)0.0f, (nfloat)1.0f, (nfloat)0.0f);
+                    newElementInstance.SwitchViewsFlipFromFrontToBack();
 
-                    var maxTransform = CATransform3D.Identity;
-                    maxTransform.m34 = m34;
-
-                    NativeView.Layer.Transform =  maxTransform;
-                    UIView.Animate(1, 0, UIViewAnimationOptions.CurveEaseInOut,
-                        () => {
-                            NativeView.Layer.AnchorPoint = new CGPoint((nfloat)0.5, (nfloat)0.5f);
-                            NativeView.Layer.Transform = minTransform;
-                        },
-                        () =>
-                        {
-                            newElementInstance.FrontView.IsVisible = false;
-                            newElementInstance.BackView.RotateYTo(180);
-                            newElementInstance.BackView.IsVisible = true;
-
-                            minTransform = minTransform.Rotate((nfloat)((-1) * Math.PI * 0.5), (nfloat)0.0f, (nfloat)1.0f, (nfloat)0.0f);
-
-                            UIView.Animate(1, 0, UIViewAnimationOptions.CurveEaseInOut,
-                                () =>
-                                {
-                                    NativeView.Layer.AnchorPoint = new CGPoint((nfloat)0.5, (nfloat)0.5f);
-                                    NativeView.Layer.Transform = minTransform;
-                                },
-                                () =>
-                                {
-
-                                }
-                            );
-                        }
-                    );
-
-
-
-                    //FlipVerticaly(NativeView, false, 0.5, () =>
-                    //{
-                    //    newElementInstance.FrontView.IsVisible = false;
-                        
-                    //    newElementInstance.BackView.IsVisible = true;
-
-                    //    FlipVerticaly(NativeView, true, 0.5, null);
-                    //});
-                }
+                    AnimateFlipHorizontally(NativeView, true, 0.5, null);
+                });
             });
         }
 
@@ -98,19 +52,17 @@ namespace XFFlipViewNative.iOS
         {
             return new Command(() =>
             {
-                FlipVerticaly(NativeView, false, 0.5, () =>
+                AnimateFlipHorizontally(NativeView, false, 0.5, () =>
                 {
-                    newElementInstance.FrontView.IsVisible = true;
+                    newElementInstance.SwitchViewsFlipFromBackToFront();
 
-                    newElementInstance.BackView.IsVisible = false;
-
-                    FlipVerticaly(NativeView, true, 0.5, null);
+                    AnimateFlipHorizontally(NativeView, true, 0.5, null);
                 });
             });
         }
 
         //https://gist.github.com/aloisdeniel/3c8b82ca4babb1d79b29
-        public static void FlipVerticaly(UIView view, bool isIn, double duration = 0.3, Action onFinished = null)
+        public void AnimateFlipHorizontally(UIView view, bool isIn, double duration = 0.3, Action onFinished = null)
         {
             var m34 = (nfloat)(-1 * 0.001);
             
