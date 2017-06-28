@@ -130,7 +130,7 @@ namespace XFFlipViewNative
         }
 
 
-        #region Android Animation Stuff
+        #region Swapping Front and Back View Visibility
 
         public void SwitchViewsFlipFromFrontToBack()
         {
@@ -152,32 +152,6 @@ namespace XFFlipViewNative
         private void FlipFromBackToFront()
         {
             FlipThisShyiatBackToFront?.Execute(null);
-        }
-
-        #endregion
-
-
-
-        #region iOS Animation Stuff
-
-        private async Task<bool> FrontToBackRotate()
-        {
-            this.RotationY = 360;
-
-            await this.RotateYTo(270, 250, Easing.Linear);
-
-            return true;
-        }
-
-        private async Task<bool> BackToFrontRotate()
-        {
-            ViewExtensions.CancelAnimations(this);
-
-            this.RotationY = 90;
-
-            await this.RotateYTo(0, 250, Easing.Linear);
-
-            return true;
         }
 
         #endregion
