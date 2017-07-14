@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFCustomInputAlertDialog.Controls.TextInputView">
+  <ContentView.Content>
+      <StackLayout Padding="20" BackgroundColor="White"
+                   HorizontalOptions="CenterAndExpand" 
+                   VerticalOptions="CenterAndExpand">
+            <Label Text="Enter the value:" x:Name="TitleLabel"/>
+            <Entry Placeholder="Enter Here..." x:Name="InputEntry"/>
+          <Button Text="Ok" x:Name="CloseButton" />
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>
