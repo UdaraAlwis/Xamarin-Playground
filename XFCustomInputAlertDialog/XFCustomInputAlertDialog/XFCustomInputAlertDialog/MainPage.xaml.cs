@@ -17,25 +17,31 @@ namespace XFCustomInputAlertDialog
             InitializeComponent();
         }
 
-        protected async override void OnAppearing()
+        private async void OpenTextInputAlertDialogButton_OnClicked(object sender, EventArgs e)
         {
-            base.OnAppearing();
-
             var result = await GetUserInput();
         }
 
         private async Task<string> GetUserInput()
         {
             var inputView = new TextInputView(
-                "What's your name?", "enter here...", "Ok");
+                "What's your name?", "enter here...", "Ok", "Ops! Can't leave this empty!");
 
             var popup = new InputAlertDialogBase<string>(inputView);
 
             inputView.CloseButtonEventHandler +=
-            (sender, obj) =>
-            {
-                popup.PageClosedTaskCompletionSource.SetResult(((TextInputView)sender).TextInputResult);
-            };
+                (sender, obj) =>
+                {
+                    if (!string.IsNullOrEmpty(((TextInputView)sender).TextInputResult))
+                    {
+                        ((TextInputView)sender).IsValidationLabelVisible = false;
+                        popup.PageClosedTaskCompletionSource.SetResult(((TextInputView)sender).TextInputResult);
+                    }
+                    else
+                    {
+                        ((TextInputView)sender).IsValidationLabelVisible = true;
+                    }
+                };
 
             await PopupNavigation.PushAsync(popup);
 
@@ -45,5 +51,6 @@ namespace XFCustomInputAlertDialog
 
             return result;
         }
+
     }
 }

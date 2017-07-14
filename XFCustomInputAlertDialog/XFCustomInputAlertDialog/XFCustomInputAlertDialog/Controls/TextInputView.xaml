@@ -3,12 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XFCustomInputAlertDialog.Controls.TextInputView">
   <ContentView.Content>
-      <StackLayout Padding="20" BackgroundColor="White"
+      <StackLayout Padding="10" BackgroundColor="White"
+                   Spacing="5"
                    HorizontalOptions="CenterAndExpand" 
                    VerticalOptions="CenterAndExpand">
-            <Label Text="Enter the value:" x:Name="TitleLabel"/>
+            <Label Text="Enter the value:" 
+                   FontSize="Medium" 
+                   x:Name="TitleLabel"/>
+            <Label Text="You can't leave this field empty!"
+                   FontSize="Micro" TextColor="Red" 
+                   IsVisible="False"
+                   x:Name="ValidationLabel"/>
             <Entry Placeholder="Enter Here..." x:Name="InputEntry"/>
-          <Button Text="Ok" x:Name="CloseButton" />
+            <Button Text="Ok" x:Name="CloseButton">
+                <Button.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double" >
+                        <On Platform="Android" Value="40"></On>
+                        <On Platform="iOS" Value="30"></On>
+                    </OnPlatform>
+                </Button.HeightRequest>
+            </Button>
       </StackLayout>
   </ContentView.Content>
 </ContentView>

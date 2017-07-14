@@ -52,7 +52,7 @@ namespace XFCustomInputAlertDialog
         {
             // Prevent hide popup
             //return base.OnBackButtonPressed();
-            return false;
+            return true;
         }
 
         // Invoced when background is clicked

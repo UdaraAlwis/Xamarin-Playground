@@ -4,8 +4,14 @@
              xmlns:local="clr-namespace:XFCustomInputAlertDialog"
              x:Class="XFCustomInputAlertDialog.MainPage">
 
-	<Label Text="Welcome to Xamarin Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout 
+        HorizontalOptions="CenterAndExpand" 
+        VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms!" />
+
+        <Button x:Name="OpenTextInputAlertDialogButton" 
+                Clicked="OpenTextInputAlertDialogButton_OnClicked"
+                Text="Open a TextInputAlert Dialog!" />
+    </StackLayout>
 
 </ContentPage>

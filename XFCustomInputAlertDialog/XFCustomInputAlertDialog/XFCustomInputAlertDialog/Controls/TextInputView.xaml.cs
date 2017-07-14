@@ -15,14 +15,48 @@ namespace XFCustomInputAlertDialog.Controls
         public EventHandler CloseButtonEventHandler { get; set; }
 
         public string TextInputResult { get; set; }
+        
+        public static readonly BindableProperty IsValidationLabelVisibleProperty =
+            BindableProperty.Create(
+                nameof(IsValidationLabelVisible),
+                typeof(bool),
+                typeof(TextInputView),
+                false, BindingMode.OneWay, null,
+                (bindable, value, newValue) =>
+                {
+                    if ((bool)newValue)
+                    {
+                        ((TextInputView)bindable).ValidationLabel.IsVisible = true;
+                    }
+                    else
+                    {
+                        ((TextInputView)bindable).ValidationLabel.IsVisible = false;
+                    }
+                });
 
-        public TextInputView(string titleText, string placeHolderText, string closeButtonText)
+        /// <summary>
+        /// Gets or Sets if the ValidationLabel is visible
+        /// </summary>
+        public bool IsValidationLabelVisible
+        {
+            get
+            {
+                return (bool)GetValue(IsValidationLabelVisibleProperty);
+            }
+            set
+            {
+                SetValue(IsValidationLabelVisibleProperty, value);
+            }
+        }
+
+        public TextInputView(string titleText, string placeHolderText, string closeButtonText, string validationLabelText)
         {
             InitializeComponent();
 
             TitleLabel.Text = titleText;
             InputEntry.Placeholder = placeHolderText;
             CloseButton.Text = closeButtonText;
+            ValidationLabel.Text = validationLabelText;
 
             CloseButton.Clicked += CloseButton_Clicked;
             InputEntry.TextChanged += InputEntry_TextChanged;
