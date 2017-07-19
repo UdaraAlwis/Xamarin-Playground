@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using XFCustomInputAlertDialog.Controls;
+using XFCustomInputAlertDialog.InputViews;
 
 namespace XFCustomInputAlertDialog
 {
@@ -19,16 +19,20 @@ namespace XFCustomInputAlertDialog
 
         private async void OpenTextInputAlertDialogButton_OnClicked(object sender, EventArgs e)
         {
-            var result = await GetUserInput();
+            var result = await LaunchTextInputPopup();
         }
 
-        private async Task<string> GetUserInput()
+        private async Task<string> LaunchTextInputPopup()
         {
+            // create the TextInputView
             var inputView = new TextInputView(
                 "What's your name?", "enter here...", "Ok", "Ops! Can't leave this empty!");
 
+            // create the Transparent Popup Page
+            // of type string since we need a string return
             var popup = new InputAlertDialogBase<string>(inputView);
 
+            // subscribe to the TextInputView's Button click event
             inputView.CloseButtonEventHandler +=
                 (sender, obj) =>
                 {
@@ -43,12 +47,16 @@ namespace XFCustomInputAlertDialog
                     }
                 };
 
+            // Push the page to Navigation Stack
             await PopupNavigation.PushAsync(popup);
 
+            // await for the user to enter the text input
             var result = await popup.PageClosedTask;
 
+            // Pop the page from Navigation Stack
             await PopupNavigation.PopAsync();
 
+            // return user inserted text value
             return result;
         }
 

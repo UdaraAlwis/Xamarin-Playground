@@ -8,30 +8,29 @@ using Xamarin.Forms;
 
 namespace XFCustomInputAlertDialog
 {
+    /// <summary>
+    /// The awesome Transparent Popup Page
+    /// sub-classed from Rg.Plugins.Popup
+    /// Customized for our usecase with
+    /// Generic data type support for the result
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class InputAlertDialogBase<T> : PopupPage
     {
-        // Use this to wait on the page to be finished with/closed/dismissed
+        // the awaitable task
         public Task<T> PageClosedTask { get { return PageClosedTaskCompletionSource.Task; } }
 
+        // the task completion source
         public TaskCompletionSource<T> PageClosedTaskCompletionSource { get; set; }
 
         public InputAlertDialogBase(View contentBody)
         {
             Content = contentBody;
 
+            // init the task completion source
             PageClosedTaskCompletionSource = new System.Threading.Tasks.TaskCompletionSource<T>();
 
             this.BackgroundColor = new Color(0, 0, 0, 0.4);
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-        }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
         }
 
         // Method for animation child in PopupPage
@@ -50,7 +49,7 @@ namespace XFCustomInputAlertDialog
 
         protected override bool OnBackButtonPressed()
         {
-            // Prevent hide popup
+            // Prevent back button pressed action on android
             //return base.OnBackButtonPressed();
             return true;
         }
@@ -58,7 +57,7 @@ namespace XFCustomInputAlertDialog
         // Invoced when background is clicked
         protected override bool OnBackgroundClicked()
         {
-            // Return default value - CloseWhenBackgroundIsClicked
+            // Prevent background clicked action
             //return base.OnBackgroundClicked();
             return false;
         }

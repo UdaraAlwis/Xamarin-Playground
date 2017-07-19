@@ -13,7 +13,7 @@ namespace XFCustomInputAlertDialog
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new XFCustomInputAlertDialog.MainPage());
+            MainPage = new XFCustomInputAlertDialog.MainPage();
         }
 
         protected override void OnStart()

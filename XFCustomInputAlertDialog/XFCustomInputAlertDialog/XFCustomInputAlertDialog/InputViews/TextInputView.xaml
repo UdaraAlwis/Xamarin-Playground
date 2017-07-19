@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="XFCustomInputAlertDialog.InputViews.TextInputView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <StackLayout
+            Padding="10"
+            BackgroundColor="White"
+            HorizontalOptions="CenterAndExpand"
+            Spacing="5"
+            VerticalOptions="CenterAndExpand">
+            <Label
+                x:Name="TitleLabel"
+                FontSize="Medium"
+                Text="Enter the value:" />
+            <Label
+                x:Name="ValidationLabel"
+                FontSize="Micro"
+                IsVisible="False"
+                Text="You can't leave this field empty!"
+                TextColor="Red" />
+            <Entry x:Name="InputEntry" Placeholder="Enter Here..." />
+            <Button x:Name="CloseButton" Text="Ok">
+                <Button.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double">
+                        <On Platform="Android" Value="40" />
+                        <On Platform="iOS" Value="30" />
+                    </OnPlatform>
+                </Button.HeightRequest>
+            </Button>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

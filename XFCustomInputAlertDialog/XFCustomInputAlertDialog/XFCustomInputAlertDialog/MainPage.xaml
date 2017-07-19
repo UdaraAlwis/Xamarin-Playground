@@ -1,17 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:XFCustomInputAlertDialog"
-             x:Class="XFCustomInputAlertDialog.MainPage">
+<ContentPage
+    x:Class="XFCustomInputAlertDialog.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XFCustomInputAlertDialog">
 
-    <StackLayout 
-        HorizontalOptions="CenterAndExpand" 
-        VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms!" />
+    <StackLayout Padding="10">
+        <Label
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="Welcome to Awaitable Transparent, Custom, Popup Input Pages from Xamarin.Forms!" />
 
-        <Button x:Name="OpenTextInputAlertDialogButton" 
-                Clicked="OpenTextInputAlertDialogButton_OnClicked"
-                Text="Open a TextInputAlert Dialog!" />
+        <Button
+            x:Name="OpenTextInputAlertDialogButton"
+            BackgroundColor="DodgerBlue"
+            Clicked="OpenTextInputAlertDialogButton_OnClicked"
+            HorizontalOptions="FillAndExpand"
+            Text="Text Input Alert Dialog!"
+            TextColor="White" />
+
+        <Button
+            x:Name="OpenCancellableTextInputAlertDialogButton"
+            BackgroundColor="DodgerBlue"
+            Clicked="OpenTextInputAlertDialogButton_OnClicked"
+            HorizontalOptions="FillAndExpand"
+            Text="Text Input Alert Dialog (Cancellable)!"
+            TextColor="White" />
+
+        <Button
+            x:Name="OpenSelectableInputAlertDialogButton"
+            BackgroundColor="DodgerBlue"
+            Clicked="OpenTextInputAlertDialogButton_OnClicked"
+            HorizontalOptions="FillAndExpand"
+            Text="Selectable List Input Alert Dialog!"
+            TextColor="White" />
+
+        <Button
+            x:Name="OpenSlideableInputAlertDialogButton"
+            BackgroundColor="DodgerBlue"
+            Clicked="OpenTextInputAlertDialogButton_OnClicked"
+            HorizontalOptions="FillAndExpand"
+            Text="Slideable Input Alert Dialog!"
+            TextColor="White" />
+
+        <Button
+            x:Name="OpenMultipleDataInputAlertDialogButton"
+            BackgroundColor="DodgerBlue"
+            Clicked="OpenTextInputAlertDialogButton_OnClicked"
+            HorizontalOptions="FillAndExpand"
+            Text="Multiple Data Input Alert Dialog!"
+            TextColor="White" />
     </StackLayout>
 
 </ContentPage>
