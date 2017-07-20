@@ -21,7 +21,11 @@
                 Text="You can't leave this field empty!"
                 TextColor="Red" />
             <Entry x:Name="InputEntry" Placeholder="Enter Here..." />
-            <Button x:Name="CloseButton" Text="Ok">
+            <Button
+                x:Name="CloseButton"
+                BackgroundColor="DodgerBlue"
+                Text="Ok"
+                TextColor="White">
                 <Button.HeightRequest>
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="Android" Value="40" />

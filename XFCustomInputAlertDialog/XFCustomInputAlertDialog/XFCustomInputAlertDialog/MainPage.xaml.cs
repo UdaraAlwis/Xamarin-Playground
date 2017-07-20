@@ -19,10 +19,20 @@ namespace XFCustomInputAlertDialog
 
         private async void OpenTextInputAlertDialogButton_OnClicked(object sender, EventArgs e)
         {
-            var result = await LaunchTextInputPopup();
+            InputResultLabel.Text = "Waiting for result...";
+            var result = await OpenTextInputAlertDialog();
+            InputResultLabel.Text = $"-{result}-";
         }
 
-        private async Task<string> LaunchTextInputPopup()
+        private async void OpenCancellableTextInputAlertDialogButton_OnClicked(object sender, EventArgs e)
+        {
+            InputResultLabel.Text = "Waiting for result...";
+            var result = await OpenCancellableTextInputAlertDialog();
+            InputResultLabel.Text = $"-{result}-";
+        }
+
+
+        private async Task<string> OpenTextInputAlertDialog()
         {
             // create the TextInputView
             var inputView = new TextInputView(
@@ -60,5 +70,49 @@ namespace XFCustomInputAlertDialog
             return result;
         }
 
+        private async Task<string> OpenCancellableTextInputAlertDialog()
+        {
+            // create the TextInputView
+            var inputView = new TextInputCancellableView(
+                "How's your day mate?", "enter here...", "Save", "Cancel", "Ops! Can't leave this empty!");
+
+            // create the Transparent Popup Page
+            // of type string since we need a string return
+            var popup = new InputAlertDialogBase<string>(inputView);
+
+            // subscribe to the TextInputView's Button click event
+            inputView.SaveButtonEventHandler +=
+                (sender, obj) =>
+                {
+                    if (!string.IsNullOrEmpty(((TextInputCancellableView)sender).TextInputResult))
+                    {
+                        ((TextInputCancellableView)sender).IsValidationLabelVisible = false;
+                        popup.PageClosedTaskCompletionSource.SetResult(((TextInputCancellableView)sender).TextInputResult);
+                    }
+                    else
+                    {
+                        ((TextInputCancellableView)sender).IsValidationLabelVisible = true;
+                    }
+                };
+
+            // subscribe to the TextInputView's Button click event
+            inputView.CancelButtonEventHandler +=
+                (sender, obj) =>
+                {
+                    popup.PageClosedTaskCompletionSource.SetResult(null);
+                };
+
+            // Push the page to Navigation Stack
+            await PopupNavigation.PushAsync(popup);
+
+            // await for the user to enter the text input
+            var result = await popup.PageClosedTask;
+
+            // Pop the page from Navigation Stack
+            await PopupNavigation.PopAsync();
+
+            // return user inserted text value
+            return result;
+        }
     }
 }
