@@ -40,7 +40,7 @@
         <Button
             x:Name="OpenSelectableInputAlertDialogButton"
             BackgroundColor="#cc33ff"
-            Clicked="OpenTextInputAlertDialogButton_OnClicked"
+            Clicked="OpenSelectableInputAlertDialogButton_OnClicked"
             HorizontalOptions="FillAndExpand"
             Text="Selectable List Input Alert Dialog!"
             TextColor="White" />
@@ -48,7 +48,7 @@
         <Button
             x:Name="OpenSliderInputAlertDialogButton"
             BackgroundColor="#ff3399"
-            Clicked="OpenTextInputAlertDialogButton_OnClicked"
+            Clicked="OpenSliderInputAlertDialogButton_OnClicked"
             HorizontalOptions="FillAndExpand"
             Text="Slider Input Alert Dialog!"
             TextColor="White" />
@@ -56,7 +56,7 @@
         <Button
             x:Name="OpenMultipleDataInputAlertDialogButton"
             BackgroundColor="#ff3300"
-            Clicked="OpenTextInputAlertDialogButton_OnClicked"
+            Clicked="OpenMultipleDataInputAlertDialogButton_OnClicked"
             HorizontalOptions="FillAndExpand"
             Text="Multiple Data Input Alert Dialog!"
             TextColor="White" />

@@ -38,6 +38,15 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InputViews\MultipleDataInputView.xaml.cs">
+      <DependentUpon>MultipleDataInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InputViews\SelectableInputView.xaml.cs">
+      <DependentUpon>SelectableInputView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InputViews\SlidableInputView.xaml.cs">
+      <DependentUpon>SlidableInputView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InputViews\TextInputView.xaml.cs">
       <DependentUpon>TextInputView.xaml</DependentUpon>
     </Compile>
@@ -88,6 +97,24 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="InputViews\TextInputCancellableView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InputViews\SelectableInputView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InputViews\SlidableInputView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InputViews\MultipleDataInputView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

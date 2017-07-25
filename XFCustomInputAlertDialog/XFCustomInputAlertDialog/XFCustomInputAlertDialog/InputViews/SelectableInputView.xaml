@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="XFCustomInputAlertDialog.InputViews.SelectableInputView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <StackLayout
+            Padding="10"
+            BackgroundColor="White"
+            HorizontalOptions="CenterAndExpand"
+            Spacing="5"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="200">
+            <Label
+                x:Name="TitleLabel"
+                FontSize="Medium"
+                Text="Select the value:" />
+            <Label
+                x:Name="ValidationLabel"
+                FontSize="Micro"
+                IsVisible="False"
+                Text="You can't leave without a selection!"
+                TextColor="Red" />
+            <ListView x:Name="SelectionListView" HeightRequest="150" />
+            <Grid>
+                <Button
+                    x:Name="SaveButton"
+                    Grid.Column="0"
+                    BackgroundColor="DodgerBlue"
+                    Text="Save"
+                    TextColor="White">
+                    <Button.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android" Value="40" />
+                            <On Platform="iOS" Value="30" />
+                        </OnPlatform>
+                    </Button.HeightRequest>
+                </Button>
+                <Button
+                    x:Name="CancelButton"
+                    Grid.Column="1"
+                    BackgroundColor="Gray"
+                    Text="Cancel">
+                    <Button.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android" Value="40" />
+                            <On Platform="iOS" Value="30" />
+                        </OnPlatform>
+                    </Button.HeightRequest>
+                </Button>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
