@@ -48,7 +48,7 @@ namespace XFCustomInputAlertDialog
         private async void OpenMultipleDataInputAlertDialogButton_OnClicked(object sender, EventArgs e)
         {
             InputResultLabel.Text = "Waiting for result...";
-            var result = await OpenSliderInputAlertDialog();
+            var result = await OpenMultipleDataInputAlertDialog();
             InputResultLabel.Text = $"-{result}-";
         }
 
@@ -213,6 +213,67 @@ namespace XFCustomInputAlertDialog
                 (sender, obj) =>
                 {
                     popup.PageClosedTaskCompletionSource.SetResult(0);
+                };
+
+            // Push the page to Navigation Stack
+            await PopupNavigation.PushAsync(popup);
+
+            // await for the user to enter the text input
+            var result = await popup.PageClosedTask;
+
+            // Pop the page from Navigation Stack
+            await PopupNavigation.PopAsync();
+
+            // return user inserted text value
+            return result;
+        }
+
+        private async Task<MyDataModel> OpenMultipleDataInputAlertDialog()
+        {
+            // create the TextInputView
+            var inputView = new MultipleDataInputView(
+                "Enter your Name?", "What's your Age?", 
+                "First Name", "Last Name", 0, 40,
+                "Save", "Cancel");
+
+            // create the Transparent Popup Page
+            // of type string since we need a string return
+            var popup = new InputAlertDialogBase<MyDataModel>(inputView);
+
+            // subscribe to the TextInputView's Button click event
+            inputView.SaveButtonEventHandler +=
+                (sender, obj) =>
+                {
+                    if (string.IsNullOrEmpty(((MultipleDataInputView)sender).MultipleDataResult.FirstName))
+                    {
+                        ((MultipleDataInputView)sender).ValidationLabelText = "Ops! You need to enter the First name!";
+                        ((MultipleDataInputView)sender).IsValidationLabelVisible = true;
+                        return;
+                    }
+
+                    if (string.IsNullOrEmpty(((MultipleDataInputView)sender).MultipleDataResult.LastName))
+                    {
+                        ((MultipleDataInputView)sender).ValidationLabelText = "Ops! You need to enter the Last name!";
+                        ((MultipleDataInputView)sender).IsValidationLabelVisible = true;
+                        return;
+                    }
+
+                    if (((MultipleDataInputView)sender).MultipleDataResult.Age < 18)
+                    {
+                        ((MultipleDataInputView)sender).ValidationLabelText = "Ops! You need to be over 18 years of Age!";
+                        ((MultipleDataInputView)sender).IsValidationLabelVisible = true;
+                        return;
+                    }
+
+                    ((MultipleDataInputView)sender).IsValidationLabelVisible = false;
+                    popup.PageClosedTaskCompletionSource.SetResult(((MultipleDataInputView)sender).MultipleDataResult); 
+                };
+
+            // subscribe to the TextInputView's Button click event
+            inputView.CancelButtonEventHandler +=
+                (sender, obj) =>
+                {
+                    popup.PageClosedTaskCompletionSource.SetResult(null);
                 };
 
             // Push the page to Navigation Stack
