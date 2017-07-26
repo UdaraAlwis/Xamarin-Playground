@@ -92,8 +92,8 @@ namespace XFCustomInputAlertDialog.InputViews
 
 	    private void InputEntryOnValueChanged(object sender, ValueChangedEventArgs valueChangedEventArgs)
 	    {
-	        InputSliderValueLabel.Text = $"[ {InputSlider.Value.ToString()} ]";
-            SliderInputResult = InputSlider.Value;
+	        InputSliderValueLabel.Text = $"[ {InputSlider.Value.ToString("##.##")} ]";
+            SliderInputResult = Math.Round(InputSlider.Value, 2, MidpointRounding.AwayFromZero);
 	    }
 
     }

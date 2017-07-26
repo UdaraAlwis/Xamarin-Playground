@@ -49,7 +49,9 @@ namespace XFCustomInputAlertDialog
         {
             InputResultLabel.Text = "Waiting for result...";
             var result = await OpenMultipleDataInputAlertDialog();
-            InputResultLabel.Text = $"-{result}-";
+
+            var resultString = $"-{result.FirstName}-\n-{result.LastName}-\n-{result.Age}-\n";
+            InputResultLabel.Text = $"{resultString}";
         }
 
         private async Task<string> OpenTextInputAlertDialog()
@@ -232,7 +234,7 @@ namespace XFCustomInputAlertDialog
         {
             // create the TextInputView
             var inputView = new MultipleDataInputView(
-                "Enter your Name?", "What's your Age?", 
+                "What's your Name?", "What's your Age?", 
                 "First Name", "Last Name", 0, 40,
                 "Save", "Cancel");
 
@@ -244,6 +246,7 @@ namespace XFCustomInputAlertDialog
             inputView.SaveButtonEventHandler +=
                 (sender, obj) =>
                 {
+                    // handle validations
                     if (string.IsNullOrEmpty(((MultipleDataInputView)sender).MultipleDataResult.FirstName))
                     {
                         ((MultipleDataInputView)sender).ValidationLabelText = "Ops! You need to enter the First name!";
@@ -265,6 +268,7 @@ namespace XFCustomInputAlertDialog
                         return;
                     }
 
+                    // if all good then set the Result
                     ((MultipleDataInputView)sender).IsValidationLabelVisible = false;
                     popup.PageClosedTaskCompletionSource.SetResult(((MultipleDataInputView)sender).MultipleDataResult); 
                 };
