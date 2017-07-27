@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -30,14 +31,19 @@ namespace XFCurvedCornersLabelControl.Droid
             var view = (CurvedCornersLabel)Element;
             if (view == null) return;
 
+            Paint(view);
+        }
+
+        private void Paint(CurvedCornersLabel view)
+        {
             // creating gradient drawable for the curved background
             _gradientBackground = new GradientDrawable();
             _gradientBackground.SetShape(ShapeType.Rectangle);
             _gradientBackground.SetColor(view.CurvedBackgroundColor.ToAndroid());
-            
+
             // Thickness of the stroke line
             _gradientBackground.SetStroke(4, view.CurvedBackgroundColor.ToAndroid());
-            
+
             // Radius for the curves
             _gradientBackground.SetCornerRadius(
                 DpToPixels(this.Context,
@@ -45,6 +51,21 @@ namespace XFCurvedCornersLabelControl.Droid
 
             // set the background of the label
             Control.SetBackground(_gradientBackground);
+        }
+
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+
+            // re-paint if these properties change at runtime
+            if (e.PropertyName == CurvedCornersLabel.BackgroundColorProperty.PropertyName ||
+                e.PropertyName == CurvedCornersLabel.CurvedCornerRadiusProperty.PropertyName)
+            {
+                if (Element != null)
+                {
+                    Paint((CurvedCornersLabel)Element);
+                }
+            }
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using CoreGraphics;
@@ -21,8 +22,28 @@ namespace XFCurvedCornersLabelControl.iOS
             if (e.NewElement != null)
             {
                 var _xfViewReference = (CurvedCornersLabel)Element;
-                this.Layer.CornerRadius = (float)_xfViewReference.CurvedCornerRadius;
-                this.Layer.BackgroundColor = _xfViewReference.CurvedBackgroundColor.ToCGColor();
+                Paint(_xfViewReference);
+            }
+        }
+
+        private void Paint(CurvedCornersLabel view)
+        {
+            this.Layer.CornerRadius = (float)view.CurvedCornerRadius;
+            this.Layer.BackgroundColor = view.CurvedBackgroundColor.ToCGColor();
+        }
+
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+
+            // re-paint if these properties change at runtime
+            if (e.PropertyName == CurvedCornersLabel.BackgroundColorProperty.PropertyName ||
+                e.PropertyName == CurvedCornersLabel.CurvedCornerRadiusProperty.PropertyName)
+            {
+                if (Element != null)
+                {
+                    Paint((CurvedCornersLabel)Element);
+                }
             }
         }
     }
