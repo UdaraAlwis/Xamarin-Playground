@@ -12,7 +12,7 @@ https://theconfuzedsourcecode.wordpress.com/2017/07/26/an-await-able-transparent
 
 <br />
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFCustomInputAlertDialog/screenshots/FullInputAlertDialogAndroid.gif"  height="380" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFCustomInputAlertDialog/screenshots/FullInputAlertDialogiOS.gif"  height="380" />
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFCustomInputAlertDialog/screenshots/FullInputAlertDialogAndroid.gif"  height="380" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFCustomInputAlertDialog/screenshots/FullInputAlertDialogiOS.gif"  height="380" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFCustomInputAlertDialog/screenshots/FullInputAlertDialogUWP.gif"  height="380" />
 
 <br />
 

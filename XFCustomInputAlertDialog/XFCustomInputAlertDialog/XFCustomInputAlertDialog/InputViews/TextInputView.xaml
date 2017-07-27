@@ -30,6 +30,7 @@
                     <OnPlatform x:TypeArguments="x:Double">
                         <On Platform="Android" Value="40" />
                         <On Platform="iOS" Value="30" />
+                        <On Platform="Windows" Value="35" />
                     </OnPlatform>
                 </Button.HeightRequest>
             </Button>
