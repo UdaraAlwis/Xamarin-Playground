@@ -5,10 +5,10 @@ Imagine you wanted to prompt your user with a popup alert dialog (which is also 
 
 And just to add some sugar to it, may be you wanted to customize and decorate the appearance of the input view?
 
-<br />
-
 Read the Full Blogpost:
 https://theconfuzedsourcecode.wordpress.com/2017/07/26/an-await-able-transparent-custom-popup-input-dialog-in-xamarin-forms/
+
+PS : built on purely Xamarin.Forms, without a single line of native code, you could straight up run this implementation on all Android, iOS, UWP, WinPhone as you wish! 😉 
 
 <br />
 
