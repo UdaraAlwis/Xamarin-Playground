@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFSegmentControl"
+             x:Class="XFSegmentControl.MainPage">
+
+    <Grid BackgroundColor="CornflowerBlue">
+
+        <Grid Grid.Row="0">
+            <Grid BackgroundColor="CornflowerBlue">
+                <Label Text="Tab 1" VerticalOptions="CenterAndExpand" />
+                <BoxView Color="White" HeightRequest="2" VerticalOptions="End" />
+            </Grid>
+
+            <Grid BackgroundColor="White">
+                <Label Text="Tab 2" VerticalOptions="CenterAndExpand" />
+                <BoxView Color="Transparent" HeightRequest="2" VerticalOptions="End" />
+            </Grid>
+        </Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+    </Grid>
+
+</ContentPage>
