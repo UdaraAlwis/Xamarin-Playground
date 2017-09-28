@@ -7,15 +7,20 @@
     <Grid BackgroundColor="CornflowerBlue">
 
         <Grid Grid.Row="0">
-            <Grid BackgroundColor="CornflowerBlue">
-                <Label Text="Tab 1" VerticalOptions="CenterAndExpand" />
+            <Grid BackgroundColor="CornflowerBlue" Grid.Column="0">
+                <Label Text="Tab 1" FontSize="Medium" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
                 <BoxView Color="White" HeightRequest="2" VerticalOptions="End" />
             </Grid>
 
-            <Grid BackgroundColor="White">
-                <Label Text="Tab 2" VerticalOptions="CenterAndExpand" />
+            <Grid BackgroundColor="White" Grid.Column="1">
+                <Label Text="Tab 2" FontSize="Medium" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
                 <BoxView Color="Transparent" HeightRequest="2" VerticalOptions="End" />
             </Grid>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
         </Grid>
 
         <Grid.RowDefinitions>
