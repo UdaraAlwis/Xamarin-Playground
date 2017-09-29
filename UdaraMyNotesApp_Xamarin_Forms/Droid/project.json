@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "Microsoft.Azure.Mobile.Client": "4.0.1",
+    "Xamarin.Forms": "2.3.4.247",
+    "Xamarin.Android.Support.Design": "23.3.0",
+    "Xamarin.Android.Support.v4": "23.3.0",
+    "Xamarin.Android.Support.v7.AppCompat": "23.3.0",
+    "Xamarin.Android.Support.v7.CardView": "23.3.0",
+    "Xamarin.Android.Support.v7.MediaRouter": "23.3.0"
+
+  },
+  "frameworks": {
+    "MonoAndroid,Version=v7.1": {}
+  }
+}
