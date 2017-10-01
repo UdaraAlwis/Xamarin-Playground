@@ -2610,6 +2610,9 @@ namespace UdaraMyNotesApp.Droid
 			// aapt resource value: 0x7f070013
 			public const int showTitle = 2131165203;
 			
+			// aapt resource value: 0x7f070099
+			public const int sliding_tabs = 2131165337;
+			
 			// aapt resource value: 0x7f07006d
 			public const int snackbar_action = 2131165293;
 			
@@ -2663,6 +2666,9 @@ namespace UdaraMyNotesApp.Droid
 			
 			// aapt resource value: 0x7f070048
 			public const int title_template = 2131165256;
+			
+			// aapt resource value: 0x7f07009a
+			public const int toolbar = 2131165338;
 			
 			// aapt resource value: 0x7f070032
 			public const int top = 2131165234;
@@ -2937,6 +2943,12 @@ namespace UdaraMyNotesApp.Droid
 			// aapt resource value: 0x7f030037
 			public const int support_simple_spinner_dropdown_item = 2130903095;
 			
+			// aapt resource value: 0x7f030038
+			public const int Tabbar = 2130903096;
+			
+			// aapt resource value: 0x7f030039
+			public const int Toolbar = 2130903097;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -3100,6 +3112,9 @@ namespace UdaraMyNotesApp.Droid
 			
 			// aapt resource value: 0x7f0a015a
 			public const int Animation_Design_BottomSheetDialog = 2131362138;
+			
+			// aapt resource value: 0x7f0a0174
+			public const int AppCompatDialogStyle = 2131362164;
 			
 			// aapt resource value: 0x7f0a00a5
 			public const int Base_AlertDialog_AppCompat = 2131361957;
@@ -3541,6 +3556,12 @@ namespace UdaraMyNotesApp.Droid
 			
 			// aapt resource value: 0x7f0a001a
 			public const int CardView_Light = 2131361818;
+			
+			// aapt resource value: 0x7f0a0172
+			public const int MainTheme = 2131362162;
+			
+			// aapt resource value: 0x7f0a0173
+			public const int MainTheme_Base = 2131362163;
 			
 			// aapt resource value: 0x7f0a0032
 			public const int Platform_AppCompat = 2131361842;
