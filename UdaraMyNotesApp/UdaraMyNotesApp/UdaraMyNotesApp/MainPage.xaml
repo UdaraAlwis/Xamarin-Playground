@@ -1,10 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="UdaraMyNotesApp.MainPage">
+<ContentPage
+    x:Class="UdaraMyNotesApp.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Padding="10,20,10,0">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="7">
             <Label Text="Welcome to Xamarin Forms!" />
+
+            <StackLayout>
+                <Entry
+                    x:Name="titleText"
+                    BackgroundColor="LightBlue"
+                    FontAttributes="Bold"
+                    FontSize="15"
+                    HeightRequest="40"
+                    Placeholder="Title..." />
+                <Editor
+                    x:Name="descriptionText"
+                    BackgroundColor="LightSteelBlue"
+                    FontSize="20"
+                    HeightRequest="100" />
+                <Label Text="{Binding TimeStamp, StringFormat='{}{0:dddd dd MMMM yyyy a\\t h:mm tt}'}" />
+
+                <Button
+                    x:Name="SaveButton"
+                    BackgroundColor="DodgerBlue"
+                    Clicked="SaveButton_OnClicked"
+                    Text="Save"
+                    TextColor="White" />
+            </StackLayout>
+
+            <ListView
+                x:Name="listView"
+                IsPullToRefreshEnabled="True"
+                Refreshing="listView_OnRefreshing">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Detail="{Binding Description}" Text="{Binding Title}">
+                            <TextCell.ContextActions>
+                                <MenuItem
+                                    Clicked="OnDelete"
+                                    CommandParameter="{Binding .}"
+                                    IsDestructive="True"
+                                    Text="Delete" />
+                            </TextCell.ContextActions>
+                        </TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
