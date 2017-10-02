@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using Microsoft.WindowsAzure.MobileServices;
+
 namespace UdaraMyNotesApp.UWP
 {
     public sealed partial class MainPage
@@ -20,7 +22,7 @@ namespace UdaraMyNotesApp.UWP
         public MainPage()
         {
             this.InitializeComponent();
-
+            
             LoadApplication(new UdaraMyNotesApp.App());
         }
     }

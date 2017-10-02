@@ -9,7 +9,7 @@ using UdaraMyNotesAppService.Models;
 
 namespace UdaraMyNotesAppService.Controllers
 {
-    public class TodoItemController : TableController<MyNote>
+    public class MyNoteController : TableController<MyNote>
     {
         protected override void Initialize(HttpControllerContext controllerContext)
         {
@@ -18,33 +18,33 @@ namespace UdaraMyNotesAppService.Controllers
             DomainManager = new EntityDomainManager<MyNote>(context, Request);
         }
 
-        // GET tables/TodoItem
+        // GET tables/MyNote
         public IQueryable<MyNote> GetAllMyNoteItems()
         {
             return Query();
         }
 
-        // GET tables/TodoItem/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        // GET tables/MyNote/48D68C86-6EA6-4C25-AA33-223FC9A27959
         public SingleResult<MyNote> GetMyNoteItem(string id)
         {
             return Lookup(id);
         }
 
-        // PATCH tables/TodoItem/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        // PATCH tables/MyNote/48D68C86-6EA6-4C25-AA33-223FC9A27959
         public Task<MyNote> PatchMyNoteItem(string id, Delta<MyNote> patch)
         {
             return UpdateAsync(id, patch);
         }
 
-        // POST tables/TodoItem
-        public async Task<IHttpActionResult> PostTodoItem(MyNote item)
+        // POST tables/MyNote
+        public async Task<IHttpActionResult> PostMyNote(MyNote item)
         {
             MyNote current = await InsertAsync(item);
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
-        // DELETE tables/TodoItem/48D68C86-6EA6-4C25-AA33-223FC9A27959
-        public Task DeleteTodoItem(string id)
+        // DELETE tables/MyNote/48D68C86-6EA6-4C25-AA33-223FC9A27959
+        public Task DeleteMyNote(string id)
         {
             return DeleteAsync(id);
         }

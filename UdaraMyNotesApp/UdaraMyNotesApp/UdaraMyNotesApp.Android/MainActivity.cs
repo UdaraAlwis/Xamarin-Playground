@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.WindowsAzure.MobileServices;
 
 namespace UdaraMyNotesApp.Droid
 {
@@ -16,6 +17,9 @@ namespace UdaraMyNotesApp.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            // Initialize Azure Mobile Apps
+            CurrentPlatform.Init();
 
             base.OnCreate(bundle);
 

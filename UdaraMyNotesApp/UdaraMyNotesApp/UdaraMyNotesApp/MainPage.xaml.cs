@@ -17,10 +17,14 @@ namespace UdaraMyNotesApp
 			InitializeComponent ();
 		}
 
-        protected override void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
+            var table = App.MobileService.GetTable<MyNote>();
+
+            IEnumerable<MyNote> items = await table
+                    .ToEnumerableAsync();
         }
     }
 }

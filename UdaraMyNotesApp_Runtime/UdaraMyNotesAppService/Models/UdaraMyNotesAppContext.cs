@@ -22,7 +22,7 @@ namespace UdaraMyNotesAppService.Models
         {
         } 
 
-        public DbSet<MyNote> TodoItems { get; set; }
+        public DbSet<MyNote> MyNotes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
