@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.Graphics.Drawables;
@@ -78,10 +78,21 @@ namespace XFAwesomeSpinnerView.Droid
                 window.ClearFlags(WindowManagerFlags.DimBehind);
                 window.SetBackgroundDrawable(new ColorDrawable(Android.Graphics.Color.Transparent));
 
+                xamFormsPage.Appearing += XamFormsPage_Appearing;
+
                 isInitialized = true;
             }
             
             dialog.Show();
+        }
+
+        private void XamFormsPage_Appearing(object sender, EventArgs e)
+        {
+            var animation = new Animation(callback: d => ((ContentPage)sender).Content.Rotation = d,
+                                          start: ((ContentPage)sender).Content.Rotation,
+                                          end: ((ContentPage)sender).Content.Rotation + 360,
+                                          easing: Easing.Linear);
+            animation.Commit(((ContentPage)sender).Content, "RotationLoopAnimation", 16, 800, null, null, () => true);
         }
 
         public void CloseSpinner()
