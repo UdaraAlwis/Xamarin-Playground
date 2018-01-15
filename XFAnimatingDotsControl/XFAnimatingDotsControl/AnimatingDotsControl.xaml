@@ -36,6 +36,11 @@
             ColumnSpacing="2"
             HorizontalOptions="Center"
             WidthRequest="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+                <ColumnDefinition Width="25" />
+            </Grid.ColumnDefinitions>
 
             <!--  Background Dots  -->
             <!--<Label
