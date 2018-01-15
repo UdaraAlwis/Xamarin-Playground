@@ -7,6 +7,7 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using XFAwesomeSpinnerView.iOS;
+using XFPlatform = Xamarin.Forms.Platform.iOS.Platform;
 
 [assembly: Xamarin.Forms.Dependency(typeof(SpinnerService))]
 namespace XFAwesomeSpinnerView.iOS
@@ -16,7 +17,7 @@ namespace XFAwesomeSpinnerView.iOS
 
     public class SpinnerService : ISpinnerService
     {
-        private UIView splash1;
+        private UIView nativeView;
 
         private bool isInitialized;
 
@@ -24,25 +25,50 @@ namespace XFAwesomeSpinnerView.iOS
         {
             if (!isInitialized)
             {
-                var xamFormsPage = new Grid()
+                var xamFormsPage = new ContentPage()
                 {
-                    Opacity = 0.7,
-                    Children =
-                    {
-                        new Xamarin.Forms.ActivityIndicator(){ IsRunning = true, },
-                    },
-                    BackgroundColor = Color.DeepSkyBlue,
+                    BackgroundColor = new Color(0, 0, 0, 0.5),
+                    Content =
+                        new StackLayout()
+                        {
+                            Padding = 30,
+                            BackgroundColor = Color.Black,
+                            Children =
+                            {
+                                new Xamarin.Forms.ActivityIndicator()
+                                {
+                                    IsRunning = true,
+                                    Color = Color.White,
+                                },
+                                new Xamarin.Forms.Label()
+                                {
+                                    Text = "Loading...",
+                                    FontAttributes = FontAttributes.Bold,
+                                    TextColor = Color.White,
+                                },
+                            },
+                            VerticalOptions = LayoutOptions.Center,
+                            HorizontalOptions = LayoutOptions.Center,
+                        }
                 };
 
-                splash1 = ConvertFormsToNative(xamFormsPage, UIScreen.MainScreen.Bounds);
-                
+                xamFormsPage.Parent = Xamarin.Forms.Application.Current.MainPage;
+
+                xamFormsPage.Layout(new Rectangle(0, 0,
+                    Xamarin.Forms.Application.Current.MainPage.Width,
+                    Xamarin.Forms.Application.Current.MainPage.Height));
+
+                var renderer = xamFormsPage.GetOrCreateRenderer();
+
+                nativeView = renderer.NativeView;
+
                 //splash1.SizeToFit();
                 //splash1.Alpha = 0.7f;
-                
+
                 isInitialized = true;
             }
 
-            UIApplication.SharedApplication.KeyWindow.AddSubview(splash1);
+            UIApplication.SharedApplication.KeyWindow.AddSubview(nativeView);
         }
 
         // Credits: https://michaelridland.com/xamarin/creating-native-view-xamarin-forms-viewpage/
@@ -68,7 +94,21 @@ namespace XFAwesomeSpinnerView.iOS
 
         public void CloseSpinner()
         {
-            splash1.RemoveFromSuperview();
+            nativeView.RemoveFromSuperview();
+        }
+    }
+
+    internal static class PlatformExtension
+    {
+        public static IVisualElementRenderer GetOrCreateRenderer(this VisualElement bindable)
+        {
+            var renderer = XFPlatform.GetRenderer(bindable);
+            if (renderer == null)
+            {
+                renderer = XFPlatform.CreateRenderer(bindable);
+                XFPlatform.SetRenderer(bindable, renderer);
+            }
+            return renderer;
         }
     }
 }

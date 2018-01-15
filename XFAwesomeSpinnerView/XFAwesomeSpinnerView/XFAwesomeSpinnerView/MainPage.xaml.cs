@@ -14,7 +14,7 @@ namespace XFAwesomeSpinnerView
 		public MainPage()
 		{
 			InitializeComponent();
-		}
+        }
 
 	    private void ButtonOpenSpinner_OnClicked(object sender, EventArgs e)
 	    {
