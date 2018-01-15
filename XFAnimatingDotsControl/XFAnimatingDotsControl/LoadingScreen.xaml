@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFAnimatingDotsControl.LoadingScreen"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xfAnimatingDotsControl="clr-namespace:XFAnimatingDotsControl;assembly=XFAnimatingDotsControl"
+    BackgroundColor="Gray">
+
+    <Frame
+        BackgroundColor="Transparent"
+        HasShadow="False"
+        HorizontalOptions="Center"
+        OutlineColor="Transparent"
+        VerticalOptions="Center">
+        <StackLayout BackgroundColor="Transparent" Orientation="Vertical">
+            <Label
+                FontAttributes="Bold"
+                FontSize="23"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Text="Loading"
+                TextColor="White" />
+            <xfAnimatingDotsControl:AnimatingDotsControl HorizontalOptions="Center" />
+        </StackLayout>
+    </Frame>
+
+</ContentPage>

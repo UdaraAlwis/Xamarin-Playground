@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="XFAnimatingDotsControl.AnimatingDotsControl"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BackgroundDotsStyle" TargetType="Label">
+                <Setter Property="VerticalTextAlignment">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="TextAlignment" Android="End" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="55" />
+                <Setter Property="Scale" Value="2.2" />
+                <Setter Property="TextColor" Value="Silver" />
+            </Style>
+
+            <Style x:Key="AnimatingDotsStyle" TargetType="Label">
+                <Setter Property="VerticalTextAlignment">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="TextAlignment" Android="End" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="FontSize" Value="55" />
+                <Setter Property="Scale" Value="2.2" />
+                <Setter Property="TextColor" Value="White" />
+                <!--<Setter Property="Opacity" Value="0" />-->
+            </Style>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid
+            BackgroundColor="Transparent"
+            ColumnSpacing="2"
+            HorizontalOptions="Center"
+            WidthRequest="100">
+
+            <!--  Background Dots  -->
+            <!--<Label
+                x:Name="Dot1Shadow"
+                Grid.Column="0"
+                Style="{StaticResource BackgroundDotsStyle}"
+                Text="." />
+
+            <Label
+                x:Name="Dot2Shadow"
+                Grid.Column="1"
+                Style="{StaticResource BackgroundDotsStyle}"
+                Text="." />
+
+            <Label
+                x:Name="Dot3Shadow"
+                Grid.Column="2"
+                Style="{StaticResource BackgroundDotsStyle}"
+                Text="." />-->
+
+
+            <!--  Animating Dots  -->
+            <Label
+                x:Name="Dot1"
+                Grid.Column="0"
+                Style="{StaticResource AnimatingDotsStyle}"
+                Text="." />
+            <Label
+                x:Name="Dot2"
+                Grid.Column="1"
+                Style="{StaticResource AnimatingDotsStyle}"
+                Text="." />
+            <Label
+                x:Name="Dot3"
+                Grid.Column="2"
+                Style="{StaticResource AnimatingDotsStyle}"
+                Text="." />
+
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>
