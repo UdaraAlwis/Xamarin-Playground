@@ -5,37 +5,27 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentView.Resources>
         <ResourceDictionary>
-            <Style x:Key="BackgroundDotsStyle" TargetType="Label">
-                <Setter Property="VerticalTextAlignment">
-                    <Setter.Value>
-                        <OnPlatform x:TypeArguments="TextAlignment" Android="End" />
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FontSize" Value="55" />
-                <Setter Property="Scale" Value="2.2" />
-                <Setter Property="TextColor" Value="Silver" />
+            <Style x:Key="AnimatingDotsStyle" TargetType="Frame">
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="BackgroundColor" Value="White" />
+                <Setter Property="CornerRadius" Value="6" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="4" />
+                <Setter Property="WidthRequest" Value="4" />
             </Style>
 
-            <Style x:Key="AnimatingDotsStyle" TargetType="Label">
-                <Setter Property="VerticalTextAlignment">
-                    <Setter.Value>
-                        <OnPlatform x:TypeArguments="TextAlignment" Android="End" />
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="FontSize" Value="55" />
-                <Setter Property="Scale" Value="2.2" />
-                <Setter Property="TextColor" Value="White" />
-                <!--<Setter Property="Opacity" Value="0" />-->
+            <Style
+                x:Key="BackgroundDotsStyle"
+                BasedOn="{StaticResource AnimatingDotsStyle}"
+                TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="DimGray" />
             </Style>
-
         </ResourceDictionary>
     </ContentView.Resources>
     <ContentView.Content>
-        <Grid
-            BackgroundColor="Transparent"
-            ColumnSpacing="2"
-            HorizontalOptions="Center"
-            WidthRequest="100">
+        <Grid ColumnSpacing="2" HorizontalOptions="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="25" />
                 <ColumnDefinition Width="25" />
@@ -43,43 +33,23 @@
             </Grid.ColumnDefinitions>
 
             <!--  Background Dots  -->
-            <!--<Label
-                x:Name="Dot1Shadow"
-                Grid.Column="0"
-                Style="{StaticResource BackgroundDotsStyle}"
-                Text="." />
-
-            <Label
-                x:Name="Dot2Shadow"
-                Grid.Column="1"
-                Style="{StaticResource BackgroundDotsStyle}"
-                Text="." />
-
-            <Label
-                x:Name="Dot3Shadow"
-                Grid.Column="2"
-                Style="{StaticResource BackgroundDotsStyle}"
-                Text="." />-->
-
+            <Frame Grid.Column="0" Style="{StaticResource BackgroundDotsStyle}" />
+            <Frame Grid.Column="1" Style="{StaticResource BackgroundDotsStyle}" />
+            <Frame Grid.Column="2" Style="{StaticResource BackgroundDotsStyle}" />
 
             <!--  Animating Dots  -->
-            <Label
+            <Frame
                 x:Name="Dot1"
                 Grid.Column="0"
-                Style="{StaticResource AnimatingDotsStyle}"
-                Text="." />
-            <Label
+                Style="{StaticResource AnimatingDotsStyle}" />
+            <Frame
                 x:Name="Dot2"
                 Grid.Column="1"
-                Style="{StaticResource AnimatingDotsStyle}"
-                Text="." />
-            <Label
+                Style="{StaticResource AnimatingDotsStyle}" />
+            <Frame
                 x:Name="Dot3"
                 Grid.Column="2"
-                Style="{StaticResource AnimatingDotsStyle}"
-                Text="." />
-
-
+                Style="{StaticResource AnimatingDotsStyle}" />
         </Grid>
     </ContentView.Content>
 </ContentView>
