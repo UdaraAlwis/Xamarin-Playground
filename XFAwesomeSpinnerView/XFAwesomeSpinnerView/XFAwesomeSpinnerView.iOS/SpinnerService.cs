@@ -61,13 +61,24 @@ namespace XFAwesomeSpinnerView.iOS
                 var renderer = xamFormsPage.GetOrCreateRenderer();
 
                 nativeView = renderer.NativeView;
-                
+
+                xamFormsPage.Appearing += XamFormsPage_Appearing;
+
                 isInitialized = true;
             }
 
             UIApplication.SharedApplication.KeyWindow.AddSubview(nativeView);
         }
-        
+
+        private void XamFormsPage_Appearing(object sender, EventArgs e)
+        {
+            var animation = new Animation(callback: d => ((ContentPage)sender).Content.Rotation = d,
+                start: ((ContentPage)sender).Content.Rotation,
+                end: ((ContentPage)sender).Content.Rotation + 360,
+                easing: Easing.Linear);
+            animation.Commit(((ContentPage)sender).Content, "RotationLoopAnimation", 16, 800, null, null, () => true);
+        }
+
         public void CloseSpinner()
         {
             nativeView.RemoveFromSuperview();
