@@ -21,7 +21,7 @@ namespace XFLoadingPageService
 	    {
 	        base.OnAppearing();
             
-	        Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+	        Device.StartTimer(TimeSpan.FromSeconds(3), () =>
 	        {
 	            DependencyService.Get<ILodingPageService>().HideLoadingPage();
 
