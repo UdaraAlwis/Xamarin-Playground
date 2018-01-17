@@ -12,11 +12,11 @@ namespace XFLoadingPageService
 		public App ()
 		{
 			InitializeComponent();
+            
+            MainPage = new NavigationPage(new MainPage());
+        }
 
-		    MainPage = new NavigationPage(new MainPage());
-		}
-
-		protected override void OnStart ()
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}

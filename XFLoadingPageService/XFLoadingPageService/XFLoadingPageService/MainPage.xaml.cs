@@ -16,13 +16,30 @@ namespace XFLoadingPageService
 			InitializeComponent();
         }
 
-	    private async void ButtonOpenSpinner_OnClicked(object sender, EventArgs e)
+        private async void buttonOpenNextPage_OnClicked(object sender, EventArgs e)
 	    {
-	        DependencyService.Get<ILodingPageService>().ShowLoadingPage();
+            // show the loading page...
+            DependencyService.Get<ILodingPageService>().ShowLoadingPage();
 
+            // just to showcase a delay...
             await Task.Delay(2000);
 
-	        await Navigation.PushAsync(new Page1());
-	    }
-	}
+            // navigate to next page...
+	        //await Navigation.PushAsync(new Page2());
+            
+	        Application.Current.MainPage = new NavigationPage(new Page2());
+        }
+
+	    private async void buttonLoadingPageTimer_OnClicked(object sender, EventArgs e)
+	    {
+	        // show the loading page...
+	        DependencyService.Get<ILodingPageService>().ShowLoadingPage();
+
+	        // just to showcase a delay...
+	        await Task.Delay(2000);
+	        
+            // close the loading page...
+	        DependencyService.Get<ILodingPageService>().HideLoadingPage();
+        }
+    }
 }

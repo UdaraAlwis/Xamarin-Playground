@@ -9,65 +9,35 @@ using Xamarin.Forms.Platform.iOS;
 using XFLoadingPageService.iOS;
 using XFPlatform = Xamarin.Forms.Platform.iOS.Platform;
 
-[assembly: Xamarin.Forms.Dependency(typeof(SpinnerService))]
+[assembly: Xamarin.Forms.Dependency(typeof(LodingPageServiceiOS))]
 namespace XFLoadingPageService.iOS
 {
-    // useful https://www.google.com.sg/search?q=xamarin.forms+page+to+UIView+convert&oq=xamarin.forms+page+to+UIView+convert&aqs=chrome..69i57.7998j0j4&sourceid=chrome&ie=UTF-8
-
-
-    public class SpinnerService : ILodingPageService
+    public class LodingPageServiceiOS : ILodingPageService
     {
-        private UIView nativeView;
+        private UIView _nativeView;
 
-        private bool isInitialized;
-
+        private bool _isInitialized;
+        
         public void ShowLoadingPage()
         {
-            if (!isInitialized)
+            if (!_isInitialized)
             {
-                var xamFormsPage = new ContentPage()
-                {
-                    BackgroundColor = new Color(0, 0, 0, 0.5),
-                    Content =
-                        new StackLayout()
-                        {
-                            Padding = 30,
-                            BackgroundColor = Color.Black,
-                            Children =
-                            {
-                                new Xamarin.Forms.ActivityIndicator()
-                                {
-                                    IsRunning = true,
-                                    Color = Color.White,
-                                },
-                                new Xamarin.Forms.Label()
-                                {
-                                    Text = "Loading...",
-                                    FontAttributes = FontAttributes.Bold,
-                                    TextColor = Color.White,
-                                },
-                            },
-                            VerticalOptions = LayoutOptions.Center,
-                            HorizontalOptions = LayoutOptions.Center,
-                        }
-                };
+                var loadingPageView = new LoadingIndicatorPage();
 
-                xamFormsPage.Parent = Xamarin.Forms.Application.Current.MainPage;
+                loadingPageView.Parent = Xamarin.Forms.Application.Current.MainPage;
 
-                xamFormsPage.Layout(new Rectangle(0, 0,
+                loadingPageView.Layout(new Rectangle(0, 0,
                     Xamarin.Forms.Application.Current.MainPage.Width,
                     Xamarin.Forms.Application.Current.MainPage.Height));
 
-                var renderer = xamFormsPage.GetOrCreateRenderer();
+                var renderer = loadingPageView.GetOrCreateRenderer();
 
-                nativeView = renderer.NativeView;
+                _nativeView = renderer.NativeView;
 
-                xamFormsPage.Appearing += XamFormsPage_Appearing;
-
-                isInitialized = true;
+                _isInitialized = true;
             }
 
-            UIApplication.SharedApplication.KeyWindow.AddSubview(nativeView);
+            UIApplication.SharedApplication.KeyWindow.AddSubview(_nativeView);
         }
 
         private void XamFormsPage_Appearing(object sender, EventArgs e)
@@ -81,7 +51,7 @@ namespace XFLoadingPageService.iOS
 
         public void HideLoadingPage()
         {
-            nativeView.RemoveFromSuperview();
+            _nativeView.RemoveFromSuperview();
         }
     }
 

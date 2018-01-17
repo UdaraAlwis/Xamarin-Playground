@@ -3,13 +3,39 @@
     x:Class="XFLoadingPageService.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:XFLoadingPageService">
-
-    <StackLayout>
-        <Label Text="Welcome to Xamarin.Forms!" />
+    xmlns:local="clr-namespace:XFLoadingPageService"
+    Title="Home"
+    Padding="20"
+    BackgroundColor="#D93463">
+    <StackLayout Spacing="10">
+        <Label
+            Margin="10,0,10,0"
+            FontAttributes="Bold"
+            FontSize="Large"
+            Text="Welcome to Xamarin.Forms 'Loading Page' Service! ;)"
+            TextColor="White" />
+        <Label
+            Margin="10,0,10,0"
+            FontSize="Medium"
+            Text="Here you have a Loading Popup View that you could use as an Busy Activity Indicator, which also draws itself over Page-Page transitions. You could customize the 'Loading View' as anyways as you wish..."
+            TextColor="White" />
         <Button
-            x:Name="buttonOpenSpinner"
-            Clicked="ButtonOpenSpinner_OnClicked"
-            Text="Open Native Spinner Page" />
+            x:Name="buttonLoadingPageTimer"
+            Margin="10,0,10,0"
+            BackgroundColor="White"
+            Clicked="buttonLoadingPageTimer_OnClicked"
+            HeightRequest="55"
+            Text="Open Loading Page for 2 Seconds"
+            TextColor="#D93463"
+            VerticalOptions="Center" />
+        <Button
+            x:Name="buttonOpenNextPage"
+            Margin="10,0,10,0"
+            BackgroundColor="White"
+            Clicked="buttonOpenNextPage_OnClicked"
+            HeightRequest="55"
+            Text="Open Next Page"
+            TextColor="#D93463"
+            VerticalOptions="Center" />
     </StackLayout>
 </ContentPage>

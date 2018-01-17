@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFLoadingPageService.Page2"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Page 2"
+    Padding="20"
+    BackgroundColor="#D93463">
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Label
+                Margin="10,0,10,0"
+                FontAttributes="Bold"
+                FontSize="Large"
+                Text="This is 2nd Page!"
+                TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
