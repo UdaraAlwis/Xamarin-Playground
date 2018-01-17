@@ -28,13 +28,12 @@ namespace XFLoadingPageService.Droid
 
         private bool _isInitialized;
 
-        public void ShowLoadingPage(ContentPage loadingIndicatorPage)
+        public void InitLoadingPage(ContentPage loadingIndicatorPage)
         {
-            if (!_isInitialized && loadingIndicatorPage == null)
-                loadingIndicatorPage = new LoadingIndicatorPage1();
-
-            if (!_isInitialized || loadingIndicatorPage != null)
+            // check if the page parameter is available
+            if (loadingIndicatorPage != null)
             {
+                // build the loading page with native base
                 loadingIndicatorPage.Parent = Xamarin.Forms.Application.Current.MainPage;
 
                 loadingIndicatorPage.Layout(new Rectangle(0, 0,
@@ -42,7 +41,7 @@ namespace XFLoadingPageService.Droid
                     Xamarin.Forms.Application.Current.MainPage.Height));
 
                 var renderer = loadingIndicatorPage.GetOrCreateRenderer();
-                
+
                 _nativeView = renderer.View;
 
                 _dialog = new Dialog(CrossCurrentActivity.Current.Activity);
@@ -53,10 +52,18 @@ namespace XFLoadingPageService.Droid
                 window.SetLayout(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent);
                 window.ClearFlags(WindowManagerFlags.DimBehind);
                 window.SetBackgroundDrawable(new ColorDrawable(Android.Graphics.Color.Transparent));
-                
+
                 _isInitialized = true;
             }
-            
+        }
+
+        public void ShowLoadingPage()
+        {
+            // check if the user has set the page or not
+            if (!_isInitialized)
+                InitLoadingPage(new LoadingIndicatorPage1()); // set the default page
+
+            // showing the native loading page
             _dialog.Show();
         }
 
