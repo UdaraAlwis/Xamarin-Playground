@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace XFLoadingPageService
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoadingIndicatorPage : ContentPage
+    public partial class LoadingIndicatorPage2 : ContentPage
     {
-        public LoadingIndicatorPage()
+        public LoadingIndicatorPage2()
         {
             InitializeComponent();
         }

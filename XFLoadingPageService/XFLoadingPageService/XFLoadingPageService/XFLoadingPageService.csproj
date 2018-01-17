@@ -39,8 +39,11 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="ILodingPageService.cs" />
-    <Compile Include="LoadingIndicatorPage.xaml.cs">
-      <DependentUpon>LoadingIndicatorPage.xaml</DependentUpon>
+    <Compile Include="LoadingIndicatorPage1.xaml.cs">
+      <DependentUpon>LoadingIndicatorPage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingIndicatorPage2.xaml.cs">
+      <DependentUpon>LoadingIndicatorPage2.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -79,7 +82,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LoadingIndicatorPage.xaml">
+    <EmbeddedResource Include="LoadingIndicatorPage1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LoadingIndicatorPage2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

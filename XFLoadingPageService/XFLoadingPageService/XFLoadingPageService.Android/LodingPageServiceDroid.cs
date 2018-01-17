@@ -24,32 +24,32 @@ namespace XFLoadingPageService.Droid
     {
         private Android.Views.View _nativeView;
 
-        private Dialog dialog;
+        private Dialog _dialog;
 
         private bool _isInitialized;
 
-        public void ShowLoadingPage()
+        public void ShowLoadingPage(ContentPage loadingIndicatorPage)
         {
+            if (!_isInitialized && loadingIndicatorPage == null)
+                loadingIndicatorPage = new LoadingIndicatorPage1();
 
-            if (!_isInitialized)
+            if (!_isInitialized || loadingIndicatorPage != null)
             {
-                var loadingPageView = new LoadingIndicatorPage();
+                loadingIndicatorPage.Parent = Xamarin.Forms.Application.Current.MainPage;
 
-                loadingPageView.Parent = Xamarin.Forms.Application.Current.MainPage;
-
-                loadingPageView.Layout(new Rectangle(0, 0,
+                loadingIndicatorPage.Layout(new Rectangle(0, 0,
                     Xamarin.Forms.Application.Current.MainPage.Width,
                     Xamarin.Forms.Application.Current.MainPage.Height));
 
-                var renderer = loadingPageView.GetOrCreateRenderer();
+                var renderer = loadingIndicatorPage.GetOrCreateRenderer();
                 
                 _nativeView = renderer.View;
 
-                dialog = new Dialog(CrossCurrentActivity.Current.Activity);
-                dialog.RequestWindowFeature((int)WindowFeatures.NoTitle);
-                dialog.SetCancelable(false);
-                dialog.SetContentView(_nativeView);
-                Window window = dialog.Window;
+                _dialog = new Dialog(CrossCurrentActivity.Current.Activity);
+                _dialog.RequestWindowFeature((int)WindowFeatures.NoTitle);
+                _dialog.SetCancelable(false);
+                _dialog.SetContentView(_nativeView);
+                Window window = _dialog.Window;
                 window.SetLayout(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent);
                 window.ClearFlags(WindowManagerFlags.DimBehind);
                 window.SetBackgroundDrawable(new ColorDrawable(Android.Graphics.Color.Transparent));
@@ -57,7 +57,7 @@ namespace XFLoadingPageService.Droid
                 _isInitialized = true;
             }
             
-            dialog.Show();
+            _dialog.Show();
         }
 
         private void XamFormsPage_Appearing(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace XFLoadingPageService.Droid
 
         public void HideLoadingPage()
         {
-            dialog.Hide();
+            _dialog.Hide();
         }
     }
 

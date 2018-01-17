@@ -18,19 +18,17 @@ namespace XFLoadingPageService.iOS
 
         private bool _isInitialized;
         
-        public void ShowLoadingPage()
+        public void ShowLoadingPage(ContentPage loadingIndicatorPage)
         {
-            if (!_isInitialized)
+            if (!_isInitialized || loadingIndicatorPage != null)
             {
-                var loadingPageView = new LoadingIndicatorPage();
+                loadingIndicatorPage.Parent = Xamarin.Forms.Application.Current.MainPage;
 
-                loadingPageView.Parent = Xamarin.Forms.Application.Current.MainPage;
-
-                loadingPageView.Layout(new Rectangle(0, 0,
+                loadingIndicatorPage.Layout(new Rectangle(0, 0,
                     Xamarin.Forms.Application.Current.MainPage.Width,
                     Xamarin.Forms.Application.Current.MainPage.Height));
 
-                var renderer = loadingPageView.GetOrCreateRenderer();
+                var renderer = loadingIndicatorPage.GetOrCreateRenderer();
 
                 _nativeView = renderer.NativeView;
 

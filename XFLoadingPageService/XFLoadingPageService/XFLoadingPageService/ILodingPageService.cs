@@ -7,7 +7,7 @@ namespace XFLoadingPageService
 {
     public interface ILodingPageService
     {
-        void ShowLoadingPage();
+        void ShowLoadingPage(ContentPage loadingIndicatorPage = null);
 
         void HideLoadingPage();
     }
