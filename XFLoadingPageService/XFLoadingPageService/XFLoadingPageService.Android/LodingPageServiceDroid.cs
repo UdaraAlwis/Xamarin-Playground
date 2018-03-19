@@ -78,6 +78,7 @@ namespace XFLoadingPageService.Droid
 
         public void HideLoadingPage()
         {
+            // Hide the page
             _dialog.Hide();
         }
     }

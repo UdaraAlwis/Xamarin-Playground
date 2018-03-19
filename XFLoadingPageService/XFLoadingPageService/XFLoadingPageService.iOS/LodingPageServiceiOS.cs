@@ -59,6 +59,7 @@ namespace XFLoadingPageService.iOS
 
         public void HideLoadingPage()
         {
+            // Hide the page
             _nativeView.RemoveFromSuperview();
         }
     }

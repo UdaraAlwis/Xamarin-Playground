@@ -22,16 +22,10 @@ namespace XFAwesomeSpinnerView.Droid
 {
     public class SpinnerService : ISpinnerService
     {
-        private Android.Views.View nativeView;
-
         private Dialog dialog;
-
-        private bool isInitialized;
-
+        
         public void OpenSpinner()
         {
-            if (!isInitialized)
-            {
                 var xamFormsPage = new ContentPage()
                 {
                     BackgroundColor = new Color(0, 0, 0, 0.5),
@@ -39,51 +33,62 @@ namespace XFAwesomeSpinnerView.Droid
                         new StackLayout()
                         {
                             Padding = 30,
+                            Spacing = 20,
+                            WidthRequest = 250,
                             BackgroundColor = Color.Black,
                             Children =
                             {
-                                new Xamarin.Forms.ActivityIndicator()
+                                new Xamarin.Forms.Label()
                                 {
-                                    IsRunning = true,
-                                    Color = Color.White,
+                                    Text = "Welcome to my own Transparent Page!",
+                                    FontAttributes = FontAttributes.Bold,
+                                    TextColor = Color.White,
+                                    FontSize = 20,
                                 },
                                 new Xamarin.Forms.Label()
                                 {
-                                    Text = "Loading...",
-                                    FontAttributes = FontAttributes.Bold,
+                                    Text = "This is from Xamarin.Forms with a bit mix of simple native magic!",
                                     TextColor = Color.White,
+                                    FontSize = 17,
                                 },
+                                new Xamarin.Forms.Button()
+                                {
+                                    Text = "Close me!",
+                                    BackgroundColor = Color.Gray,
+                                    TextColor = Color.White,
+                                }
                             },
                             VerticalOptions = LayoutOptions.Center,
                             HorizontalOptions = LayoutOptions.Center,
                         }
                 };
                 
+                // Assign the Parent hook for our page instance 
                 xamFormsPage.Parent = Xamarin.Forms.Application.Current.MainPage;
 
+                // Run the Layout Rendering Cycle for the page
                 xamFormsPage.Layout(new Rectangle(0, 0,
                     Xamarin.Forms.Application.Current.MainPage.Width,
                     Xamarin.Forms.Application.Current.MainPage.Height));
 
-                var renderer = xamFormsPage.GetOrCreateRenderer();
+                // Get the native renderered instance for our page
+                var nativePageRendererInstance = xamFormsPage.GetOrCreateRenderer();
 
-                nativeView = renderer.View;
+                // Get the native page for our page
+                Android.Views.View nativePageView = nativePageRendererInstance.View;
                 
+                // Create the native transparent Dialog instance to embedd our page
                 dialog = new Dialog(CrossCurrentActivity.Current.Activity);
                 dialog.RequestWindowFeature((int)WindowFeatures.NoTitle);
                 dialog.SetCancelable(false);
-                dialog.SetContentView(nativeView);
+                dialog.SetContentView(nativePageView);
                 Window window = dialog.Window;
                 window.SetLayout(ViewGroup.LayoutParams.MatchParent, ViewGroup.LayoutParams.MatchParent);
                 window.ClearFlags(WindowManagerFlags.DimBehind);
                 window.SetBackgroundDrawable(new ColorDrawable(Android.Graphics.Color.Transparent));
 
-                xamFormsPage.Appearing += XamFormsPage_Appearing;
-
-                isInitialized = true;
-            }
-            
-            dialog.Show();
+                // show the page
+                dialog.Show();
         }
 
         private void XamFormsPage_Appearing(object sender, EventArgs e)

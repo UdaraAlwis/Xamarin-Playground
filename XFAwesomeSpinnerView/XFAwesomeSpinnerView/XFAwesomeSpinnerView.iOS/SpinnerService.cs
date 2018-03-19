@@ -23,8 +23,6 @@ namespace XFAwesomeSpinnerView.iOS
 
         public void OpenSpinner()
         {
-            if (!isInitialized)
-            {
                 var xamFormsPage = new ContentPage()
                 {
                     BackgroundColor = new Color(0, 0, 0, 0.5),
@@ -32,42 +30,52 @@ namespace XFAwesomeSpinnerView.iOS
                         new StackLayout()
                         {
                             Padding = 30,
+                            Spacing = 20,
+                            WidthRequest = 250,
                             BackgroundColor = Color.Black,
                             Children =
                             {
-                                new Xamarin.Forms.ActivityIndicator()
+                                new Xamarin.Forms.Label()
                                 {
-                                    IsRunning = true,
-                                    Color = Color.White,
+                                    Text = "Welcome to my own Transparent Page!",
+                                    FontAttributes = FontAttributes.Bold,
+                                    TextColor = Color.White,
+                                    FontSize = 20,
                                 },
                                 new Xamarin.Forms.Label()
                                 {
-                                    Text = "Loading...",
-                                    FontAttributes = FontAttributes.Bold,
+                                    Text = "This is from Xamarin.Forms with a bit mix of simple native magic!",
                                     TextColor = Color.White,
+                                    FontSize = 17,
                                 },
+                                new Xamarin.Forms.Button()
+                                {
+                                    Text = "Close me!",
+                                    BackgroundColor = Color.Gray,
+                                    TextColor = Color.White,
+                                }
                             },
                             VerticalOptions = LayoutOptions.Center,
                             HorizontalOptions = LayoutOptions.Center,
                         }
                 };
 
+                // Assign the Parent hook for our page instance 
                 xamFormsPage.Parent = Xamarin.Forms.Application.Current.MainPage;
 
+                // Run the Layout Rendering Cycle for the page
                 xamFormsPage.Layout(new Rectangle(0, 0,
                     Xamarin.Forms.Application.Current.MainPage.Width,
                     Xamarin.Forms.Application.Current.MainPage.Height));
 
-                var renderer = xamFormsPage.GetOrCreateRenderer();
+                // Get the native renderered instance for our page
+                var nativePageRendererInstance = xamFormsPage.GetOrCreateRenderer();
 
-                nativeView = renderer.NativeView;
+                // Get the native page for our page
+                UIView nativePageView = nativePageRendererInstance.NativeView;
 
-                xamFormsPage.Appearing += XamFormsPage_Appearing;
-
-                isInitialized = true;
-            }
-
-            UIApplication.SharedApplication.KeyWindow.AddSubview(nativeView);
+                // Show the page by pushing to the stack
+                UIApplication.SharedApplication.KeyWindow.AddSubview(nativePageView);
         }
 
         private void XamFormsPage_Appearing(object sender, EventArgs e)

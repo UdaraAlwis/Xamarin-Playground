@@ -20,7 +20,7 @@ namespace XFAwesomeSpinnerView
 	    {
 	        DependencyService.Get<ISpinnerService>().OpenSpinner();
 
-	        Navigation.PushAsync(new Page1());
+	        //Navigation.PushAsync(new Page1());
 	    }
 	}
 }
