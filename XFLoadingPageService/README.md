@@ -12,3 +12,7 @@ https://theconfuzedsourcecode.wordpress.com/
 <br />
 
 <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/android preview 1.gif"  width="210" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/android preview 2.gif"  width="210" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/android preview 3.gif"  width="210" />
+
+-That's our first Loading screen in action...
+-And click on the second button, there's our second Loading screen in action, on the go...
+-Look at that, even during navigation between pages our Loading page stays intact on top of the Xamarin.Forms Pages stack. ;)
