@@ -7,8 +7,8 @@ Then you stopped at the right place.
 
 https://theconfuzedsourcecode.wordpress.com/
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/ios preview 1.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/ios preview 2.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/ios preview 3.gif"  height="350" />
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/ios preview 1.gif"  width="210" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/ios preview 2.gif"  width="210" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/ios preview 3.gif"  width="210" />
 
 <br />
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/android preview 1.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/android preview 2.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/android preview 3.gif"  height="350" />
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/android preview 1.gif"  width="210" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/android preview 2.gif"  width="210" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/android preview 3.gif"  width="210" />
