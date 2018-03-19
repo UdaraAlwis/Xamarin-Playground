@@ -5,7 +5,13 @@ Have you ever wanted to have an Activity or Loading indicator dialog screen over
 
 Then you stopped at the right place.
 
-https://theconfuzedsourcecode.wordpress.com/
+https://theconfuzedsourcecode.wordpress.com/2018/03/19/build-yo-own-awesome-activity-loading-indicator-page-for-xamarin-forms/
+
+>Fully customizable View on the go from Xamarin.Forms
+>Overlays on top of your ContentPage / Navigation Stack
+>Service based, full MVVM & testing friendly
+>Fully transparent and controllable dimmer
+>Cancellation & back button disabled
 
 <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/ios preview 1.gif"  width="210" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/ios preview 2.gif"  width="210" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFLoadingPageService/screenshots/ios preview 3.gif"  width="210" />
 
