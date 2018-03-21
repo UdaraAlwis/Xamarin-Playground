@@ -18,7 +18,7 @@ namespace XFAnimatingDotsControl
             InitializeComponent();
         }
 
-        private bool animationStarted;
+        private bool _animationStarted;
         
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -26,10 +26,10 @@ namespace XFAnimatingDotsControl
 
             if (propertyName == "Renderer")
             {
-                if (!animationStarted)
+                if (!_animationStarted)
                 {
                     // start the animation on element rendering
-                    animationStarted = true;
+                    _animationStarted = true;
 
                     RunAnimations();
                 }

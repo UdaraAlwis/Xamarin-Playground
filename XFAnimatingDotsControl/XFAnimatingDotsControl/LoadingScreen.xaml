@@ -20,6 +20,7 @@
                 HorizontalTextAlignment="Center"
                 Text="Loading"
                 TextColor="White" />
+            <!--  Embedding our Animating Dots Control  -->
             <xfAnimatingDotsControl:AnimatingDotsControl HorizontalOptions="Center" />
         </StackLayout>
     </Frame>
