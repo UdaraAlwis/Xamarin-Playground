@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MultiSelectListViewControl.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MultiSelectListViewControl"
+    Padding="20">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:SelectedItemColorConverter x:Key="SelectedItemColorConv" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+
+        <Label Text="Welcome to Xamarin.Forms!" />
+
+        <local:MultiSelectListView x:Name="multiSelectListView" ItemsSource="{Binding Data}">
+            <local:MultiSelectListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Name}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </local:MultiSelectListView.ItemTemplate>
+        </local:MultiSelectListView>
+
+    </StackLayout>
+
+</ContentPage>
+

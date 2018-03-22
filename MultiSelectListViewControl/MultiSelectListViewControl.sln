@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSelectListViewControl.Android", "MultiSelectListViewControl\MultiSelectListViewControl.Android\MultiSelectListViewControl.Android.csproj", "{772ED202-06D2-437C-968C-DA2BC8B4C129}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSelectListViewControl.Android", "MultiSelectListViewControl.Android\MultiSelectListViewControl.Android.csproj", "{772ED202-06D2-437C-968C-DA2BC8B4C129}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSelectListViewControl.iOS", "MultiSelectListViewControl\MultiSelectListViewControl.iOS\MultiSelectListViewControl.iOS.csproj", "{8E753F71-75ED-44B2-82D2-B4966F6D0724}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSelectListViewControl.iOS", "MultiSelectListViewControl.iOS\MultiSelectListViewControl.iOS.csproj", "{8E753F71-75ED-44B2-82D2-B4966F6D0724}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSelectListViewControl.UWP", "MultiSelectListViewControl\MultiSelectListViewControl.UWP\MultiSelectListViewControl.UWP.csproj", "{55B9E27C-3DF1-47C8-932E-B79FD2E0321C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSelectListViewControl.UWP", "MultiSelectListViewControl.UWP\MultiSelectListViewControl.UWP.csproj", "{55B9E27C-3DF1-47C8-932E-B79FD2E0321C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSelectListViewControl", "MultiSelectListViewControl\MultiSelectListViewControl\MultiSelectListViewControl.csproj", "{F962EAD5-68B8-4A83-8E75-7DB1B72F8913}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiSelectListViewControl", "MultiSelectListViewControl\MultiSelectListViewControl.csproj", "{F962EAD5-68B8-4A83-8E75-7DB1B72F8913}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
