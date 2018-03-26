@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage
-    x:Class="AdvPrismTabNavigation.Views.TabbedPage1"
+    x:Class="AdvPrismTabNavigation.Views.MyTabbedPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AdvPrismTabNavigation.Views;assembly=AdvPrismTabNavigation"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="True">
     <TabbedPage.Children>
-        <local:ChildPage1 />
+        <local:Child1Page />
+        <local:Child2Page />
+        <local:Child3Page />
     </TabbedPage.Children>
 </TabbedPage>

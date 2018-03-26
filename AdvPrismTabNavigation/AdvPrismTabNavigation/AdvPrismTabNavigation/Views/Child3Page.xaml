@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="AdvPrismTabNavigation.Views.MainPage"
+    x:Class="AdvPrismTabNavigation.Views.Child3Page"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="{Binding Title}">
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    Title="{Binding Title}"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="Green">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="Welcome to Xamarin Forms and Prism!" />
-        <Button Command="{Binding GoToTabPageCommand}" Text="Go to Tab page" />
+        <Button Command="{Binding GoToXPageCommand}" Text="Go to X page" />
     </StackLayout>
 
 </ContentPage>

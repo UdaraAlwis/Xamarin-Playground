@@ -10,16 +10,34 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\ChildPage1.xaml">
+    <Compile Update="Views\Child1Page.xaml.cs">
+      <DependentUpon>Child1Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Child2Page.xaml.cs">
+      <DependentUpon>Child2Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Child3Page.xaml.cs">
+      <DependentUpon>Child3Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MyTabbedPage.xaml.cs">
+      <DependentUpon>MyTabbedPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Child1Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ChildPage2.xaml">
+    <EmbeddedResource Update="Views\Child2Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ChildPage3.xaml">
+    <EmbeddedResource Update="Views\Child3Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\TabbedPage1.xaml">
+    <EmbeddedResource Update="Views\MyTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\XPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

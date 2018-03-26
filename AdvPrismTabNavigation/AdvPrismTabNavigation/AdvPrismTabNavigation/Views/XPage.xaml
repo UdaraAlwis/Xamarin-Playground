@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AdvPrismTabNavigation.Views.XPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:mvvm="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    mvvm:ViewModelLocator.AutowireViewModel="True">
+    <ContentPage.Content>
+
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="Welcome to Xamarin Forms and Prism!" />
+            <Button Command="{Binding ProgramaticallyGoBackCommand}" Text="Go back to Tab page" />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

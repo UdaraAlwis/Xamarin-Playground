@@ -31,10 +31,11 @@ namespace AdvPrismTabNavigation
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
-            containerRegistry.RegisterForNavigation<TabbedPage1>();
-            containerRegistry.RegisterForNavigation<ChildPage1>();
-            containerRegistry.RegisterForNavigation<ChildPage2>();
-            containerRegistry.RegisterForNavigation<ChildPage3>();
+            containerRegistry.RegisterForNavigation<MyTabbedPage>();
+            containerRegistry.RegisterForNavigation<Child1Page>();
+            containerRegistry.RegisterForNavigation<Child2Page>();
+            containerRegistry.RegisterForNavigation<Child3Page>();
+            containerRegistry.RegisterForNavigation<XPage>();
         }
     }
 }

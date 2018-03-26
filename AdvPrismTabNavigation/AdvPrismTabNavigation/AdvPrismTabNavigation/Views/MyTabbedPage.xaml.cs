@@ -2,9 +2,9 @@
 
 namespace AdvPrismTabNavigation.Views
 {
-    public partial class ChildPage1 : ContentPage
+    public partial class MyTabbedPage : TabbedPage
     {
-        public ChildPage1()
+        public MyTabbedPage()
         {
             InitializeComponent();
         }

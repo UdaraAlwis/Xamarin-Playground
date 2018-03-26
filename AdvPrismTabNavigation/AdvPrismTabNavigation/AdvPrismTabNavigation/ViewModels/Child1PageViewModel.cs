@@ -1,18 +1,18 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
-using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Prism.Navigation;
 
 namespace AdvPrismTabNavigation.ViewModels
 {
-	public class TabbedPage1ViewModel : ViewModelBase
-    {
-        public TabbedPage1ViewModel(INavigationService navigationService)
+	public class Child1PageViewModel : ViewModelBase
+	{
+        public Child1PageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-
+            Title = "Child 1";
         }
-	}
+    }
 }

@@ -13,7 +13,7 @@ namespace AdvPrismTabNavigation.ViewModels
     {
         private readonly INavigationService _navigationService;
 
-        DelegateCommand GoToTabPageCommand;
+        public DelegateCommand GoToTabPageCommand { get; set; }
 
         public MainPageViewModel(INavigationService navigationService) 
             : base (navigationService)
@@ -27,7 +27,7 @@ namespace AdvPrismTabNavigation.ViewModels
 
         private async void GoToTabPage()
         {
-            await _navigationService.NavigateAsync(nameof(TabbedPage1));
+            await _navigationService.NavigateAsync($"{nameof(MyTabbedPage)}?selectedTab=Child3Page");
         }
     }
 }
