@@ -5,6 +5,7 @@ using AdvPrismTabNavigation.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Prism.Unity;
+using AdvPrismTabNavigation.Interfaces;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace AdvPrismTabNavigation
@@ -35,7 +36,9 @@ namespace AdvPrismTabNavigation
             containerRegistry.RegisterForNavigation<TabChild1Page>();
             containerRegistry.RegisterForNavigation<TabChild2Page>();
             containerRegistry.RegisterForNavigation<TabChild3Page>();
-            containerRegistry.RegisterForNavigation<ExtraPage>();
+            containerRegistry.RegisterForNavigation<DetailPage>();
+
+            containerRegistry.Register<IMyTabbedPageSelectedTab, MyTabbedPage>();
         }
     }
 }

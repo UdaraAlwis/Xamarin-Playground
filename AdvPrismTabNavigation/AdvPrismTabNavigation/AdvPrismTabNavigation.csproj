@@ -25,8 +25,8 @@
     <Compile Update="Views\MyTabbedPage.xaml.cs">
       <DependentUpon>MyTabbedPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\ExtraPage.xaml.cs">
-      <DependentUpon>ExtraPage.xaml</DependentUpon>
+    <Compile Update="Views\DetailPage.xaml.cs">
+      <DependentUpon>DetailPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -43,7 +43,7 @@
     <EmbeddedResource Update="Views\MyTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\ExtraPage.xaml">
+    <EmbeddedResource Update="Views\DetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

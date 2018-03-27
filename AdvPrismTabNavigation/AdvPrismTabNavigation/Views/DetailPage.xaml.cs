@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace AdvPrismTabNavigation.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ExtraPage : ContentPage
+	public partial class DetailPage : ContentPage
 	{
-		public ExtraPage()
+		public DetailPage()
 		{
 			InitializeComponent ();
 		}

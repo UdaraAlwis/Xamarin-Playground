@@ -7,9 +7,9 @@ using Prism.Navigation;
 
 namespace AdvPrismTabNavigation.ViewModels
 {
-	public class TabTabChild2PageViewModel : ViewModelBase
+	public class TabChild2PageViewModel : ViewModelBase
 	{
-	    public TabTabChild2PageViewModel(INavigationService navigationService)
+	    public TabChild2PageViewModel(INavigationService navigationService)
 	        : base(navigationService)
         {
             Title = "Tab Child 2";

@@ -4,31 +4,35 @@ using System.Collections.Generic;
 using System.Text;
 using AdvPrismTabNavigation.Views;
 using Prism.Commands;
+using Prism;
+using Prism.Services;
+using AdvPrismTabNavigation.Interfaces;
 
 namespace AdvPrismTabNavigation.ViewModels
 {
-    public class ExtraPageViewModel : ViewModelBase
+    public class DetailPageViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
+        private readonly IDependencyService _dependencyService;
 
         public DelegateCommand ProgramaticallyGoBackCommand { get; set; }
 
-        public ExtraPageViewModel(INavigationService navigationService)
+        public DetailPageViewModel(INavigationService navigationService, IDependencyService dependencyService)
             : base(navigationService)
         {
             this._navigationService = navigationService;
+            this._dependencyService = dependencyService;
+
+            Title = "Detail Page";
 
             ProgramaticallyGoBackCommand = new DelegateCommand(ProgramaticallyGoBack);
         }
 
         private void ProgramaticallyGoBack()
         {
-            NavigationParameters navigationParameters = new NavigationParameters()
-            {
-                {"selectedTab", nameof(TabChild1Page)},
-            };
+            var result = _dependencyService.Get<IMyTabbedPageSelectedTab>();
 
-            _navigationService.GoBackAsync(navigationParameters);
+            _navigationService.GoBackAsync();
         }
 
         public override void OnNavigatedFrom(NavigationParameters parameters)

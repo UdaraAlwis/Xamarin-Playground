@@ -8,24 +8,24 @@ using Prism.Navigation;
 
 namespace AdvPrismTabNavigation.ViewModels
 {
-	public class TabTabChild3PageViewModel : ViewModelBase
+	public class TabChild3PageViewModel : ViewModelBase
 	{
 	    private readonly INavigationService _navigationService;
 
-	    public DelegateCommand GoToExtraPageCommand { get; set; }
+	    public DelegateCommand GoToDetailPageCommand { get; set; }
 
-        public TabTabChild3PageViewModel(INavigationService navigationService)
+        public TabChild3PageViewModel(INavigationService navigationService)
 	        : base(navigationService)
         {
             _navigationService = navigationService;
             Title = "Tab Child 3";
 
-            GoToExtraPageCommand = new DelegateCommand(GoToExtraPage);
+            GoToDetailPageCommand = new DelegateCommand(GoToDetailPage);
         }
 
-	    private async void GoToExtraPage()
+	    private async void GoToDetailPage()
 	    {
-	        await _navigationService.NavigateAsync(nameof(ExtraPage));
+	        await _navigationService.NavigateAsync(nameof(DetailPage));
 	    }
     }
 }

@@ -12,7 +12,7 @@ namespace AdvPrismTabNavigation.ViewModels
         public MyTabbedPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-
+            Title = "My Tabbed Page";
         }
 
         public override void OnNavigatedTo(NavigationParameters parameters)
