@@ -29,7 +29,7 @@ namespace AdvPrismTabNavigation.ViewModels
             this._navigationService = navigationService;
             this._unityContainer = unityContainer;
 
-            _myTabbedPageSelectedTab = unityContainer.Resolve<IMyTabbedPageSelectedTab>();
+            this._myTabbedPageSelectedTab = unityContainer.Resolve<IMyTabbedPageSelectedTab>();
 
             Title = "Detail Page";
 

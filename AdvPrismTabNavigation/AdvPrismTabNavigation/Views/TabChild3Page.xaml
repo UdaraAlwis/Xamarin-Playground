@@ -11,6 +11,10 @@
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="Welcome to Xamarin Forms and Prism!" />
         <Button Command="{Binding GoToDetailPageCommand}" Text="Go to detail page" />
+        <Button
+            Command="{Binding GoToNextTabChildCommand}"
+            CommandParameter="0"
+            Text="Go to next tab" />
     </StackLayout>
 
 </ContentPage>

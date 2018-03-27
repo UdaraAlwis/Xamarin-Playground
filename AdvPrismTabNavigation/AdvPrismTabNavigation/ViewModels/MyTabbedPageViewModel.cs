@@ -14,25 +14,5 @@ namespace AdvPrismTabNavigation.ViewModels
         {
             Title = "My Tabbed Page";
         }
-
-        public override void OnNavigatedTo(NavigationParameters parameters)
-        {
-            base.OnNavigatedTo(parameters);
-
-            if (parameters.ContainsKey("selectedTab"))
-            {
-                
-            }
-        }
-
-        public override void OnNavigatedFrom(NavigationParameters parameters)
-        {
-            base.OnNavigatedFrom(parameters);
-        }
-
-        public override void OnNavigatingTo(NavigationParameters parameters)
-        {
-            base.OnNavigatingTo(parameters);
-        }
     }
 }

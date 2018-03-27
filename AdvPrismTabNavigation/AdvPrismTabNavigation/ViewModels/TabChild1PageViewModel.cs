@@ -1,14 +1,10 @@
 ﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Prism.Navigation;
 using AdvPrismTabNavigation.Views;
 
 namespace AdvPrismTabNavigation.ViewModels
 {
-	public class TabChild1PageViewModel : ViewModelBase
+    public class TabChild1PageViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
 
@@ -17,7 +13,7 @@ namespace AdvPrismTabNavigation.ViewModels
         public TabChild1PageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            _navigationService = navigationService;
+            this._navigationService = navigationService;
 
             Title = "Tab Child 1";
             
