@@ -7,47 +7,55 @@ using Prism.Commands;
 using Prism;
 using Prism.Services;
 using AdvPrismTabNavigation.Interfaces;
+using Unity;
 
 namespace AdvPrismTabNavigation.ViewModels
 {
     public class DetailPageViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
-        private readonly IDependencyService _dependencyService;
+        private readonly IUnityContainer _unityContainer;
+        private readonly IMyTabbedPageSelectedTab _myTabbedPageSelectedTab;
 
-        public DelegateCommand ProgramaticallyGoBackCommand { get; set; }
+        public DelegateCommand GoBackToTabChild1PageCommand { get; set; }
 
-        public DetailPageViewModel(INavigationService navigationService, IDependencyService dependencyService)
+        public DelegateCommand GoBackToTabChild2PageCommand { get; set; }
+
+        public DelegateCommand GoBackToTabChild3PageCommand { get; set; }
+
+        public DetailPageViewModel(INavigationService navigationService, IUnityContainer unityContainer)
             : base(navigationService)
         {
             this._navigationService = navigationService;
-            this._dependencyService = dependencyService;
+            this._unityContainer = unityContainer;
+
+            _myTabbedPageSelectedTab = unityContainer.Resolve<IMyTabbedPageSelectedTab>();
 
             Title = "Detail Page";
 
-            ProgramaticallyGoBackCommand = new DelegateCommand(ProgramaticallyGoBack);
+            GoBackToTabChild1PageCommand = new DelegateCommand(GoBackToTabChild1Page);
+
+            GoBackToTabChild2PageCommand = new DelegateCommand(GoBackToTabChild2Page);
+
+            GoBackToTabChild3PageCommand = new DelegateCommand(GoBackToTabChild3Page);
         }
 
-        private void ProgramaticallyGoBack()
+        private void GoBackToTabChild1Page()
         {
-            var result = _dependencyService.Get<IMyTabbedPageSelectedTab>();
-
+            _myTabbedPageSelectedTab.SetSelectedTab(0);
             _navigationService.GoBackAsync();
         }
 
-        public override void OnNavigatedFrom(NavigationParameters parameters)
+        private void GoBackToTabChild2Page()
         {
-            base.OnNavigatedFrom(parameters);
+            _myTabbedPageSelectedTab.SetSelectedTab(1);
+            _navigationService.GoBackAsync();
         }
 
-        public override void OnNavigatingTo(NavigationParameters parameters)
+        private void GoBackToTabChild3Page()
         {
-            base.OnNavigatingTo(parameters);
-        }
-
-        public override void OnNavigatedTo(NavigationParameters parameters)
-        {
-            base.OnNavigatedTo(parameters);
+            _myTabbedPageSelectedTab.SetSelectedTab(2);
+            _navigationService.GoBackAsync();
         }
     }
 }

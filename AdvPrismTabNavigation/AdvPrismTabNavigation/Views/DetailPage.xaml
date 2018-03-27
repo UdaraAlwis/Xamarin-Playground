@@ -10,7 +10,11 @@
 
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <Label Text="Welcome to Xamarin Forms and Prism!" />
-            <Button Command="{Binding ProgramaticallyGoBackCommand}" Text="Go back to Tab page" />
+            <Button Command="{Binding GoBackToTabChild1PageCommand}" Text="Go back to Tab Child 1 page" />
+
+            <Button Command="{Binding GoBackToTabChild2PageCommand}" Text="Go back to Tab Child 2 page" />
+
+            <Button Command="{Binding GoBackToTabChild3PageCommand}" Text="Go back to Tab Child 3 page" />
         </StackLayout>
 
     </ContentPage.Content>

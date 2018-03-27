@@ -18,6 +18,7 @@ namespace AdvPrismTabNavigation.ViewModels
 	        : base(navigationService)
         {
             _navigationService = navigationService;
+
             Title = "Tab Child 3";
 
             GoToDetailPageCommand = new DelegateCommand(GoToDetailPage);

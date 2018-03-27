@@ -6,4 +6,11 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
-    BackgroundColor="Red" />
+    BackgroundColor="Red">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <Button Command="{Binding GoToDetailPageCommand}" Text="Go to detail page" />
+    </StackLayout>
+
+</ContentPage>

@@ -37,8 +37,6 @@ namespace AdvPrismTabNavigation
             containerRegistry.RegisterForNavigation<TabChild2Page>();
             containerRegistry.RegisterForNavigation<TabChild3Page>();
             containerRegistry.RegisterForNavigation<DetailPage>();
-
-            containerRegistry.Register<IMyTabbedPageSelectedTab, MyTabbedPage>();
         }
     }
 }

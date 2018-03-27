@@ -27,7 +27,7 @@ namespace AdvPrismTabNavigation.ViewModels
 
         private async void GoToTabPage()
         {
-            await _navigationService.NavigateAsync($"{nameof(MyTabbedPage)}?selectedTab=TabChild3Page");
+            await _navigationService.NavigateAsync($"{nameof(MyTabbedPage)}");
         }
     }
 }
