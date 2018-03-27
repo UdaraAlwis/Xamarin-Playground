@@ -10,34 +10,40 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Child1Page.xaml.cs">
-      <DependentUpon>Child1Page.xaml</DependentUpon>
+    <Compile Update="Views\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Child2Page.xaml.cs">
-      <DependentUpon>Child2Page.xaml</DependentUpon>
+    <Compile Update="Views\TabChild1Page.xaml.cs">
+      <DependentUpon>TabChild1Page.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Child3Page.xaml.cs">
-      <DependentUpon>Child3Page.xaml</DependentUpon>
+    <Compile Update="Views\TabChild2Page.xaml.cs">
+      <DependentUpon>TabChild2Page.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TabChild3Page.xaml.cs">
+      <DependentUpon>TabChild3Page.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\MyTabbedPage.xaml.cs">
       <DependentUpon>MyTabbedPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ExtraPage.xaml.cs">
+      <DependentUpon>ExtraPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\Child1Page.xaml">
+    <EmbeddedResource Update="Views\TabChild1Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Child2Page.xaml">
+    <EmbeddedResource Update="Views\TabChild2Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Child3Page.xaml">
+    <EmbeddedResource Update="Views\TabChild3Page.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MyTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\XPage.xaml">
+    <EmbeddedResource Update="Views\ExtraPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

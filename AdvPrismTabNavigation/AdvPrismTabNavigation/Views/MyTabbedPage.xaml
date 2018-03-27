@@ -7,8 +7,8 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     prism:ViewModelLocator.AutowireViewModel="True">
     <TabbedPage.Children>
-        <local:Child1Page />
-        <local:Child2Page />
-        <local:Child3Page />
+        <local:TabChild1Page />
+        <local:TabChild2Page />
+        <local:TabChild3Page />
     </TabbedPage.Children>
 </TabbedPage>

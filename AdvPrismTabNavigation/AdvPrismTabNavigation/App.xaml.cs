@@ -24,18 +24,18 @@ namespace AdvPrismTabNavigation
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/HomePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<HomePage>();
             containerRegistry.RegisterForNavigation<MyTabbedPage>();
-            containerRegistry.RegisterForNavigation<Child1Page>();
-            containerRegistry.RegisterForNavigation<Child2Page>();
-            containerRegistry.RegisterForNavigation<Child3Page>();
-            containerRegistry.RegisterForNavigation<XPage>();
+            containerRegistry.RegisterForNavigation<TabChild1Page>();
+            containerRegistry.RegisterForNavigation<TabChild2Page>();
+            containerRegistry.RegisterForNavigation<TabChild3Page>();
+            containerRegistry.RegisterForNavigation<ExtraPage>();
         }
     }
 }

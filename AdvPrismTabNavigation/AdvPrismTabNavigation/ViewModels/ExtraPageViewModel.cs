@@ -7,13 +7,13 @@ using Prism.Commands;
 
 namespace AdvPrismTabNavigation.ViewModels
 {
-    public class XPageViewModel : ViewModelBase
+    public class ExtraPageViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
 
         public DelegateCommand ProgramaticallyGoBackCommand { get; set; }
 
-        public XPageViewModel(INavigationService navigationService)
+        public ExtraPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             this._navigationService = navigationService;
@@ -25,7 +25,7 @@ namespace AdvPrismTabNavigation.ViewModels
         {
             NavigationParameters navigationParameters = new NavigationParameters()
             {
-                {"selectedTab", nameof(Child1Page)},
+                {"selectedTab", nameof(TabChild1Page)},
             };
 
             _navigationService.GoBackAsync(navigationParameters);

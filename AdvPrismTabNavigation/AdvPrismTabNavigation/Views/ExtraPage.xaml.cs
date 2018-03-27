@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace AdvPrismTabNavigation.Views
 {
-	public partial class MainPage : ContentPage
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class ExtraPage : ContentPage
 	{
-		public MainPage ()
+		public ExtraPage()
 		{
 			InitializeComponent ();
 		}

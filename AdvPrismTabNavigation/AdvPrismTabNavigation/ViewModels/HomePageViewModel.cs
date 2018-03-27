@@ -9,13 +9,13 @@ using System.Text;
 
 namespace AdvPrismTabNavigation.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class HomePageViewModel : ViewModelBase
     {
         private readonly INavigationService _navigationService;
 
         public DelegateCommand GoToTabPageCommand { get; set; }
 
-        public MainPageViewModel(INavigationService navigationService) 
+        public HomePageViewModel(INavigationService navigationService) 
             : base (navigationService)
         {
             this._navigationService = navigationService;
@@ -27,7 +27,7 @@ namespace AdvPrismTabNavigation.ViewModels
 
         private async void GoToTabPage()
         {
-            await _navigationService.NavigateAsync($"{nameof(MyTabbedPage)}?selectedTab=Child3Page");
+            await _navigationService.NavigateAsync($"{nameof(MyTabbedPage)}?selectedTab=TabChild3Page");
         }
     }
 }

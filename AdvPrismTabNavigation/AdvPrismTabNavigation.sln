@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2011
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvPrismTabNavigation", "AdvPrismTabNavigation\AdvPrismTabNavigation\AdvPrismTabNavigation.csproj", "{3E4F1F20-E372-4899-8B99-767EE9DD5392}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvPrismTabNavigation", "AdvPrismTabNavigation\AdvPrismTabNavigation.csproj", "{3E4F1F20-E372-4899-8B99-767EE9DD5392}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvPrismTabNavigation.Android", "AdvPrismTabNavigation\AdvPrismTabNavigation.Android\AdvPrismTabNavigation.Android.csproj", "{D8BF71B4-994D-47BD-8371-FCA1BF5C30BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvPrismTabNavigation.Android", "AdvPrismTabNavigation.Android\AdvPrismTabNavigation.Android.csproj", "{D8BF71B4-994D-47BD-8371-FCA1BF5C30BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvPrismTabNavigation.iOS", "AdvPrismTabNavigation\AdvPrismTabNavigation.iOS\AdvPrismTabNavigation.iOS.csproj", "{B838F00D-A41D-47D8-8A38-B06AD57D6F38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvPrismTabNavigation.iOS", "AdvPrismTabNavigation.iOS\AdvPrismTabNavigation.iOS.csproj", "{B838F00D-A41D-47D8-8A38-B06AD57D6F38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvPrismTabNavigation.UWP", "AdvPrismTabNavigation\AdvPrismTabNavigation.UWP\AdvPrismTabNavigation.UWP.csproj", "{C78DE1D7-91AA-490C-A0FA-5A48F5363074}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvPrismTabNavigation.UWP", "AdvPrismTabNavigation.UWP\AdvPrismTabNavigation.UWP.csproj", "{C78DE1D7-91AA-490C-A0FA-5A48F5363074}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
