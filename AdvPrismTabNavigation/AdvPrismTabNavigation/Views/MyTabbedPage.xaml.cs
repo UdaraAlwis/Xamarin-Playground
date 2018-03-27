@@ -4,10 +4,11 @@ using Xamarin.Forms;
 using Prism.Unity;
 using System;
 using System.Runtime.CompilerServices;
+using Prism.Navigation;
 
 namespace AdvPrismTabNavigation.Views
 {
-    public partial class MyTabbedPage : TabbedPage, IMyTabbedPageSelectedTab
+    public partial class MyTabbedPage : TabbedPage, IMyTabbedPageSelectedTab, IDestructible
     {
         private readonly IUnityContainer _container;
         private int _selectedTab = 0;
@@ -52,6 +53,13 @@ namespace AdvPrismTabNavigation.Views
             {
                 this.CurrentPage = this.Children[_selectedTab];
             }
+        }
+
+        public void Destroy()
+        {
+            _isTabPageVisible = false;
+
+            this._container.RegisterInstance<IMyTabbedPageSelectedTab>(null);
         }
     }
 }
