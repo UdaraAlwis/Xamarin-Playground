@@ -32,40 +32,42 @@ namespace AdvPrismTabNavigation.xUnitTest
         }
 
         [Fact]
-        public void HomePageInit()
+        public void NavigatingWithinTabbedPage()
         {
             _appInstance = new TestApp();
 
-            //HomePage homePage = new HomePage();
-            //ViewModelLocator.SetAutowireViewModel(homePage, true);
+            var navigationStack = ((NavigationPage)_appInstance.MainPage).Navigation.NavigationStack;
 
-            //Assert.NotNull(homePage.BindingContext);
-            //Assert.IsType<HomePageViewModel>(homePage.BindingContext);
-            
             // Am I in the HomePage?
-            Assert.IsType<HomePage>(PageUtilities.GetCurrentPage(_appInstance.MainPage));
+            Assert.IsType<HomePageViewModel>(navigationStack.Last().BindingContext);
 
             // Let's go to Tabbed Page
-            var homePageViewModel = _appInstance.Container.Resolve<HomePageViewModel>();
-            homePageViewModel.GoToTabPageCommand.Execute();
-            _appInstance.Container.Resolve<MyTabbedPage>().SendAppearing();
+            _appInstance.Container.Resolve<HomePageViewModel>()
+                                        .GoToTabPageCommand.Execute();
+
+            //Resolving MyTabbedPage instance   
+            var myTabbedPage = (MyTabbedPage)_appInstance.Container.Resolve<MyTabbedPage>();
+            myTabbedPage.SendAppearing();
+
+            //  Am I inside the MyTabbedPage
+            Assert.IsType<MyTabbedPageViewModel>(navigationStack.Last().BindingContext);
 
             //  Am I in the MyTabbedPage-> TabChild1Page?
-            Assert.IsType<TabChild1Page>(PageUtilities.GetCurrentPage(_appInstance.MainPage));
+            Assert.IsType<TabChild1PageViewModel>(myTabbedPage.CurrentPage.BindingContext);
 
             //  Let's Tab-Navigate to TabChild2Page
-            _appInstance.Container.Resolve<TabChild1PageViewModel>().GoToNextTabCommand.Execute("1");
-
-            var resCurrentPage = _appInstance.Container.Resolve<MyTabbedPage>().CurrentPage;
-
-            ////  Am I in the MyTabbedPage-> TabChild2Page?
-            //Assert.IsType<TabChild2Page>(_appInstance.Container.Resolve<MyTabbedPage>().CurrentPage);
-
-            ////  Let's Tab-Navigate to TabChild3Page
-            //_appInstance.Container.Resolve<TabChild2PageViewModel>().GoToNextTabCommand.Execute("2");
+            ((TabChild1PageViewModel)(myTabbedPage.Children[0]).BindingContext)
+                        .GoToNextTabCommand.Execute("1");
 
             ////  Am I in the MyTabbedPage-> TabChild2Page?
-            //Assert.IsType<TabChild3Page>(_appInstance.Container.Resolve<MyTabbedPage>().CurrentPage);
+            Assert.IsType<TabChild2PageViewModel>(myTabbedPage.CurrentPage.BindingContext);
+
+            //  Let's Tab-Navigate to TabChild3Page
+            ((TabChild2PageViewModel)(myTabbedPage.Children[1]).BindingContext)
+                        .GoToNextTabCommand.Execute("2");
+
+            ////  Am I in the MyTabbedPage-> TabChild2Page?
+            Assert.IsType<TabChild3PageViewModel>(myTabbedPage.CurrentPage.BindingContext);
         }
     }
 }
