@@ -32,7 +32,7 @@ namespace AdvPrismTabNavigation.xUnitTest
         }
 
         [Fact]
-        public void NavigatingWithinTabbedPage()
+        public void NavigatingFromWithinTabbedPage()
         {
             _appInstance = new TestApp();
 
@@ -71,7 +71,7 @@ namespace AdvPrismTabNavigation.xUnitTest
         }
 
         [Fact]
-        public void NavigatingOutOfTabbedPage()
+        public void NavigatingFromOutsideTabbedPage()
         {
             _appInstance = new TestApp();
 
@@ -91,12 +91,28 @@ namespace AdvPrismTabNavigation.xUnitTest
             //  Am I in the MyTabbedPage-> TabChild1Page?
             Assert.IsType<TabChild1PageViewModel>(myTabbedPage.CurrentPage.BindingContext);
 
-            //  Let's Tab-Navigate to TabChild2Page
+            //  Let's go to DetailPage
             ((TabChild1PageViewModel)myTabbedPage.CurrentPage.BindingContext)
                         .GoToDetailPageCommand.Execute();
 
-            //  Am I inside the MyTabbedPage
+            //  Am I inside the DetailPage
             Assert.IsType<DetailPageViewModel>(navigationStack.Last().BindingContext);
+
+            // Let's go back to Tabbed Page -> TabChild1Page
+            _appInstance.Container.Resolve<DetailPageViewModel>()
+                                        .GoBackToTabChild3PageCommand.Execute();
+
+            //  Am I inside the MyTabbedPage
+            Assert.IsType<MyTabbedPageViewModel>(navigationStack.Last().BindingContext);
+
+            //  Am I in the MyTabbedPage-> TabChild1Page?
+            Assert.IsType<TabChild3PageViewModel>(myTabbedPage.CurrentPage.BindingContext);
+
+            //  Go back to the Homepage manually by user
+            _appInstance.Container.Resolve<INavigationService>().GoBackAsync();
+            
+            //  Am I inside the MyTabbedPage
+            Assert.IsType<HomePageViewModel>(navigationStack.Last().BindingContext);
         }
     }
 }

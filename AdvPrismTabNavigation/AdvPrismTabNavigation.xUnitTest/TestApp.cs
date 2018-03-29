@@ -30,7 +30,7 @@ namespace AdvPrismTabNavigation.xUnitTest
         {
             Xamarin.Forms.Mocks.MockForms.Init();
 
-            Container.GetContainer().RegisterInstance<INavigationService>(NavigationService);
+            Container.GetContainer().RegisterInstance<INavigationService>(NavigationService, new Unity.Lifetime.SingletonLifetimeManager());
 
             await NavigationService.NavigateAsync("NavigationPage/HomePage");
         }
@@ -44,13 +44,13 @@ namespace AdvPrismTabNavigation.xUnitTest
             containerRegistry.RegisterForNavigation<TabChild2Page>();
             containerRegistry.RegisterForNavigation<TabChild3Page>();
             containerRegistry.RegisterForNavigation<DetailPage>();
-            
-            containerRegistry.Register<HomePageViewModel>();
-            containerRegistry.Register<MyTabbedPageViewModel>();
-            containerRegistry.Register<TabChild1PageViewModel>();
-            containerRegistry.Register<TabChild2PageViewModel>();
-            containerRegistry.Register<TabChild3PageViewModel>();
-            containerRegistry.Register<DetailPageViewModel>();
+
+            containerRegistry.GetContainer().RegisterType<HomePageViewModel>(new Unity.Lifetime.ContainerControlledLifetimeManager());
+            containerRegistry.GetContainer().RegisterType<MyTabbedPageViewModel>(new Unity.Lifetime.ContainerControlledLifetimeManager());
+            containerRegistry.GetContainer().RegisterType<TabChild1PageViewModel>(new Unity.Lifetime.ContainerControlledLifetimeManager());
+            containerRegistry.GetContainer().RegisterType<TabChild2PageViewModel>(new Unity.Lifetime.ContainerControlledLifetimeManager());
+            containerRegistry.GetContainer().RegisterType<TabChild3PageViewModel>(new Unity.Lifetime.ContainerControlledLifetimeManager());
+            containerRegistry.GetContainer().RegisterType<DetailPageViewModel>(new Unity.Lifetime.ContainerControlledLifetimeManager());
         }
     }
 }
