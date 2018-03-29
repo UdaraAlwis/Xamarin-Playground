@@ -19,11 +19,23 @@
 
             <Label HorizontalTextAlignment="Center" Text="Which Tab child you want to go back to?" />
 
-            <Button Command="{Binding GoBackToTabChild1PageCommand}" Text="Go back to Tab Child 1 page" />
+            <Button
+                BackgroundColor="#2196F3"
+                Command="{Binding GoBackToTabChild1PageCommand}"
+                Text="Go back to Tab Child 1 page"
+                TextColor="White" />
 
-            <Button Command="{Binding GoBackToTabChild2PageCommand}" Text="Go back to Tab Child 2 page" />
+            <Button
+                BackgroundColor="#2196F3"
+                Command="{Binding GoBackToTabChild2PageCommand}"
+                Text="Go back to Tab Child 2 page"
+                TextColor="White" />
 
-            <Button Command="{Binding GoBackToTabChild3PageCommand}" Text="Go back to Tab Child 3 page" />
+            <Button
+                BackgroundColor="#2196F3"
+                Command="{Binding GoBackToTabChild3PageCommand}"
+                Text="Go back to Tab Child 3 page"
+                TextColor="White" />
         </StackLayout>
 
     </ContentPage.Content>

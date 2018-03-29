@@ -6,8 +6,12 @@
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     Title="{Binding Title}"
     prism:ViewModelLocator.AutowireViewModel="True"
-    BackgroundColor="White"
-    Icon="tab3icon.png">
+    BackgroundColor="White">
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource">
+            <On Platform="iOS" Value="tab3icon.png" />
+        </OnPlatform>
+    </ContentPage.Icon>
 
     <StackLayout
         Padding="20"

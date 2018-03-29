@@ -13,7 +13,7 @@ namespace AdvPrismTabNavigation.ViewModels
 
         public DelegateCommand GoToDetailPageCommand { get; set; }
 
-        public DelegateCommand<object> GoToNextTabCommand { get; set; }
+        public DelegateCommand<string> GoToNextTabCommand { get; set; }
 
         public TabChild1PageViewModel(INavigationService navigationService, IUnityContainer unityContainer)
             : base(navigationService)
@@ -25,7 +25,7 @@ namespace AdvPrismTabNavigation.ViewModels
             
             GoToDetailPageCommand = new DelegateCommand(GoToDetailPage);
 
-            GoToNextTabCommand = new DelegateCommand<object>((param) => GoToNextTab(int.Parse(param.ToString())));
+            GoToNextTabCommand = new DelegateCommand<string>((param) => GoToNextTab(int.Parse(param)));
         }
 
         private async void GoToDetailPage()
@@ -33,12 +33,9 @@ namespace AdvPrismTabNavigation.ViewModels
             await _navigationService.NavigateAsync(nameof(DetailPage));
         }
 
-        private void GoToNextTab(int? tabIndex)
+        private void GoToNextTab(int tabIndex)
         {
-            if (tabIndex !=null)
-            {
-                _unityContainer.Resolve<IMyTabbedPageSelectedTab>().SetSelectedTab(tabIndex.Value);
-            }
+            _unityContainer.Resolve<IMyTabbedPageSelectedTab>().SetSelectedTab(tabIndex);
         }
     }
 }
