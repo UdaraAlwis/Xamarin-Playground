@@ -5,30 +5,47 @@ using Prism.Unity;
 using System;
 using System.Runtime.CompilerServices;
 using Prism.Navigation;
+using Xamarin.Forms.Xaml;
 
 namespace AdvPrismTabNavigation.Views
 {
-    public partial class MyTabbedPage : TabbedPage, IMyTabbedPageSelectedTab, IDestructible
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MyTabbedPage : TabbedPage
     {
-        private readonly IUnityContainer _container;
-        private int _selectedTab = 0;
         private bool _isTabPageVisible;
 
-        public MyTabbedPage(IUnityContainer container)
+        public static readonly BindableProperty SelectedTabIndexProperty =
+            BindableProperty.Create(
+                nameof(SelectedTabIndex), 
+                typeof(int),
+                typeof(MyTabbedPage), 0,
+                BindingMode.TwoWay, null,
+                propertyChanged: OnSelectedTabIndexChanged);
+        static void OnSelectedTabIndexChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            InitializeComponent();
-
-            this._container = container;
-            this._container.RegisterInstance<IMyTabbedPageSelectedTab>(this);
+            if (((MyTabbedPage)bindable)._isTabPageVisible)
+            {
+                ((MyTabbedPage)bindable).CurrentPage = ((MyTabbedPage)bindable).Children[(int)newValue];
+            }
+        }
+        public int SelectedTabIndex
+        {
+            get { return (int)GetValue(SelectedTabIndexProperty); }
+            set { SetValue(SelectedTabIndexProperty, value); }
         }
 
+        public MyTabbedPage()
+        {
+            InitializeComponent();
+        }
+        
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
             _isTabPageVisible = true;
 
-            this.CurrentPage = this.Children[_selectedTab];
+            this.CurrentPage = this.Children[SelectedTabIndex];
         }
 
         protected override void OnDisappearing()
@@ -42,24 +59,7 @@ namespace AdvPrismTabNavigation.Views
         {
             base.OnCurrentPageChanged();
 
-            _selectedTab = this.Children.IndexOf(this.CurrentPage);
-        }
-
-        public void SetSelectedTab(int tabIndex)
-        {
-            _selectedTab = tabIndex;
-
-            if (_isTabPageVisible)
-            {
-                this.CurrentPage = this.Children[_selectedTab];
-            }
-        }
-
-        public void Destroy()
-        {
-            _isTabPageVisible = false;
-
-            this._container.RegisterInstance<IMyTabbedPageSelectedTab>(null);
+            SelectedTabIndex = this.Children.IndexOf(this.CurrentPage);
         }
     }
 }

@@ -6,6 +6,8 @@ namespace AdvPrismTabNavigation.Interfaces
 {
     public interface IMyTabbedPageSelectedTab
     {
+        int SelectedTab { get; set; }
+
         void SetSelectedTab(int tabIndex);
     }
 }

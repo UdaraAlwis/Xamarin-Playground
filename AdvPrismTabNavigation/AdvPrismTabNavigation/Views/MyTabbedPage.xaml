@@ -6,7 +6,8 @@
     xmlns:local="clr-namespace:AdvPrismTabNavigation.Views;assembly=AdvPrismTabNavigation"
     xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
     Title="{Binding Title}"
-    prism:ViewModelLocator.AutowireViewModel="True">
+    prism:ViewModelLocator.AutowireViewModel="True"
+    SelectedTabIndex="{Binding SelectedTab}">
     <TabbedPage.Children>
         <local:TabChild1Page />
         <local:TabChild2Page />
