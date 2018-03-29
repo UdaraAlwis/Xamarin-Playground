@@ -20,7 +20,7 @@ namespace AdvPrismTabNavigation.ViewModels
         {
             this._navigationService = navigationService;
 
-            Title = "Main Page";
+            Title = "Home Page";
 
             GoToTabPageCommand = new DelegateCommand(GoToTabPage);
         }

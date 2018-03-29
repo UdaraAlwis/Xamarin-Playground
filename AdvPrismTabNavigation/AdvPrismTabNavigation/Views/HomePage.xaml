@@ -5,9 +5,24 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="{Binding Title}">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-        <Button Command="{Binding GoToTabPageCommand}" Text="Go to Tab page" />
+    <StackLayout
+        Padding="20"
+        HorizontalOptions="Fill"
+        VerticalOptions="CenterAndExpand">
+        <Label
+            FontSize="20"
+            HorizontalTextAlignment="Center"
+            Text="Welcome to Xamarin Forms and Prism!" />
+        <Label
+            Margin="0,10,0,10"
+            FontAttributes="Bold"
+            HorizontalTextAlignment="Center"
+            Text="Here to explore Advanced Tab Navigation with MVVM friendly and Testable disciplines!" />
+        <Button
+            BackgroundColor="#2196F3"
+            Command="{Binding GoToTabPageCommand}"
+            Text="Go to Tabbed Page"
+            TextColor="White" />
     </StackLayout>
 
 </ContentPage>

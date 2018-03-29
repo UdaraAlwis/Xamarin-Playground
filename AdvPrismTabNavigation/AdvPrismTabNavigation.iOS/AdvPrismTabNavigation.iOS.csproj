@@ -198,5 +198,14 @@
       <Name>AdvPrismTabNavigation</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab1icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab2icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tab3icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

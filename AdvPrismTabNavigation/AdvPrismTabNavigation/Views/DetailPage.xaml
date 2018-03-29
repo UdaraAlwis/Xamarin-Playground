@@ -8,8 +8,17 @@
     mvvm:ViewModelLocator.AutowireViewModel="True">
     <ContentPage.Content>
 
-        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Text="Welcome to Xamarin Forms and Prism!" />
+        <StackLayout
+            Padding="20"
+            HorizontalOptions="Fill"
+            VerticalOptions="CenterAndExpand">
+            <Label
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                Text="Welcome to some Detail Page out of Tabbed Page..." />
+
+            <Label HorizontalTextAlignment="Center" Text="Which Tab child you want to go back to?" />
+
             <Button Command="{Binding GoBackToTabChild1PageCommand}" Text="Go back to Tab Child 1 page" />
 
             <Button Command="{Binding GoBackToTabChild2PageCommand}" Text="Go back to Tab Child 2 page" />
