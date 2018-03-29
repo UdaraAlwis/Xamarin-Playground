@@ -44,6 +44,13 @@ namespace AdvPrismTabNavigation.xUnitTest
             containerRegistry.RegisterForNavigation<TabChild2Page>();
             containerRegistry.RegisterForNavigation<TabChild3Page>();
             containerRegistry.RegisterForNavigation<DetailPage>();
+            
+            containerRegistry.Register<HomePageViewModel>();
+            containerRegistry.Register<MyTabbedPageViewModel>();
+            containerRegistry.Register<TabChild1PageViewModel>();
+            containerRegistry.Register<TabChild2PageViewModel>();
+            containerRegistry.Register<TabChild3PageViewModel>();
+            containerRegistry.Register<DetailPageViewModel>();
         }
     }
 }
