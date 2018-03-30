@@ -15,6 +15,10 @@ namespace AdvPrismTabNavigation.ViewModels
         private readonly IUnityContainer _unityContainer;
 
         private int _selectedTab;
+        /// <summary>
+        /// Binds to the View's property
+        /// View-ViewModel communcation
+        /// </summary>
         public int SelectedTab
         {
             get { return _selectedTab; }
@@ -32,6 +36,8 @@ namespace AdvPrismTabNavigation.ViewModels
 
             this._unityContainer = unityContainer;
 
+            // register this instance so we can access 
+            // IMyTabbedPageSelectedTab anywhere in the code
             _unityContainer.RegisterInstance<IMyTabbedPageSelectedTab>(this, new ContainerControlledLifetimeManager());
         }
 

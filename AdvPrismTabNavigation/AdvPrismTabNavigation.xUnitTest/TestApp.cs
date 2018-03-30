@@ -15,6 +15,9 @@ using Xamarin.Forms;
 
 namespace AdvPrismTabNavigation.xUnitTest
 {
+    /// <summary>
+    /// Initializing test environment for the app
+    /// </summary>
     public partial class TestApp : PrismApplication
     {
         /* 

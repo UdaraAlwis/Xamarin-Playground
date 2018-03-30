@@ -25,6 +25,7 @@ namespace AdvPrismTabNavigation.Views
         {
             if (((MyTabbedPage)bindable)._isTabPageVisible)
             {
+                // update the Selected Child-Tab page only if Tabbed Page is visible..
                 ((MyTabbedPage)bindable).CurrentPage = ((MyTabbedPage)bindable).Children[(int)newValue];
             }
         }
@@ -43,8 +44,10 @@ namespace AdvPrismTabNavigation.Views
         {
             base.OnAppearing();
 
+            // the tabbed page is now visible...
             _isTabPageVisible = true;
 
+            // go ahead and update the Selected Child-Tab page..
             this.CurrentPage = this.Children[SelectedTabIndex];
         }
 
@@ -52,6 +55,7 @@ namespace AdvPrismTabNavigation.Views
         {
             base.OnDisappearing();
 
+            // the Tabbed Page is not visible anymore...
             _isTabPageVisible = false;
         }
 
@@ -59,6 +63,8 @@ namespace AdvPrismTabNavigation.Views
         {
             base.OnCurrentPageChanged();
 
+            // when the user manually changes the Tab by themselves
+            // we need to update it back to the ViewModel...
             SelectedTabIndex = this.Children.IndexOf(this.CurrentPage);
         }
     }

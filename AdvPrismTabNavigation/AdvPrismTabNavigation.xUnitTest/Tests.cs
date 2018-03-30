@@ -14,11 +14,11 @@ using Xunit;
 
 namespace AdvPrismTabNavigation.xUnitTest
 {
-    public class FirstTest
+    public class Tests
     {
         private TestApp _appInstance;
 
-        public FirstTest()
+        public Tests()
         {
             Xamarin.Forms.Mocks.MockForms.Init();
         }
@@ -56,14 +56,14 @@ namespace AdvPrismTabNavigation.xUnitTest
             Assert.IsType<TabChild1PageViewModel>(myTabbedPage.CurrentPage.BindingContext);
 
             //  Let's Tab-Navigate to TabChild2Page
-            ((TabChild1PageViewModel)(myTabbedPage.Children[0]).BindingContext)
+            _appInstance.Container.Resolve<TabChild1PageViewModel>()
                         .GoToNextTabCommand.Execute("1");
 
             ////  Am I in the MyTabbedPage-> TabChild2Page?
             Assert.IsType<TabChild2PageViewModel>(myTabbedPage.CurrentPage.BindingContext);
 
             //  Let's Tab-Navigate to TabChild3Page
-            ((TabChild2PageViewModel)(myTabbedPage.Children[1]).BindingContext)
+            _appInstance.Container.Resolve<TabChild2PageViewModel>()
                         .GoToNextTabCommand.Execute("2");
 
             ////  Am I in the MyTabbedPage-> TabChild2Page?
@@ -85,24 +85,24 @@ namespace AdvPrismTabNavigation.xUnitTest
             var myTabbedPage = (MyTabbedPage)_appInstance.Container.Resolve<MyTabbedPage>();
             myTabbedPage.SendAppearing();
 
-            //  Am I inside the MyTabbedPage
+            //  Am I inside the MyTabbedPage?
             Assert.IsType<MyTabbedPageViewModel>(navigationStack.Last().BindingContext);
 
             //  Am I in the MyTabbedPage-> TabChild1Page?
             Assert.IsType<TabChild1PageViewModel>(myTabbedPage.CurrentPage.BindingContext);
 
             //  Let's go to DetailPage
-            ((TabChild1PageViewModel)myTabbedPage.CurrentPage.BindingContext)
+            _appInstance.Container.Resolve<TabChild1PageViewModel>()
                         .GoToDetailPageCommand.Execute();
 
-            //  Am I inside the DetailPage
+            //  Am I inside the DetailPage?
             Assert.IsType<DetailPageViewModel>(navigationStack.Last().BindingContext);
 
             // Let's go back to Tabbed Page -> TabChild1Page
             _appInstance.Container.Resolve<DetailPageViewModel>()
                                         .GoBackToTabChild3PageCommand.Execute();
 
-            //  Am I inside the MyTabbedPage
+            //  Am I inside the MyTabbedPage?
             Assert.IsType<MyTabbedPageViewModel>(navigationStack.Last().BindingContext);
 
             //  Am I in the MyTabbedPage-> TabChild1Page?
@@ -111,7 +111,7 @@ namespace AdvPrismTabNavigation.xUnitTest
             //  Go back to the Homepage manually by user
             _appInstance.Container.Resolve<INavigationService>().GoBackAsync();
             
-            //  Am I inside the MyTabbedPage
+            //  Am I inside the HomePage?
             Assert.IsType<HomePageViewModel>(navigationStack.Last().BindingContext);
         }
     }
