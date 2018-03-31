@@ -2,10 +2,11 @@
 <ContentPage
     x:Class="XFPageLifecycleDemo.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Page Lifecycle Demo">
     <ContentPage.Content>
         <StackLayout>
-            <Label HorizontalOptions="Center" Text="Welcome to Xamarin.Forms!" />
+            <Label HorizontalOptions="Center" Text="Welcome to Xamarin.Forms.ContentPage Lifecycle Demo!" />
             <StackLayout x:Name="listStackLayout" Spacing="5" />
 
             <Button
