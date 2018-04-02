@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFHacks.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="XFHacks">
+
+    <Grid Padding="20" VerticalOptions="Center">
+
+        <Label
+            Grid.Row="0"
+            FontSize="20"
+            Text="Welcome to Xamarin.Forms, uh no, XFHACKS! ;)" />
+
+        <Button
+            Grid.Row="1"
+            Clicked="OnButtonClicked"
+            Text="Goto: Picker with Icon" />
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+    </Grid>
+
+</ContentPage>
