@@ -69,7 +69,7 @@ namespace MultiSelectListViewControl
                 {
                     SelectedItems.Remove(itemTappedEventArgs.Item);
                 }
-                
+
                 this.SelectedItem = null;
             }
         }

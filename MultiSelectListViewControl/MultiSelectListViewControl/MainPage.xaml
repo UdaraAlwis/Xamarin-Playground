@@ -7,7 +7,7 @@
     Padding="20">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:SelectedItemColorConverter x:Key="SelectedItemColorConv" />
+            <local:SelectedItemBackgroundConverter x:Key="selectedItemBackgroundConv" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -15,17 +15,23 @@
 
         <Label Text="Welcome to Xamarin.Forms!" />
 
-        <local:MultiSelectListView x:Name="multiSelectListView" ItemsSource="{Binding Data}">
-            <local:MultiSelectListView.ItemTemplate>
+        <ListView ItemsSource="{Binding Data}" SelectedItem="{Binding SelectedItem}">
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
+                        <StackLayout BackgroundColor="{Binding IsSelected, Converter={StaticResource selectedItemBackgroundConv}}">
                             <Label Text="{Binding Name}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
-            </local:MultiSelectListView.ItemTemplate>
-        </local:MultiSelectListView>
+            </ListView.ItemTemplate>
+
+            <ListView.Triggers>
+                <EventTrigger Event="ItemSelected">
+                    <local:ListViewItemSelectedTriggerAction />
+                </EventTrigger>
+            </ListView.Triggers>
+        </ListView>
 
     </StackLayout>
 
