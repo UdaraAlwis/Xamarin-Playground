@@ -6,7 +6,13 @@
     xmlns:local="clr-namespace:XFHacks.Extensions"
     Title="Picker with Icon Page">
 
-    <Grid Padding="20" VerticalOptions="Center">
+    <Grid RowSpacing="20" VerticalOptions="Center">
+        <Grid.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="Android" Value="70" />
+                <On Platform="iOS" Value="20" />
+            </OnPlatform>
+        </Grid.Padding>
 
         <Label
             Grid.Row="0"
@@ -49,7 +55,14 @@
             </Picker>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="50" />
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength">
+                            <On Platform="Android" Value="50" />
+                            <On Platform="iOS" Value="35" />
+                        </OnPlatform>
+                    </RowDefinition.Height>
+                </RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />

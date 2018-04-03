@@ -10,6 +10,7 @@
         <Label
             Grid.Row="0"
             FontSize="20"
+            HorizontalTextAlignment="Center"
             Text="Welcome to Xamarin.Forms, uh no, XFHACKS! ;)" />
 
         <Button

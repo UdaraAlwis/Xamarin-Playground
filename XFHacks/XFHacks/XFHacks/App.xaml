@@ -1,10 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XFHacks.App">
-	<Application.Resources>
+<Application
+    x:Class="XFHacks.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <!--  Application resource dictionary  -->
+        <ResourceDictionary>
 
-	</Application.Resources>
+            <!--  Styles  -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#2196F3" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+            <!--  Styles  -->
+
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
