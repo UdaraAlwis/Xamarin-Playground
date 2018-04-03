@@ -15,12 +15,12 @@
 
         <Label Text="Welcome to Xamarin.Forms!" />
 
-        <ListView ItemsSource="{Binding Data}" SelectedItem="{Binding SelectedItem}">
+        <ListView ItemsSource="{Binding UserList}" SelectedItem="{Binding SelectedUser}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout BackgroundColor="{Binding IsSelected, Converter={StaticResource selectedItemBackgroundConv}}">
-                            <Label Text="{Binding Name}" />
+                            <Label Text="{Binding Data.Name}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

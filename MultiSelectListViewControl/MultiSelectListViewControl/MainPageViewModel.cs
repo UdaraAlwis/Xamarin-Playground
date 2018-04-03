@@ -23,69 +23,69 @@ namespace MultiSelectListViewControl
             }
         }
 
-        private User _selectedItem;
+        private SelectableItemWrapper<User> _selectedUser;
 
-        public User SelectedItem
+        public SelectableItemWrapper<User> SelectedUser
         {
-            get => _selectedItem;
+            get => _selectedUser;
 
             set
             {
-                _selectedItem = value;
+                _selectedUser = value;
 
-                if (_selectedItem != null)
+                if (_selectedUser != null)
                 {
-                    var result = Data.First(x => x.Name == _selectedItem.Name);
+                    var result = UserList.First(x => x.Data.Name == _selectedUser.Data.Name);
                     result.IsSelected = !result.IsSelected;
                 }
 
-                NotifyPropertyChanged(nameof(SelectedItem));
+                NotifyPropertyChanged(nameof(SelectedUser));
             }
         }
 
         public MainPageViewModel()
         {
-            Data = new ObservableCollection<User>()
+            UserList = new ObservableCollection<SelectableItemWrapper<User>>()
             {
-                new User{ Name = "Eliana Hood"},
-                new User{ Name = "Miranda Martinez"},
-                new User{ Name = "Ahmed Marsh"},
-                new User{ Name = "Karina Barr"},
-                new User{ Name = "Forrest Grimes"},
-                new User{ Name = "Yetta Alexander"},
-                new User{ Name = "Finn Cobb"},
-                new User{ Name = "Cheyenne Cochran"},
-                new User{ Name = "Galena Mckinney"},
-                new User{ Name = "Perry Daniels"},
-                new User{ Name = "Lucy Ward"},
-                new User{ Name = "Savannah Murray"},
-                new User{ Name = "Harrison Calhoun"},
-                new User{ Name = "Zorita Horn"},
-                new User{ Name = "Maia Stanley"},
-                new User{ Name = "Blake Morgan"},
-                new User{ Name = "Nicole Pena"},
-                new User{ Name = "Vance Pacheco"},
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Eliana Hood"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Miranda Martinez"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Ahmed Marsh"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Karina Barr"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Forrest Grimes"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Yetta Alexander"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Finn Cobb"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Cheyenne Cochran" } },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Galena Mckinney"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Perry Daniels"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Lucy Ward"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Savannah Murray" } },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Harrison Calhoun"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Zorita Horn"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Maia Stanley"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Blake Morgan"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Nicole Pena"} },
+                new SelectableItemWrapper<User>{ Data = new User{ Name = "Vance Pacheco"} },
             };
         }
 
-        public ObservableCollection<User> Data { get; set; }
+        public ObservableCollection<SelectableItemWrapper<User>> UserList { get; set; }
     }
 
-    public class User : INotifyPropertyChanged
+    public class SelectableItemWrapper<T> : INotifyPropertyChanged
     {
         private bool _isSelected;
-
-        public string Name { get; set; }
-
         public bool IsSelected
         {
             get => _isSelected;
 
-            set {
+            set
+            {
                 _isSelected = value;
                 NotifyPropertyChanged(nameof(IsSelected));
             }
         }
+
+        public T Data { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -99,5 +99,10 @@ namespace MultiSelectListViewControl
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+    }
+
+    public class User 
+    {
+        public string Name { get; set; }
     }
 }
