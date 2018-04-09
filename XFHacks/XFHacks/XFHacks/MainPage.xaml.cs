@@ -20,5 +20,10 @@ namespace XFHacks
         {
             Navigation.PushAsync(new PickerWithIconPage());
         }
+
+        void OnButtonWithIconClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ButtonWithIconPage());
+        }
     }
 }

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFHacks.ButtonWithIconPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XFHacks.Extensions"
+    Title="Button with Icon Page">
+
+    <Grid RowSpacing="20" VerticalOptions="Center">
+        <Grid.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="Android" Value="70" />
+                <On Platform="iOS" Value="20" />
+            </OnPlatform>
+        </Grid.Padding>
+
+        <Label
+            Grid.Row="0"
+            FontSize="20"
+            HorizontalTextAlignment="Center"
+            Text="Welcome to Button with an Icon Element!" />
+
+        <!--  Picker with an Icon Control  -->
+        <Grid
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            WidthRequest="200">
+
+            <!--  Picker Control  -->
+            <Button
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Text="Click me!" />
+
+            <!--  Icon Image  -->
+            <Image
+                Grid.Column="1"
+                Margin="0,0,10,0"
+                HeightRequest="25"
+                HorizontalOptions="End"
+                InputTransparent="True"
+                Source="{local:ImageResource XFHacks.Resources.dropdownicon.png}"
+                VerticalOptions="Center"
+                WidthRequest="25" />
+
+            <Grid.RowDefinitions>
+                <RowDefinition>
+                    <RowDefinition.Height>
+                        <OnPlatform x:TypeArguments="GridLength">
+                            <On Platform="Android" Value="50" />
+                            <On Platform="iOS" Value="35" />
+                            <On Platform="UWP" Value="50" />
+                        </OnPlatform>
+                    </RowDefinition.Height>
+                </RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="35" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+    </Grid>
+
+</ContentPage>

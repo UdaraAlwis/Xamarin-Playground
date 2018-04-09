@@ -18,7 +18,13 @@
             Clicked="OnButtonClicked"
             Text="Goto: Picker with Icon" />
 
+        <Button
+            Grid.Row="2"
+            Clicked="OnButtonWithIconClicked"
+            Text="Goto: Button with Icon" />
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
