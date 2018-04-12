@@ -6,9 +6,13 @@
 
   <ItemGroup>
     <None Remove="Resources\dropdownicon.png" />
+    <None Remove="Resources\leftarrowicon.png" />
+    <None Remove="Resources\rightarrowicon.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\leftarrowicon.png" />
+    <EmbeddedResource Include="Resources\rightarrowicon.png" />
     <EmbeddedResource Include="Resources\dropdownicon.png" />
   </ItemGroup>
 
