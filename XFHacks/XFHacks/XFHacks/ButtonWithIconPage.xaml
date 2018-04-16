@@ -14,6 +14,7 @@
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="Android" Value="70" />
                 <On Platform="iOS" Value="20" />
+                <On Platform="UWP" Value="50" />
             </OnPlatform>
         </Grid.Padding>
 
@@ -31,12 +32,13 @@
             Grid.Column="0"
             Grid.ColumnSpan="2"
             HorizontalOptions="FillAndExpand"
-            WidthRequest="220">
+            WidthRequest="200">
 
-            <!--  Picker Control  -->
+            <!--  Button Control  -->
             <Button
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
+                BackgroundColor="LightGray"
                 HorizontalOptions="FillAndExpand"
                 Text="Click me!" />
 
@@ -57,7 +59,7 @@
                         <OnPlatform x:TypeArguments="GridLength">
                             <On Platform="Android" Value="50" />
                             <On Platform="iOS" Value="35" />
-                            <On Platform="UWP" Value="50" />
+                            <On Platform="UWP" Value="40" />
                         </OnPlatform>
                     </RowDefinition.Height>
                 </RowDefinition>
@@ -79,6 +81,7 @@
             <Button
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
+                BackgroundColor="LightGray"
                 HorizontalOptions="FillAndExpand"
                 Text="Back" />
 
@@ -99,7 +102,7 @@
                         <OnPlatform x:TypeArguments="GridLength">
                             <On Platform="Android" Value="50" />
                             <On Platform="iOS" Value="35" />
-                            <On Platform="UWP" Value="50" />
+                            <On Platform="UWP" Value="40" />
                         </OnPlatform>
                     </RowDefinition.Height>
                 </RowDefinition>
@@ -121,6 +124,7 @@
             <Button
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
+                BackgroundColor="LightGray"
                 HorizontalOptions="FillAndExpand"
                 Text="Next" />
 
@@ -141,7 +145,7 @@
                         <OnPlatform x:TypeArguments="GridLength">
                             <On Platform="Android" Value="50" />
                             <On Platform="iOS" Value="35" />
-                            <On Platform="UWP" Value="50" />
+                            <On Platform="UWP" Value="40" />
                         </OnPlatform>
                     </RowDefinition.Height>
                 </RowDefinition>

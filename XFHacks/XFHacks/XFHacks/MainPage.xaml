@@ -23,7 +23,13 @@
             Clicked="OnButtonWithIconClicked"
             Text="Goto: Button with Icon" />
 
+        <Button
+            Grid.Row="3"
+            Clicked="OnEditorWithBorderClicked"
+            Text="Goto: Editor with Border" />
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
