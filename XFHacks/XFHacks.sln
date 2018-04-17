@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFHacks.iOS", "XFHacks\XFHa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFHacks.UWP", "XFHacks\XFHacks.UWP\XFHacks.UWP.csproj", "{9F4B1192-4960-4A12-867E-F955B7A71B2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFHacks", "XFHacks\XFHacks\XFHacks.csproj", "{6D170208-A418-47A0-B130-85C1985CE7DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XFHacks", "XFHacks\XFHacks\XFHacks.csproj", "{6D170208-A418-47A0-B130-85C1985CE7DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

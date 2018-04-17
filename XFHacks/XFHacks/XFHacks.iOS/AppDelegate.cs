@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using KeyboardOverlap.Forms.Plugin.iOSUnified;
 using UIKit;
 
 namespace XFHacks.iOS
@@ -24,6 +25,9 @@ namespace XFHacks.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+
+            //https://devlinduldulao.pro/how-to-fix-keyboard-overlapping-or-covering-entry/
+            KeyboardOverlapRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

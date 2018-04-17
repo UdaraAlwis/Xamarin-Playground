@@ -6,6 +6,8 @@
     xmlns:local="clr-namespace:XFHacks.Extensions"
     Title="Picker with Icon Page">
 
+    <!--  FOR ANDROID|IOS  -->
+
     <Grid RowSpacing="20" VerticalOptions="Center">
         <Grid.Padding>
             <OnPlatform x:TypeArguments="Thickness">

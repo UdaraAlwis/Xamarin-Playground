@@ -5,6 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Editor with Border Page">
 
+    <!--  FOR ANDROID|IOS  -->
+
     <Grid
         ColumnSpacing="0"
         RowSpacing="20"
@@ -13,47 +15,60 @@
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="Android" Value="70" />
                 <On Platform="iOS" Value="20" />
-                <On Platform="UWP" Value="50" />
             </OnPlatform>
         </Grid.Padding>
 
         <Label
             Grid.Row="0"
             Grid.Column="0"
-            Grid.ColumnSpan="2"
             FontSize="20"
             HorizontalTextAlignment="Center"
             Text="Welcome to Editor with a Border Element!" />
 
-        <!--  Editor with a Border Control  -->
         <Grid
             Grid.Row="1"
             Grid.Column="0"
-            Grid.ColumnSpan="2"
             HorizontalOptions="FillAndExpand"
             WidthRequest="200">
 
-            <Frame
+            <Label
                 Grid.Row="0"
-                Padding="5"
-                CornerRadius="8"
-                HasShadow="True"
-                OutlineColor="SlateGray">
-                <Editor />
-            </Frame>
+                FontSize="15"
+                HorizontalTextAlignment="Center"
+                Text="With Border Color" />
 
+            <!--  Editor with a Border Control  -->
             <Frame
                 Grid.Row="1"
                 Padding="5"
-                BackgroundColor="LightGray"
                 CornerRadius="8"
                 HasShadow="True"
-                OutlineColor="Black">
-                <Editor />
+                OutlineColor="#2196F3">
+                <Editor BackgroundColor="Transparent" TextColor="Black" />
+            </Frame>
+
+
+            <Label
+                Grid.Row="3"
+                FontSize="15"
+                HorizontalTextAlignment="Center"
+                Text="With Background Color" />
+
+            <!--  Editor with a Border Control  -->
+            <Frame
+                Grid.Row="4"
+                Padding="5"
+                BackgroundColor="#7fc5ff"
+                CornerRadius="8"
+                HasShadow="False">
+                <Editor BackgroundColor="Transparent" TextColor="Black" />
             </Frame>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="100" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="100" />
             </Grid.RowDefinitions>
         </Grid>

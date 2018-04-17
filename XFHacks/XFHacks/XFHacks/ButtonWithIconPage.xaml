@@ -6,6 +6,8 @@
     xmlns:local="clr-namespace:XFHacks.Extensions"
     Title="Button with Icon Page">
 
+    <!--  FOR ANDROID|IOS|UWP  -->
+
     <Grid
         ColumnSpacing="0"
         RowSpacing="20"
@@ -38,9 +40,10 @@
             <Button
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                BackgroundColor="LightGray"
+                BackgroundColor="#2196F3"
                 HorizontalOptions="FillAndExpand"
-                Text="Click me!" />
+                Text="Click me!"
+                TextColor="White" />
 
             <!--  Icon Image  -->
             <Image
@@ -81,9 +84,10 @@
             <Button
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                BackgroundColor="LightGray"
+                BackgroundColor="#2196F3"
                 HorizontalOptions="FillAndExpand"
-                Text="Back" />
+                Text="Back"
+                TextColor="White" />
 
             <!--  Icon Image  -->
             <Image
@@ -124,9 +128,10 @@
             <Button
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
-                BackgroundColor="LightGray"
+                BackgroundColor="#2196F3"
                 HorizontalOptions="FillAndExpand"
-                Text="Next" />
+                Text="Next"
+                TextColor="White" />
 
             <!--  Icon Image  -->
             <Image

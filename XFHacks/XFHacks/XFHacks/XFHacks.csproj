@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\leftarrowicon.png" />
     <EmbeddedResource Include="Resources\rightarrowicon.png" />
+    <EmbeddedResource Include="Resources\leftarrowicon.png" />
     <EmbeddedResource Include="Resources\dropdownicon.png" />
   </ItemGroup>
 
