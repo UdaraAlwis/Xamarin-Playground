@@ -9,14 +9,14 @@
     <!--  FOR ANDROID|IOS|UWP  -->
 
     <Grid
-        ColumnSpacing="0"
+        ColumnSpacing="10"
         RowSpacing="20"
         VerticalOptions="Center">
         <Grid.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="Android" Value="70" />
-                <On Platform="iOS" Value="20" />
-                <On Platform="UWP" Value="50" />
+                <On Platform="iOS" Value="50" />
+                <On Platform="UWP" Value="120" />
             </OnPlatform>
         </Grid.Padding>
 
@@ -61,7 +61,7 @@
                     <RowDefinition.Height>
                         <OnPlatform x:TypeArguments="GridLength">
                             <On Platform="Android" Value="50" />
-                            <On Platform="iOS" Value="35" />
+                            <On Platform="iOS" Value="40" />
                             <On Platform="UWP" Value="40" />
                         </OnPlatform>
                     </RowDefinition.Height>
@@ -105,7 +105,7 @@
                     <RowDefinition.Height>
                         <OnPlatform x:TypeArguments="GridLength">
                             <On Platform="Android" Value="50" />
-                            <On Platform="iOS" Value="35" />
+                            <On Platform="iOS" Value="40" />
                             <On Platform="UWP" Value="40" />
                         </OnPlatform>
                     </RowDefinition.Height>
@@ -149,7 +149,7 @@
                     <RowDefinition.Height>
                         <OnPlatform x:TypeArguments="GridLength">
                             <On Platform="Android" Value="50" />
-                            <On Platform="iOS" Value="35" />
+                            <On Platform="iOS" Value="40" />
                             <On Platform="UWP" Value="40" />
                         </OnPlatform>
                     </RowDefinition.Height>

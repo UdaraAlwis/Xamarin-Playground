@@ -15,18 +15,24 @@
 
         <Button
             Grid.Row="1"
+            BackgroundColor="#2196F3"
             Clicked="OnButtonClicked"
-            Text="Goto: Picker with Icon" />
+            Text="Goto: Picker with Icon"
+            TextColor="White" />
 
         <Button
             Grid.Row="2"
+            BackgroundColor="#2196F3"
             Clicked="OnButtonWithIconClicked"
-            Text="Goto: Button with Icon" />
+            Text="Goto: Button with Icon"
+            TextColor="White" />
 
         <Button
             Grid.Row="3"
+            BackgroundColor="#2196F3"
             Clicked="OnEditorWithBorderClicked"
-            Text="Goto: Editor with Border" />
+            Text="Goto: Editor with Border"
+            TextColor="White" />
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
