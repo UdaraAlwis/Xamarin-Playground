@@ -33,11 +33,28 @@
             HorizontalOptions="FillAndExpand"
             WidthRequest="200">
 
-            <Editor BackgroundColor="Transparent" TextColor="Black" />
+            <Editor
+                x:Name="editor"
+                BackgroundColor="Transparent"
+                TextColor="Black" />
             <Label
                 FontSize="15"
                 HorizontalTextAlignment="Center"
-                Text="type here..." />
+                Text="type here...">
+                <Label.Triggers>
+                    <DataTrigger
+                        Binding="{Binding Source={x:Reference editor}, Path=Text.Length}"
+                        TargetType="Label"
+                        Value="0">
+                        <DataTrigger.EnterActions>
+                            <Setter Property="IsVisible" Value="False" />
+                        </DataTrigger.EnterActions>
+                        <DataTrigger.ExitActions>
+                            <Setter Property="IsVisible" Value="False" />
+                        </DataTrigger.ExitActions>
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
 
         </Grid>
 
