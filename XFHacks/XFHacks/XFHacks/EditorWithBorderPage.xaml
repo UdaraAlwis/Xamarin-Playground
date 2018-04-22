@@ -35,7 +35,7 @@
                 Grid.Row="0"
                 FontSize="15"
                 HorizontalTextAlignment="Center"
-                Text="With Border Color" />
+                Text="With Border" />
 
             <!--  Editor with a Border Control  -->
             <Frame
@@ -52,7 +52,7 @@
                 Grid.Row="3"
                 FontSize="15"
                 HorizontalTextAlignment="Center"
-                Text="With Background Color" />
+                Text="With Background" />
 
             <!--  Editor with a Border Control  -->
             <Frame

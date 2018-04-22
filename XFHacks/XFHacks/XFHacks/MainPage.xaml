@@ -34,7 +34,15 @@
             Text="Goto: Editor with Border"
             TextColor="White" />
 
+        <Button
+            Grid.Row="4"
+            BackgroundColor="#2196F3"
+            Clicked="OnEditorWithPlaceholderClicked"
+            Text="Goto: Editor with Placeholder"
+            TextColor="White" />
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />

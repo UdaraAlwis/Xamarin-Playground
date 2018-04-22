@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFHacks.EditorWithPlaceholderPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Editor with Placeholder Page">
+
+    <!--  FOR ANDROID|IOS|UWP  -->
+
+    <Grid
+        ColumnSpacing="0"
+        RowSpacing="20"
+        VerticalOptions="Center">
+        <Grid.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="Android" Value="70" />
+                <On Platform="iOS" Value="20" />
+                <On Platform="UWP" Value="-1" />
+            </OnPlatform>
+        </Grid.Padding>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            FontSize="20"
+            HorizontalTextAlignment="Center"
+            Text="Welcome to Editor with a Placeholder Element!" />
+
+        <!--  Editor with a Border Control  -->
+        <Grid
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalOptions="FillAndExpand"
+            WidthRequest="200">
+
+            <Editor BackgroundColor="Transparent" TextColor="Black" />
+            <Label
+                FontSize="15"
+                HorizontalTextAlignment="Center"
+                Text="type here..." />
+
+        </Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+    </Grid>
+
+
+</ContentPage>

@@ -30,5 +30,10 @@ namespace XFHacks
         {
             Navigation.PushAsync(new EditorWithBorderPage());
         }
+
+        void OnEditorWithPlaceholderClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditorWithPlaceholderPage());
+        }
     }
 }
