@@ -14,7 +14,7 @@
         <Grid.Padding>
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="Android" Value="70" />
-                <On Platform="iOS" Value="20" />
+                <On Platform="iOS" Value="50" />
             </OnPlatform>
         </Grid.Padding>
 
@@ -58,7 +58,7 @@
             <Frame
                 Grid.Row="4"
                 Padding="5"
-                BackgroundColor="#7fc5ff"
+                BackgroundColor="#b3ddff"
                 CornerRadius="8"
                 HasShadow="False">
                 <Editor BackgroundColor="Transparent" TextColor="Black" />
