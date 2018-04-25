@@ -27,7 +27,7 @@
             HorizontalTextAlignment="Center"
             Text="Welcome to Editor with a Placeholder Element!" />
 
-        <!--  Editor with a Border Control  -->
+        <!--  Editor with a Placeholder  -->
         <Grid
             Grid.Row="1"
             Grid.Column="0"
