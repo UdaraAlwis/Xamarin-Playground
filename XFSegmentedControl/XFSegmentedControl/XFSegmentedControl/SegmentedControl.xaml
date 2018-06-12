@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="XFSegmentedControl.SegmentedControl"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Grid BackgroundColor="CornflowerBlue">
+
+        <Grid Grid.Row="0" ColumnSpacing="0">
+            <Grid Grid.Column="0" BackgroundColor="CornflowerBlue">
+                <Label
+                    FontSize="Medium"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Tab 1"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
+                <BoxView
+                    HeightRequest="2"
+                    VerticalOptions="End"
+                    Color="White" />
+            </Grid>
+
+            <Grid Grid.Column="1" BackgroundColor="CornflowerBlue">
+                <Label
+                    FontSize="Medium"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Tab 2"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
+                <BoxView
+                    HeightRequest="2"
+                    VerticalOptions="End"
+                    Color="Transparent" />
+            </Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+    </Grid>
+
+</ContentView>
