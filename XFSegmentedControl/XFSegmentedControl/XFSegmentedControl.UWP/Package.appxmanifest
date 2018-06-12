@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="ff51bc77-4348-49bc-9146-a4b039b4743c"
-    Publisher="CN=68178c89-6120-4d89-abd2-e145bd40b878"
+    Name="68668c0f-b8cf-41ae-a8b9-9caec85ba03c"
+    Publisher="CN=66342ab9-9be9-4dd2-8647-c2ef3178e66a"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>XFSegmentedControl.UWP</DisplayName>
-    <PublisherDisplayName>68178c89-6120-4d89-abd2-e145bd40b878</PublisherDisplayName>
+    <PublisherDisplayName>66342ab9-9be9-4dd2-8647-c2ef3178e66a</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{9423FDA5-1E0C-4203-8F61-AA990F9F35B4}</ProjectGuid>
+    <ProjectGuid>{8C1DAAA9-EC42-4669-8C7E-776C3A1844C9}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XFSegmentedControl.UWP</RootNamespace>
@@ -148,7 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XFSegmentedControl\XFSegmentedControl.csproj">
-      <Project>{CF265475-AFAB-4645-8A58-272979B6CB02}</Project>
+      <Project>{40EF3C87-9E67-45D6-B120-CAEACF81A6A7}</Project>
       <Name>XFSegmentedControl</Name>
     </ProjectReference>
   </ItemGroup>
