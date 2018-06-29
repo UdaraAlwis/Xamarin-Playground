@@ -16,5 +16,10 @@ namespace XFSegmentedControl
 		{
 			InitializeComponent ();
 		}
+
+	    private void Tab1Button_OnClicked(object sender, EventArgs e)
+	    {
+	        
+	    }
 	}
 }
