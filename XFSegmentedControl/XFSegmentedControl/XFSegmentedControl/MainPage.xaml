@@ -6,8 +6,6 @@
     xmlns:local="clr-namespace:XFSegmentedControl">
 
     <StackLayout>
-        <!--  Place new controls here  -->
-        <Label HorizontalOptions="Center" Text="Welcome to Xamarin.Forms!" />
 
         <local:SegmentedControl />
 

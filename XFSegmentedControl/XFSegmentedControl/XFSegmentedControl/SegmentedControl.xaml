@@ -13,37 +13,43 @@
                     HorizontalOptions="Fill"
                     IsClippedToBounds="True">
                     <Grid
+                        BackgroundColor="CornflowerBlue"
                         ColumnSpacing="0"
-                        HeightRequest="35"
-                        VerticalOptions="FillAndExpand">
+                        HeightRequest="35">
+                        <Grid Grid.Column="0">
+                            <Button
+                                x:Name="Tab1ButtoniOS"
+                                Margin="-5,-5,-5,-5"
+                                BackgroundColor="CornflowerBlue"
+                                Clicked="Tab1Button_OnClicked" />
+                            <Label
+                                FontSize="Medium"
+                                HorizontalOptions="CenterAndExpand"
+                                InputTransparent="True"
+                                Text="Tab 1"
+                                TextColor="White"
+                                VerticalOptions="CenterAndExpand" />
+                        </Grid>
+
+                        <Grid Grid.Column="1" BackgroundColor="CornflowerBlue">
+                            <Button
+                                x:Name="Tab2ButtoniOS"
+                                Margin="-5,-5,-5,-5"
+                                BackgroundColor="CornflowerBlue"
+                                Clicked="Tab2Button_OnClicked" />
+                            <Label
+                                FontSize="Medium"
+                                HorizontalOptions="CenterAndExpand"
+                                InputTransparent="True"
+                                Text="Tab 2"
+                                TextColor="White"
+                                VerticalOptions="CenterAndExpand" />
+                        </Grid>
+
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-
-                        <StackLayout
-                            Grid.Column="0"
-                            Margin="1"
-                            Padding="0,2"
-                            BackgroundColor="CornflowerBlue"
-                            HorizontalOptions="Fill">
-
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding PromosCommand}" NumberOfTapsRequired="1" />
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-
-                        <StackLayout
-                            Grid.Column="1"
-                            Margin="1"
-                            Padding="0,2"
-                            BackgroundColor="CornflowerBlue"
-                            HorizontalOptions="Fill">
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding EventsCommand}" NumberOfTapsRequired="1" />
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-
                     </Grid>
                 </Frame>
             </On>
@@ -57,7 +63,7 @@
                     <Grid Grid.Column="0">
                         <Button
                             x:Name="Tab1Button"
-                            Margin="-5,-5,-5,-5"
+                            Margin="-5,-5,-5,0"
                             BackgroundColor="CornflowerBlue"
                             Clicked="Tab1Button_OnClicked" />
                         <Label
@@ -68,14 +74,19 @@
                             TextColor="White"
                             VerticalOptions="CenterAndExpand" />
                         <BoxView
+                            x:Name="Tab1BoxView"
                             HeightRequest="2"
                             InputTransparent="True"
+                            IsVisible="False"
                             VerticalOptions="End"
-                            Color="White" />
+                            Color="Red" />
                     </Grid>
 
                     <Grid Grid.Column="1" BackgroundColor="CornflowerBlue">
-                        <Button Margin="-5,-5,-5,-5" BackgroundColor="CornflowerBlue" />
+                        <Button
+                            Margin="0,-5,-5,0"
+                            BackgroundColor="CornflowerBlue"
+                            Clicked="Tab2Button_OnClicked" />
                         <Label
                             FontSize="Medium"
                             HorizontalOptions="CenterAndExpand"
@@ -84,10 +95,12 @@
                             TextColor="White"
                             VerticalOptions="CenterAndExpand" />
                         <BoxView
+                            x:Name="Tab2BoxView"
                             HeightRequest="2"
                             InputTransparent="True"
+                            IsVisible="False"
                             VerticalOptions="End"
-                            Color="Transparent" />
+                            Color="Red" />
                     </Grid>
 
                     <Grid.ColumnDefinitions>
