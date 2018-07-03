@@ -2,115 +2,81 @@
 <ContentView
     x:Class="XFSegmentedControl.SegmentedControl"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:system="clr-namespace:System;assembly=netstandard">
     <ContentView.Content>
-        <OnPlatform x:TypeArguments="View">
+        <Frame
+            x:Name="FrameView"
+            Padding="0"
+            IsClippedToBounds="True">
+            <Frame.HasShadow>
+                <OnPlatform x:TypeArguments="system:Boolean">
+                    <On Platform="Android" Value="False" />
+                    <On Platform="iOS" Value="True" />
+                </OnPlatform>
+            </Frame.HasShadow>
+            <Frame.CornerRadius>
+                <OnPlatform x:TypeArguments="system:Single">
+                    <On Platform="Android" Value="0" />
+                    <On Platform="iOS" Value="5" />
+                </OnPlatform>
+            </Frame.CornerRadius>
+            <Frame.HeightRequest>
+                <OnPlatform x:TypeArguments="system:Double">
+                    <On Platform="Android" Value="50" />
+                    <On Platform="iOS" Value="35" />
+                </OnPlatform>
+            </Frame.HeightRequest>
 
-            <On Platform="iOS">
-                <Frame
-                    Padding="0"
-                    CornerRadius="5"
-                    HorizontalOptions="Fill"
-                    IsClippedToBounds="True">
-                    <Grid
-                        BackgroundColor="CornflowerBlue"
-                        ColumnSpacing="0"
-                        HeightRequest="35">
-                        <Grid Grid.Column="0">
-                            <Button
-                                x:Name="Tab1ButtoniOS"
-                                Margin="-5,-5,-5,-5"
-                                BackgroundColor="CornflowerBlue"
-                                Clicked="Tab1Button_OnClicked" />
-                            <Label
-                                FontSize="Medium"
-                                HorizontalOptions="CenterAndExpand"
-                                InputTransparent="True"
-                                Text="Tab 1"
-                                TextColor="White"
-                                VerticalOptions="CenterAndExpand" />
-                        </Grid>
-
-                        <Grid Grid.Column="1" BackgroundColor="CornflowerBlue">
-                            <Button
-                                x:Name="Tab2ButtoniOS"
-                                Margin="-5,-5,-5,-5"
-                                BackgroundColor="CornflowerBlue"
-                                Clicked="Tab2Button_OnClicked" />
-                            <Label
-                                FontSize="Medium"
-                                HorizontalOptions="CenterAndExpand"
-                                InputTransparent="True"
-                                Text="Tab 2"
-                                TextColor="White"
-                                VerticalOptions="CenterAndExpand" />
-                        </Grid>
-
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                </Frame>
-            </On>
-
-            <On Platform="Android">
-
-                <Grid
-                    BackgroundColor="CornflowerBlue"
-                    ColumnSpacing="0"
-                    HeightRequest="50">
-                    <Grid Grid.Column="0">
-                        <Button
-                            x:Name="Tab1Button"
-                            Margin="-5,-5,-5,0"
-                            BackgroundColor="CornflowerBlue"
-                            Clicked="Tab1Button_OnClicked" />
-                        <Label
-                            FontSize="Medium"
-                            HorizontalOptions="CenterAndExpand"
-                            InputTransparent="True"
-                            Text="Tab 1"
-                            TextColor="White"
-                            VerticalOptions="CenterAndExpand" />
-                        <BoxView
-                            x:Name="Tab1BoxView"
-                            HeightRequest="2"
-                            InputTransparent="True"
-                            IsVisible="False"
-                            VerticalOptions="End"
-                            Color="Red" />
-                    </Grid>
-
-                    <Grid Grid.Column="1" BackgroundColor="CornflowerBlue">
-                        <Button
-                            Margin="0,-5,-5,0"
-                            BackgroundColor="CornflowerBlue"
-                            Clicked="Tab2Button_OnClicked" />
-                        <Label
-                            FontSize="Medium"
-                            HorizontalOptions="CenterAndExpand"
-                            InputTransparent="True"
-                            Text="Tab 2"
-                            TextColor="White"
-                            VerticalOptions="CenterAndExpand" />
-                        <BoxView
-                            x:Name="Tab2BoxView"
-                            HeightRequest="2"
-                            InputTransparent="True"
-                            IsVisible="False"
-                            VerticalOptions="End"
-                            Color="Red" />
-                    </Grid>
-
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+            <Grid ColumnSpacing="0">
+                <Grid Grid.Column="0" IsClippedToBounds="True">
+                    <Button
+                        x:Name="Tab1ButtonView"
+                        Margin="-2,-3,-2,0"
+                        Clicked="Tab1Button_OnClicked" />
+                    <Label
+                        x:Name="Tab1LabelView"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalOptions="CenterAndExpand"
+                        InputTransparent="True"
+                        Text="Tab 1"
+                        VerticalOptions="CenterAndExpand" />
+                    <BoxView
+                        x:Name="Tab1BoxView"
+                        HeightRequest="2"
+                        InputTransparent="True"
+                        IsVisible="False"
+                        VerticalOptions="End" />
                 </Grid>
-            </On>
 
-        </OnPlatform>
+                <Grid Grid.Column="1" IsClippedToBounds="True">
+                    <Button
+                        x:Name="Tab2ButtonView"
+                        Margin="-2,-3,-2,0"
+                        Clicked="Tab2Button_OnClicked" />
+                    <Label
+                        x:Name="Tab2LabelView"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalOptions="CenterAndExpand"
+                        InputTransparent="True"
+                        Text="Tab 2"
+                        VerticalOptions="CenterAndExpand" />
+                    <BoxView
+                        x:Name="Tab2BoxView"
+                        HeightRequest="2"
+                        InputTransparent="True"
+                        IsVisible="False"
+                        VerticalOptions="End" />
+                </Grid>
 
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+        </Frame>
     </ContentView.Content>
 </ContentView>

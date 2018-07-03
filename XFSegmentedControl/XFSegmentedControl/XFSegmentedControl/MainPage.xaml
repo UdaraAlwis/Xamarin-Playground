@@ -3,11 +3,47 @@
     x:Class="XFSegmentedControl.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:XFSegmentedControl">
+    xmlns:local="clr-namespace:XFSegmentedControl"
+    BackgroundColor="CornflowerBlue">
 
-    <StackLayout>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="Android" Value="0" />
+            <On Platform="iOS" Value="0,20,0,0" />
+        </OnPlatform>
+    </ContentPage.Padding>
 
-        <local:SegmentedControl />
+    <StackLayout Spacing="0">
+
+        <Label
+            Margin="20,20,20,0"
+            FontSize="Medium"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="Welcome to awesome Rocker Control in Xamarin.Forms!"
+            TextColor="White" />
+
+        <Label
+            Margin="20,10,20,20"
+            FontSize="Small"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="but some people call it Tabbed Buttons or Segmented Control??!!%##!"
+            TextColor="White" />
+
+        <local:SegmentedControl PrimaryColor="CornflowerBlue" SecondaryColor="White">
+            <local:SegmentedControl.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="Android" Value="0" />
+                    <On Platform="iOS" Value="10,0,10,10" />
+                </OnPlatform>
+            </local:SegmentedControl.Padding>
+        </local:SegmentedControl>
+
+        <Grid
+            BackgroundColor="#1344a0"
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand" />
 
     </StackLayout>
 
