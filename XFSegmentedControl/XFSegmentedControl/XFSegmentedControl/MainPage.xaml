@@ -31,7 +31,13 @@
             Text="but some people call it Tabbed Buttons or Segmented Control??!!%##!"
             TextColor="White" />
 
-        <local:SegmentedControl PrimaryColor="CornflowerBlue" SecondaryColor="White">
+        <local:SegmentedControl
+            x:Name="SegmentedControlView"
+            PrimaryColor="CornflowerBlue"
+            SecondaryColor="White"
+            SelectedTabIndexChanged="SegmentedControlView_SelectedTabIndexChanged"
+            Tab1Text="Monkeys"
+            Tab2Text="Minions">
             <local:SegmentedControl.Padding>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="Android" Value="0" />
@@ -43,7 +49,34 @@
         <Grid
             BackgroundColor="#1344a0"
             HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand" />
+            VerticalOptions="FillAndExpand">
+
+            <Grid
+                x:Name="ContentView1"
+                Padding="20"
+                IsVisible="False">
+                <Label
+                    FontSize="28"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="Monkeys are awesome bundi jungle creatures banana tour monumental garlic bread action button moment."
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
+            </Grid>
+
+            <Grid
+                x:Name="ContentView2"
+                Padding="20"
+                IsVisible="False">
+                <Label
+                    FontSize="28"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="Minions are funny creatures employed by Gru, who loves banana mid western pudding bubble tree hill."
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand" />
+            </Grid>
+        </Grid>
 
     </StackLayout>
 
