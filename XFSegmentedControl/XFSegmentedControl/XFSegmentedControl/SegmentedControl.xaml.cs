@@ -45,7 +45,7 @@ namespace XFSegmentedControl
                 nameof(Tab1Text),
                 typeof(string),
                 typeof(SegmentedControl),
-                default(string));
+                "Tab 1");
 
         public string Tab1Text
         {
@@ -59,7 +59,7 @@ namespace XFSegmentedControl
                 nameof(Tab2Text),
                 typeof(string),
                 typeof(SegmentedControl),
-                default(string));
+                "Tab 2");
 
         public string Tab2Text
         {
@@ -126,6 +126,8 @@ namespace XFSegmentedControl
             Tab2LabelView.Text = Tab2Text;
 
             SelectTab1();
+            SelectedTabIndex = 1;
+            SendSelectedTabIndexChangedEvent();
         }
 
         private void Tab1Button_OnClicked(object sender, EventArgs e)

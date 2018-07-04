@@ -14,8 +14,6 @@ namespace XFSegmentedControl
 		public MainPage()
 		{
 			InitializeComponent();
-
-
 		}
 
         private void SegmentedControlView_SelectedTabIndexChanged(object sender, SelectedTabIndexEventArgs e)
