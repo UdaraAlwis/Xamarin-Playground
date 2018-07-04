@@ -60,6 +60,7 @@
                     HorizontalOptions="CenterAndExpand"
                     HorizontalTextAlignment="Center"
                     Text="Monkeys are awesome bundi jungle creatures banana tour monumental garlic bread action button moment."
+                    TextColor="White"
                     VerticalOptions="StartAndExpand" />
             </Grid>
 
@@ -72,6 +73,7 @@
                     HorizontalOptions="CenterAndExpand"
                     HorizontalTextAlignment="Center"
                     Text="Minions are funny creatures employed by Gru, who loves banana mid western pudding bubble tree hill."
+                    TextColor="White"
                     VerticalOptions="StartAndExpand" />
             </Grid>
         </Grid>
