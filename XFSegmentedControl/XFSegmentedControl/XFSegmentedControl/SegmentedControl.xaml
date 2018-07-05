@@ -9,6 +9,7 @@
             x:Name="FrameView"
             Padding="0"
             IsClippedToBounds="True">
+            <!--  Platform specific customization values for the border  -->
             <Frame.HasShadow>
                 <OnPlatform x:TypeArguments="system:Boolean">
                     <On Platform="Android" Value="False" />
@@ -27,8 +28,11 @@
                     <On Platform="iOS" Value="35" />
                 </OnPlatform>
             </Frame.HeightRequest>
+            <!--  Platform specific customization values for the border  -->
 
             <Grid ColumnSpacing="0">
+
+                <!--  Tab button 1  -->
                 <Grid Grid.Column="0" IsClippedToBounds="True">
                     <Button
                         x:Name="Tab1ButtonView"
@@ -49,7 +53,9 @@
                         IsVisible="False"
                         VerticalOptions="End" />
                 </Grid>
+                <!--  Tab button 1  -->
 
+                <!--  Tab button 2  -->
                 <Grid Grid.Column="1" IsClippedToBounds="True">
                     <Button
                         x:Name="Tab2ButtonView"
@@ -70,6 +76,7 @@
                         IsVisible="False"
                         VerticalOptions="End" />
                 </Grid>
+                <!--  Tab button 2  -->
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />

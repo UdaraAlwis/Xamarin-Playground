@@ -88,10 +88,15 @@ namespace XFSegmentedControl
 			InitializeComponent();
         }
 
+        /// <summary>
+        /// load up the customizations and applying
+        /// properties when the element has rendered
+        /// </summary>
         protected override void OnParentSet()
         {
             base.OnParentSet();
             
+            // Setting up platform specific properties for Android and iOS
             if (Device.RuntimePlatform == Device.Android)
             {
                 Tab1LabelView.FontSize
@@ -125,6 +130,7 @@ namespace XFSegmentedControl
             Tab1LabelView.Text = Tab1Text;
             Tab2LabelView.Text = Tab2Text;
 
+            // setting up default values
             SelectTab1();
             SelectedTabIndex = 1;
             SendSelectedTabIndexChangedEvent();
@@ -146,6 +152,8 @@ namespace XFSegmentedControl
         
         private void SelectTab1()
         {
+            // set up platform specific
+            // properties for SelectTab1 event
             if (Device.RuntimePlatform == Device.Android)
             {
                 Tab1BoxView.IsVisible = true;
@@ -163,6 +171,8 @@ namespace XFSegmentedControl
 
         private void SelectTab2()
         {
+            // set up platform specific
+            // properties for SelectTab2 event
             if (Device.RuntimePlatform == Device.Android)
             {
                 Tab1BoxView.IsVisible = false;
@@ -178,6 +188,11 @@ namespace XFSegmentedControl
             }
         }
 
+        /// <summary>
+        /// Invoke the SelectedTabIndexChanged event
+        /// for whoever has subscribed so they can
+        /// use it for any reative action
+        /// </summary>
         private void SendSelectedTabIndexChangedEvent()
         {
             var eventArgs = new SelectedTabIndexEventArgs();
