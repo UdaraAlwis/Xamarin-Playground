@@ -3,7 +3,7 @@
     x:Class="XFHacks.ButtonWithIconPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:XFHacks.Extensions"
+    xmlns:extensions="clr-namespace:XFHacks.Extensions"
     Title="Button with Icon Page">
 
     <!--  FOR ANDROID|IOS|UWP  -->
@@ -52,7 +52,7 @@
                 HeightRequest="25"
                 HorizontalOptions="End"
                 InputTransparent="True"
-                Source="{local:ImageResource XFHacks.Resources.dropdownicon.png}"
+                Source="{extensions:ImageResource XFHacks.Resources.dropdownicon.png}"
                 VerticalOptions="Center"
                 WidthRequest="25" />
 
@@ -96,7 +96,7 @@
                 HeightRequest="25"
                 HorizontalOptions="End"
                 InputTransparent="True"
-                Source="{local:ImageResource XFHacks.Resources.leftarrowicon.png}"
+                Source="{extensions:ImageResource XFHacks.Resources.leftarrowicon.png}"
                 VerticalOptions="Center"
                 WidthRequest="25" />
 
@@ -140,7 +140,7 @@
                 HeightRequest="25"
                 HorizontalOptions="End"
                 InputTransparent="True"
-                Source="{local:ImageResource XFHacks.Resources.rightarrowicon.png}"
+                Source="{extensions:ImageResource XFHacks.Resources.rightarrowicon.png}"
                 VerticalOptions="Center"
                 WidthRequest="25" />
 

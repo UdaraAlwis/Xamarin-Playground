@@ -41,7 +41,15 @@
             Text="Goto: Editor with Placeholder"
             TextColor="White" />
 
+        <Button
+            Grid.Row="5"
+            BackgroundColor="#2196F3"
+            Clicked="OnTinyButtonsWithIconTextClicked"
+            Text="Goto: Tiny Buttons with Icon/Text"
+            TextColor="White" />
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />

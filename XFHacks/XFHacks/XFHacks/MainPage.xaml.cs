@@ -35,5 +35,10 @@ namespace XFHacks
         {
             Navigation.PushAsync(new EditorWithPlaceholderPage());
         }
+
+        void OnTinyButtonsWithIconTextClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new TinyButtonsPage());
+        }
     }
 }
