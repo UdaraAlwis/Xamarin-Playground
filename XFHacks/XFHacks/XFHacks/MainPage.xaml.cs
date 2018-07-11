@@ -38,7 +38,7 @@ namespace XFHacks
 
         void OnTinyButtonsWithIconTextClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new TinyButtonsPage());
+            Navigation.PushAsync(new ButtonWithMoreControlPage());
         }
     }
 }

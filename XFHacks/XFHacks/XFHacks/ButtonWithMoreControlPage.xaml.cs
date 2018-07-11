@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace XFHacks
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TinyButtonsPage : ContentPage
+	public partial class ButtonWithMoreControlPage : ContentPage
 	{
-		public TinyButtonsPage ()
+		public ButtonWithMoreControlPage()
 		{
 			InitializeComponent ();
 		}

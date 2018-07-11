@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XFHacks.TinyButtonsPage"
+    x:Class="XFHacks.ButtonWithMoreControlPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:extensions="clr-namespace:XFHacks.Extensions;assembly=XFHacks"
@@ -26,7 +26,7 @@
             Grid.ColumnSpan="3"
             FontSize="20"
             HorizontalTextAlignment="Center"
-            Text="Welcome to Tiny Buttons with Text and Icons!" />
+            Text="Welcome to Button with more control!" />
 
         <!--  Tiny Button with Icon  -->
         <Grid
@@ -41,7 +41,7 @@
             WidthRequest="25">
 
             <!--  Button Control  -->
-            <Button BackgroundColor="#2196F3">
+            <Button BackgroundColor="#2196F3" >
                 <Button.Margin>
                     <OnPlatform x:TypeArguments="Thickness">
                         <On Platform="Android" Value="-4,-6,-4,-5" />

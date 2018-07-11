@@ -33,6 +33,9 @@
     <Compile Update="PickerWithIconPage.xaml.cs">
       <DependentUpon>PickerWithIconPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="ButtonWithMoreControlPage.xaml.cs">
+      <DependentUpon>ButtonWithMoreControlPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -51,7 +54,7 @@
     <EmbeddedResource Update="PickerWithIconPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TinyButtonsPage.xaml">
+    <EmbeddedResource Update="ButtonWithMoreControlPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
