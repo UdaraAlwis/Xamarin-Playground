@@ -4,7 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:extensions="clr-namespace:XFHacks.Extensions;assembly=XFHacks"
-    Title="Tiny Buttons with Icon/Text Page">
+    Title="Button with more control Page">
 
     <!--  FOR ANDROID|IOS|UWP  -->
 
@@ -41,7 +41,7 @@
             WidthRequest="25">
 
             <!--  Button Control  -->
-            <Button BackgroundColor="#2196F3" >
+            <Button BackgroundColor="#2196F3">
                 <Button.Margin>
                     <OnPlatform x:TypeArguments="Thickness">
                         <On Platform="Android" Value="-4,-6,-4,-5" />

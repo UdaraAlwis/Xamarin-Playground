@@ -44,8 +44,8 @@
         <Button
             Grid.Row="5"
             BackgroundColor="#2196F3"
-            Clicked="OnTinyButtonsWithIconTextClicked"
-            Text="Goto: Tiny Buttons with Icon/Text"
+            Clicked="OnButtonWithMoreControlClicked"
+            Text="Goto: Button with more Control"
             TextColor="White" />
 
         <Grid.RowDefinitions>
