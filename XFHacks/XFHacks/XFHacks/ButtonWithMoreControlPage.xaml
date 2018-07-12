@@ -23,47 +23,16 @@
         <Label
             Grid.Row="0"
             Grid.Column="0"
-            Grid.ColumnSpan="3"
             FontSize="20"
             HorizontalTextAlignment="Center"
             Text="Welcome to Button with more control!" />
 
-        <!--  Tiny Button with Icon  -->
+        <!--  Button with Text and Icon  -->
         <Grid
             Grid.Row="1"
             Grid.Column="0"
-            Padding="0"
-            BackgroundColor="Aqua"
-            HeightRequest="25"
-            HorizontalOptions="End"
-            IsClippedToBounds="True"
-            VerticalOptions="Center"
-            WidthRequest="25">
-
-            <!--  Button Control  -->
-            <Button BackgroundColor="#2196F3">
-                <Button.Margin>
-                    <OnPlatform x:TypeArguments="Thickness">
-                        <On Platform="Android" Value="-4,-6,-4,-5" />
-                        <On Platform="iOS" Value="0" />
-                    </OnPlatform>
-                </Button.Margin>
-            </Button>
-
-            <!--  Icon Image  -->
-            <Image
-                HorizontalOptions="Center"
-                InputTransparent="True"
-                Source="{extensions:ImageResource XFHacks.Resources.leftarrowicon.png}"
-                VerticalOptions="Center" />
-        </Grid>
-
-        <!--  Tiny Button with Text  -->
-        <Grid
-            Grid.Row="1"
-            Grid.Column="1"
-            HeightRequest="25"
-            HorizontalOptions="Center"
+            HeightRequest="40"
+            HorizontalOptions="Fill"
             IsClippedToBounds="True"
             VerticalOptions="Center">
 
@@ -79,27 +48,33 @@
 
             <!--  Text Label  -->
             <Label
-                Margin="10,0,10,0"
+                Margin="10,0,0,0"
                 FontAttributes="Bold"
                 FontSize="Small"
-                HorizontalOptions="Center"
+                HorizontalOptions="Start"
                 HorizontalTextAlignment="Center"
                 InputTransparent="True"
-                Text="click here!"
+                Text="go next"
                 TextColor="White"
+                VerticalOptions="Center" />
+
+            <!--  Icon Image  -->
+            <Image
+                Margin="0,0,10,0"
+                HorizontalOptions="End"
+                InputTransparent="True"
+                Source="{extensions:ImageResource XFHacks.Resources.rightarrowicon.png}"
                 VerticalOptions="Center" />
         </Grid>
 
-        <!--  Tiny Button with Icon  -->
+        <!--  Button with Text and Icon  -->
         <Grid
-            Grid.Row="1"
-            Grid.Column="2"
-            BackgroundColor="Aqua"
-            HeightRequest="25"
-            HorizontalOptions="Start"
+            Grid.Row="2"
+            Grid.Column="0"
+            HeightRequest="40"
+            HorizontalOptions="Fill"
             IsClippedToBounds="True"
-            VerticalOptions="Center"
-            WidthRequest="25">
+            VerticalOptions="Center">
 
             <!--  Button Control  -->
             <Button BackgroundColor="#2196F3">
@@ -113,21 +88,230 @@
 
             <!--  Icon Image  -->
             <Image
-                HorizontalOptions="Center"
+                Margin="10,0,0,0"
+                HorizontalOptions="Start"
                 InputTransparent="True"
-                Source="{extensions:ImageResource XFHacks.Resources.rightarrowicon.png}"
+                Source="{extensions:ImageResource XFHacks.Resources.leftarrowicon.png}"
                 VerticalOptions="Center" />
+
+            <!--  Text Label  -->
+            <Label
+                Margin="0,0,10,0"
+                FontAttributes="Bold"
+                FontSize="Small"
+                HorizontalOptions="End"
+                HorizontalTextAlignment="Center"
+                InputTransparent="True"
+                Text="go back"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.Column="0">
+
+            <!--  Button with Icon  -->
+            <Grid
+                Grid.Row="0"
+                Grid.Column="0"
+                HeightRequest="25"
+                HorizontalOptions="End"
+                IsClippedToBounds="True"
+                VerticalOptions="Center"
+                WidthRequest="25">
+
+                <!--  Button Control  -->
+                <Button BackgroundColor="#2196F3">
+                    <Button.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="-4,-6,-4,-5" />
+                            <On Platform="iOS" Value="0" />
+                        </OnPlatform>
+                    </Button.Margin>
+                </Button>
+
+                <!--  Icon Image  -->
+                <Image
+                    HorizontalOptions="Center"
+                    InputTransparent="True"
+                    Source="{extensions:ImageResource XFHacks.Resources.leftarrowicon.png}"
+                    VerticalOptions="Center" />
+            </Grid>
+
+            <!--  Button with Text  -->
+            <Grid
+                Grid.Row="0"
+                Grid.Column="1"
+                HeightRequest="25"
+                HorizontalOptions="Fill"
+                IsClippedToBounds="True"
+                VerticalOptions="Center">
+
+                <!--  Button Control  -->
+                <Button BackgroundColor="#2196F3">
+                    <Button.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="-4,-6,-4,-5" />
+                            <On Platform="iOS" Value="0" />
+                        </OnPlatform>
+                    </Button.Margin>
+                </Button>
+
+                <!--  Text Label  -->
+                <Label
+                    Margin="10,0,10,0"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    InputTransparent="True"
+                    Text="click here!"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+            </Grid>
+
+            <!--  Button with Icon  -->
+            <Grid
+                Grid.Row="0"
+                Grid.Column="2"
+                HeightRequest="25"
+                HorizontalOptions="Start"
+                IsClippedToBounds="True"
+                VerticalOptions="Center"
+                WidthRequest="25">
+
+                <!--  Button Control  -->
+                <Button BackgroundColor="#2196F3">
+                    <Button.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="-4,-6,-4,-5" />
+                            <On Platform="iOS" Value="0" />
+                        </OnPlatform>
+                    </Button.Margin>
+                </Button>
+
+                <!--  Icon Image  -->
+                <Image
+                    HorizontalOptions="Center"
+                    InputTransparent="True"
+                    Source="{extensions:ImageResource XFHacks.Resources.rightarrowicon.png}"
+                    VerticalOptions="Center" />
+            </Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <Grid Grid.Row="4" Grid.Column="0">
+
+            <!--  Button with Text and Icon  -->
+            <Grid
+                Grid.Row="0"
+                Grid.Column="0"
+                HeightRequest="40"
+                HorizontalOptions="Fill"
+                IsClippedToBounds="True"
+                VerticalOptions="Center">
+
+                <!--  Button Control  -->
+                <Button Grid.ColumnSpan="2" BackgroundColor="#2196F3">
+                    <Button.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="-4,-6,-4,-5" />
+                            <On Platform="iOS" Value="0" />
+                        </OnPlatform>
+                    </Button.Margin>
+                </Button>
+
+                <!--  Icon Image  -->
+                <Image
+                    Grid.Column="0"
+                    Margin="10,0,0,0"
+                    HorizontalOptions="Start"
+                    InputTransparent="True"
+                    Source="{extensions:ImageResource XFHacks.Resources.infoicon.png}"
+                    VerticalOptions="Center" />
+
+                <!--  Text Label  -->
+                <Label
+                    Grid.Column="1"
+                    Margin="5,0,0,0"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HorizontalOptions="Start"
+                    HorizontalTextAlignment="Start"
+                    InputTransparent="True"
+                    Text="info"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+            <!--  Button with Text and Icon  -->
+            <Grid
+                Grid.Row="0"
+                Grid.Column="1"
+                HeightRequest="40"
+                HorizontalOptions="Fill"
+                IsClippedToBounds="True"
+                VerticalOptions="Center">
+
+                <!--  Button Control  -->
+                <Button Grid.ColumnSpan="2" BackgroundColor="#2196F3">
+                    <Button.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <On Platform="Android" Value="-4,-6,-4,-5" />
+                            <On Platform="iOS" Value="0" />
+                        </OnPlatform>
+                    </Button.Margin>
+                </Button>
+
+                <!--  Text Label  -->
+                <Label
+                    Grid.Column="0"
+                    Margin="0,0,5,0"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HorizontalOptions="End"
+                    HorizontalTextAlignment="End"
+                    InputTransparent="True"
+                    Text="favs"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+
+                <!--  Icon Image  -->
+                <Image
+                    Grid.Column="1"
+                    Margin="0,0,10,0"
+                    HorizontalOptions="End"
+                    InputTransparent="True"
+                    Source="{extensions:ImageResource XFHacks.Resources.staricon.png}"
+                    VerticalOptions="Center" />
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
         </Grid>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
     </Grid>
 </ContentPage>
