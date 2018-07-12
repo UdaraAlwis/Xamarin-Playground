@@ -56,15 +56,18 @@
                 InputTransparent="True"
                 Text="go next"
                 TextColor="White"
-                VerticalOptions="Center" />
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center" />
 
             <!--  Icon Image  -->
             <Image
-                Margin="0,0,10,0"
+                Margin="0,0,5,0"
+                HeightRequest="30"
                 HorizontalOptions="End"
                 InputTransparent="True"
                 Source="{extensions:ImageResource XFHacks.Resources.rightarrowicon.png}"
-                VerticalOptions="Center" />
+                VerticalOptions="Center"
+                WidthRequest="30" />
         </Grid>
 
         <!--  Button with Text and Icon  -->
@@ -88,11 +91,13 @@
 
             <!--  Icon Image  -->
             <Image
-                Margin="10,0,0,0"
+                Margin="5,0,0,0"
+                HeightRequest="30"
                 HorizontalOptions="Start"
                 InputTransparent="True"
                 Source="{extensions:ImageResource XFHacks.Resources.leftarrowicon.png}"
-                VerticalOptions="Center" />
+                VerticalOptions="Center"
+                WidthRequest="30" />
 
             <!--  Text Label  -->
             <Label
@@ -104,7 +109,8 @@
                 InputTransparent="True"
                 Text="go back"
                 TextColor="White"
-                VerticalOptions="Center" />
+                VerticalOptions="Center"
+                VerticalTextAlignment="Center" />
         </Grid>
 
         <Grid Grid.Row="3" Grid.Column="0">
@@ -229,10 +235,12 @@
                 <Image
                     Grid.Column="0"
                     Margin="10,0,0,0"
+                    HeightRequest="30"
                     HorizontalOptions="Start"
                     InputTransparent="True"
                     Source="{extensions:ImageResource XFHacks.Resources.infoicon.png}"
-                    VerticalOptions="Center" />
+                    VerticalOptions="Center"
+                    WidthRequest="30" />
 
                 <!--  Text Label  -->
                 <Label
@@ -245,7 +253,8 @@
                     InputTransparent="True"
                     Text="info"
                     TextColor="White"
-                    VerticalOptions="Center" />
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -283,16 +292,19 @@
                     InputTransparent="True"
                     Text="favs"
                     TextColor="White"
-                    VerticalOptions="Center" />
+                    VerticalOptions="Center"
+                    VerticalTextAlignment="Center" />
 
                 <!--  Icon Image  -->
                 <Image
                     Grid.Column="1"
                     Margin="0,0,10,0"
+                    HeightRequest="30"
                     HorizontalOptions="End"
                     InputTransparent="True"
                     Source="{extensions:ImageResource XFHacks.Resources.staricon.png}"
-                    VerticalOptions="Center" />
+                    VerticalOptions="Center"
+                    WidthRequest="30" />
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
