@@ -48,7 +48,15 @@
             Text="Goto: Button with more Control"
             TextColor="White" />
 
+        <Button
+            Grid.Row="6"
+            BackgroundColor="#2196F3"
+            Clicked="OnShowHidePasswordEntryClicked"
+            Text="Goto: Show Hide Password Entry"
+            TextColor="White" />
+
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />

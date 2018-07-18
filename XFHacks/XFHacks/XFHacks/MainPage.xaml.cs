@@ -40,5 +40,10 @@ namespace XFHacks
         {
             Navigation.PushAsync(new ButtonWithMoreControlPage());
         }
+
+        void OnShowHidePasswordEntryClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ShowHidePasswordEntryPage());
+        }
     }
 }
