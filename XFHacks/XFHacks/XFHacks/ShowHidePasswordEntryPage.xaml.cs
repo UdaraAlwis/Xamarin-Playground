@@ -17,16 +17,5 @@ namespace XFHacks
 		{
 			InitializeComponent ();
 		}
-
-	    private void ShowPasswordButton_OnClicked(object sender, EventArgs e)
-	    {
-	        EntryPassword.IsVisible = !EntryPassword.IsVisible;
-	        EntryText.IsVisible = !EntryText.IsVisible;
-
-            if (EntryPassword.IsVisible)
-                ShowPasswordButtonIcon.Source = ImageSource.FromResource("XFHacks.Resources.showpasswordicon.png", Assembly.GetExecutingAssembly());
-            else
-                ShowPasswordButtonIcon.Source = ImageSource.FromResource("XFHacks.Resources.hidepasswordicon.png", Assembly.GetExecutingAssembly());
-        }
 	}
 }
