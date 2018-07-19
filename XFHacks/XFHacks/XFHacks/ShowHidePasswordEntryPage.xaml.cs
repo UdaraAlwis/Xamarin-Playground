@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,11 @@ namespace XFHacks
 	    {
 	        EntryPassword.IsVisible = !EntryPassword.IsVisible;
 	        EntryText.IsVisible = !EntryText.IsVisible;
+
+            if (EntryPassword.IsVisible)
+                ShowPasswordButtonIcon.Source = ImageSource.FromResource("XFHacks.Resources.showpasswordicon.png", Assembly.GetExecutingAssembly());
+            else
+                ShowPasswordButtonIcon.Source = ImageSource.FromResource("XFHacks.Resources.hidepasswordicon.png", Assembly.GetExecutingAssembly());
         }
 	}
 }

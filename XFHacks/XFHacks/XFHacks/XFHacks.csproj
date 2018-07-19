@@ -6,17 +6,21 @@
 
   <ItemGroup>
     <None Remove="Resources\dropdownicon.png" />
+    <None Remove="Resources\hidepasswordicon.png" />
     <None Remove="Resources\infoicon.png" />
     <None Remove="Resources\leftarrowicon.png" />
     <None Remove="Resources\rightarrowicon.png" />
+    <None Remove="Resources\showpasswordicon.png" />
     <None Remove="Resources\staricon.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\hidepasswordicon.png" />
     <EmbeddedResource Include="Resources\infoicon.png" />
     <EmbeddedResource Include="Resources\rightarrowicon.png" />
     <EmbeddedResource Include="Resources\leftarrowicon.png" />
     <EmbeddedResource Include="Resources\dropdownicon.png" />
+    <EmbeddedResource Include="Resources\showpasswordicon.png" />
     <EmbeddedResource Include="Resources\staricon.png" />
   </ItemGroup>
 
