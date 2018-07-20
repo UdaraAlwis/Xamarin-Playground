@@ -11,46 +11,46 @@ Blog Series: https://theconfuzedsourcecode.wordpress.com/tag/xfhacks/
 - Udara Alwis
 - - - -
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-001 .png"  height="130" /> 
-
 XFHACKS-001 Picker with an Icon!
 ---------------
+
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-001 .png"  height="130" /> 
 
 Ever wanted to have an Icon element attached to a Xamarin.Forms.Picker control? 
 
 https://theconfuzedsourcecode.wordpress.com/2018/04/03/xfhacks-001-picker-with-an-icon/
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-002 .png"  height="130" /> 
-
 XFHACKS-002 Button with an Icon!
 ---------------
+
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-002 .png"  height="130" /> 
 
 Ever wanted to have an Icon element attached to a Xamarin.Forms.Button control? 
 
 https://theconfuzedsourcecode.wordpress.com/2018/04/22/xfhacks-002-button-with-an-icon/
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-003 .png"  height="130" /> 
-
 XFHACKS-003 Editor with a Border!
 ---------------
+
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-003 .png"  height="130" /> 
 
 Ever wanted to have a Border around your Xamarin.Forms.Editor control? 
 
 https://theconfuzedsourcecode.wordpress.com/2018/04/24/xfhacks-003-editor-with-a-border/
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-004 .png"  height="130" /> 
-
 XFHACKS-004 Editor with a Placeholder!
 ---------------
+
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-004 .png"  height="130" /> 
 
 Ever wanted to have a Placeholder property for your Xamarin.Forms.Editor control?
 
 https://theconfuzedsourcecode.wordpress.com/2018/04/26/xfhacks-004-editor-with-a-placeholder/
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-005 .png"  height="130" /> 
-
 XFHACKS-005 Button with full control on Text and Icon!
 ---------------
+
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-005 .png"  height="130" /> 
 
 Ever came across an instance where you wished if you had more control or customization over the Text and Icon properties of your Xamarin.Forms Button?
 
