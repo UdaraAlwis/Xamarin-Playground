@@ -8,7 +8,7 @@ No custom renderers, no platform specific code and no third party libraries! Jus
 
 Blog Series: https://theconfuzedsourcecode.wordpress.com/tag/xfhacks/
 
-Udara Alwis
+- Udara Alwis
 - - - -
 
 XFHACKS-001 Picker with an Icon!
@@ -49,3 +49,10 @@ Ever came across an instance where you wished if you had more control or customi
 
 https://theconfuzedsourcecode.wordpress.com/2018/07/17/xfhacks-005-button-with-full-control-on-text-and-icon/
 
+
+XFHACKS-006 Password Entry with show/hide Text feature! 
+---------------
+
+Ever wished if your Xamarin.Forms Password Entry control had the option to reveal, or show the Password text that the User types on demand, instead of the black dots? 
+
+https://theconfuzedsourcecode.wordpress.com/tag/xfhacks/
