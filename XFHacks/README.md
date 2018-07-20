@@ -14,9 +14,8 @@ Blog Series: https://theconfuzedsourcecode.wordpress.com/tag/xfhacks/
 XFHACKS-001 Picker with an Icon!
 ---------------
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-001 .png"  height="130" /> 
-
-Ever wanted to have an Icon element attached to a Xamarin.Forms.Picker control? 
+> Ever wanted to have an Icon element attached to a Xamarin.Forms.Picker control? 
+>> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-001 .png"  height="130" /> 
 
 https://theconfuzedsourcecode.wordpress.com/2018/04/03/xfhacks-001-picker-with-an-icon/
 
