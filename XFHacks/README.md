@@ -57,6 +57,6 @@ XFHACKS-006 Password Entry with show/hide Text feature!
 > Ever wished if your Xamarin.Forms Password Entry control had the option to reveal, or show the Password text that the User types on demand, instead of the black dots? 
 >> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-006 .png"  height="130" /> 
 
-https://theconfuzedsourcecode.wordpress.com/tag/xfhacks/
+https://theconfuzedsourcecode.wordpress.com/2018/07/21/xfhacks-006-password-entry-with-show-hide-text-feature/
 
 

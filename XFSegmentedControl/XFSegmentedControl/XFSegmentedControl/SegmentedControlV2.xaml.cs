@@ -44,11 +44,6 @@ namespace XFSegmentedControl
 
         static void OnTabButtonsPropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
-            if (oldValue != null)
-            {
-                // handle old items if you need
-            }
-
             if (newValue != null)
             {
                 // handle new items
