@@ -47,6 +47,8 @@ namespace XFSegmentedControl
             if (newValue != null)
             {
                 // handle new items
+
+                var asdasd =  ((IEnumerable)newValue).ToList();
             }
         }
 

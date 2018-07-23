@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    x:Class="XFSegmentedControl.TabButton"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    IsClippedToBounds="True">
+    <Button
+        x:Name="TabButtonView"
+        Margin="-2,-3,-2,0"
+        Clicked="TabButton_OnClicked" />
+    <Label
+        x:Name="TabLabelView"
+        FontAttributes="Bold"
+        FontSize="Medium"
+        HorizontalOptions="CenterAndExpand"
+        InputTransparent="True"
+        Text="Tab 2"
+        VerticalOptions="CenterAndExpand" />
+    <BoxView
+        x:Name="TabBoxView"
+        HeightRequest="2"
+        InputTransparent="True"
+        IsVisible="False"
+        VerticalOptions="End" />
+</Grid>
