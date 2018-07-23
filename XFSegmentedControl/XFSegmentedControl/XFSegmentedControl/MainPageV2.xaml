@@ -49,7 +49,6 @@
                     <x:String>Minions</x:String>
                     <x:String>Penguins</x:String>
                     <x:String>Foxes</x:String>
-                    <x:String>Tingus</x:String>
                 </x:Array>
             </xfSegmentedControl:SegmentedControlV2.TabButtons>
         </xfSegmentedControl:SegmentedControlV2>
@@ -107,19 +106,6 @@
                     HorizontalOptions="CenterAndExpand"
                     HorizontalTextAlignment="Center"
                     Text="Foxes are bing bottle cannes of the forest trails howling the night out furry mountain creatures."
-                    TextColor="White"
-                    VerticalOptions="StartAndExpand" />
-            </Grid>
-
-            <Grid
-                x:Name="ContentView5"
-                Padding="20"
-                IsVisible="False">
-                <Label
-                    FontSize="28"
-                    HorizontalOptions="CenterAndExpand"
-                    HorizontalTextAlignment="Center"
-                    Text="Tingus are flute treat biscuits flying banana hopping mid air nightly purple ferry rock bubbles."
                     TextColor="White"
                     VerticalOptions="StartAndExpand" />
             </Grid>
