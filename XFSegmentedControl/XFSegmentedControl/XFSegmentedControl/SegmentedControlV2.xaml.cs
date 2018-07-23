@@ -14,6 +14,34 @@ namespace XFSegmentedControl
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SegmentedControlV2 : ContentView
 	{
+	    public static readonly BindableProperty PrimaryColorProperty
+	        = BindableProperty.Create(
+	            nameof(PrimaryColor),
+	            typeof(Color),
+	            typeof(SegmentedControlV2),
+	            Color.CornflowerBlue);
+
+	    public Color PrimaryColor
+	    {
+	        get { return (Color)GetValue(PrimaryColorProperty); }
+	        set { SetValue(PrimaryColorProperty, value); }
+	    }
+
+
+	    public static readonly BindableProperty SecondaryColorProperty
+	        = BindableProperty.Create(
+	            nameof(SecondaryColor),
+	            typeof(Color),
+	            typeof(SegmentedControlV2),
+	            Color.White);
+
+	    public Color SecondaryColor
+	    {
+	        get { return (Color)GetValue(SecondaryColorProperty); }
+	        set { SetValue(SecondaryColorProperty, value); }
+	    }
+
+
         public static readonly BindableProperty SelectedTabIndexProperty
             = BindableProperty.Create(
                 nameof(SelectedTabIndex),
@@ -47,20 +75,50 @@ namespace XFSegmentedControl
             if (newValue != null)
             {
                 // handle new items
+                
+                ((SegmentedControlV2)bindable).TabButtonHolder.Children?.Clear();
 
-                var asdasd =  ((IEnumerable)newValue).ToList();
+                int index = 0;
+                foreach (var item in (IEnumerable) newValue)
+                {
+                    var newTab = new TabButton(
+                        item.ToString(),
+                        index, 
+                        ((SegmentedControlV2)bindable).PrimaryColor, 
+                        ((SegmentedControlV2)bindable).SecondaryColor,
+                        (index == 0));
+
+                    newTab.TabButtonClicked += (sender, args) =>
+                    {
+                        foreach (var tabButton in ((SegmentedControlV2)bindable).TabButtonHolder.Children)
+                            ((TabButton) tabButton).UpdateTabButtonState(((TabButton) sender).TabIndex);
+                        
+                        ((SegmentedControlV2)bindable).SelectedTabIndex = ((TabButton)sender).TabIndex;
+                        ((SegmentedControlV2)bindable).SendSelectedTabIndexChangedEvent();
+                    };
+                    
+                    Grid.SetColumn(newTab, index++);
+
+                    ((SegmentedControlV2)bindable).TabButtonHolder.Children.Add(newTab);
+                }
+
+
             }
         }
 
 
-        public event EventHandler<SelectedTabIndexEventArgs> SelectedTabIndexChanged;
+	    public event EventHandler<SelectedTabIndexEventArgs> SelectedTabIndexChanged;
 
-
-
+        
         public SegmentedControlV2 ()
 		{
 			InitializeComponent ();
-		}
+            
+		    if (Device.RuntimePlatform == Device.iOS)
+		    {
+		        FrameView.BorderColor = SecondaryColor;
+		    }
+        }
 
         /// <summary>
         /// Invoke the SelectedTabIndexChanged event

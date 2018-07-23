@@ -14,7 +14,7 @@
         FontSize="Medium"
         HorizontalOptions="CenterAndExpand"
         InputTransparent="True"
-        Text="Tab 2"
+        Text="Tab Text"
         VerticalOptions="CenterAndExpand" />
     <BoxView
         x:Name="TabBoxView"
