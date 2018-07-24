@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XFSegmentedControl
+namespace XFSegmentedControl.Advanced
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TabButton : Grid
@@ -34,28 +34,33 @@ namespace XFSegmentedControl
             
             TabLabelView.Text = TabText;
 
-            // Setting up platform specific properties for Android and iOS
-            if (Device.RuntimePlatform == Device.Android)
-            {
-                TabLabelView.FontSize
-                    = Device.GetNamedSize(NamedSize.Medium, TabLabelView);
-
-                TabButtonView.BackgroundColor = PrimaryColor;
-
-                TabBoxView.Color =
-                        TabLabelView.TextColor = SecondaryColor;
-            }
-            else if (Device.RuntimePlatform == Device.iOS)
-            {
-                TabLabelView.FontSize
-                    = Device.GetNamedSize(NamedSize.Small, TabLabelView);
-
-                TabButtonView.BackgroundColor = PrimaryColor;
-                TabLabelView.TextColor = SecondaryColor;
-            }
+            SetUpColorScheme();
 
             if (isSelectedByDefault)
                 TabButtonView.SendClicked();
+        }
+
+	    private void SetUpColorScheme()
+	    {
+	        // Setting up platform specific properties for Android and iOS
+	        if (Device.RuntimePlatform == Device.Android)
+	        {
+	            TabLabelView.FontSize
+	                = Device.GetNamedSize(NamedSize.Medium, TabLabelView);
+
+	            TabButtonView.BackgroundColor = PrimaryColor;
+
+	            TabBoxView.Color =
+	                TabLabelView.TextColor = SecondaryColor;
+	        }
+	        else if (Device.RuntimePlatform == Device.iOS)
+	        {
+	            TabLabelView.FontSize
+	                = Device.GetNamedSize(NamedSize.Small, TabLabelView);
+
+	            TabButtonView.BackgroundColor = PrimaryColor;
+	            TabLabelView.TextColor = SecondaryColor;
+	        }
         }
 
         private void TabButton_OnClicked(object sender, EventArgs e)
@@ -98,6 +103,14 @@ namespace XFSegmentedControl
 	                TabLabelView.TextColor = SecondaryColor;
 	            }
             }
+	    }
+
+	    public void UpdateTabButtonColors(Color primaryColor, Color secondaryColor)
+	    {
+	        PrimaryColor = primaryColor;
+	        SecondaryColor = secondaryColor;
+
+	        SetUpColorScheme();
 	    }
     }
 }

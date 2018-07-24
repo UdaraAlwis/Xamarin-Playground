@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XFSegmentedControl
+namespace XFSegmentedControl.Simple
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SegmentedControl : ContentView
@@ -73,7 +73,7 @@ namespace XFSegmentedControl
                 nameof(SelectedTabIndex),
                 typeof(int),
                 typeof(SegmentedControl),
-                1);
+                0);
         
         public int SelectedTabIndex
         {
@@ -132,21 +132,21 @@ namespace XFSegmentedControl
 
             // setting up default values
             SelectTab1();
-            SelectedTabIndex = 1;
+            SelectedTabIndex = 0;
             SendSelectedTabIndexChangedEvent();
         }
 
         private void Tab1Button_OnClicked(object sender, EventArgs e)
 	    {
             SelectTab1();
-	        SelectedTabIndex = 1;
+	        SelectedTabIndex = 0;
             SendSelectedTabIndexChangedEvent();
         }
 
         private void Tab2Button_OnClicked(object sender, EventArgs e)
         {
             SelectTab2();
-            SelectedTabIndex = 2;
+            SelectedTabIndex = 1;
             SendSelectedTabIndexChangedEvent();
         }
         

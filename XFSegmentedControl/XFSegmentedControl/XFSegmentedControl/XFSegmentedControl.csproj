@@ -9,16 +9,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="MainPageV2.xaml">
+    <EmbeddedResource Update="Advanced\MainPageV2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SegmentedControl.xaml">
+    <EmbeddedResource Update="Simple\SegmentedControl.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SegmentedControlV2.xaml">
+    <EmbeddedResource Update="Advanced\SegmentedControlV2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TabButton.xaml">
+    <EmbeddedResource Update="Advanced\TabButton.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

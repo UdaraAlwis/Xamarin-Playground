@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XFSegmentedControl.Simple;
 
-namespace XFSegmentedControl
+namespace XFSegmentedControl.Advanced
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainPageV2 : ContentPage

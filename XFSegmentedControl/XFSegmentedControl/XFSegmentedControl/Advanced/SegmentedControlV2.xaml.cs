@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XFSegmentedControl.Simple;
 
-namespace XFSegmentedControl
+namespace XFSegmentedControl.Advanced
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SegmentedControlV2 : ContentView
@@ -19,7 +20,12 @@ namespace XFSegmentedControl
 	            nameof(PrimaryColor),
 	            typeof(Color),
 	            typeof(SegmentedControlV2),
-	            Color.CornflowerBlue);
+	            Color.CornflowerBlue,
+	            propertyChanged: (bindable, value, newValue) =>
+	            {
+	                foreach (var tabButton in ((SegmentedControlV2)bindable).TabButtonHolder.Children)
+	                    ((TabButton)tabButton).UpdateTabButtonColors(((Color)newValue), ((SegmentedControlV2)bindable).SecondaryColor);
+                });
 
 	    public Color PrimaryColor
 	    {
@@ -33,9 +39,19 @@ namespace XFSegmentedControl
 	            nameof(SecondaryColor),
 	            typeof(Color),
 	            typeof(SegmentedControlV2),
-	            Color.White);
+	            Color.White,
+	            propertyChanged: (bindable, value, newValue) =>
+	            {
+                    if (Device.RuntimePlatform == Device.iOS)
+	                {
+	                    ((SegmentedControlV2)bindable).FrameView.BorderColor = ((Color)newValue);
+	                }
+                    
+	                foreach (var tabButton in ((SegmentedControlV2)bindable).TabButtonHolder.Children)
+	                    ((TabButton)tabButton).UpdateTabButtonColors(((Color)newValue), ((SegmentedControlV2)bindable).SecondaryColor);
+                });
 
-	    public Color SecondaryColor
+        public Color SecondaryColor
 	    {
 	        get { return (Color)GetValue(SecondaryColorProperty); }
 	        set { SetValue(SecondaryColorProperty, value); }
@@ -47,7 +63,7 @@ namespace XFSegmentedControl
                 nameof(SelectedTabIndex),
                 typeof(int),
                 typeof(SegmentedControlV2),
-                1);
+                0);
 
         public int SelectedTabIndex
         {
@@ -86,7 +102,7 @@ namespace XFSegmentedControl
                         index, 
                         ((SegmentedControlV2)bindable).PrimaryColor, 
                         ((SegmentedControlV2)bindable).SecondaryColor,
-                        (index == 0));
+                        (index == ((SegmentedControlV2)bindable).SelectedTabIndex));
 
                     newTab.TabButtonClicked += (sender, args) =>
                     {
@@ -101,24 +117,15 @@ namespace XFSegmentedControl
 
                     ((SegmentedControlV2)bindable).TabButtonHolder.Children.Add(newTab);
                 }
-
-
             }
         }
 
-
-	    public event EventHandler<SelectedTabIndexEventArgs> SelectedTabIndexChanged;
-
-        
         public SegmentedControlV2 ()
 		{
 			InitializeComponent ();
-            
-		    if (Device.RuntimePlatform == Device.iOS)
-		    {
-		        FrameView.BorderColor = SecondaryColor;
-		    }
         }
+        
+	    public event EventHandler<SelectedTabIndexEventArgs> SelectedTabIndexChanged;
 
         /// <summary>
         /// Invoke the SelectedTabIndexChanged event

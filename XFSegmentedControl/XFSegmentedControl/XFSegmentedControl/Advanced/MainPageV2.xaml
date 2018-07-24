@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XFSegmentedControl.MainPageV2"
+    x:Class="XFSegmentedControl.Advanced.MainPageV2"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:system="clr-namespace:System;assembly=netstandard"
@@ -36,6 +36,7 @@
             x:Name="SegmentedControlV2View"
             PrimaryColor="CornflowerBlue"
             SecondaryColor="White"
+            SelectedTabIndex="2"
             SelectedTabIndexChanged="SegmentedControlV2View_OnSelectedTabIndexChanged">
             <xfSegmentedControl:SegmentedControlV2.Padding>
                 <OnPlatform x:TypeArguments="Thickness">

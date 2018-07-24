@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XFSegmentedControl
+namespace XFSegmentedControl.Simple
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
@@ -18,12 +18,12 @@ namespace XFSegmentedControl
 
         private void SegmentedControlView_SelectedTabIndexChanged(object sender, SelectedTabIndexEventArgs e)
         {
-            if (e.SelectedTabIndex == 1)
+            if (e.SelectedTabIndex == 0)
             {
                 ContentView1.IsVisible = true;
                 ContentView2.IsVisible = false;
             }
-            if (e.SelectedTabIndex == 2)
+            if (e.SelectedTabIndex == 1)
             {
                 ContentView1.IsVisible = false;
                 ContentView2.IsVisible = true;
