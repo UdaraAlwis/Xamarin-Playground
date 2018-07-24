@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XFSegmentedControl.Simple
+namespace XFSegmentedControl.Simple.Controls
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SegmentedControl : ContentView
+	public partial class SimpleSegmentedControl : ContentView
     {
         public static readonly BindableProperty PrimaryColorProperty
             = BindableProperty.Create(
                 nameof(PrimaryColor),
                 typeof(Color),
-                typeof(SegmentedControl),
+                typeof(SimpleSegmentedControl),
                 Color.CornflowerBlue);
 
         public Color PrimaryColor
@@ -30,7 +30,7 @@ namespace XFSegmentedControl.Simple
             = BindableProperty.Create(
 	            nameof(SecondaryColor),
 	            typeof(Color),
-	            typeof(SegmentedControl),
+	            typeof(SimpleSegmentedControl),
 	            Color.White);
 
 	    public Color SecondaryColor
@@ -44,7 +44,7 @@ namespace XFSegmentedControl.Simple
             = BindableProperty.Create(
                 nameof(Tab1Text),
                 typeof(string),
-                typeof(SegmentedControl),
+                typeof(SimpleSegmentedControl),
                 "Tab 1");
 
         public string Tab1Text
@@ -58,7 +58,7 @@ namespace XFSegmentedControl.Simple
             = BindableProperty.Create(
                 nameof(Tab2Text),
                 typeof(string),
-                typeof(SegmentedControl),
+                typeof(SimpleSegmentedControl),
                 "Tab 2");
 
         public string Tab2Text
@@ -72,7 +72,7 @@ namespace XFSegmentedControl.Simple
             = BindableProperty.Create(
                 nameof(SelectedTabIndex),
                 typeof(int),
-                typeof(SegmentedControl),
+                typeof(SimpleSegmentedControl),
                 0);
         
         public int SelectedTabIndex
@@ -83,7 +83,7 @@ namespace XFSegmentedControl.Simple
 
         public event EventHandler<SelectedTabIndexEventArgs> SelectedTabIndexChanged;
 
-        public SegmentedControl()
+        public SimpleSegmentedControl()
 		{
 			InitializeComponent();
         }

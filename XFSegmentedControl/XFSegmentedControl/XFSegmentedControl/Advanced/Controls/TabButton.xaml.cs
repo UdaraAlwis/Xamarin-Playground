@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace XFSegmentedControl.Advanced
+namespace XFSegmentedControl.Advanced.Controls
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TabButton : Grid

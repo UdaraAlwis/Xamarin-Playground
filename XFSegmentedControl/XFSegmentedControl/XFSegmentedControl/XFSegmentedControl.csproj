@@ -9,16 +9,37 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Advanced\MainPageV2.xaml">
+    <Compile Update="Advanced\DemoPage.xaml.cs">
+      <DependentUpon>DemoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Advanced\Controls\AdvSegmentedControl.xaml.cs">
+      <DependentUpon>AdvSegmentedControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Simple\Controls\SimpleSegmentedControl.xaml.cs">
+      <DependentUpon>SimpleSegmentedControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Simple\DemoPage.xaml.cs">
+      <DependentUpon>DemoPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Advanced\DemoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Simple\SegmentedControl.xaml">
+    <EmbeddedResource Update="Advanced\MoreDemoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Advanced\SegmentedControlV2.xaml">
+    <EmbeddedResource Update="MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Advanced\TabButton.xaml">
+    <EmbeddedResource Update="Simple\Controls\SimpleSegmentedControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Advanced\Controls\AdvSegmentedControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Advanced\Controls\TabButton.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XFSegmentedControl.Simple;
+using XFSegmentedControl.Simple.Controls;
 
 namespace XFSegmentedControl.Advanced
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainPageV2 : ContentPage
+	public partial class DemoPage : ContentPage
 	{
-		public MainPageV2 ()
+		public DemoPage()
 		{
 			InitializeComponent ();
 		}
@@ -48,5 +49,10 @@ namespace XFSegmentedControl.Advanced
                     break;
             }
         }
-	}
+
+	    private void MoreDemoButton_OnClicked(object sender, EventArgs e)
+	    {
+	        Navigation.PushAsync(new NavigationPage(new MoreDemoPage()));
+	    }
+    }
 }

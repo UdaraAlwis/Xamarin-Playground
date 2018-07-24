@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XFSegmentedControl.Simple.Controls;
 
 namespace XFSegmentedControl.Simple
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : ContentPage
+    public partial class DemoPage : ContentPage
 	{
-		public MainPage()
+		public DemoPage()
 		{
 			InitializeComponent();
 		}
