@@ -19,12 +19,12 @@ namespace XFSegmentedControl
 
 	    private void SimpleSegmentControlButton_OnClicked(object sender, EventArgs e)
 	    {
-	        
+	        Navigation.PushAsync(new XFSegmentedControl.Simple.DemoPage());
 	    }
 
 	    private void AdvancedSegmentControlButton_OnClicked(object sender, EventArgs e)
 	    {
-	        
-	    }
+	        Navigation.PushAsync(new XFSegmentedControl.Advanced.DemoPage());
+        }
 	}
 }

@@ -11,7 +11,7 @@ namespace XFSegmentedControl
 		{
 			InitializeComponent();
 
-		    MainPage = new NavigationPage(new XFSegmentedControl.Advanced.DemoPage());
+		    MainPage = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart ()
