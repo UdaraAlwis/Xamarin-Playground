@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:XFSegmentedControl.Advanced.Controls;assembly=XFSegmentedControl"
     xmlns:controls1="clr-namespace:XFSegmentedControl.Simple.Controls;assembly=XFSegmentedControl"
+    Title="Advanced Segmented Control Page"
     BackgroundColor="CornflowerBlue">
 
     <ContentPage.Padding>

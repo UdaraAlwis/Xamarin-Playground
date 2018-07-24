@@ -52,7 +52,7 @@ namespace XFSegmentedControl.Advanced
 
 	    private void MoreDemoButton_OnClicked(object sender, EventArgs e)
 	    {
-	        Navigation.PushAsync(new NavigationPage(new MoreDemoPage()));
+	        Navigation.PushAsync(new MoreDemoPage());
 	    }
     }
 }

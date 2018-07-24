@@ -15,8 +15,8 @@
     <Compile Update="Advanced\Controls\AdvSegmentedControl.xaml.cs">
       <DependentUpon>AdvSegmentedControl.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Simple\Controls\SimpleSegmentedControl.xaml.cs">
-      <DependentUpon>SimpleSegmentedControl.xaml</DependentUpon>
+    <Compile Update="Simple\Controls\SimSegmentedControl.xaml.cs">
+      <DependentUpon>SimSegmentedControl.xaml</DependentUpon>
     </Compile>
     <Compile Update="Simple\DemoPage.xaml.cs">
       <DependentUpon>DemoPage.xaml</DependentUpon>
@@ -33,7 +33,7 @@
     <EmbeddedResource Update="MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Simple\Controls\SimpleSegmentedControl.xaml">
+    <EmbeddedResource Update="Simple\Controls\SimSegmentedControl.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Advanced\Controls\AdvSegmentedControl.xaml">

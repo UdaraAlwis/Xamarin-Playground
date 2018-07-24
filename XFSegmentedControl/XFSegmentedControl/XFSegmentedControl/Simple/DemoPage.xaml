@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:XFSegmentedControl.Simple.Controls;assembly=XFSegmentedControl"
+    Title="Simple Segmented Control Page"
     BackgroundColor="CornflowerBlue">
 
     <ContentPage.Padding>
@@ -31,20 +32,20 @@
             Text="but some people call it Tabbed Buttons or Rocker Control??!!%##!"
             TextColor="White" />
 
-        <controls:SimpleSegmentedControl
+        <controls:SimSegmentedControl
             x:Name="SegmentedControlView"
             PrimaryColor="CornflowerBlue"
             SecondaryColor="White"
             SelectedTabIndexChanged="SegmentedControlView_SelectedTabIndexChanged"
             Tab1Text="Monkeys"
             Tab2Text="Minions">
-            <controls:SimpleSegmentedControl.Padding>
+            <controls:SimSegmentedControl.Padding>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="Android" Value="0" />
                     <On Platform="iOS" Value="10,0,10,10" />
                 </OnPlatform>
-            </controls:SimpleSegmentedControl.Padding>
-        </controls:SimpleSegmentedControl>
+            </controls:SimSegmentedControl.Padding>
+        </controls:SimSegmentedControl>
 
         <Grid
             BackgroundColor="#a2bef4"
@@ -81,6 +82,22 @@
     </StackLayout>
 
 </ContentPage>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

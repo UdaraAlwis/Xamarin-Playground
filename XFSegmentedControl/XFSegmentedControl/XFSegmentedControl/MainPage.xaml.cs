@@ -16,5 +16,15 @@ namespace XFSegmentedControl
 		{
 			InitializeComponent ();
 		}
+
+	    private void SimpleSegmentControlButton_OnClicked(object sender, EventArgs e)
+	    {
+	        
+	    }
+
+	    private void AdvancedSegmentControlButton_OnClicked(object sender, EventArgs e)
+	    {
+	        
+	    }
 	}
 }
