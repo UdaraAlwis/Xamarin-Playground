@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XFSegmentedControl.Simple.DemoPage"
+    x:Class="XFSegmentedControl.Advanced.AdvancedDemoPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:XFSegmentedControl.Simple.Controls;assembly=XFSegmentedControl"
-    Title="Simple Segmented Control Page"
+    xmlns:controls="clr-namespace:XFSegmentedControl.Advanced.Controls;assembly=XFSegmentedControl"
+    xmlns:controls1="clr-namespace:XFSegmentedControl.Simple.Controls;assembly=XFSegmentedControl"
+    Title="Advanced Segmented Control Page"
     BackgroundColor="CornflowerBlue">
 
     <ContentPage.Padding>
@@ -32,20 +33,27 @@
             Text="but some people call it Tabbed Buttons or Rocker Control??!!%##!"
             TextColor="White" />
 
-        <controls:SimSegmentedControl
-            x:Name="SegmentedControlView"
+        <controls:AdvSegmentedControl
+            x:Name="SegmentedControlV2View"
             PrimaryColor="CornflowerBlue"
             SecondaryColor="White"
-            SelectedTabIndexChanged="SegmentedControlView_SelectedTabIndexChanged"
-            Tab1Text="Monkeys"
-            Tab2Text="Minions">
-            <controls:SimSegmentedControl.Padding>
+            SelectedTabIndex="2"
+            SelectedTabIndexChanged="SegmentedControlV2View_OnSelectedTabIndexChanged">
+            <controls:AdvSegmentedControl.Padding>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="Android" Value="0" />
                     <On Platform="iOS" Value="10,0,10,10" />
                 </OnPlatform>
-            </controls:SimSegmentedControl.Padding>
-        </controls:SimSegmentedControl>
+            </controls:AdvSegmentedControl.Padding>
+            <controls:AdvSegmentedControl.TabButtonsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Monkeys</x:String>
+                    <x:String>Minions</x:String>
+                    <x:String>Penguins</x:String>
+                    <x:String>Foxes</x:String>
+                </x:Array>
+            </controls:AdvSegmentedControl.TabButtonsSource>
+        </controls:AdvSegmentedControl>
 
         <Grid
             BackgroundColor="#a2bef4"
@@ -77,39 +85,39 @@
                     TextColor="White"
                     VerticalOptions="StartAndExpand" />
             </Grid>
+
+            <Grid
+                x:Name="ContentView3"
+                Padding="20"
+                IsVisible="False">
+                <Label
+                    FontSize="28"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="Penguins are pineable butter tree house in the hill night watch over the massive seas throughout."
+                    TextColor="White"
+                    VerticalOptions="StartAndExpand" />
+            </Grid>
+
+            <Grid
+                x:Name="ContentView4"
+                Padding="20"
+                IsVisible="False">
+                <Label
+                    FontSize="28"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="Foxes are bing bottle cannes of the forest trails howling the night out furry mountain creatures."
+                    TextColor="White"
+                    VerticalOptions="StartAndExpand" />
+            </Grid>
         </Grid>
+
+        <Button
+            x:Name="MoreDemoButton"
+            Clicked="MoreDemoButton_OnClicked"
+            Text="Show me more..." />
 
     </StackLayout>
 
 </ContentPage>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

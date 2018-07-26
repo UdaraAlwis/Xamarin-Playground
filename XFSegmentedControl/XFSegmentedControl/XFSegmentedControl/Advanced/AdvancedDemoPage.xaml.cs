@@ -12,9 +12,9 @@ using XFSegmentedControl.Simple.Controls;
 namespace XFSegmentedControl.Advanced
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class DemoPage : ContentPage
+	public partial class AdvancedDemoPage : ContentPage
 	{
-		public DemoPage()
+		public AdvancedDemoPage()
 		{
 			InitializeComponent ();
 		}

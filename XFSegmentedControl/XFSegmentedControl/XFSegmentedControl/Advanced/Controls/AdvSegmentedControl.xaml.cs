@@ -26,9 +26,10 @@ namespace XFSegmentedControl.Advanced.Controls
 	            {
 	                foreach (var tabButton in ((AdvSegmentedControl)bindable).TabButtonHolder.Children)
 	                    ((TabButton)tabButton).UpdateTabButtonColors(((Color)newValue), ((AdvSegmentedControl)bindable).SecondaryColor);
-                });
+                },
+	            defaultBindingMode: BindingMode.TwoWay);
 
-	    public Color PrimaryColor
+        public Color PrimaryColor
 	    {
 	        get { return (Color)GetValue(PrimaryColorProperty); }
 	        set { SetValue(PrimaryColorProperty, value); }
@@ -49,8 +50,9 @@ namespace XFSegmentedControl.Advanced.Controls
 	                }
                     
 	                foreach (var tabButton in ((AdvSegmentedControl)bindable).TabButtonHolder.Children)
-	                    ((TabButton)tabButton).UpdateTabButtonColors(((Color)newValue), ((AdvSegmentedControl)bindable).SecondaryColor);
-                });
+	                    ((TabButton)tabButton).UpdateTabButtonColors(((AdvSegmentedControl)bindable).PrimaryColor, ((Color)newValue));
+                },
+	            defaultBindingMode:BindingMode.TwoWay);
 
         public Color SecondaryColor
 	    {
@@ -73,18 +75,19 @@ namespace XFSegmentedControl.Advanced.Controls
         }
 
 
-        public static readonly BindableProperty TabButtonsProperty 
+        public static readonly BindableProperty TabButtonsSourceProperty
             = BindableProperty.Create(
-                nameof(TabButtons),
+                nameof(TabButtonsSource),
                 typeof(IEnumerable), 
                 typeof(AdvSegmentedControl),
                 null,
-        propertyChanged: OnTabButtonsPropertyChanged);
+        propertyChanged: OnTabButtonsPropertyChanged,
+        defaultBindingMode: BindingMode.TwoWay);
 
-        public IEnumerable TabButtons
+        public IEnumerable TabButtonsSource
         {
-            get { return (IEnumerable)GetValue(TabButtonsProperty); }
-            set { SetValue(TabButtonsProperty, value); }
+            get { return (IEnumerable)GetValue(TabButtonsSourceProperty); }
+            set { SetValue(TabButtonsSourceProperty, value); }
         }
 
         static void OnTabButtonsPropertyChanged(BindableObject bindable, object oldValue, object newValue)
@@ -118,6 +121,10 @@ namespace XFSegmentedControl.Advanced.Controls
 
                     ((AdvSegmentedControl)bindable).TabButtonHolder.Children.Add(newTab);
                 }
+            }
+            else
+            {
+                ((AdvSegmentedControl)bindable).TabButtonHolder.Children?.Clear();
             }
         }
 
