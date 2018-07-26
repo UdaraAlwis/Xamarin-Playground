@@ -7,4 +7,4 @@ Yeah such a platform specific UI element, right out of Xamarin.Forms without a s
 
 Read the full blog post: https://theconfuzedsourcecode.wordpress.com/2018/07/09/a-segmented-control-in-pure-xamarin-forms/
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/SegmentedControlAndroidGIF.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/SegmentedControliOSGIF.gif"  height="350" />
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/SimpleSegmentedControlAndroidGIF.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/SimpleSegmentedControliOSGIF.gif"  height="350" />
