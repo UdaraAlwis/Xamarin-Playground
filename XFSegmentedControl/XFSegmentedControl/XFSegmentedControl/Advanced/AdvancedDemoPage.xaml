@@ -38,7 +38,7 @@
             PrimaryColor="CornflowerBlue"
             SecondaryColor="White"
             SelectedTabIndex="2"
-            SelectedTabIndexChanged="SegmentedControlV2View_OnSelectedTabIndexChanged">
+            SelectedTabIndexChanged="AdvancedDemoPage_OnSelectedTabIndexChanged">
             <controls:AdvSegmentedControl.Padding>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="Android" Value="0" />

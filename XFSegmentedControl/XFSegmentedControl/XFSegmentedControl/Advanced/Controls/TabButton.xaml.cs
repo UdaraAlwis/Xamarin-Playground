@@ -86,6 +86,38 @@ namespace XFSegmentedControl.Advanced.Controls
             SendTabButtonClicked();
         }
 
+	    private void SetSelectedTabState()
+	    {
+	        // set up platform specific
+	        // properties for SelectTab event
+	        if (Device.RuntimePlatform == Device.Android)
+	        {
+	            TabBoxView.IsVisible = true;
+	        }
+	        if (Device.RuntimePlatform == Device.iOS)
+	        {
+	            TabButtonView.BackgroundColor = SecondaryColor;
+
+	            TabLabelView.TextColor = PrimaryColor;
+	        }
+        }
+
+	    private void SetUnselectedTabState()
+	    {
+	        // set up platform specific
+	        // properties for SelectTab event
+	        if (Device.RuntimePlatform == Device.Android)
+	        {
+	            TabBoxView.IsVisible = false;
+	        }
+	        else if (Device.RuntimePlatform == Device.iOS)
+	        {
+	            TabButtonView.BackgroundColor = PrimaryColor;
+
+	            TabLabelView.TextColor = SecondaryColor;
+	        }
+        }
+
 	    private void SendTabButtonClicked()
 	    {
 	        TabButtonClicked?.Invoke(this, EventArgs.Empty);
@@ -95,30 +127,12 @@ namespace XFSegmentedControl.Advanced.Controls
 	    {
 	        if (selectedTabIndex != TabIndex)
 	        {
-	            // set up platform specific
-	            // properties for SelectTab1 event
-	            if (Device.RuntimePlatform == Device.Android)
-	            {
-	                TabBoxView.IsVisible = false;
-	            }
-	            else if (Device.RuntimePlatform == Device.iOS)
-	            {
-	                TabButtonView.BackgroundColor = PrimaryColor;
-
-	                TabLabelView.TextColor = SecondaryColor;
-	            }
+	            SetUnselectedTabState();
 	        }
 	        else
 	        {
-                // for iOS we need to update the 
-                // color scheme of seleted Tab manually
-                if (Device.RuntimePlatform == Device.iOS)
-	            {
-	                TabButtonView.BackgroundColor = SecondaryColor;
-
-	                TabLabelView.TextColor = PrimaryColor;
-	            }
-            }
+	            SetSelectedTabState();
+	        }
 	    }
 
 	    public void UpdateTabButtonColors(Color primaryColor, Color secondaryColor)

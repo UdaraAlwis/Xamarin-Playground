@@ -78,12 +78,19 @@ namespace XFSegmentedControl.Advanced.Controls
                 nameof(SelectedTabIndex),
                 typeof(int),
                 typeof(AdvSegmentedControl),
-                0);
+                0, BindingMode.TwoWay, 
+                propertyChanged: (bindable, value, newValue) =>
+                {
+                    ((AdvSegmentedControl)bindable).SendSelectedTabIndexChangedEvent();
+
+                    foreach (var tabButton in ((AdvSegmentedControl)bindable).TabButtonHolder.Children)
+                        ((TabButton)tabButton).UpdateTabButtonState(((AdvSegmentedControl)bindable).SelectedTabIndex);
+                });
 
         public int SelectedTabIndex
         {
             get { return (int)GetValue(SelectedTabIndexProperty); }
-            private set { SetValue(SelectedTabIndexProperty, value); }
+            set { SetValue(SelectedTabIndexProperty, value); }
         }
 
 
@@ -122,20 +129,19 @@ namespace XFSegmentedControl.Advanced.Controls
 
                     newTab.TabButtonClicked += (sender, args) =>
                     {
-                        foreach (var tabButton in ((AdvSegmentedControl)bindable).TabButtonHolder.Children)
-                            ((TabButton) tabButton).UpdateTabButtonState(((TabButton) sender).TabIndex);
-                        
                         ((AdvSegmentedControl)bindable).SelectedTabIndex = ((TabButton)sender).TabIndex;
-                        ((AdvSegmentedControl)bindable).SendSelectedTabIndexChangedEvent();
                     };
                     
                     Grid.SetColumn(newTab, index++);
 
-                    ((AdvSegmentedControl)bindable).SelectedTabIndex = 0;
-                    ((AdvSegmentedControl)bindable).SendSelectedTabIndexChangedEvent();
+                    ((AdvSegmentedControl)bindable).TabButtonHolder.Children.Add(newTab);
                 }
-                
-                ((AdvSegmentedControl)bindable).SelectedTabIndex = 0;
+
+                if (((AdvSegmentedControl)bindable).SelectedTabIndex > 
+                    ((AdvSegmentedControl)bindable).TabButtonHolder.Children.Count - 1)
+                {
+                    ((AdvSegmentedControl) bindable).SelectedTabIndex = 0;
+                }
             }
             else
             {

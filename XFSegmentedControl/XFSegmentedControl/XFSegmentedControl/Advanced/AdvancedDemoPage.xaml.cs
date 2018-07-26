@@ -19,7 +19,7 @@ namespace XFSegmentedControl.Advanced
 			InitializeComponent ();
 		}
 
-	    private void SegmentedControlV2View_OnSelectedTabIndexChanged(object sender, SelectedTabIndexEventArgs e)
+	    private void AdvancedDemoPage_OnSelectedTabIndexChanged(object sender, SelectedTabIndexEventArgs e)
 	    {
 	        switch (e.SelectedTabIndex)
 	        {
