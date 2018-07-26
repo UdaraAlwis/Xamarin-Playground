@@ -3,5 +3,18 @@
     x:Class="XFSegmentedControl.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Application.Resources />
+    <Application.Resources>
+
+        <!--  Application resource dictionary  -->
+        <ResourceDictionary>
+
+            <!--  Styles  -->
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#2196F3" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+            <!--  Styles  -->
+
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

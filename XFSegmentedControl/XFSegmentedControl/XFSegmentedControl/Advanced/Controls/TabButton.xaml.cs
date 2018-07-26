@@ -34,6 +34,9 @@ namespace XFSegmentedControl.Advanced.Controls
             
             TabLabelView.Text = TabText;
 
+            if (Device.RuntimePlatform == Device.iOS && TabIndex != 0)
+                VerticalSeparator.IsVisible = true;
+
             SetUpColorScheme();
 
             if (isSelectedByDefault)
@@ -52,7 +55,7 @@ namespace XFSegmentedControl.Advanced.Controls
 
 	            TabBoxView.Color =
 	                TabLabelView.TextColor = SecondaryColor;
-	        }
+            }
 	        else if (Device.RuntimePlatform == Device.iOS)
 	        {
 	            TabLabelView.FontSize
@@ -60,13 +63,16 @@ namespace XFSegmentedControl.Advanced.Controls
 
 	            TabButtonView.BackgroundColor = PrimaryColor;
 	            TabLabelView.TextColor = SecondaryColor;
-	        }
+
+	            VerticalSeparator.Color =
+	                TabLabelView.TextColor = SecondaryColor;
+            }
         }
 
         private void TabButton_OnClicked(object sender, EventArgs e)
         {
             // set up platform specific
-            // properties for SelectTab2 event
+            // properties for SelectTab event
             if (Device.RuntimePlatform == Device.Android)
             {
                 TabBoxView.IsVisible = true;
@@ -74,7 +80,6 @@ namespace XFSegmentedControl.Advanced.Controls
             else if (Device.RuntimePlatform == Device.iOS)
             {
                 TabButtonView.BackgroundColor = SecondaryColor;
-
                 TabLabelView.TextColor = PrimaryColor;
             }
 
@@ -99,8 +104,19 @@ namespace XFSegmentedControl.Advanced.Controls
 	            else if (Device.RuntimePlatform == Device.iOS)
 	            {
 	                TabButtonView.BackgroundColor = PrimaryColor;
-                    
+
 	                TabLabelView.TextColor = SecondaryColor;
+	            }
+	        }
+	        else
+	        {
+                // for iOS we need to update the 
+                // color scheme of seleted Tab manually
+                if (Device.RuntimePlatform == Device.iOS)
+	            {
+	                TabButtonView.BackgroundColor = SecondaryColor;
+
+	                TabLabelView.TextColor = PrimaryColor;
 	            }
             }
 	    }

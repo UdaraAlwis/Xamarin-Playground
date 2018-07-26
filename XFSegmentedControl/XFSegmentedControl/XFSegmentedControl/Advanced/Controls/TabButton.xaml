@@ -22,4 +22,11 @@
         InputTransparent="True"
         IsVisible="False"
         VerticalOptions="End" />
+    <BoxView
+        x:Name="VerticalSeparator"
+        HorizontalOptions="Start"
+        InputTransparent="True"
+        IsVisible="False"
+        VerticalOptions="FillAndExpand"
+        WidthRequest="1" />
 </Grid>

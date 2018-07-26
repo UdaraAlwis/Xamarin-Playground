@@ -40,7 +40,7 @@ namespace XFSegmentedControl.Advanced
 
 	    private void RemoveTabButton_OnClicked(object sender, EventArgs e)
 	    {
-	        if (_tabSource.Count > 0)
+	        if (_tabSource.Count > 2)
     	        _tabSource.Remove(_tabSource.Last());
 
 	        AdvSegmentedControl.TabButtonsSource = new ObservableCollection<string>(_tabSource);

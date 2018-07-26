@@ -113,11 +113,15 @@
             </Grid>
         </Grid>
 
-        <Button
-            x:Name="MoreDemoButton"
-            Clicked="MoreDemoButton_OnClicked"
-            Text="Show me more..." />
-
+        <Grid BackgroundColor="White">
+            <Button
+                x:Name="MoreDemoButton"
+                Margin="10,10,10,10"
+                BackgroundColor="DodgerBlue"
+                Clicked="MoreDemoButton_OnClicked"
+                Text="Show me more..."
+                TextColor="White" />
+        </Grid>
     </StackLayout>
 
 </ContentPage>
