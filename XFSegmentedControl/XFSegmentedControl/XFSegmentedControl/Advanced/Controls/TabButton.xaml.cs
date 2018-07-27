@@ -22,28 +22,33 @@ namespace XFSegmentedControl.Advanced.Controls
 
 	    public Color SecondaryColor { get; private set; }
 
-	    public TabButton(string tabText, int tabIndex, Color primaryColor,
-	        Color secondaryColor, bool isSelectedByDefault)
+        public TabButton(string tabText, int tabIndex, Color primaryColor,
+            Color secondaryColor, bool isSelectedByDefault)
         {
-			InitializeComponent ();
+            InitializeComponent();
 
+            // Set up default text values
             TabText = tabText;
             TabIndex = tabIndex;
             PrimaryColor = primaryColor;
             SecondaryColor = secondaryColor;
-            
+
             TabLabelView.Text = TabText;
 
+            // set up ios vertical separator 
+            // visibility based on index
             if (Device.RuntimePlatform == Device.iOS && TabIndex != 0)
                 VerticalSeparator.IsVisible = true;
 
+            // Set up default color values
             SetUpColorScheme();
 
+            // set up selected status
             if (isSelectedByDefault)
                 TabButtonView.SendClicked();
         }
 
-	    private void SetUpColorScheme()
+        private void SetUpColorScheme()
 	    {
 	        // Setting up platform specific properties for Android and iOS
 	        if (Device.RuntimePlatform == Device.Android)
@@ -71,17 +76,7 @@ namespace XFSegmentedControl.Advanced.Controls
 
         private void TabButton_OnClicked(object sender, EventArgs e)
         {
-            // set up platform specific
-            // properties for SelectTab event
-            if (Device.RuntimePlatform == Device.Android)
-            {
-                HorizontalIndicator.IsVisible = true;
-            }
-            else if (Device.RuntimePlatform == Device.iOS)
-            {
-                TabButtonView.BackgroundColor = SecondaryColor;
-                TabLabelView.TextColor = PrimaryColor;
-            }
+            SetSelectedTabState();
 
             SendTabButtonClicked();
         }
@@ -97,16 +92,15 @@ namespace XFSegmentedControl.Advanced.Controls
 	        if (Device.RuntimePlatform == Device.iOS)
 	        {
 	            TabButtonView.BackgroundColor = SecondaryColor;
-
 	            TabLabelView.TextColor = PrimaryColor;
 	        }
         }
 
 	    private void SetUnselectedTabState()
 	    {
-	        // set up platform specific
-	        // properties for SelectTab event
-	        if (Device.RuntimePlatform == Device.Android)
+            // set up platform specific
+            // properties for UnselectTab event
+            if (Device.RuntimePlatform == Device.Android)
 	        {
 	            HorizontalIndicator.IsVisible = false;
 	        }
