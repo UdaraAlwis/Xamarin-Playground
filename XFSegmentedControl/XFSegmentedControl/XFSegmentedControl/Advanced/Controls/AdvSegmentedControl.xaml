@@ -30,6 +30,7 @@
             </Frame.HeightRequest>
             <!--  Platform specific customization values for the border  -->
 
+            <!--  Holder of the Child Tab buttons  -->
             <Grid x:Name="TabButtonHolder" ColumnSpacing="0" />
 
         </Frame>

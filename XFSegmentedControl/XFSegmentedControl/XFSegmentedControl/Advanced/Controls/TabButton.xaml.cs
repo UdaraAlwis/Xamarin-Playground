@@ -53,7 +53,7 @@ namespace XFSegmentedControl.Advanced.Controls
 
 	            TabButtonView.BackgroundColor = PrimaryColor;
 
-	            TabBoxView.Color =
+	            HorizontalIndicator.Color =
 	                TabLabelView.TextColor = SecondaryColor;
             }
 	        else if (Device.RuntimePlatform == Device.iOS)
@@ -75,7 +75,7 @@ namespace XFSegmentedControl.Advanced.Controls
             // properties for SelectTab event
             if (Device.RuntimePlatform == Device.Android)
             {
-                TabBoxView.IsVisible = true;
+                HorizontalIndicator.IsVisible = true;
             }
             else if (Device.RuntimePlatform == Device.iOS)
             {
@@ -92,7 +92,7 @@ namespace XFSegmentedControl.Advanced.Controls
 	        // properties for SelectTab event
 	        if (Device.RuntimePlatform == Device.Android)
 	        {
-	            TabBoxView.IsVisible = true;
+	            HorizontalIndicator.IsVisible = true;
 	        }
 	        if (Device.RuntimePlatform == Device.iOS)
 	        {
@@ -108,7 +108,7 @@ namespace XFSegmentedControl.Advanced.Controls
 	        // properties for SelectTab event
 	        if (Device.RuntimePlatform == Device.Android)
 	        {
-	            TabBoxView.IsVisible = false;
+	            HorizontalIndicator.IsVisible = false;
 	        }
 	        else if (Device.RuntimePlatform == Device.iOS)
 	        {
@@ -123,6 +123,10 @@ namespace XFSegmentedControl.Advanced.Controls
 	        TabButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Update the Tab Button status Selected/Unselected
+        /// </summary>
+        /// <param name="selectedTabIndex"></param>
 	    public void UpdateTabButtonState(int selectedTabIndex)
 	    {
 	        if (selectedTabIndex != TabIndex)
@@ -135,6 +139,11 @@ namespace XFSegmentedControl.Advanced.Controls
 	        }
 	    }
 
+        /// <summary>
+        /// Update the Color status of the Tab Button
+        /// </summary>
+        /// <param name="primaryColor"></param>
+        /// <param name="secondaryColor"></param>
 	    public void UpdateTabButtonColors(Color primaryColor, Color secondaryColor)
 	    {
 	        PrimaryColor = primaryColor;
