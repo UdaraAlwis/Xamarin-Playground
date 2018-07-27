@@ -124,14 +124,10 @@ namespace XFSegmentedControl.Advanced.Controls
 	    public void UpdateTabButtonState(int selectedTabIndex)
 	    {
 	        if (selectedTabIndex != TabIndex)
-	        {
 	            SetUnselectedTabState();
-	        }
 	        else
-	        {
 	            SetSelectedTabState();
-	        }
-	    }
+        }
 
         /// <summary>
         /// Update the Color status of the Tab Button
