@@ -5,7 +5,7 @@ A Segmented Button Control, or as some call it Grouped Button Control, or Tabbed
 
 Yeah such a platform specific UI element, right out of Xamarin.Forms without a single line of native code, how's that even? Well if you've been following my blog for a while, you know that I'm all about pushing them limits of any given platform and achieve the impossibru! ;)
 
-Started this off as a fun experientant implementation which blew into a fool-proof awesomeness which I have broken into two parts.
+Started this off as a fun experientant implementation which blew into a fool-proof awesomeness which I have broken into two parts, Simple and Advanced implementation!
 
 Part 1: Simple Segmented Button Control in pure Xamarin.Forms!
 ---------------
@@ -14,7 +14,7 @@ A very simple Segmented Button Control which has two Tab Button elements but wit
 
 Read the full blog post: https://theconfuzedsourcecode.wordpress.com/2018/07/09/a-segmented-control-in-pure-xamarin-forms/
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/SimpleSegmentedControlAndroidGIF.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/SimpleSegmentedControliOSGIF.gif"  height="350" />
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/SimpleSegmentedControlAndroidGIF.gif"  height="315" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/SimpleSegmentedControliOSGIF.gif"  height="315" />
 
 
 
@@ -29,7 +29,7 @@ Read the full blog post: https://theconfuzedsourcecode.wordpress.com/2018/07/09/
 
 **more awesome stuff...**
 
-just to show how powerful this awesomeness is, I cooked up bit of a cool demo right here!
+just to show how powerful this awesomeness is, I cooked up bit of a cool demo right here running on iOS and Android!
 
 <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControliOSGIF1.gif"  width="250" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControliOSGIF2.gif"  width="250" />
 
