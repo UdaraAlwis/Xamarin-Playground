@@ -23,7 +23,7 @@ Part 2: Advanced Segmented Button Control in pure Xamarin.Forms!
 
 An advanced Segmented Button Control which has awesome features such as dynamically adding or removing Tab Button elements, setting Colors, and Selected Tab index at run time with full native features and looks and feel!
 
-> Read the full blog post: https://theconfuzedsourcecode.wordpress.com/2018/07/09/a-segmented-control-in-pure-xamarin-forms/
+> Read the full blog post: https://theconfuzedsourcecode.wordpress.com/2018/08/02/advanced-segmented-button-control-in-pure-xamarin-forms/
 
 <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControlAndroidGIF.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControliOSGIF.gif"  height="350" />
 
