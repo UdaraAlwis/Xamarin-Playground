@@ -27,13 +27,15 @@ Read the full blog post: https://theconfuzedsourcecode.wordpress.com/2018/07/09/
 
 <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControlAndroidGIF.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControliOSGIF.gif"  height="350" />
 
-more awesome stuff...
+**more awesome stuff...**
 
 just to show how powerful this awesomeness is, I cooked up bit of a cool demo right here!
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControliOSGIF1.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControliOSGIF2.gif"  height="350" />
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControliOSGIF1.gif"  width="250" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControliOSGIF2.gif"  width="250" />
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControlAndroidGIF1.gif"  height="350" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControlAndroidGIF2.gif"  height="350" />
+<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControlAndroidGIF1.gif"  width="250" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControlAndroidGIF2.gif"  width="250" />
+
+FULLY DYNAMIC | ADDING/REMOVE TABS | SWITCHING COLORS  | SWITCHING TAB
 
 
 
