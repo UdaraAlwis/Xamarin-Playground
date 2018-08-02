@@ -35,7 +35,7 @@ just to show how powerful this awesomeness is, I cooked up bit of a cool demo ri
 
 <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControlAndroidGIF1.gif"  width="250" /> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFSegmentedControl/screenshots/AdvSegmentedControlAndroidGIF2.gif"  width="250" />
 
-FULLY DYNAMIC | ADDING/REMOVE TABS | SWITCHING COLORS  | SWITCHING TAB
+**FULLY DYNAMIC | ADDING/REMOVE TABS | SWITCHING COLORS  | SWITCHING TAB** 
 
 
 
