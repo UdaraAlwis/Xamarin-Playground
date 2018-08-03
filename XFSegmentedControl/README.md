@@ -5,7 +5,7 @@ A Segmented Button Control, or as some call it Grouped Button Control, or Tabbed
 
 Yeah such a platform specific UI element, right out of Xamarin.Forms without a single line of native code, how's that even? Well if you've been following my blog for a while, you know that I'm all about pushing them limits of any given platform and achieve the impossibru! ;)
 
-Started this off as a fun experientant implementation which blew into a fool-proof awesomeness which I have broken into two parts, Simple and Advanced implementation!
+Started this off as a fun experientant implementation which blew into a fool-proof awesomeness which I have broken into two parts, Simple and Advanced implementation in my blog!
 
 Part 1: Simple Segmented Button Control in pure Xamarin.Forms!
 ---------------
