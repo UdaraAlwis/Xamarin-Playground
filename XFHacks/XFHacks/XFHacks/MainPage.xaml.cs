@@ -45,5 +45,10 @@ namespace XFHacks
         {
             Navigation.PushAsync(new ShowHidePasswordEntryPage());
         }
+
+        void OnLabelwithBorderClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new LabelWithBorderPage());
+        }
     }
 }

@@ -5,65 +5,75 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="XFHacks">
 
-    <Grid Padding="20" VerticalOptions="Center">
+    <ScrollView>
+        <Grid Padding="20" VerticalOptions="Center">
 
-        <Label
-            Grid.Row="0"
-            FontSize="20"
-            HorizontalTextAlignment="Center"
-            Text="Welcome to Xamarin.Forms, uh no, XFHACKS! ;)" />
+            <Label
+                Grid.Row="0"
+                FontSize="20"
+                HorizontalTextAlignment="Center"
+                Text="Welcome to Xamarin.Forms, uh no, XFHACKS! ;)" />
 
-        <Button
-            Grid.Row="1"
-            BackgroundColor="#2196F3"
-            Clicked="OnButtonClicked"
-            Text="Goto: Picker with Icon"
-            TextColor="White" />
+            <Button
+                Grid.Row="1"
+                BackgroundColor="#2196F3"
+                Clicked="OnButtonClicked"
+                Text="Goto: Picker with Icon"
+                TextColor="White" />
 
-        <Button
-            Grid.Row="2"
-            BackgroundColor="#2196F3"
-            Clicked="OnButtonWithIconClicked"
-            Text="Goto: Button with Icon"
-            TextColor="White" />
+            <Button
+                Grid.Row="2"
+                BackgroundColor="#2196F3"
+                Clicked="OnButtonWithIconClicked"
+                Text="Goto: Button with Icon"
+                TextColor="White" />
 
-        <Button
-            Grid.Row="3"
-            BackgroundColor="#2196F3"
-            Clicked="OnEditorWithBorderClicked"
-            Text="Goto: Editor with Border"
-            TextColor="White" />
+            <Button
+                Grid.Row="3"
+                BackgroundColor="#2196F3"
+                Clicked="OnEditorWithBorderClicked"
+                Text="Goto: Editor with Border"
+                TextColor="White" />
 
-        <Button
-            Grid.Row="4"
-            BackgroundColor="#2196F3"
-            Clicked="OnEditorWithPlaceholderClicked"
-            Text="Goto: Editor with Placeholder"
-            TextColor="White" />
+            <Button
+                Grid.Row="4"
+                BackgroundColor="#2196F3"
+                Clicked="OnEditorWithPlaceholderClicked"
+                Text="Goto: Editor with Placeholder"
+                TextColor="White" />
 
-        <Button
-            Grid.Row="5"
-            BackgroundColor="#2196F3"
-            Clicked="OnButtonWithMoreControlClicked"
-            Text="Goto: Button with more Control"
-            TextColor="White" />
+            <Button
+                Grid.Row="5"
+                BackgroundColor="#2196F3"
+                Clicked="OnButtonWithMoreControlClicked"
+                Text="Goto: Button with more Control"
+                TextColor="White" />
 
-        <Button
-            Grid.Row="6"
-            BackgroundColor="#2196F3"
-            Clicked="OnShowHidePasswordEntryClicked"
-            Text="Goto: Show Hide Password Entry"
-            TextColor="White" />
+            <Button
+                Grid.Row="6"
+                BackgroundColor="#2196F3"
+                Clicked="OnShowHidePasswordEntryClicked"
+                Text="Goto: Show Hide Password Entry"
+                TextColor="White" />
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-    </Grid>
+            <Button
+                Grid.Row="7"
+                BackgroundColor="#2196F3"
+                Clicked="OnLabelwithBorderClicked"
+                Text="Goto: Label with Border"
+                TextColor="White" />
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+        </Grid>
+    </ScrollView>
 
 </ContentPage>

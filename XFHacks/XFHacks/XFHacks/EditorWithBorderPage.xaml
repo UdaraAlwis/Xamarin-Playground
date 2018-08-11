@@ -15,6 +15,7 @@
             <OnPlatform x:TypeArguments="Thickness">
                 <On Platform="Android" Value="70" />
                 <On Platform="iOS" Value="50" />
+                <On Platform="UWP" Value="70" />
             </OnPlatform>
         </Grid.Padding>
 

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFHacks.LabelWithBorderPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Label with Border Page">
+
+    <!--  FOR ANDROID|IOS|UWP  -->
+
+    <Grid RowSpacing="20" VerticalOptions="Center">
+        <Grid.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="Android" Value="30,0,30,0" />
+                <On Platform="iOS" Value="30,0,30,0" />
+                <On Platform="UWP" Value="30,0,30,0" />
+            </OnPlatform>
+        </Grid.Padding>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            FontSize="20"
+            HorizontalTextAlignment="Center"
+            Text="Welcome to Label with a Border and more!" />
+
+        <Grid
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalOptions="Center"
+            WidthRequest="200">
+
+            <Label
+                Grid.Row="0"
+                FontSize="15"
+                HorizontalTextAlignment="Center"
+                Text="With Border" />
+
+            <!--  Label with a Border  -->
+            <Frame
+                Grid.Row="1"
+                Padding="7"
+                CornerRadius="8"
+                HasShadow="True"
+                OutlineColor="#2196F3">
+                <Label
+                    BackgroundColor="Transparent"
+                    Text="Hello World!"
+                    TextColor="Black" />
+            </Frame>
+
+
+            <Label
+                Grid.Row="2"
+                FontSize="15"
+                HorizontalTextAlignment="Center"
+                Text="With Background" />
+
+            <!--  Label with a Border  -->
+            <Frame
+                Grid.Row="3"
+                Padding="7"
+                BackgroundColor="#b3ddff"
+                CornerRadius="8"
+                HasShadow="False">
+                <Label
+                    BackgroundColor="Transparent"
+                    Text="Hello World!"
+                    TextColor="Black" />
+            </Frame>
+
+
+            <Label
+                Grid.Row="4"
+                FontSize="15"
+                HorizontalTextAlignment="Center"
+                Text="With Multiple Lines" />
+
+            <!--  Label with a Border  -->
+            <Frame
+                Grid.Row="5"
+                Padding="7"
+                BackgroundColor="#b3ddff"
+                CornerRadius="8"
+                HasShadow="False">
+                <Label
+                    BackgroundColor="Transparent"
+                    Text="This Label is from pure Xamarin.Forms and it has a customizable Background and a Border, oh how awesome is that eh!"
+                    TextColor="Black" />
+            </Frame>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+        </Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+    </Grid>
+
+</ContentPage>
