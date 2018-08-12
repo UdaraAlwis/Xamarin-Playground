@@ -10,9 +10,9 @@
     <Grid RowSpacing="20" VerticalOptions="Center">
         <Grid.Padding>
             <OnPlatform x:TypeArguments="Thickness">
-                <On Platform="Android" Value="30,0,30,0" />
-                <On Platform="iOS" Value="30,0,30,0" />
-                <On Platform="UWP" Value="30,0,30,0" />
+                <On Platform="Android" Value="70,0,70,0" />
+                <On Platform="iOS" Value="20,0,20,0" />
+                <On Platform="UWP" Value="70,0,70,0" />
             </OnPlatform>
         </Grid.Padding>
 
@@ -29,67 +29,165 @@
             HorizontalOptions="Center"
             WidthRequest="200">
 
-            <Label
-                Grid.Row="0"
-                FontSize="15"
-                HorizontalTextAlignment="Center"
-                Text="With Border" />
-
-            <!--  Label with a Border  -->
-            <Frame
-                Grid.Row="1"
-                Padding="7"
-                CornerRadius="8"
-                HasShadow="True"
-                OutlineColor="#2196F3">
+            <StackLayout Grid.Row="0" Padding="0,0,0,10">
                 <Label
-                    BackgroundColor="Transparent"
-                    Text="Hello World!"
-                    TextColor="Black" />
-            </Frame>
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    Text="Border with curved corners" />
 
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7">
+                    <Grid>
+                        <Frame
+                            Margin="2"
+                            Padding="5"
+                            BackgroundColor="White"
+                            CornerRadius="6">
+                            <Label
+                                BackgroundColor="Transparent"
+                                HorizontalOptions="Center"
+                                Text="Hello World!"
+                                TextColor="Black" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+            </StackLayout>
 
-            <Label
-                Grid.Row="2"
-                FontSize="15"
-                HorizontalTextAlignment="Center"
-                Text="With Background" />
-
-            <!--  Label with a Border  -->
-            <Frame
-                Grid.Row="3"
-                Padding="7"
-                BackgroundColor="#b3ddff"
-                CornerRadius="8"
-                HasShadow="False">
+            <StackLayout Grid.Row="1" Padding="0,0,0,10">
                 <Label
-                    BackgroundColor="Transparent"
-                    Text="Hello World!"
-                    TextColor="Black" />
-            </Frame>
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    Text="Border with rounded sides" />
 
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="16">
+                    <Grid>
+                        <Frame
+                            Margin="2"
+                            Padding="5"
+                            BackgroundColor="White"
+                            CornerRadius="15">
+                            <Label
+                                BackgroundColor="Transparent"
+                                HorizontalOptions="Center"
+                                Text="Hello World!"
+                                TextColor="Black" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+            </StackLayout>
 
-            <Label
-                Grid.Row="4"
-                FontSize="15"
-                HorizontalTextAlignment="Center"
-                Text="With Multiple Lines" />
-
-            <!--  Label with a Border  -->
-            <Frame
-                Grid.Row="5"
-                Padding="7"
-                BackgroundColor="#b3ddff"
-                CornerRadius="8"
-                HasShadow="False">
+            <StackLayout Grid.Row="2" Padding="0,0,0,10">
                 <Label
-                    BackgroundColor="Transparent"
-                    Text="This Label is from pure Xamarin.Forms and it has a customizable Background and a Border, oh how awesome is that eh!"
-                    TextColor="Black" />
-            </Frame>
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    Text="Support with Text Alignment" />
+
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="16">
+                    <Grid>
+                        <Frame
+                            Margin="2"
+                            Padding="5"
+                            BackgroundColor="White"
+                            CornerRadius="15">
+                            <Label
+                                Margin="5,0,0,0"
+                                BackgroundColor="Transparent"
+                                HorizontalOptions="Start"
+                                Text="Hello World!"
+                                TextColor="Black" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="16">
+                    <Grid>
+                        <Frame
+                            Margin="2"
+                            Padding="5"
+                            BackgroundColor="White"
+                            CornerRadius="15">
+                            <Label
+                                Margin="0,0,5,0"
+                                BackgroundColor="Transparent"
+                                HorizontalOptions="End"
+                                Text="Hello World!"
+                                TextColor="Black" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Padding="0,0,0,10">
+                <Label
+                    Grid.Row="4"
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    Text="With Background" />
+
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7">
+                    <Grid>
+                        <Frame
+                            Margin="2"
+                            Padding="7"
+                            BackgroundColor="#2196F3"
+                            CornerRadius="6">
+                            <Label
+                                BackgroundColor="Transparent"
+                                HorizontalOptions="Center"
+                                Text="Hello World!"
+                                TextColor="White" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Row="4" Padding="0,0,0,10">
+                <Label
+                    Grid.Row="6"
+                    FontSize="15"
+                    HorizontalTextAlignment="Center"
+                    Text="With Multiple Lines" />
+
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7">
+                    <Grid>
+                        <Frame
+                            Margin="2"
+                            Padding="7"
+                            BackgroundColor="White"
+                            CornerRadius="6">
+                            <Label
+                                BackgroundColor="Transparent"
+                                Text="This Label is from pure Xamarin.Forms and it has a customizable Background and a Border, oh how awesome is that eh!"
+                                TextColor="Black" />
+                        </Frame>
+                    </Grid>
+                </Frame>
+            </StackLayout>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
