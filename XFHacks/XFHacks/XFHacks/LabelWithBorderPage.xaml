@@ -7,12 +7,12 @@
 
     <!--  FOR ANDROID|IOS|UWP  -->
 
-    <Grid RowSpacing="20" VerticalOptions="Center">
+    <Grid RowSpacing="20" VerticalOptions="Start">
         <Grid.Padding>
             <OnPlatform x:TypeArguments="Thickness">
-                <On Platform="Android" Value="70,0,70,0" />
-                <On Platform="iOS" Value="20,0,20,0" />
-                <On Platform="UWP" Value="70,0,70,0" />
+                <On Platform="Android" Value="70,20,70,0" />
+                <On Platform="iOS" Value="55,20,55,0" />
+                <On Platform="UWP" Value="70,20,70,0" />
             </OnPlatform>
         </Grid.Padding>
 
@@ -35,12 +35,14 @@
                 <Frame
                     Padding="0"
                     BackgroundColor="#2196F3"
-                    CornerRadius="7">
+                    CornerRadius="7"
+                    HasShadow="False">
                     <Frame
                         Margin="2"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="6">
+                        CornerRadius="6"
+                        HasShadow="False">
                         <Label
                             BackgroundColor="Transparent"
                             HorizontalOptions="Center"
@@ -56,12 +58,14 @@
                 <Frame
                     Padding="0"
                     BackgroundColor="#2196F3"
-                    CornerRadius="16">
+                    CornerRadius="16"
+                    HasShadow="False">
                     <Frame
                         Margin="2"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="15">
+                        CornerRadius="15"
+                        HasShadow="False">
                         <Label
                             BackgroundColor="Transparent"
                             HorizontalOptions="Center"
@@ -72,21 +76,19 @@
             </StackLayout>
 
             <StackLayout Grid.Row="2" Padding="0,0,0,10">
-                <Label
-                    FontSize="15"
-                    HorizontalTextAlignment="Center"
-                    Text="Support with Text Alignment" />
 
                 <!--  Label with a Border  -->
                 <Frame
                     Padding="0"
                     BackgroundColor="#2196F3"
-                    CornerRadius="16">
+                    CornerRadius="16"
+                    HasShadow="False">
                     <Frame
                         Margin="2"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="15">
+                        CornerRadius="15"
+                        HasShadow="False">
                         <Label
                             Margin="5,0,0,0"
                             BackgroundColor="Transparent"
@@ -100,12 +102,14 @@
                 <Frame
                     Padding="0"
                     BackgroundColor="#2196F3"
-                    CornerRadius="16">
+                    CornerRadius="16"
+                    HasShadow="False">
                     <Frame
                         Margin="2"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="15">
+                        CornerRadius="15"
+                        HasShadow="False">
                         <Label
                             Margin="0,0,5,0"
                             BackgroundColor="Transparent"
@@ -122,12 +126,14 @@
                 <Frame
                     Padding="0"
                     BackgroundColor="#2196F3"
-                    CornerRadius="7">
+                    CornerRadius="7"
+                    HasShadow="False">
                     <Frame
                         Margin="2"
                         Padding="7"
                         BackgroundColor="#2196F3"
-                        CornerRadius="6">
+                        CornerRadius="6"
+                        HasShadow="False">
                         <Label
                             BackgroundColor="Transparent"
                             HorizontalOptions="Center"
@@ -143,12 +149,14 @@
                 <Frame
                     Padding="0"
                     BackgroundColor="#2196F3"
-                    CornerRadius="7">
+                    CornerRadius="7"
+                    HasShadow="False">
                     <Frame
                         Margin="2"
                         Padding="7"
                         BackgroundColor="White"
-                        CornerRadius="6">
+                        CornerRadius="6"
+                        HasShadow="False">
                         <Label
                             BackgroundColor="Transparent"
                             Text="This Label has Multiple Lines and a Border around it, and it is from pure Xamarin.Forms, oh how awesome is that eh!"
