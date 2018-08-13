@@ -59,11 +59,19 @@
             <Button
                 Grid.Row="7"
                 BackgroundColor="#2196F3"
+                Clicked="OnImprovedFrameControlClicked"
+                Text="Goto: Improved Frame Control"
+                TextColor="White" />
+
+            <Button
+                Grid.Row="8"
+                BackgroundColor="#2196F3"
                 Clicked="OnLabelwithBorderClicked"
                 Text="Goto: Label with Border"
                 TextColor="White" />
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />

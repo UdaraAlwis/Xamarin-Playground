@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFHacks.ImprovedFrameControlPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--  FOR ANDROID|IOS|UWP  -->
+
+    <Grid RowSpacing="20" VerticalOptions="Start">
+        <Grid.Padding>
+            <OnPlatform x:TypeArguments="Thickness">
+                <On Platform="Android" Value="70,20,70,0" />
+                <On Platform="iOS" Value="55,20,55,0" />
+                <On Platform="UWP" Value="70,20,70,0" />
+            </OnPlatform>
+        </Grid.Padding>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            FontSize="20"
+            HorizontalTextAlignment="Center"
+            Text="Welcome to Frame with improvements!" />
+
+        <Grid
+            Grid.Row="1"
+            Grid.Column="0"
+            HorizontalOptions="Center"
+            WidthRequest="230">
+
+            <StackLayout Grid.Row="0" Padding="0,0,0,15">
+
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="5"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7"
+                    HasShadow="False"
+                    HeightRequest="60"
+                    OutlineColor="Red" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Padding="0,0,0,15">
+
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7"
+                    HasShadow="False"
+                    HeightRequest="60">
+                    <Frame
+                        Margin="2"
+                        BackgroundColor="White"
+                        CornerRadius="6"
+                        HasShadow="False">
+                        <!--
+                            Whatever the content you want to
+                            place inside the Frame goes in here
+                        -->
+                    </Frame>
+                </Frame>
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="2" Padding="0,0,0,15">
+
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7"
+                    HasShadow="False"
+                    HeightRequest="60">
+                    <Frame
+                        Margin="2"
+                        Padding="0"
+                        BackgroundColor="White"
+                        CornerRadius="6"
+                        HasShadow="False">
+                        <Frame
+                            Margin="2"
+                            Padding="5"
+                            BackgroundColor="Cyan"
+                            CornerRadius="6"
+                            HasShadow="False">
+                            <!--
+                                Whatever the content you want to
+                                place inside the Frame goes in here
+                            -->
+                        </Frame>
+                    </Frame>
+                </Frame>
+            </StackLayout>
+
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+        </Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+    </Grid>
+</ContentPage>
