@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace XFHacks
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ImprovedFrameControlPage : ContentPage
+	public partial class FrameWithBorderWidth : ContentPage
 	{
-		public ImprovedFrameControlPage ()
+		public FrameWithBorderWidth()
 		{
 			InitializeComponent ();
 		}

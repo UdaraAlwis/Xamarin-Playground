@@ -59,8 +59,8 @@
             <Button
                 Grid.Row="7"
                 BackgroundColor="#2196F3"
-                Clicked="OnImprovedFrameControlClicked"
-                Text="Goto: Improved Frame Control"
+                Clicked="OnFrameWithBorderWidthClicked"
+                Text="Goto: Frame with Border Width"
                 TextColor="White" />
 
             <Button

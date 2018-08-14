@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XFHacks.ImprovedFrameControlPage"
+    x:Class="XFHacks.FrameWithBorderWidth"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
@@ -32,7 +32,7 @@
 
                 <!--  Label with a Border  -->
                 <Frame
-                    Padding="5"
+                    Padding="0"
                     BackgroundColor="#2196F3"
                     CornerRadius="7"
                     HasShadow="False"
@@ -73,22 +73,15 @@
                     HasShadow="False"
                     HeightRequest="60">
                     <Frame
-                        Margin="2"
-                        Padding="0"
-                        BackgroundColor="White"
+                        Margin="7"
+                        Padding="5"
+                        BackgroundColor="Cyan"
                         CornerRadius="6"
                         HasShadow="False">
-                        <Frame
-                            Margin="2"
-                            Padding="5"
-                            BackgroundColor="Cyan"
-                            CornerRadius="6"
-                            HasShadow="False">
-                            <!--
-                                Whatever the content you want to
-                                place inside the Frame goes in here
-                            -->
-                        </Frame>
+                        <!--
+                            Whatever the content you want to
+                            place inside the Frame goes in here
+                        -->
                     </Frame>
                 </Frame>
             </StackLayout>

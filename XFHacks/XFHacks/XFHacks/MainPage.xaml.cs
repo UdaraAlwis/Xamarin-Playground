@@ -46,9 +46,9 @@ namespace XFHacks
             Navigation.PushAsync(new ShowHidePasswordEntryPage());
         }
 
-        void OnImprovedFrameControlClicked(object sender, EventArgs e)
+        void OnFrameWithBorderWidthClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ImprovedFrameControlPage());
+            Navigation.PushAsync(new FrameWithBorderWidth());
         }
 
         void OnLabelwithBorderClicked(object sender, EventArgs e)
