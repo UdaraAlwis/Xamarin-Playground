@@ -83,7 +83,7 @@
                     <Frame
                         Margin="2"
                         BackgroundColor="White"
-                        CornerRadius="6"
+                        CornerRadius="5"
                         HasShadow="False">
                         <!--
                             Whatever the content you want to
@@ -115,7 +115,7 @@
                         Margin="3"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="6"
+                        CornerRadius="5"
                         HasShadow="False">
                         <!--
                             Whatever the content you want to
@@ -136,7 +136,7 @@
                         Margin="4"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="6"
+                        CornerRadius="5"
                         HasShadow="False">
                         <!--
                             Whatever the content you want to
@@ -157,7 +157,7 @@
                         Margin="5"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="6"
+                        CornerRadius="5"
                         HasShadow="False">
                         <!--
                             Whatever the content you want to
@@ -178,7 +178,7 @@
                         Margin="6"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="6"
+                        CornerRadius="5"
                         HasShadow="False">
                         <!--
                             Whatever the content you want to
@@ -199,7 +199,7 @@
                         Margin="7"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="6"
+                        CornerRadius="5"
                         HasShadow="False">
                         <!--
                             Whatever the content you want to

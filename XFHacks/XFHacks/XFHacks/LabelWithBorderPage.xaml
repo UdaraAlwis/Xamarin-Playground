@@ -41,7 +41,7 @@
                         Margin="2"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="6"
+                        CornerRadius="5"
                         HasShadow="False">
                         <Label
                             BackgroundColor="Transparent"
@@ -64,7 +64,7 @@
                         Margin="2"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="15"
+                        CornerRadius="14"
                         HasShadow="False">
                         <Label
                             BackgroundColor="Transparent"
@@ -87,7 +87,7 @@
                         Margin="2"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="15"
+                        CornerRadius="14"
                         HasShadow="False">
                         <Label
                             Margin="5,0,0,0"
@@ -108,7 +108,7 @@
                         Margin="2"
                         Padding="5"
                         BackgroundColor="White"
-                        CornerRadius="15"
+                        CornerRadius="14"
                         HasShadow="False">
                         <Label
                             Margin="0,0,5,0"
@@ -132,7 +132,7 @@
                         Margin="2"
                         Padding="7"
                         BackgroundColor="#2196F3"
-                        CornerRadius="6"
+                        CornerRadius="5"
                         HasShadow="False">
                         <Label
                             BackgroundColor="Transparent"
@@ -155,7 +155,7 @@
                         Margin="2"
                         Padding="7"
                         BackgroundColor="White"
-                        CornerRadius="6"
+                        CornerRadius="5"
                         HasShadow="False">
                         <Label
                             BackgroundColor="Transparent"
