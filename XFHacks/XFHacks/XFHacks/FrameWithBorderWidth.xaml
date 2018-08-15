@@ -19,7 +19,7 @@
         <Label
             Grid.Row="0"
             Grid.Column="0"
-            FontSize="20"
+            FontSize="Large"
             HorizontalTextAlignment="Center"
             Text="Welcome to Frame with improvements!" />
 
