@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="XFHacks.FrameWithBorderWidth"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Frame with Border Width Page">
 
     <!--  FOR ANDROID|IOS|UWP  -->
 
@@ -30,25 +31,55 @@
 
             <StackLayout Grid.Row="0" Padding="0,0,0,15">
 
-                <!--  Label with a Border  -->
+                <Label FontSize="Small" Text="Default Xamarin.Forms.Frame with no Border Width!" />
+
+                <!--  Default Xamarin.Forms.Frame with a Border  -->
                 <Frame
                     Padding="0"
-                    BackgroundColor="#2196F3"
+                    BorderColor="#2196F3"
                     CornerRadius="7"
                     HasShadow="False"
-                    HeightRequest="60"
-                    OutlineColor="Red" />
+                    HeightRequest="50">
+                    <!--
+                        Whatever the content you want to
+                        place inside the Frame goes in here
+                    -->
+                </Frame>
             </StackLayout>
 
-            <StackLayout Grid.Row="1" Padding="0,0,0,15">
+            <StackLayout Grid.Row="1" Padding="0,0,0,0">
 
-                <!--  Label with a Border  -->
+                <Label FontSize="Small" Text="Custom Frame with Border Width!" />
+
+                <!--  Frame with a Border Width  -->
                 <Frame
                     Padding="0"
                     BackgroundColor="#2196F3"
                     CornerRadius="7"
                     HasShadow="False"
-                    HeightRequest="60">
+                    HeightRequest="50">
+                    <Frame
+                        Margin="1"
+                        BackgroundColor="White"
+                        CornerRadius="6"
+                        HasShadow="False">
+                        <!--
+                            Whatever the content you want to
+                            place inside the Frame goes in here
+                        -->
+                    </Frame>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Padding="0,0,0,0">
+
+                <!--  Frame with a Border Width  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7"
+                    HasShadow="False"
+                    HeightRequest="50">
                     <Frame
                         Margin="2"
                         BackgroundColor="White"
@@ -62,20 +93,112 @@
                 </Frame>
             </StackLayout>
 
+            <Label
+                Grid.Row="3"
+                FontSize="Micro"
+                Text="with any Border Width as you wish..." />
 
-            <StackLayout Grid.Row="2" Padding="0,0,0,15">
+            <StackLayout
+                Grid.Row="4"
+                Padding="0,0,0,0"
+                Orientation="Horizontal">
 
-                <!--  Label with a Border  -->
+                <!--  Frame with a Border Width  -->
                 <Frame
                     Padding="0"
                     BackgroundColor="#2196F3"
                     CornerRadius="7"
                     HasShadow="False"
-                    HeightRequest="60">
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand">
+                    <Frame
+                        Margin="3"
+                        Padding="5"
+                        BackgroundColor="White"
+                        CornerRadius="6"
+                        HasShadow="False">
+                        <!--
+                            Whatever the content you want to
+                            place inside the Frame goes in here
+                        -->
+                    </Frame>
+                </Frame>
+
+                <!--  Frame with a Border Width  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7"
+                    HasShadow="False"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand">
+                    <Frame
+                        Margin="4"
+                        Padding="5"
+                        BackgroundColor="White"
+                        CornerRadius="6"
+                        HasShadow="False">
+                        <!--
+                            Whatever the content you want to
+                            place inside the Frame goes in here
+                        -->
+                    </Frame>
+                </Frame>
+
+                <!--  Frame with a Border Width  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7"
+                    HasShadow="False"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand">
+                    <Frame
+                        Margin="5"
+                        Padding="5"
+                        BackgroundColor="White"
+                        CornerRadius="6"
+                        HasShadow="False">
+                        <!--
+                            Whatever the content you want to
+                            place inside the Frame goes in here
+                        -->
+                    </Frame>
+                </Frame>
+
+                <!--  Frame with a Border Width  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7"
+                    HasShadow="False"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand">
+                    <Frame
+                        Margin="6"
+                        Padding="5"
+                        BackgroundColor="White"
+                        CornerRadius="6"
+                        HasShadow="False">
+                        <!--
+                            Whatever the content you want to
+                            place inside the Frame goes in here
+                        -->
+                    </Frame>
+                </Frame>
+
+                <!--  Frame with a Border Width  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7"
+                    HasShadow="False"
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand">
                     <Frame
                         Margin="7"
                         Padding="5"
-                        BackgroundColor="Cyan"
+                        BackgroundColor="White"
                         CornerRadius="6"
                         HasShadow="False">
                         <!--
@@ -86,8 +209,9 @@
                 </Frame>
             </StackLayout>
 
-
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
