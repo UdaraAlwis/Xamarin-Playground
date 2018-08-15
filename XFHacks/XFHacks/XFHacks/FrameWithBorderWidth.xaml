@@ -10,7 +10,7 @@
     <Grid RowSpacing="20" VerticalOptions="Start">
         <Grid.Padding>
             <OnPlatform x:TypeArguments="Thickness">
-                <On Platform="Android" Value="70,20,70,0" />
+                <On Platform="Android" Value="60,20,60,0" />
                 <On Platform="iOS" Value="55,20,55,0" />
                 <On Platform="UWP" Value="70,20,70,0" />
             </OnPlatform>
