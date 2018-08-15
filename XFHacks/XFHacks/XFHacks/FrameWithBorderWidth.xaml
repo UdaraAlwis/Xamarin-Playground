@@ -21,7 +21,7 @@
             Grid.Column="0"
             FontSize="Large"
             HorizontalTextAlignment="Center"
-            Text="Welcome to Frame with improvements!" />
+            Text="Welcome to Frame with Border Width!" />
 
         <Grid
             Grid.Row="1"
