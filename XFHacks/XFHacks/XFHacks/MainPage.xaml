@@ -67,7 +67,7 @@
                 Grid.Row="8"
                 BackgroundColor="#2196F3"
                 Clicked="OnLabelwithBorderClicked"
-                Text="Goto: Label with Border"
+                Text="Goto: Element with Border"
                 TextColor="White" />
 
             <Grid.RowDefinitions>

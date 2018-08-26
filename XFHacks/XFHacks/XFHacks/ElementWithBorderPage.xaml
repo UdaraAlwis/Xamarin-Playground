@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XFHacks.LabelWithBorderPage"
+    x:Class="XFHacks.ElementWithBorderPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Label with Border Page">
+    Title="Element with Border Page">
 
     <!--  FOR ANDROID|IOS|UWP  -->
 
@@ -21,7 +21,7 @@
             Grid.Column="0"
             FontSize="20"
             HorizontalTextAlignment="Center"
-            Text="Welcome to Label with a Border and more!" />
+            Text="Welcome to Element with Border and more!" />
 
         <Grid
             Grid.Row="1"

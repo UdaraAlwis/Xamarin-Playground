@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace XFHacks
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LabelWithBorderPage : ContentPage
+	public partial class FrameWithBorderImage : ContentPage
 	{
-		public LabelWithBorderPage()
+		public FrameWithBorderImage ()
 		{
 			InitializeComponent ();
 		}

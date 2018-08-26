@@ -38,8 +38,8 @@
     <Compile Update="FrameWithBorderWidth.xaml.cs">
       <DependentUpon>FrameWithBorderWidth.xaml</DependentUpon>
     </Compile>
-    <Compile Update="LabelWithBorderPage.xaml.cs">
-      <DependentUpon>LabelWithBorderPage.xaml</DependentUpon>
+    <Compile Update="ElementWithBorderPage.xaml.cs">
+      <DependentUpon>ElementWithBorderPage.xaml</DependentUpon>
     </Compile>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
@@ -62,13 +62,16 @@
     <EmbeddedResource Update="EditorWithPlaceholderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="FrameWithBorderImage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="FrameWithBorderWidth.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="InputElementsWithIconsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="LabelWithBorderPage.xaml">
+    <EmbeddedResource Update="ElementWithBorderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="PickerWithIconPage.xaml">
