@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\abstractbackground.jpg" />
+    <None Remove="Resources\abstractbackground1.jpg" />
+    <None Remove="Resources\abstractbackground2.jpg" />
     <None Remove="Resources\dropdownicon.png" />
     <None Remove="Resources\hidepasswordicon.png" />
     <None Remove="Resources\infoicon.png" />
@@ -16,7 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\abstractbackground.jpg" />
+    <EmbeddedResource Include="Resources\abstractbackground1.jpg" />
+    <EmbeddedResource Include="Resources\abstractbackground2.jpg" />
     <EmbeddedResource Include="Resources\hidepasswordicon.png" />
     <EmbeddedResource Include="Resources\infoicon.png" />
     <EmbeddedResource Include="Resources\rightarrowicon.png" />

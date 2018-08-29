@@ -55,5 +55,10 @@ namespace XFHacks
         {
             Navigation.PushAsync(new LabelWithBorderPage());
         }
+
+        void OnFrameWithBorderImageClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new FrameWithBorderImage());
+        }
     }
 }

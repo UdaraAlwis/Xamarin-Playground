@@ -165,7 +165,7 @@
                         HasShadow="False"
                         IsClippedToBounds="True">
                         <Grid HeightRequest="30" IsClippedToBounds="True">
-                            <Image Aspect="AspectFill" Source="{extensions:ImageResource XFHacks.Resources.abstractbackground.jpg}" />
+                            <Image Aspect="AspectFill" Source="{extensions:ImageResource XFHacks.Resources.abstractbackground1.jpg}" />
                             <Label
                                 BackgroundColor="Transparent"
                                 FontAttributes="Bold"
