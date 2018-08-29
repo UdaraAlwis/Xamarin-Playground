@@ -59,4 +59,20 @@ XFHACKS-006 Password Entry with show/hide Text feature!
 
 https://theconfuzedsourcecode.wordpress.com/2018/07/21/xfhacks-006-password-entry-with-show-hide-text-feature/
 
+XFHACKS-007 Frame with a Border Width!
+---------------
+
+> Ever wanted to have a Xamarin.Forms.Element with a Border which you can customize the Border-Width property? 
+>> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-007 .png"  height="130" /> 
+
+https://theconfuzedsourcecode.wordpress.com/2018/08/22/xfhacks-007-frame-with-a-border-width/
+
+XFHACKS-008 Label with Border and Background!
+---------------
+
+> Ever wanted to have a Xamarin.Forms.Label, with a Border, or even better with a Background, or with a Corner Radius customization?
+>> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-008 .png"  height="130" /> 
+
+https://theconfuzedsourcecode.wordpress.com/2018/08/29/xfhacks-008-label-with-border-and-background/
+
 
