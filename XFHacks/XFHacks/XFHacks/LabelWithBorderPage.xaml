@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XFHacks.ElementWithBorderPage"
+    x:Class="XFHacks.LabelWithBorderPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Element with Border Page">
+    xmlns:extensions="clr-namespace:XFHacks.Extensions"
+    Title="Label with Border Page">
 
     <!--  FOR ANDROID|IOS|UWP  -->
 
@@ -21,13 +22,13 @@
             Grid.Column="0"
             FontSize="20"
             HorizontalTextAlignment="Center"
-            Text="Welcome to Element with Border and more!" />
+            Text="Welcome to Label with Border and more!" />
 
         <Grid
             Grid.Row="1"
             Grid.Column="0"
             HorizontalOptions="Center"
-            WidthRequest="230">
+            WidthRequest="260">
 
             <StackLayout Grid.Row="0" Padding="0,0,0,15">
 
@@ -75,14 +76,18 @@
                 </Frame>
             </StackLayout>
 
-            <StackLayout Grid.Row="2" Padding="0,0,0,15">
+            <StackLayout
+                Grid.Row="2"
+                Padding="0,0,0,15"
+                Orientation="Horizontal">
 
                 <!--  Label with a Border  -->
                 <Frame
                     Padding="0"
                     BackgroundColor="#2196F3"
                     CornerRadius="16"
-                    HasShadow="False">
+                    HasShadow="False"
+                    HorizontalOptions="FillAndExpand">
                     <Frame
                         Margin="2"
                         Padding="5"
@@ -93,7 +98,7 @@
                             Margin="5,0,0,0"
                             BackgroundColor="Transparent"
                             HorizontalOptions="Start"
-                            Text="Hello World!"
+                            Text="Start!"
                             TextColor="Black" />
                     </Frame>
                 </Frame>
@@ -103,7 +108,8 @@
                     Padding="0"
                     BackgroundColor="#2196F3"
                     CornerRadius="16"
-                    HasShadow="False">
+                    HasShadow="False"
+                    HorizontalOptions="FillAndExpand">
                     <Frame
                         Margin="2"
                         Padding="5"
@@ -114,7 +120,7 @@
                             Margin="0,0,5,0"
                             BackgroundColor="Transparent"
                             HorizontalOptions="End"
-                            Text="Hello World!"
+                            Text="End!"
                             TextColor="Black" />
                     </Frame>
                 </Frame>
@@ -153,6 +159,34 @@
                     HasShadow="False">
                     <Frame
                         Margin="2"
+                        Padding="0"
+                        BackgroundColor="White"
+                        CornerRadius="5"
+                        HasShadow="False">
+                        <Grid HeightRequest="30" IsClippedToBounds="True">
+                            <Image Aspect="AspectFill" Source="{extensions:ImageResource XFHacks.Resources.abstractbackground.jpg}" />
+                            <Label
+                                BackgroundColor="Transparent"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                Text="With a Cool Background!"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </Frame>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Row="5" Padding="0,0,0,15">
+
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    BackgroundColor="#2196F3"
+                    CornerRadius="7"
+                    HasShadow="False">
+                    <Frame
+                        Margin="2"
                         Padding="7"
                         BackgroundColor="White"
                         CornerRadius="5"
@@ -166,6 +200,7 @@
             </StackLayout>
 
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />

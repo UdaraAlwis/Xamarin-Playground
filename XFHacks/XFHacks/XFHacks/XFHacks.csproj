@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\abstractbackground.jpg" />
     <None Remove="Resources\dropdownicon.png" />
     <None Remove="Resources\hidepasswordicon.png" />
     <None Remove="Resources\infoicon.png" />
@@ -15,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\abstractbackground.jpg" />
     <EmbeddedResource Include="Resources\hidepasswordicon.png" />
     <EmbeddedResource Include="Resources\infoicon.png" />
     <EmbeddedResource Include="Resources\rightarrowicon.png" />
@@ -38,8 +40,8 @@
     <Compile Update="FrameWithBorderWidth.xaml.cs">
       <DependentUpon>FrameWithBorderWidth.xaml</DependentUpon>
     </Compile>
-    <Compile Update="ElementWithBorderPage.xaml.cs">
-      <DependentUpon>ElementWithBorderPage.xaml</DependentUpon>
+    <Compile Update="LabelWithBorderPage.xaml.cs">
+      <DependentUpon>LabelWithBorderPage.xaml</DependentUpon>
     </Compile>
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
@@ -71,7 +73,7 @@
     <EmbeddedResource Update="InputElementsWithIconsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ElementWithBorderPage.xaml">
+    <EmbeddedResource Update="LabelWithBorderPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="PickerWithIconPage.xaml">

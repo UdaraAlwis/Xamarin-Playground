@@ -53,7 +53,7 @@ namespace XFHacks
 
         void OnLabelwithBorderClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ElementWithBorderPage());
+            Navigation.PushAsync(new LabelWithBorderPage());
         }
     }
 }
