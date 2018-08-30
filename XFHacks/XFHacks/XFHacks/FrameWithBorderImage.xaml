@@ -37,8 +37,33 @@
                     Padding="0"
                     CornerRadius="7"
                     HasShadow="False">
-                    <Grid HeightRequest="30" IsClippedToBounds="True">
+                    <Grid HeightRequest="50" IsClippedToBounds="True">
                         <Image Aspect="AspectFill" Source="{extensions:ImageResource XFHacks.Resources.abstractbackground1.jpg}" />
+                        <Frame
+                            Margin="5"
+                            Padding="0"
+                            BackgroundColor="White"
+                            CornerRadius="5"
+                            HasShadow="False"
+                            IsClippedToBounds="True">
+                            <!--
+                                Whatever the content you want to
+                                place inside the Frame goes in here
+                            -->
+                        </Frame>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Padding="0,0,0,15">
+
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    CornerRadius="7"
+                    HasShadow="False">
+                    <Grid HeightRequest="50" IsClippedToBounds="True">
+                        <Image Aspect="AspectFill" Source="{extensions:ImageResource XFHacks.Resources.abstractbackground2.jpg}" />
                         <Frame
                             Margin="7"
                             Padding="0"
@@ -55,18 +80,42 @@
                 </Frame>
             </StackLayout>
 
-
-            <StackLayout Grid.Row="1" Padding="0,0,0,15">
+            <StackLayout Grid.Row="2" Padding="0,0,0,15">
 
                 <!--  Label with a Border  -->
                 <Frame
                     Padding="0"
                     CornerRadius="7"
                     HasShadow="False">
-                    <Grid HeightRequest="30" IsClippedToBounds="True">
+                    <Grid HeightRequest="50" IsClippedToBounds="True">
                         <Image Aspect="AspectFill" Source="{extensions:ImageResource XFHacks.Resources.abstractbackground1.jpg}" />
                         <Frame
                             Margin="10"
+                            Padding="0"
+                            BackgroundColor="White"
+                            CornerRadius="5"
+                            HasShadow="False"
+                            IsClippedToBounds="True">
+                            <!--
+                                Whatever the content you want to
+                                place inside the Frame goes in here
+                            -->
+                        </Frame>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Padding="0,0,0,15">
+
+                <!--  Label with a Border  -->
+                <Frame
+                    Padding="0"
+                    CornerRadius="7"
+                    HasShadow="False">
+                    <Grid HeightRequest="200" IsClippedToBounds="True">
+                        <Image Aspect="AspectFill" Source="{extensions:ImageResource XFHacks.Resources.abstractbackground2.jpg}" />
+                        <Frame
+                            Margin="14"
                             Padding="0"
                             BackgroundColor="White"
                             CornerRadius="5"
