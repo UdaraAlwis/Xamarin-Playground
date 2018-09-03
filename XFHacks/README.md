@@ -75,4 +75,13 @@ XFHACKS-008 Label with Border and Background!
 
 https://theconfuzedsourcecode.wordpress.com/2018/08/29/xfhacks-008-label-with-border-and-background/
 
+XFHACKS-009 Frame with Border Image!
+---------------
+
+> Ever wanted to have a Xamarin.Forms.Frame with a Border Image? Or have a Border Image around any of your Xamarin.Forms Elements?
+>> <img src="https://github.com/UdaraAlwis/Xamarin-Playground/blob/master/XFHacks/screenshots/XFHACKS-009 .png"  height="130" /> 
+
+https://theconfuzedsourcecode.wordpress.com/2018/09/03/xfhacks-009-frame-with-border-image/
+
+
 
