@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFOTPAutoFillControl.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XFOTPAutoFillControl"
+    Padding="0,20,0,0">
+
+    <Grid Padding="10,0,10,0">
+
+        <Label
+            Grid.Row="0"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="Welcome to OTP Auto-Fill Control in Xamarin.Forms!" />
+
+        <Label
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            Text="Deploy to device and send an OTP to the device, then watch it work! ;)" />
+
+        <local:OTPAutoFillControl
+            Grid.Row="2"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Keyboard="Numeric"
+            Placeholder="XXXXXX" />
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+    </Grid>
+
+</ContentPage>
