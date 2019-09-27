@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="App2.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:app2="clr-namespace:App2;assembly=App2"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    ios:Page.UseSafeArea="true"
+    mc:Ignorable="d">
+
+    <!--  Place new controls here  -->
+    <StackLayout Padding="20,20,20,20">
+        <Stepper
+            x:Name="numberStepper"
+            Increment="1"
+            Maximum="99"
+            Minimum="0"
+            Value="3" />
+
+        <!--  FlexLayout  -->
+        <ScrollView Grid.Row="1">
+            <FlexLayout
+                x:Name="flexLayout"
+                AlignContent="Start"
+                AlignItems="Center"
+                BackgroundColor="White"
+                Direction="Row"
+                JustifyContent="Start"
+                Wrap="Wrap">
+                <Label
+                    Margin="2,0,2,2"
+                    FontSize="20"
+                    Text="Warning this " />
+                <Grid Margin="2,0,2,2">
+                    <app2:CustomEntry FontSize="20" Text="Behind the curtain" />
+                    <BoxView
+                        HeightRequest="1"
+                        VerticalOptions="End"
+                        Color="Silver" />
+                </Grid>
+                <Label
+                    Margin="2,0,2,2"
+                    FontSize="20"
+                    Text="Marin pere jlha uiwer asdh" />
+                <Label
+                    Margin="2,0,2,2"
+                    FontSize="20"
+                    Text="Warning this " />
+                <Label
+                    Margin="2,0,2,2"
+                    FontSize="20"
+                    Text="asdasd s this " />
+                <Grid Margin="2,0,2,2">
+                    <app2:CustomEntry FontSize="20" Text="as this man has" />
+                    <BoxView
+                        HeightRequest="1"
+                        VerticalOptions="End"
+                        Color="Silver" />
+                </Grid>
+                <Label
+                    Margin="2,0,2,2"
+                    FontSize="20"
+                    Text="this " />
+                <Label
+                    Margin="2,0,2,2"
+                    FontSize="20"
+                    Text="Banana home jumping" />
+                <Label
+                    Margin="2,0,2,2"
+                    FontSize="20"
+                    Text="Monkey with the red jump" />
+                <Label
+                    Margin="2,0,2,2"
+                    FontSize="20"
+                    Text="suiting the management" />
+                <Grid Margin="2,0,2,2">
+                    <app2:CustomEntry FontSize="20" Text="as this man has" />
+                    <BoxView
+                        HeightRequest="1"
+                        VerticalOptions="End"
+                        Color="Silver" />
+                </Grid>
+                <Label
+                    Margin="2,0,2,2"
+                    FontSize="20"
+                    Text="Warning zone." />
+            </FlexLayout>
+        </ScrollView>
+
+    </StackLayout>
+
+</ContentPage>
