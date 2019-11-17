@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace App2
+namespace XFFillInAnswersLayout
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

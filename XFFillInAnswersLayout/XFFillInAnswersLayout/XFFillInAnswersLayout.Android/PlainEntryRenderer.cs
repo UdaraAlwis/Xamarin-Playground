@@ -1,25 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using App2;
-using App2.Droid;
+﻿using Android.Content;
+using XFFillInAnswersLayout;
+using XFFillInAnswersLayout.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
-namespace App2.Droid
+[assembly: ExportRenderer(typeof(PlainEntry), typeof(PlainEntryRenderer))]
+namespace XFFillInAnswersLayout.Droid
 {
-    public class CustomEntryRenderer : EntryRenderer
+    public class PlainEntryRenderer : EntryRenderer
     {
-        public CustomEntryRenderer(Context context) : base(context)
+        public PlainEntryRenderer(Context context) : base(context)
         {
 
         }

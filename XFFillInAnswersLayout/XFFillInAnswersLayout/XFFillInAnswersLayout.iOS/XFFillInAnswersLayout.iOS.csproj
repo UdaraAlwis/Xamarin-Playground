@@ -9,9 +9,9 @@
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{6143fdea-f3c2-4a09-aafa-6e230626515e}</TemplateGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>App2.iOS</RootNamespace>
+    <RootNamespace>XFFillInAnswersLayout.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>App2.iOS</AssemblyName>
+    <AssemblyName>XFFillInAnswersLayout.iOS</AssemblyName>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
   </PropertyGroup>
@@ -59,8 +59,11 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CustomEntryRenderer.cs" />
+    <Compile Include="PlainEntryRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -129,9 +132,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\App2\App2.csproj">
-      <Project>{C32CB08B-6F6E-4AA5-B1C1-5CA51128CC5E}</Project>
-      <Name>App2</Name>
+    <ProjectReference Include="..\XFFillInAnswersLayout\XFFillInAnswersLayout.csproj">
+      <Project>{6DA00AB5-D0C8-430B-92DD-C071E32C2157}</Project>
+      <Name>XFFillInAnswersLayout</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

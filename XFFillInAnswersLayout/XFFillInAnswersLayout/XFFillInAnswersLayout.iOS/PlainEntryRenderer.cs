@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using App2;
-using App2.iOS;
+﻿using XFFillInAnswersLayout;
+using XFFillInAnswersLayout.iOS;
 using CoreGraphics;
-using Foundation;
 using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
-namespace App2.iOS
+[assembly: ExportRenderer(typeof(PlainEntry), typeof(PlainEntryRenderer))]
+namespace XFFillInAnswersLayout.iOS
 {
-    public class CustomEntryRenderer : EntryRenderer
+    public class PlainEntryRenderer : EntryRenderer
     {
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {

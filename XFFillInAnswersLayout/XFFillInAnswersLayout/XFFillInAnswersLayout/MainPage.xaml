@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="App2.MainPage"
+    x:Class="XFFillInAnswersLayout.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:app2="clr-namespace:App2;assembly=App2"
+    xmlns:XFFillInAnswersLayout="clr-namespace:XFFillInAnswersLayout;assembly=XFFillInAnswersLayout"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -12,6 +12,11 @@
 
     <!--  Place new controls here  -->
     <StackLayout Padding="20,20,20,20">
+        <Label
+            Margin="2,0,2,2"
+            FontSize="20"
+            Text="This awesome layout will seamlessly load Labels and Entry elements in a text paragraph fashion..." />
+
         <Stepper
             x:Name="numberStepper"
             Increment="1"
@@ -33,13 +38,15 @@
                     Margin="2,0,2,2"
                     FontSize="20"
                     Text="Warning this " />
+                <!--  Entry Element here  -->
                 <Grid Margin="2,0,2,2">
-                    <app2:CustomEntry FontSize="20" Text="Behind the curtain" />
+                    <XFFillInAnswersLayout:PlainEntry FontSize="20" Text="Behind the curtain" />
                     <BoxView
                         HeightRequest="1"
                         VerticalOptions="End"
                         Color="Silver" />
                 </Grid>
+                <!--  Entry Element here  -->
                 <Label
                     Margin="2,0,2,2"
                     FontSize="20"
@@ -52,13 +59,15 @@
                     Margin="2,0,2,2"
                     FontSize="20"
                     Text="asdasd s this " />
+                <!--  Entry Element here  -->
                 <Grid Margin="2,0,2,2">
-                    <app2:CustomEntry FontSize="20" Text="as this man has" />
+                    <XFFillInAnswersLayout:PlainEntry FontSize="20" Text="as this man has" />
                     <BoxView
                         HeightRequest="1"
                         VerticalOptions="End"
                         Color="Silver" />
                 </Grid>
+                <!--  Entry Element here  -->
                 <Label
                     Margin="2,0,2,2"
                     FontSize="20"
@@ -75,13 +84,15 @@
                     Margin="2,0,2,2"
                     FontSize="20"
                     Text="suiting the management" />
+                <!--  Entry Element here  -->
                 <Grid Margin="2,0,2,2">
-                    <app2:CustomEntry FontSize="20" Text="as this man has" />
+                    <XFFillInAnswersLayout:PlainEntry FontSize="20" Text="as this man has" />
                     <BoxView
                         HeightRequest="1"
                         VerticalOptions="End"
                         Color="Silver" />
                 </Grid>
+                <!--  Entry Element here  -->
                 <Label
                     Margin="2,0,2,2"
                     FontSize="20"

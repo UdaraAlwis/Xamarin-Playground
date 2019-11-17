@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App2
+namespace XFFillInAnswersLayout
 {
     public partial class App : Application
     {

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2.Android", "App2\App2.Android\App2.Android.csproj", "{6CCF5CA5-46CB-479A-9FE7-1C2B958A0A42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFFillInAnswersLayout.Android", "XFFillInAnswersLayout\XFFillInAnswersLayout.Android\XFFillInAnswersLayout.Android.csproj", "{6CCF5CA5-46CB-479A-9FE7-1C2B958A0A42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2.iOS", "App2\App2.iOS\App2.iOS.csproj", "{F6B92D47-C059-40D2-8F9A-4B5DD004B492}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFFillInAnswersLayout.iOS", "XFFillInAnswersLayout\XFFillInAnswersLayout.iOS\XFFillInAnswersLayout.iOS.csproj", "{F6B92D47-C059-40D2-8F9A-4B5DD004B492}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App2", "App2\App2\App2.csproj", "{6DA00AB5-D0C8-430B-92DD-C071E32C2157}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XFFillInAnswersLayout", "XFFillInAnswersLayout\XFFillInAnswersLayout\XFFillInAnswersLayout.csproj", "{6DA00AB5-D0C8-430B-92DD-C071E32C2157}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
