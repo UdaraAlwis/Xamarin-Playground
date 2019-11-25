@@ -9,11 +9,18 @@
     mc:Ignorable="d">
 
     <StackLayout Padding="15" Spacing="20">
+        <Label FontSize="Medium" Text="Id:" />
+        <Label
+            d:Text="Item id"
+            FontSize="Small"
+            Text="{Binding Item.Id}" />
+
         <Label FontSize="Medium" Text="Text:" />
         <Label
             d:Text="Item name"
             FontSize="Small"
             Text="{Binding Item.Text}" />
+
         <Label FontSize="Medium" Text="Description:" />
         <Label
             d:Text="Item description"

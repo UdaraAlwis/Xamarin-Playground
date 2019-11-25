@@ -14,21 +14,25 @@ namespace XFShellAppTryOut.Views
     [QueryProperty("ItemId", "itemId")]
     public partial class ItemDetailPage : ContentPage
     {
-        private readonly ItemDetailViewModel _viewModel;
+        private ItemDetailViewModel _viewModel;
+        private string _itemId;
 
-        public string ItemId { get; set; }
+        public string ItemId
+        {
+            get => _itemId;
+            set => _itemId = Uri.UnescapeDataString(value);
+        }
 
         public ItemDetailPage()
         {
             InitializeComponent();
+        }
 
-            var item = new Item
-            {
-                Text = "Item 1",
-                Description = "This is an item description."
-            };
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
 
-            _viewModel = new ItemDetailViewModel(item);
+            _viewModel = new ItemDetailViewModel(ItemId);
             BindingContext = _viewModel;
         }
     }
