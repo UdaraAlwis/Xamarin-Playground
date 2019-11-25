@@ -33,8 +33,6 @@ namespace XFShellAppTryOut.Views
             if (item == null)
                 return;
 
-            //await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
-
             var url = Uri.EscapeDataString(item.Id);
             await Shell.Current.GoToAsync($"itemdetailpage?itemId={url}", true);
 
