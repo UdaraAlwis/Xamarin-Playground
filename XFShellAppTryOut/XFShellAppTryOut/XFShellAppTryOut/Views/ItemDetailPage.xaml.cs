@@ -11,16 +11,12 @@ namespace XFShellAppTryOut.Views
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
+    [QueryProperty("ItemId", "itemId")]
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        private readonly ItemDetailViewModel _viewModel;
 
-        public ItemDetailPage(ItemDetailViewModel viewModel)
-        {
-            InitializeComponent();
-
-            BindingContext = this.viewModel = viewModel;
-        }
+        public string ItemId { get; set; }
 
         public ItemDetailPage()
         {
@@ -32,8 +28,8 @@ namespace XFShellAppTryOut.Views
                 Description = "This is an item description."
             };
 
-            viewModel = new ItemDetailViewModel(item);
-            BindingContext = viewModel;
+            _viewModel = new ItemDetailViewModel(item);
+            BindingContext = _viewModel;
         }
     }
 }
