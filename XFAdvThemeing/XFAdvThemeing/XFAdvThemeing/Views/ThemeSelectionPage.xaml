@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFAdvThemeing.Views.ThemeSelectionPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="ThemeManagerPage"
+    Title="{Binding Title}"
+    BackgroundColor="{DynamicResource PageBackgroundColor}"
+    mc:Ignorable="d">
+
+    <ContentPage.Content>
+        <StackLayout Padding="0,60,0,0">
+
+            <ListView
+                BackgroundColor="Transparent"
+                ItemsSource="{Binding Themes}"
+                RowHeight="70"
+                SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"
+                SeparatorColor="{StaticResource SeparatorLineColor}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Margin="10" VerticalOptions="Center">
+                                <Label Style="{StaticResource TitleLabelStyle}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Title}" />
+                                            <Span Text="&#x0a;" />
+                                            <Span Style="{StaticResource SubLabelStyle}" Text="{Binding Description}" />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <BoxView
+                                    BackgroundColor="{DynamicResource PrimaryColor}"
+                                    CornerRadius="10"
+                                    HeightRequest="20"
+                                    HorizontalOptions="End"
+                                    IsVisible="{Binding IsSelected, Mode=TwoWay}"
+                                    VerticalOptions="Center"
+                                    WidthRequest="20" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
