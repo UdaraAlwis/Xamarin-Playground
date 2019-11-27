@@ -13,6 +13,7 @@ namespace XFShellAppTryOut
             InitializeComponent();
 
             Routing.RegisterRoute("itemdetailpage", typeof(ItemDetailPage));
+            Routing.RegisterRoute("newitempage", typeof(NewItemPage));
         }
     }
 }

@@ -21,6 +21,7 @@ namespace XFShellAppTryOut.Views
 
             Item = new Item
             {
+                Id = Guid.NewGuid().ToString(),
                 Text = "Item name",
                 Description = "This is an item description."
             };
@@ -31,12 +32,12 @@ namespace XFShellAppTryOut.Views
         async void Save_Clicked(object sender, EventArgs e)
         {
             MessagingCenter.Send(this, "AddItem", Item);
-            await Navigation.PopModalAsync();
+            await Shell.Current.Navigation.PopAsync();
         }
 
         async void Cancel_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PopModalAsync();
+            await Shell.Current.Navigation.PopAsync();
         }
     }
 }

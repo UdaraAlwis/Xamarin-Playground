@@ -42,7 +42,7 @@ namespace XFShellAppTryOut.Views
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+            await Shell.Current.GoToAsync($"newitempage", true);
         }
 
         protected override void OnAppearing()
