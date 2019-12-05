@@ -44,11 +44,11 @@ namespace XFAdvThemeing.ThemeResources
                             mergedDictionaries.Add(new LightTheme());
                             break;
                         }
-                    //case Themes.Dark:
-                    //    {
-                    //        mergedDictionaries.Add(new DarkTheme());
-                    //        break;
-                    //    }
+                    case Themes.Dark:
+                        {
+                            mergedDictionaries.Add(new DarkTheme());
+                            break;
+                        }
                     //case Themes.Blue:
                     //    {
                     //        mergedDictionaries.Add(new BlueTheme());

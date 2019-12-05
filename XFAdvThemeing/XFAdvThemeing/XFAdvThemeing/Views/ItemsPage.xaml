@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="BrowseItemsPage"
     Title="{Binding Title}"
+    BackgroundColor="{DynamicResource PageBackgroundColor}"
     mc:Ignorable="d">
 
     <ContentPage.ToolbarItems>
@@ -22,6 +23,7 @@
 
         <ListView
             x:Name="ItemsListView"
+            BackgroundColor="{DynamicResource PageBackgroundColor}"
             CachingStrategy="RecycleElement"
             HasUnevenRows="true"
             IsPullToRefreshEnabled="true"

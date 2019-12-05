@@ -1,17 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="XFAdvThemeing.Views.ItemDetailPage"
-             Title="{Binding Title}">
+<ContentPage
+    x:Class="XFAdvThemeing.Views.ItemDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="{Binding Title}"
+    BackgroundColor="{DynamicResource PageBackgroundColor}"
+    mc:Ignorable="d">
 
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small"/>
+    <StackLayout Padding="15" Spacing="20">
+        <Label FontSize="Medium" Text="Text:" />
+        <Label
+            d:Text="Item name"
+            FontSize="Small"
+            Text="{Binding Item.Text}" />
+        <Label FontSize="Medium" Text="Description:" />
+        <Label
+            d:Text="Item description"
+            FontSize="Small"
+            Text="{Binding Item.Description}" />
     </StackLayout>
-    
+
 </ContentPage>
