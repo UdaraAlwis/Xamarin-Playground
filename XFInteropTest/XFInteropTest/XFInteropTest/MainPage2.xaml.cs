@@ -1,39 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Plugin.Media;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace XFInteropTest
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MainPage2 : ContentPage
     {
-        private string sampleImageElement =
-            "<img alt=\"Google\" height=\"92\" id=\"hplogo\" src=\"https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png\"  style=\"padding-top:109px\" width=\"272\">";
-
-        public MainPage()
+        public MainPage2()
         {
             InitializeComponent();
 
-            webViewElement.Source = new HtmlWebViewSource
+            hybridWebView.RegisterAction(data => DisplayAlert("Alert", "Hello " + data, "OK"));
+
+            hybridWebView.Source = new HtmlWebViewSource
             {
-                Html = $@"<html>"+
+                Html = $@"<html>" +
                        "<head><style>*{margin:0;padding:0}.imgbox{display:grid;height:100%}.center-fit{max-width:100%;max-height:100vh;margin:auto}</style></head>" +
                        "<body>" +
                        "<script type=\"text/javascript\">" +
                        "function factorial(num) {" +
-                       "        var numValue = num;"+
+                       "        var numValue = num;" +
                        "        if(isNaN(num)){" +
                        "            document.getElementById(\"calcValue\").innerHTML = \"nope!\";" +
                        "            return num;" +
-                       "        }"+
+                       "        }" +
                        "        if (num === 0 || num === 1)" +
                        "            return 1;" +
                        "        for (var i = num - 1; i >= 1; i--) {" +
@@ -61,27 +58,26 @@ namespace XFInteropTest
                        "</body>" +
                        "</html>"
             };
-
-            //webViewElement.RegisterAction(data => DisplayAlert("Alert", "Hello " + data, "OK"));
         }
+
 
         private async void entry1Element_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             if (int.TryParse(entry1Element.Text, out int number))
             {
-                string result = await webViewElement.EvaluateJavaScriptAsync($"factorial({number})");
+                string result = await hybridWebView.EvaluateJavaScriptAsync($"factorial({number})");
                 labelElement.Text = $"Factorial of {number} is {result}.";
             }
             else
             {
-                string result = await webViewElement.EvaluateJavaScriptAsync($"factorial('{entry1Element.Text}')");
+                string result = await hybridWebView.EvaluateJavaScriptAsync($"factorial('{entry1Element.Text}')");
                 labelElement.Text = string.Empty;
             }
         }
 
         private async void entry2Element_OnTextChanged(object sender, TextChangedEventArgs e)
         {
-            string result = await webViewElement.EvaluateJavaScriptAsync($"showtext('{entry2Element.Text}')");
+            string result = await hybridWebView.EvaluateJavaScriptAsync($"showtext('{entry2Element.Text}')");
         }
 
         private async void buttonElement_Clicked(object sender, EventArgs e)
@@ -113,7 +109,7 @@ namespace XFInteropTest
 
             var imageAsBytesBase64 = Convert.ToBase64String(imageAsBytes);
 
-            string result = await webViewElement.EvaluateJavaScriptAsync($"showimg('{imageAsBytesBase64}')");
+            string result = await hybridWebView.EvaluateJavaScriptAsync($"showimg('{imageAsBytesBase64}')");
 
             //image.Source = ImageSource.FromStream(() =>
             //{

@@ -10,7 +10,7 @@ namespace XFInteropTest
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage2());
         }
 
         protected override void OnStart()

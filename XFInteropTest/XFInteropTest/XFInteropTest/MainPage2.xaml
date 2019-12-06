@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFInteropTest.MainPage2"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xfInteropTest="clr-namespace:XFInteropTest;assembly=XFInteropTest"
+    Padding="0,20,0,0"
+    iOsSpecific:Page.UseSafeArea="true"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <!--  Place new controls here  -->
+            <Label Text="Welcome to Xamarin.Forms!" />
+            <Entry
+                x:Name="entry1Element"
+                FontSize="25"
+                Placeholder="type a number here..."
+                TextChanged="entry1Element_OnTextChanged" />
+            <Entry
+                x:Name="entry2Element"
+                FontSize="25"
+                Placeholder="type some text here..."
+                TextChanged="entry2Element_OnTextChanged" />
+            <xfInteropTest:HybridWebView
+                x:Name="hybridWebView"
+                BackgroundColor="Red"
+                HorizontalOptions="FillAndExpand"
+                Source="https://forums.xamarin.com/discussion/18467/how-to-bind-html-string-to-webview"
+                VerticalOptions="FillAndExpand" />
+
+            <Label x:Name="labelElement" Text="this will show result..." />
+            <Button
+                x:Name="buttonElement"
+                Clicked="buttonElement_Clicked"
+                Text="Take Photo" />
+
+            <Image x:Name="image" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
