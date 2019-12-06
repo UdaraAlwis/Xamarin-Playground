@@ -22,7 +22,9 @@ namespace XFInteropTest
             hybridWebView.Source = new HtmlWebViewSource
             {
                 Html = $@"<html>" +
-                       "<head><style>*{margin:0;padding:0}.imgbox{display:grid;height:100%}.center-fit{max-width:100%;max-height:100vh;margin:auto}</style></head>" +
+                       "<head>" +
+                       "<link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>" +
+                       "<style>*{margin:0;padding:0}.imgbox{display:grid;height:100%}.center-fit{max-width:100%;max-height:100vh;margin:auto}</style></head>" +
                        "<body>" +
                        "<script type=\"text/javascript\">" +
                        "function factorial(num) {" +
@@ -49,11 +51,24 @@ namespace XFInteropTest
                        "function showtext(textval) {" +
                        "        document.getElementById(\"textValue\").innerHTML = textval;" +
                        "}" +
+                       "function invokeCSCode(){" +
+                       "    try{" +
+                       "        var data = document.getElementById(\"inputElement\").value;" +
+                       "        invokeCSharpAction(data);" +
+                       "    }" +
+                       "    catch(err){" +
+                       "        alert(err);" +
+                       "    }" +
+                       "}"+
                        "</script>" +
 
-                       "<p id=\"calcValue\"></p> <br>" +
-                       "<p id=\"textValue\"></p> <br>" +
-                       "<img id=\"myImg\" class=\"center-fit\" >" +
+                       "<p id=\"calcValue\" style=\"font-size:25px;font-family:'Ubuntu';\"></p> <br>" +
+                       "<p id=\"textValue\" style=\"font-size:25px;font-family:'Ubuntu';\"></p> <br>" +
+
+                       "<img id=\"myImg\" class=\"center-fit\" ><br>" +
+
+                       "<input type=\"text\" style=\"font-size:25px;font-family:'Ubuntu';\" id=\"inputElement\" placeholder=\"Type something here to pass to C# environment..\"><br><br>" +
+                       "<button type=\"button\" style=\"font-size:25px;font-family:'Ubuntu';\" onclick=\"invokeCSCode()\">Invoke C# Code</button>" +
 
                        "</body>" +
                        "</html>"
