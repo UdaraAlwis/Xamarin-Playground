@@ -29,12 +29,17 @@ namespace XFInteropTest
                        "<body>" +
                        "<script type=\"text/javascript\">" +
                        "function factorial(num) {" +
+                       "        var numValue = num;"+
+                       "        if(isNaN(num)){" +
+                       "            document.getElementById(\"calcValue\").innerHTML = \"nope!\";" +
+                       "            return num;" +
+                       "        }"+
                        "        if (num === 0 || num === 1)" +
                        "            return 1;" +
                        "        for (var i = num - 1; i >= 1; i--) {" +
                        "            num *= i;" +
                        "        }" +
-                       "        document.getElementById(\"demo\").innerHTML = num;" +
+                       "        document.getElementById(\"calcValue\").innerHTML = \"Factorial of \" + numValue + \" is \" + num + \".\";" +
                        "        return num;" +
                        "}" +
                        "function showimg(base64imagestring) {" +
@@ -45,12 +50,12 @@ namespace XFInteropTest
                        "        alert('done!');" +
                        "}" +
                        "function showtext(textval) {" +
-                       "        document.getElementById(\"textlabel\").innerHTML = textval;" +
+                       "        document.getElementById(\"textValue\").innerHTML = textval;" +
                        "}" +
                        "</script>" +
 
-                       "<p id=\"demo\"></p>" +
-                       "<p id=\"textlabel\"></p>" +
+                       "<p id=\"calcValue\"></p> <br>" +
+                       "<p id=\"textValue\"></p> <br>" +
                        "<img id=\"myImg\" class=\"center-fit\" >" +
 
                        "</body>" +
@@ -66,14 +71,16 @@ namespace XFInteropTest
                 string result = await webViewElement.EvaluateJavaScriptAsync($"factorial({number})");
                 labelElement.Text = $"Factorial of {number} is {result}.";
             }
+            else
+            {
+                string result = await webViewElement.EvaluateJavaScriptAsync($"factorial('{entry1Element.Text}')");
+                labelElement.Text = string.Empty;
+            }
         }
 
         private async void entry2Element_OnTextChanged(object sender, TextChangedEventArgs e)
         {
             string result = await webViewElement.EvaluateJavaScriptAsync($"showtext('{entry2Element.Text}')");
-
-            string result2 = await webViewElement.EvaluateJavaScriptAsync($"showimg('{new byte[] { 123 }}')");
-
         }
 
         private async void buttonElement_Clicked(object sender, EventArgs e)
