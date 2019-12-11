@@ -59,6 +59,8 @@ namespace XFAdvThemeing.ViewModels
             }
             ThemeManager.ChangeTheme(selectedTheme.ThemeId);
 
+            Shell.Current.SendBackButtonPressed();
+
             ////For Android we need some Platform specific twicks for Android Toolbar. 
             ////Apply this platform specific change by invoking following DependencyService
             //if (Device.RuntimePlatform == Device.Android)

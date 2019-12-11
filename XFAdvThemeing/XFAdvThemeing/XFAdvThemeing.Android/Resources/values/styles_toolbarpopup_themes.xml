@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="lightToolbarPopupTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <item name="android:colorBackground">#FFFFFF</item>
+    <item name="android:textColor">#141414</item>
+  </style>
+  <style name="darkToolbarPopupTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <item name="android:colorBackground">#141414</item>
+    <item name="android:textColor">#FFFFFF</item>
+  </style>
+</resources>

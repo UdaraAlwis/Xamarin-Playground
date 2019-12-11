@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <!--When you introduce a new theme in Core project's ThemeResources folder. Also create similar copy for Toolbar as below for that theme-->
+
+  <style name="blueThemeToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <item name="android:textColorPrimary">#FFFFFF</item>
+    <item name="actionMenuTextColor">#FFFFFF</item>
+    <item name="android:textColorSecondary">#FFFFFF</item>
+  </style>
+
+  <style name="darkThemeToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <item name="android:textColorPrimary">#FFFFFF</item>
+    <item name="actionMenuTextColor">#FFFFFF</item>
+    <item name="android:textColorSecondary">#FFFFFF</item>
+  </style>
+
+  <style name="lightThemeToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <item name="android:textColorPrimary">#FFFFFF</item>
+    <item name="actionMenuTextColor">#FFFFFF</item>
+    <item name="android:textColorSecondary">#FFFFFF</item>
+  </style>
+
+  <style name="orangeThemeToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <item name="android:textColorPrimary">#FFFFFF</item>
+    <item name="actionMenuTextColor">#FFFFFF</item>
+    <item name="android:textColorSecondary">#FFFFFF</item>
+  </style>
+
+  <style name="whiteThemeToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <item name="android:textColorPrimary">#1d1d1d</item>
+    <item name="actionMenuTextColor">#1d1d1d</item>
+    <item name="android:textColorSecondary">#1d1d1d</item>
+  </style>
+</resources>
