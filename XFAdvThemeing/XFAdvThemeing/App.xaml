@@ -6,6 +6,6 @@
              mc:Ignorable="d"
              x:Class="XFAdvThemeing.App">
     <Application.Resources>
-
+        
     </Application.Resources>
 </Application>
