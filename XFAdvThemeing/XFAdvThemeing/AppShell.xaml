@@ -1,35 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-       mc:Ignorable="d"
-       xmlns:local="clr-namespace:XFAdvThemeing.Views"
-       Title="XFAdvThemeing"
-       x:Class="XFAdvThemeing.AppShell">
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="XFAdvThemeing.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:XFAdvThemeing.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="XFAdvThemeing"
+    mc:Ignorable="d">
 
-    <!-- 
-        Styles and Resources 
+    <!--
+        Styles and Resources
     -->
     <Shell.Resources>
         <ResourceDictionary>
-            <Color x:Key="NavigationPrimary">#2196F3</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
-                <Setter Property="Shell.BackgroundColor" Value="{StaticResource NavigationPrimary}" />
-                <Setter Property="Shell.ForegroundColor" Value="White" />
-                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.BackgroundColor" Value="{DynamicResource NavigationBarColor}" />
+                <Setter Property="Shell.ForegroundColor" Value="{DynamicResource SecondaryColor}" />
+                <Setter Property="Shell.TitleColor" Value="{DynamicResource SecondaryColor}" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
                 <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
-                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource NavigationBarColor}" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="{DynamicResource SecondaryColor}" />
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarTitleColor" Value="{DynamicResource SecondaryColor}" />
             </Style>
-            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
         </ResourceDictionary>
     </Shell.Resources>
 
-    <!-- Your Pages -->
+    <!--  Your Pages  -->
     <TabBar>
         <Tab Title="Browse" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
@@ -39,7 +39,7 @@
         </Tab>
     </TabBar>
 
-    <!-- Optional Templates 
+    <!-- Optional Templates
     // These may be provided inline as below or as separate classes.
 
     // This header appears at the top of the Flyout.
