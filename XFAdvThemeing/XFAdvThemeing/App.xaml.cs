@@ -8,7 +8,6 @@ namespace XFAdvThemeing
 {
     public partial class App : Application
     {
-
         public App()
         {
             InitializeComponent();

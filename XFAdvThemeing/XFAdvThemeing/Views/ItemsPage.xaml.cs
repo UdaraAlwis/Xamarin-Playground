@@ -51,5 +51,10 @@ namespace XFAdvThemeing.Views
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
+
+        private async void ChangeThemeButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new ThemeSelectionPage()));
+        }
     }
 }
