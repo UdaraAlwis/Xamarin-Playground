@@ -7,24 +7,31 @@
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:local="clr-namespace:XFAdvThemeing"
     xmlns:models="clr-namespace:XFAdvThemeing.Models;assembly=XFAdvThemeing"
-    Title="Change App Theme">
+    Title="Change App Theme"
+    ios:Page.UseSafeArea="true">
 
-    <StackLayout Margin="20" VerticalOptions="CenterAndExpand">
+    <StackLayout Margin="20">
+
         <controls:EnumPicker
+            x:Name="ThemePicker"
             Title="Select Theme"
             ios:Picker.UpdateMode="WhenFinished"
             EnumType="{x:Type models:Theme}"
-            SelectedIndexChanged="OnPickerSelectionChanged" />
+            SelectedIndexChanged="OnPickerSelectionChanged"
+            VerticalOptions="Start" />
 
         <Label
             x:Name="statusLabel"
             HorizontalOptions="Center"
-            Style="{DynamicResource LargeLabelStyle}" />
+            Style="{DynamicResource SmallLabelStyle}"
+            TextColor="SlateGray"
+            VerticalOptions="Start" />
 
         <Button
             x:Name="CloseButton"
             Clicked="CloseButton_Clicked"
-            Style="{StaticResource ButtonStyle}"
-            Text="Back" />
+            Style="{DynamicResource ButtonStyle}"
+            Text="Back"
+            VerticalOptions="EndAndExpand" />
     </StackLayout>
 </ContentPage>

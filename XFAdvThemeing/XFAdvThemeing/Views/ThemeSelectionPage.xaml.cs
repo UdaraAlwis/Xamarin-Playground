@@ -19,17 +19,40 @@ namespace XFAdvThemeing.Views
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+            if (mergedDictionaries.Count > 0)
+            {
+                var currentTheme = mergedDictionaries.First().GetType();
+
+                if (currentTheme.FullName != null && currentTheme.FullName.Equals(typeof(LightTheme).FullName))
+                {
+                    ThemePicker.SelectedIndex = 0;
+                    statusLabel.Text = $"{Theme.Light.ToString()} theme loaded. Close this page.";
+                }
+                else
+                if (currentTheme.FullName != null && currentTheme.FullName.Equals(typeof(DarkTheme).FullName))
+                {
+                    ThemePicker.SelectedIndex = 1;
+                    statusLabel.Text = $"{Theme.Dark.ToString()} theme loaded. Close this page.";
+                }
+            }
+        }
+
         void OnPickerSelectionChanged(object sender, EventArgs e)
         {
             Picker picker = sender as Picker;
-            Theme theme = (Theme)picker.SelectedItem;
+            Theme selectedTheme = (Theme)picker.SelectedItem;
 
             ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
             if (mergedDictionaries != null)
             {
                 mergedDictionaries.Clear();
 
-                switch (theme)
+                switch (selectedTheme)
                 {
                     case Theme.Dark:
                         mergedDictionaries.Add(new DarkTheme());
@@ -39,7 +62,7 @@ namespace XFAdvThemeing.Views
                         mergedDictionaries.Add(new LightTheme());
                         break;
                 }
-                statusLabel.Text = $"{theme.ToString()} theme loaded. Close this page.";
+                statusLabel.Text = $"{selectedTheme.ToString()} theme loaded. Close this page.";
             }
         }
 
