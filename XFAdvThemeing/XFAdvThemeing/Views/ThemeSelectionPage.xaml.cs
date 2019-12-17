@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XFAdvThemeing.Models;
@@ -62,30 +62,18 @@ namespace XFAdvThemeing.Views
             {
                 mergedDictionaries.Clear();
 
-                switch (ThemePicker.SelectedItem)
+                // parsing selected theme value
+                if (Enum.TryParse(ThemePicker.SelectedItem.ToString(), out Theme currentThemeEnum))
                 {
-                    case Theme.Dark:
-                        mergedDictionaries.Add(new DarkTheme());
-                        break;
-
-                    case Theme.Light:
-                        mergedDictionaries.Add(new LightTheme());
-                        break;
-
-                    case Theme.Pink:
-                        mergedDictionaries.Add(new PinkTheme());
-                        break;
-
-                    case Theme.Gold:
-                        mergedDictionaries.Add(new GoldTheme());
-                        break;
-
-                    default:
-                        mergedDictionaries.Add(new LightTheme());
-                        break;
+                    // setting up theme
+                    if (ThemeHelper.SetAppTheme(currentThemeEnum))
+                    {
+                        // Theme setting successful
+                        statusLabel.Text = $"{ThemePicker.SelectedItem.ToString()} theme loaded. Close this page.";
+                        Preferences.Set("CurrentTheme", ThemePicker.SelectedItem.ToString());
+                    }
                 }
 
-                statusLabel.Text = $"{ThemePicker.SelectedItem.ToString()} theme loaded. Close this page.";
             }
         }
 

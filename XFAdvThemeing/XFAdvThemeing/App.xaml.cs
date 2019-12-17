@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XFAdvThemeing.Models;
 using XFAdvThemeing.Services;
 using XFAdvThemeing.Views;
 
@@ -19,6 +21,23 @@ namespace XFAdvThemeing
 
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
+
+            SetupCurrentTheme();
+        }
+
+        /// <summary>
+        /// Set up current theme from app settings
+        /// </summary>
+        public void SetupCurrentTheme()
+        {
+            var currentTheme = Preferences.Get("CurrentTheme", null);
+            if (currentTheme != null)
+            {
+                if (Enum.TryParse(currentTheme, out Theme currentThemeEnum))
+                {
+                    ThemeHelper.SetAppTheme(currentThemeEnum);
+                }
+            }
         }
 
         protected override void OnStart()
