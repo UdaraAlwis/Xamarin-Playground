@@ -7,10 +7,11 @@
     <Color x:Key="PageBackgroundColor">White</Color>
     <Color x:Key="NavigationBarColor">WhiteSmoke</Color>
     <Color x:Key="PrimaryColor">WhiteSmoke</Color>
+    <Color x:Key="AccentColor">#d9d9d9</Color>
     <Color x:Key="SecondaryColor">Black</Color>
+
     <Color x:Key="PrimaryTextColor">Black</Color>
-    <Color x:Key="SecondaryTextColor">White</Color>
-    <Color x:Key="TertiaryTextColor">Gray</Color>
-    <Color x:Key="TransparentColor">Transparent</Color>
+    <Color x:Key="SecondaryTextColor">#4a4a4a</Color>
+    <Color x:Key="TertiaryTextColor">#7d7d7d</Color>
 
 </ResourceDictionary>

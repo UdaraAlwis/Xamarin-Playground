@@ -19,11 +19,7 @@
                 <Setter Property="Shell.ForegroundColor" Value="{DynamicResource SecondaryColor}" />
                 <Setter Property="Shell.TitleColor" Value="{DynamicResource SecondaryColor}" />
                 <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
-                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource NavigationBarColor}" />
-                <Setter Property="Shell.TabBarForegroundColor" Value="{DynamicResource SecondaryColor}" />
-                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF" />
-                <Setter Property="Shell.TabBarTitleColor" Value="{DynamicResource SecondaryColor}" />
+                <Setter Property="Shell.UnselectedColor" Value="{DynamicResource AccentColor}" />
             </Style>
             <Style BasedOn="{StaticResource BaseStyle}" TargetType="TabBar" />
         </ResourceDictionary>

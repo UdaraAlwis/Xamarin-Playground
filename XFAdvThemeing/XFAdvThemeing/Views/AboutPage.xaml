@@ -9,6 +9,7 @@
     xmlns:vm="clr-namespace:XFAdvThemeing.ViewModels"
     Title="{Binding Title}"
     iOsSpecific:Page.UseSafeArea="true"
+    BackgroundColor="{DynamicResource PageBackgroundColor}"
     mc:Ignorable="d">
 
     <ContentPage.BindingContext>
@@ -17,8 +18,6 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
-            <Color x:Key="Accent">#96d1ff</Color>
             <Color x:Key="LightTextColor">#999999</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -29,7 +28,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <StackLayout
-            BackgroundColor="{StaticResource Accent}"
+            BackgroundColor="{DynamicResource AccentColor}"
             HorizontalOptions="Fill"
             VerticalOptions="FillAndExpand">
             <StackLayout
@@ -49,7 +48,7 @@
                 Padding="16,40,16,40"
                 Orientation="Vertical"
                 Spacing="10">
-                <Label FontSize="22">
+                <Label FontSize="22" Style="{DynamicResource LargeLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
@@ -58,12 +57,12 @@
                                     FontSize="22"
                                     Text="AppName" />
                                 <Span Text=" " />
-                                <Span ForegroundColor="{StaticResource LightTextColor}" Text="1.0" />
+                                <Span ForegroundColor="{DynamicResource PrimaryTextColor}" Text="1.0" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Label>
+                <Label Style="{DynamicResource MediumLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
@@ -75,7 +74,7 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
-                <Label>
+                <Label Style="{DynamicResource MediumLabelStyle}">
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
@@ -88,12 +87,12 @@
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
+
                 <Button
                     Margin="0,10,0,0"
-                    BackgroundColor="{StaticResource Primary}"
                     Command="{Binding OpenWebCommand}"
-                    Text="Learn more"
-                    TextColor="White" />
+                    Style="{StaticResource ButtonStyle}"
+                    Text="Learn more" />
             </StackLayout>
         </ScrollView>
     </Grid>

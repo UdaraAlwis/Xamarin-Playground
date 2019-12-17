@@ -39,6 +39,18 @@ namespace XFAdvThemeing.Views
                     ThemePicker.SelectedIndex = 1;
                     statusLabel.Text = $"{Theme.Dark.ToString()} theme loaded. Close this page.";
                 }
+                else
+                if (currentTheme.FullName != null && currentTheme.FullName.Equals(typeof(PinkTheme).FullName))
+                {
+                    ThemePicker.SelectedIndex = 2;
+                    statusLabel.Text = $"{Theme.Pink.ToString()} theme loaded. Close this page.";
+                }
+                else
+                if (currentTheme.FullName != null && currentTheme.FullName.Equals(typeof(GoldTheme).FullName))
+                {
+                    ThemePicker.SelectedIndex = 3;
+                    statusLabel.Text = $"{Theme.Gold.ToString()} theme loaded. Close this page.";
+                }
             }
         }
 
@@ -57,7 +69,19 @@ namespace XFAdvThemeing.Views
                     case Theme.Dark:
                         mergedDictionaries.Add(new DarkTheme());
                         break;
+
                     case Theme.Light:
+                        mergedDictionaries.Add(new LightTheme());
+                        break;
+
+                    case Theme.Pink:
+                        mergedDictionaries.Add(new PinkTheme());
+                        break;
+
+                    case Theme.Gold:
+                        mergedDictionaries.Add(new GoldTheme());
+                        break;
+
                     default:
                         mergedDictionaries.Add(new LightTheme());
                         break;

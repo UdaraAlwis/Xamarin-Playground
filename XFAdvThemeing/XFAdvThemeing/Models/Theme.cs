@@ -7,6 +7,8 @@ namespace XFAdvThemeing.Models
     public enum Theme
     {
         Light,
-        Dark
+        Dark,
+        Pink,
+        Gold
     }
 }
