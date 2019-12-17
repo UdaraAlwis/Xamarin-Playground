@@ -23,6 +23,8 @@ namespace XFAdvThemeing.Views
         {
             base.OnAppearing();
 
+            ThemePicker.ItemsSource = Enum.GetValues(typeof(Theme));
+
             ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
             if (mergedDictionaries.Count > 0)
             {
@@ -31,40 +33,36 @@ namespace XFAdvThemeing.Views
                 if (currentTheme.FullName != null && currentTheme.FullName.Equals(typeof(LightTheme).FullName))
                 {
                     ThemePicker.SelectedIndex = 0;
-                    statusLabel.Text = $"{Theme.Light.ToString()} theme loaded. Close this page.";
                 }
                 else
                 if (currentTheme.FullName != null && currentTheme.FullName.Equals(typeof(DarkTheme).FullName))
                 {
                     ThemePicker.SelectedIndex = 1;
-                    statusLabel.Text = $"{Theme.Dark.ToString()} theme loaded. Close this page.";
                 }
                 else
                 if (currentTheme.FullName != null && currentTheme.FullName.Equals(typeof(PinkTheme).FullName))
                 {
                     ThemePicker.SelectedIndex = 2;
-                    statusLabel.Text = $"{Theme.Pink.ToString()} theme loaded. Close this page.";
                 }
                 else
                 if (currentTheme.FullName != null && currentTheme.FullName.Equals(typeof(GoldTheme).FullName))
                 {
                     ThemePicker.SelectedIndex = 3;
-                    statusLabel.Text = $"{Theme.Gold.ToString()} theme loaded. Close this page.";
                 }
+
+                if (ThemePicker.SelectedItem != null)
+                    statusLabel.Text = $"Currently, {ThemePicker.SelectedItem.ToString()} theme loaded.";
             }
         }
 
         void OnPickerSelectionChanged(object sender, EventArgs e)
         {
-            Picker picker = sender as Picker;
-            Theme selectedTheme = (Theme)picker.SelectedItem;
-
             ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
             if (mergedDictionaries != null)
             {
                 mergedDictionaries.Clear();
 
-                switch (selectedTheme)
+                switch (ThemePicker.SelectedItem)
                 {
                     case Theme.Dark:
                         mergedDictionaries.Add(new DarkTheme());
@@ -86,7 +84,8 @@ namespace XFAdvThemeing.Views
                         mergedDictionaries.Add(new LightTheme());
                         break;
                 }
-                statusLabel.Text = $"{selectedTheme.ToString()} theme loaded. Close this page.";
+
+                statusLabel.Text = $"{ThemePicker.SelectedItem.ToString()} theme loaded. Close this page.";
             }
         }
 

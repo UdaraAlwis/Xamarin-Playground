@@ -12,11 +12,10 @@
 
     <StackLayout Margin="20">
 
-        <controls:EnumPicker
+        <Picker
             x:Name="ThemePicker"
             Title="Select Theme"
             ios:Picker.UpdateMode="WhenFinished"
-            EnumType="{x:Type models:Theme}"
             SelectedIndexChanged="OnPickerSelectionChanged"
             VerticalOptions="Start" />
 
