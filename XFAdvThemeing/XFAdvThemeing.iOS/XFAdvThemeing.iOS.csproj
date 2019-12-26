@@ -5,9 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7A7250EC-1B7C-410D-8DF0-1F562E4E85AA}</ProjectGuid>
+    <ProjectGuid>{CED260C7-7651-4027-8DEE-A9D2CF3C63F8}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TemplateGuid>{89a4fe7c-635d-49c9-8d8c-5cd363c0d68d}</TemplateGuid>
+    <TemplateGuid>{65C0771A-452F-423B-995C-F0AE46E643BA}</TemplateGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>XFAdvThemeing.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
@@ -137,7 +137,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\XFAdvThemeing\XFAdvThemeing.csproj">
-      <Project>{CF58FFE2-C979-42E0-92E0-88516C1F5C5D}</Project>
+      <Project>{DC672487-B79A-428F-99A0-3F2075FE6830}</Project>
       <Name>XFAdvThemeing</Name>
     </ProjectReference>
   </ItemGroup>

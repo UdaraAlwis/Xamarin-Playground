@@ -1,34 +1,24 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage
-    x:Class="XFAdvThemeing.Views.NewItemPage"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="New Item"
-    iOsSpecific:Page.UseSafeArea="true"
-    mc:Ignorable="d">
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XFAdvThemeing.Views.NewItemPage"
+             Title="New Item">
+    
     <ContentPage.ToolbarItems>
-        <ToolbarItem Clicked="Cancel_Clicked" Text="Cancel" />
-        <ToolbarItem Clicked="Save_Clicked" Text="Save" />
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
     </ContentPage.ToolbarItems>
-
+    
     <ContentPage.Content>
-        <StackLayout Padding="15" Spacing="20">
-            <Label FontSize="Medium" Text="Text" />
-            <Entry
-                d:Text="Item name"
-                FontSize="Small"
-                Text="{Binding Item.Text}" />
-            <Label FontSize="Medium" Text="Description" />
-            <Editor
-                Margin="0"
-                d:Text="Item description"
-                FontSize="Small"
-                Text="{Binding Item.Description}" />
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Text" FontSize="Medium" />
+            <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
+            <Label Text="Description" FontSize="Medium" />
+            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
         </StackLayout>
     </ContentPage.Content>
-
+    
 </ContentPage>

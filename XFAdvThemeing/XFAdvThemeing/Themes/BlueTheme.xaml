@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ResourceDictionary
-    x:Class="XFAdvThemeing.Themes.DarkTheme"
+    x:Class="XFAdvThemeing.Themes.BlueTheme"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <Color x:Key="PrimaryColor">#383838</Color>
-    <Color x:Key="AccentColor">#878787</Color>
+    <Color x:Key="PrimaryColor">#2196F3</Color>
+    <Color x:Key="AccentColor">#b8e0ff</Color>
     <Color x:Key="SecondaryColor">White</Color>
 
     <Color x:Key="PageBackgroundColor">White</Color>
-    <Color x:Key="NavigationBarColor">#383838</Color>
+    <Color x:Key="NavigationBarColor">#2196F3</Color>
 
     <Color x:Key="PrimaryTextColor">Black</Color>
     <Color x:Key="SecondaryTextColor">#4a4a4a</Color>

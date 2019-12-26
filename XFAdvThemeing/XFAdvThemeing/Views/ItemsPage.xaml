@@ -9,17 +9,15 @@
     x:Name="BrowseItemsPage"
     Title="{Binding Title}"
     iOsSpecific:Page.UseSafeArea="true"
-    BackgroundColor="{DynamicResource PageBackgroundColor}"
     mc:Ignorable="d">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="AddItem_Clicked" Text="Add" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout Margin="20">
+    <StackLayout>
         <ListView
             x:Name="ItemsListView"
-            BackgroundColor="Transparent"
             CachingStrategy="RecycleElement"
             HasUnevenRows="true"
             IsPullToRefreshEnabled="true"
@@ -44,13 +42,15 @@
                         <StackLayout Padding="10">
                             <Label
                                 d:Text="{Binding .}"
+                                FontSize="16"
                                 LineBreakMode="NoWrap"
-                                Style="{DynamicResource MediumLabelStyle}"
+                                Style="{DynamicResource ListItemTextStyle}"
                                 Text="{Binding Text}" />
                             <Label
-                                d:Text="Item description"
+                                d:Text="Item descripton"
+                                FontSize="13"
                                 LineBreakMode="NoWrap"
-                                Style="{DynamicResource SmallLabelStyle}"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
                                 Text="{Binding Description}" />
                         </StackLayout>
                     </ViewCell>
@@ -61,7 +61,7 @@
         <Button
             x:Name="ChangeThemeButton"
             Clicked="ChangeThemeButton_Clicked"
-            Style="{StaticResource ButtonStyle}"
+            Style="{DynamicResource ButtonStyle}"
             Text="Change App Theme" />
     </StackLayout>
 
