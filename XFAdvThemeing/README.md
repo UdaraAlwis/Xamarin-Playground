@@ -18,7 +18,7 @@ Sample Theme File:
 ```xaml
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ResourceDictionary
-    x:Class="XFShellAdvThemeing.Themes.PinkTheme"
+    x:Class="XFAdvThemeing.Themes.PinkTheme"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
