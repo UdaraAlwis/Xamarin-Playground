@@ -17,9 +17,10 @@
         <ToolbarItem Clicked="AddItem_Clicked" Text="Add" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout>
+    <StackLayout Margin="20">
         <ListView
             x:Name="ItemsListView"
+            BackgroundColor="Transparent"
             CachingStrategy="RecycleElement"
             HasUnevenRows="true"
             IsPullToRefreshEnabled="true"
@@ -46,13 +47,13 @@
                                 d:Text="{Binding .}"
                                 FontSize="16"
                                 LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemTextStyle}"
+                                Style="{DynamicResource MediumLabelStyle}"
                                 Text="{Binding Text}" />
                             <Label
                                 d:Text="Item descripton"
                                 FontSize="13"
                                 LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                Style="{DynamicResource SmallLabelStyle}"
                                 Text="{Binding Description}" />
                         </StackLayout>
                     </ViewCell>

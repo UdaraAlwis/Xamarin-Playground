@@ -1,24 +1,39 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="XFAdvThemeing.Views.NewItemPage"
-             Title="New Item">
-    
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="XFAdvThemeing.Views.NewItemPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="New Item"
+    iOsSpecific:Page.UseSafeArea="true"
+    BackgroundColor="{DynamicResource PageBackgroundColor}"
+    Visual="Material"
+    mc:Ignorable="d">
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
-        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+        <ToolbarItem Clicked="Cancel_Clicked" Text="Cancel" />
+        <ToolbarItem Clicked="Save_Clicked" Text="Save" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Item.Text}" d:Text="Item name" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" d:Text="Item description" FontSize="Small" Margin="0" />
+        <StackLayout Padding="15" Spacing="20">
+            <Label Style="{DynamicResource SmallLabelStyle}" Text="Text" />
+            <Entry
+                d:Text="Item name"
+                Placeholder="Item name"
+                Text="{Binding Item.Text}"
+                TextColor="{DynamicResource PrimaryTextColor}" />
+
+            <Label Style="{DynamicResource SmallLabelStyle}" Text="Description" />
+            <Editor
+                Margin="0"
+                d:Text="Item description"
+                Placeholder="Item description"
+                Text="{Binding Item.Description}"
+                TextColor="{DynamicResource PrimaryTextColor}" />
         </StackLayout>
     </ContentPage.Content>
-    
+
 </ContentPage>

@@ -3,20 +3,20 @@
     x:Class="XFAdvThemeing.Views.ThemeSelectionPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:XFAdvThemeing.Controls;assembly=XFAdvThemeing"
-    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-    xmlns:local="clr-namespace:XFAdvThemeing"
-    xmlns:models="clr-namespace:XFAdvThemeing.Models;assembly=XFAdvThemeing"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     Title="Change App Theme"
-    ios:Page.UseSafeArea="true">
+    iOsSpecific:Page.UseSafeArea="true"
+    BackgroundColor="{DynamicResource PageBackgroundColor}"
+    Visual="Material">
 
     <StackLayout Margin="20">
 
         <Picker
             x:Name="ThemePicker"
             Title="Select Theme"
-            ios:Picker.UpdateMode="WhenFinished"
+            iOsSpecific:Picker.UpdateMode="WhenFinished"
             SelectedIndexChanged="OnPickerSelectionChanged"
+            TextColor="{DynamicResource PrimaryTextColor}"
             VerticalOptions="Start" />
 
         <Label
