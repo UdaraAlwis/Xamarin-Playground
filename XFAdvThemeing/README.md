@@ -1,4 +1,4 @@
-# XFShellAdvThemeing
+# XFAdvThemeing
 Stunning App themes with Xamarin Forms! 
 
 Setting up App Themes in a Xamarin.Forms Master-Detail App! 😉 
