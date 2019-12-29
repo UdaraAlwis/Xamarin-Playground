@@ -11,20 +11,21 @@
     <item name="windowActionBar">false</item>
     <!-- Set theme colors from https://aka.ms/material-colors -->
     <!-- colorPrimary is used for the default action bar background -->
-    <item name="colorPrimary">#2196F3</item>
+    <item name="colorPrimary">#212121</item>
     <!-- colorPrimaryDark is used for the status bar -->
-    <item name="colorPrimaryDark">#1976D2</item>
+    <item name="colorPrimaryDark">#000000</item>
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-    <item name="colorAccent">#FF4081</item>
+    <item name="colorAccent">#484848</item>
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
     <item name="windowActionModeOverlay">true</item>
 
-    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
-  </style>
-
-  <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-    <item name="colorAccent">#FF4081</item>
+    <!-- Got it from here: https://forums.xamarin.com/discussion/170362/change-background-color-of-the-selected-list-item -->
+    <item name="android:colorPressedHighlight">@color/colorListViewHighlighted</item>
+    <item name="android:colorLongPressedHighlight">@color/colorListViewHighlighted</item>
+    <item name="android:colorFocusedHighlight">@color/colorListViewHighlighted</item>
+    <item name="android:colorActivatedHighlight">@color/colorListViewHighlighted</item>
+    <item name="android:activatedBackgroundIndicator">@color/colorListViewHighlighted</item>
   </style>
 </resources>
