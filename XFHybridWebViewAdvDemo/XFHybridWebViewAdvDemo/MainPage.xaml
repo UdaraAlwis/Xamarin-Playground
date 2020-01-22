@@ -1,16 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="XFHybridWebViewAdvDemo.MainPage">
+<ContentPage
+    x:Class="XFHybridWebViewAdvDemo.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XFHybridWebViewAdvDemo.Controls;assembly=XFHybridWebViewAdvDemo"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Xamarin Forms - Hybrid WebView Interop"
+    iOsSpecific:Page.UseSafeArea="true"
+    mc:Ignorable="d">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <ContentPage.Content>
+        <StackLayout Padding="10,10,10,10">
+            <!--  Place new controls here  -->
+            <Label
+                FontSize="Medium"
+                Text="Uni-directional communication from Xamarin.Forms to WebView interoperability..."
+                VerticalOptions="Start" />
+
+            <Entry
+                x:Name="textEntryElement"
+                FontSize="25"
+                Placeholder="type something here..."
+                VerticalOptions="Start" />
+            <Button
+                x:Name="sendToWebViewButton"
+                BackgroundColor="#2196F3"
+                Clicked="sendToWebViewButton_Clicked"
+                FontSize="Medium"
+                Text="Send to WebView"
+                TextColor="White"
+                VerticalOptions="Start" />
+
+            <controls:HybridWebView
+                x:Name="webViewElement"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+
+            <Frame
+                BackgroundColor="#2196F3"
+                HasShadow="False"
+                VerticalOptions="End">
+                <Label
+                    x:Name="textFromWebViewLabel"
+                    FontSize="Medium"
+                    Text="Yes! bi-directional! Waiting for data from WebView..."
+                    TextColor="White"
+                    VerticalOptions="End" />
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
 
 </ContentPage>
