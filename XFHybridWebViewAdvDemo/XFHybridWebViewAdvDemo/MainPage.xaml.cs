@@ -19,13 +19,13 @@ namespace XFHybridWebViewAdvDemo
             InitializeComponent();
         }
 
-        private bool isHtmlSet = false;
+        private bool _isHtmlSet = false;
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            if (isHtmlSet)
+            if (_isHtmlSet)
                 return;
 
             webViewElement.Source = new HtmlWebViewSource()
@@ -112,7 +112,7 @@ namespace XFHybridWebViewAdvDemo
 
             webViewElement.RegisterAction(DisplayDataFromJavascript);
 
-            isHtmlSet = true;
+            _isHtmlSet = true;
         }
 
         private void DisplayDataFromJavascript(string data1, string data2)
