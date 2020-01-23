@@ -7,9 +7,9 @@ namespace XFHybridWebViewAdvDemo.Controls
 {
     public class HybridWebView : WebView
     {
-        private Action<string> _action;
+        private Action<string, string> _action;
 
-        public void RegisterAction(Action<string> callback)
+        public void RegisterAction(Action<string, string> callback)
         {
             _action = callback;
         }
@@ -19,13 +19,13 @@ namespace XFHybridWebViewAdvDemo.Controls
             _action = null;
         }
 
-        public void InvokeAction(string data)
+        public void InvokeAction(string data1, string data2)
         {
-            if (_action == null || data == null)
+            if (_action == null || (data1 == null && data2 == null))
             {
                 return;
             }
-            _action.Invoke(data);
+            _action.Invoke(data1, data2);
         }
     }
 }

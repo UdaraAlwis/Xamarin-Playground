@@ -19,20 +19,6 @@
                 Text="Uni-directional communication from Xamarin.Forms to WebView interoperability..."
                 VerticalOptions="Start" />
 
-            <Entry
-                x:Name="textEntryElement"
-                FontSize="25"
-                Placeholder="type something here..."
-                VerticalOptions="Start" />
-            <Button
-                x:Name="sendToWebViewButton"
-                BackgroundColor="#2196F3"
-                Clicked="sendToWebViewButton_Clicked"
-                FontSize="Medium"
-                Text="Send to WebView"
-                TextColor="White"
-                VerticalOptions="Start" />
-
             <controls:HybridWebView
                 x:Name="webViewElement"
                 HorizontalOptions="FillAndExpand"
