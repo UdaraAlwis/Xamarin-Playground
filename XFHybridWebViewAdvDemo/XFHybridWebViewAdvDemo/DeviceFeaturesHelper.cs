@@ -1,5 +1,7 @@
 ﻿using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +19,8 @@ namespace XFHybridWebViewAdvDemo
                 await pageContext.DisplayAlert("No Camera", ":( No camera available.", "OK");
                 return null;
             }
+
+            await CheckForCameraAndGalleryPermission();
 
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
@@ -45,6 +49,8 @@ namespace XFHybridWebViewAdvDemo
                 return null;
             }
 
+            await CheckForCameraAndGalleryPermission();
+
             var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
             {
                 PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
@@ -71,6 +77,24 @@ namespace XFHybridWebViewAdvDemo
             }
 
             return imageAsBytes;
+        }
+
+        private async Task<bool> CheckForCameraAndGalleryPermission() 
+        {
+            var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
+            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
+            var mediaLibraryStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.MediaLibrary);
+
+            if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted || mediaLibraryStatus != PermissionStatus.Granted)
+            {
+                var permissionRequestResult = await CrossPermissions.Current.RequestPermissionsAsync(
+                    new Permission[] { Permission.Camera, Permission.Storage, Permission.MediaLibrary });
+
+                var cameraResult = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.Camera];
+                var storageResult = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.Storage];
+            }
+
+            return true;
         }
 
         public async Task<string> GetDeviceData() 

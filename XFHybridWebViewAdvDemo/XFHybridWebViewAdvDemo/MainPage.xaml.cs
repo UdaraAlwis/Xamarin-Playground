@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Plugin.Permissions;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace XFHybridWebViewAdvDemo
