@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace XFHybridWebViewAdvDemo.Controls
@@ -25,7 +26,11 @@ namespace XFHybridWebViewAdvDemo.Controls
             {
                 return;
             }
-            _action.Invoke(data1, data2);
+
+            if (MainThread.IsMainThread)
+                _action.Invoke(data1, data2);
+            else
+                MainThread.BeginInvokeOnMainThread(() => _action.Invoke(data1, data2));
         }
     }
 }

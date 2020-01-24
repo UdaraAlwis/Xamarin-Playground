@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Plugin.Media;
-using Plugin.Media.Abstractions;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace XFHybridWebViewAdvDemo
@@ -21,7 +13,9 @@ namespace XFHybridWebViewAdvDemo
 
         private bool _isHtmlSet = false;
 
-        protected override void OnAppearing()
+        private DeviceFeaturesHelper _deviceFeaturesHelper;
+
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
 
@@ -46,6 +40,10 @@ namespace XFHybridWebViewAdvDemo
                             "function setresult_selectphoto(value) {" +
                             "    document.getElementById(\"photoGallery_ResultElement\").src = \"data:image/png;base64,\" + value;" +
                             "    document.getElementById(\"photoGallery_placeholderElement\").remove();" +
+                            "}" +
+                            "function setresult_getdeviceinfo(value) {" +
+                            "    document.getElementById(\"deviceInfo_ResultElement\").innerHTML = value;" +
+                            "    document.getElementById(\"deviceInfo_placeholderElement\").remove();" +
                             "}" +
                             "function invokexamarinforms(param){" +
                             "    try{" +
@@ -105,100 +103,60 @@ namespace XFHybridWebViewAdvDemo
                             "</div>" +
                         "</div>" +
 
+                        "<div class=\"card border-primary mb-3\">" +
+                            "<h5 class=\"card-header\">Device Info</h5>" +
+                            "<div class=\"card-body\">" +
+                                "<div class=\"shadow-sm p-2 mb-3 bg-white rounded\">" +
+                                    "<div id=\"deviceInfo_placeholderElement\" >" +
+                                        "<span class=\"spinner-grow spinner-grow-sm\" role=\"status\" aria-hidden=\"true\" ></span>" +
+                                        "<span style=\"padding-left:10px;\">Waiting for data...</span>" +
+                                    "</div>" +
+                                    "<p class=\"text-uppercase\" id=\"deviceInfo_ResultElement\" />" +
+                                "</div>" +
+                                "<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" onclick=\"invokexamarinforms('INFO')\">Get from Xamarin.Forms</button>" +
+                            "</div>" +
+                        "</div>" +
+
                     "</body>" +
 
                     "</html>"
             };
 
             webViewElement.RegisterAction(DisplayDataFromJavascript);
+            
+            var isInit = await Plugin.Media.CrossMedia.Current.Initialize();
+
+            _deviceFeaturesHelper = new DeviceFeaturesHelper();
 
             _isHtmlSet = true;
         }
 
-        private void DisplayDataFromJavascript(string data1, string data2)
+        private async void DisplayDataFromJavascript(string data1, string data2)
         {
-            Device.InvokeOnMainThreadAsync(async () =>
+            if (data1 != null && data1.Equals("PHOTO") && data2.Equals("CAMERA"))
             {
-                if (data1!=null && data1.Equals("PHOTO") && data2.Equals("CAMERA"))
+                var result = await _deviceFeaturesHelper.TakePhoto(this);
+                if (result != null)
                 {
-                    var result = await TakePhoto();
-                    if (result != null)
-                    {
-                        await webViewElement.EvaluateJavaScriptAsync($"setresult_takephoto('{result}')");
-                    }
+                    await webViewElement.EvaluateJavaScriptAsync($"setresult_takephoto('{result}')");
                 }
-                else if (data1 != null && data1.Equals("PHOTO") && data2.Equals("GALLERY"))
+            }
+            else if (data1 != null && data1.Equals("PHOTO") && data2.Equals("GALLERY"))
+            {
+                var result = await _deviceFeaturesHelper.SelectPhoto(this);
+                if (result != null)
                 {
-                    var result = await SelectPhoto();
-                    if (result != null)
-                    {
-                        await webViewElement.EvaluateJavaScriptAsync($"setresult_selectphoto('{result}')");
-                    }
+                    await webViewElement.EvaluateJavaScriptAsync($"setresult_selectphoto('{result}')");
                 }
-            });
-        }
-
-        private async Task<string> TakePhoto()
-        {
-            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-            {
-                await DisplayAlert("No Camera", ":( No camera available.", "OK");
-                return null;
             }
-
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            else if (data1 != null && data1.Equals("INFO"))
             {
-                Directory = "TestPhotoFolder",
-                SaveToAlbum = true,
-                CompressionQuality = 75,
-                CustomPhotoSize = 50,
-                PhotoSize = PhotoSize.Medium,
-                MaxWidthHeight = 1000,
-            });
-
-            if (file == null)
-                return null;
-
-            // Convert bytes to base64 content
-            var imageAsBytesBase64 = Convert.ToBase64String(ConvertFileToByteArray(file));
-
-            return imageAsBytesBase64;
-        }
-
-        private async Task<string> SelectPhoto()
-        {
-            if (!CrossMedia.Current.IsPickPhotoSupported)
-            {
-                await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
-                return null;
+                var result = await _deviceFeaturesHelper.GetDeviceData();
+                if (result != null)
+                {
+                    await webViewElement.EvaluateJavaScriptAsync($"setresult_getdeviceinfo('{result}')");
+                }
             }
-
-            var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
-            {
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
-            });
-
-            if (file == null)
-                return null;
-            
-            // Convert bytes to base64 content
-            var imageAsBytesBase64 = Convert.ToBase64String(ConvertFileToByteArray(file));
-
-            return imageAsBytesBase64;
-        }
-
-        private byte[] ConvertFileToByteArray(MediaFile imageFile)
-        {
-            // Convert Image to bytes
-            byte[] imageAsBytes;
-            using (var memoryStream = new MemoryStream())
-            {
-                imageFile.GetStream().CopyTo(memoryStream);
-                imageFile.Dispose();
-                imageAsBytes = memoryStream.ToArray();
-            }
-
-            return imageAsBytes;
         }
     }
 }
