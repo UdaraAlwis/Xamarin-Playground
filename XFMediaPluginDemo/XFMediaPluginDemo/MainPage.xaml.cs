@@ -23,7 +23,7 @@ namespace XFMediaPluginDemo
         
         private async void TakePhotoButton_Clicked(object sender, EventArgs e)
         {
-            var result = await TakePhoto(this);
+            var result = await TakePhoto();
 
             if (result != null)
                 viewPhotoImage.Source = result;
@@ -31,17 +31,17 @@ namespace XFMediaPluginDemo
 
         private async void PickPhotoButton_Clicked(object sender, EventArgs e)
         {
-            var result = await SelectPhoto(this);
+            var result = await SelectPhoto();
 
             if (result != null)
                 viewPhotoImage.Source = result;
         }
 
-        public async Task<ImageSource> TakePhoto(ContentPage pageContext)
+        public async Task<ImageSource> TakePhoto()
         {
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
-                await pageContext.DisplayAlert("No Camera", ":( No camera available.", "OK");
+                await DisplayAlert("No Camera", ":( No camera available.", "OK");
                 return null;
             }
 
@@ -69,11 +69,11 @@ namespace XFMediaPluginDemo
             return imageSource;
         }
 
-        public async Task<ImageSource> SelectPhoto(ContentPage pageContext)
+        public async Task<ImageSource> SelectPhoto()
         {
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
-                await pageContext.DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
                 return null;
             }
             
