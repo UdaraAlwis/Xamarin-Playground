@@ -134,6 +134,8 @@ namespace XFHybridWebViewAdvDemo
 
         private async void DisplayDataFromJavascript(string data1, string data2)
         {
+            statusLabel.Text = $"Received request: {data1} {data2}";
+
             if (data1 != null && data1.Equals("PHOTO") && data2.Equals("CAMERA"))
             {
                 var result = await _deviceFeaturesHelper.TakePhoto(this);

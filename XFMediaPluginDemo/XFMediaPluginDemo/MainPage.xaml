@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFMediaPluginDemo.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Xamarin.Forms Media Plugin Demo"
+    iOsSpecific:Page.UseSafeArea="true"
+    mc:Ignorable="d">
+
+    <ContentPage.Content>
+        <StackLayout Padding="10,10,10,10">
+            <!--  Place new controls here  -->
+            <Label
+                HorizontalOptions="FillAndExpand"
+                Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="Start" />
+
+            <Image
+                x:Name="viewPhotoImage"
+                Aspect="AspectFill"
+                BackgroundColor="Silver"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                <Button
+                    x:Name="TakePhotoButton"
+                    BackgroundColor="Red"
+                    Clicked="TakePhotoButton_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Take Photo"
+                    TextColor="White" />
+                <Button
+                    x:Name="PickPhotoButton"
+                    BackgroundColor="#2196F3"
+                    Clicked="PickPhotoButton_Clicked"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Pick Photo"
+                    TextColor="White" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -29,9 +29,9 @@
                 HasShadow="False"
                 VerticalOptions="End">
                 <Label
-                    x:Name="textFromWebViewLabel"
+                    x:Name="statusLabel"
                     FontSize="Medium"
-                    Text="Yes! bi-directional! Waiting for data from WebView..."
+                    Text="Waiting for requests from Javascript in the WebView..."
                     TextColor="White"
                     VerticalOptions="End" />
             </Frame>

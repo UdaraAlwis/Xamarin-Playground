@@ -3,7 +3,9 @@ using Plugin.Media.Abstractions;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -81,17 +83,20 @@ namespace XFHybridWebViewAdvDemo
 
         private async Task<bool> CheckForCameraAndGalleryPermission() 
         {
-            var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
-            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
-            var mediaLibraryStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.MediaLibrary);
+            List<Permission> permissionList = new List<Permission>{ Permission.Camera, Permission.Storage, Permission.MediaLibrary };
 
-            if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted || mediaLibraryStatus != PermissionStatus.Granted)
+            List<PermissionStatus> permissionStatuses = new List<PermissionStatus>();
+            foreach (var permission in permissionList)
             {
-                var permissionRequestResult = await CrossPermissions.Current.RequestPermissionsAsync(
-                    new Permission[] { Permission.Camera, Permission.Storage, Permission.MediaLibrary });
+                var status = await CrossPermissions.Current.CheckPermissionStatusAsync(permission);
+                permissionStatuses.Add(status);
+            }
 
-                var cameraResult = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.Camera];
-                var storageResult = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.Storage];
+            var requiresRequesst = permissionStatuses.Any(x => x != PermissionStatus.Granted);
+
+            if (requiresRequesst)
+            {
+                var permissionRequestResult = await CrossPermissions.Current.RequestPermissionsAsync(permissionList.ToArray());
             }
 
             return true;
