@@ -45,7 +45,9 @@ namespace XFMediaPluginDemo
                 return null;
             }
 
-            await RequestCameraAndGalleryPermissions();
+            var isPermissionGranted = await RequestCameraAndGalleryPermissions();
+            if (!isPermissionGranted)
+                return null;
 
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
@@ -76,8 +78,10 @@ namespace XFMediaPluginDemo
                 await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
                 return null;
             }
-            
-            await RequestCameraAndGalleryPermissions();
+
+            var isPermissionGranted = await RequestCameraAndGalleryPermissions();
+            if (!isPermissionGranted)
+                return null;
 
             var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
             {
@@ -110,6 +114,11 @@ namespace XFMediaPluginDemo
                 var cameraResult = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.Camera];
                 var storageResult = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.Storage];
                 var mediaLibraryResults = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.MediaLibrary];
+
+                return (
+                    cameraResult != PermissionStatus.Denied &&
+                    storageResult != PermissionStatus.Denied &&
+                    mediaLibraryResults != PermissionStatus.Denied);
             }
 
             return true;
