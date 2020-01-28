@@ -39,9 +39,10 @@ namespace XFMediaPluginDemo
 
         public async Task<ImageSource> TakePhoto()
         {
-            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            if (!CrossMedia.Current.IsCameraAvailable ||
+                    !CrossMedia.Current.IsTakePhotoSupported)
             {
-                await DisplayAlert("No Camera", ":( No camera available.", "OK");
+                await DisplayAlert("No Camera", "Sorry! No camera available.", "OK");
                 return null;
             }
 
@@ -75,7 +76,7 @@ namespace XFMediaPluginDemo
         {
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
-                await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                await DisplayAlert("Photos Not Supported", "Sorry! Permission not granted to photos.", "OK");
                 return null;
             }
 
