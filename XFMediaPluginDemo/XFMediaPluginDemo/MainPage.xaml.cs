@@ -23,18 +23,30 @@ namespace XFMediaPluginDemo
         
         private async void TakePhotoButton_Clicked(object sender, EventArgs e)
         {
-            var result = await TakePhoto();
-
-            if (result != null)
-                viewPhotoImage.Source = result;
+            try
+            {
+                var result = await TakePhoto();
+                if (result != null)
+                    viewPhotoImage.Source = result;
+            }
+            catch (Exception ex)
+            {
+                // handle your exception
+            }
         }
 
         private async void PickPhotoButton_Clicked(object sender, EventArgs e)
         {
-            var result = await SelectPhoto();
-
-            if (result != null)
-                viewPhotoImage.Source = result;
+            try
+            {
+                var result = await SelectPhoto();
+                if (result != null)
+                    viewPhotoImage.Source = result;
+            }
+            catch (Exception ex)
+            {
+                // handle your exception
+            }
         }
 
         public async Task<ImageSource> TakePhoto()
@@ -105,21 +117,21 @@ namespace XFMediaPluginDemo
         {
             var cameraStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Camera);
             var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
-            var mediaLibraryStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.MediaLibrary);
+            var photosStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Photos);
 
-            if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted || mediaLibraryStatus != PermissionStatus.Granted)
+            if (cameraStatus != PermissionStatus.Granted || storageStatus != PermissionStatus.Granted)
             {
                 var permissionRequestResult = await CrossPermissions.Current.RequestPermissionsAsync(
-                    new Permission[] { Permission.Camera, Permission.Storage, Permission.MediaLibrary });
+                    new Permission[] { Permission.Camera, Permission.Storage, Permission.Photos });
 
                 var cameraResult = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.Camera];
                 var storageResult = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.Storage];
-                var mediaLibraryResults = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.MediaLibrary];
+                var photosResult = permissionRequestResult[Plugin.Permissions.Abstractions.Permission.Photos];
 
                 return (
                     cameraResult != PermissionStatus.Denied &&
                     storageResult != PermissionStatus.Denied &&
-                    mediaLibraryResults != PermissionStatus.Denied);
+                    photosResult != PermissionStatus.Denied);
             }
 
             return true;
@@ -127,8 +139,6 @@ namespace XFMediaPluginDemo
 
         private async Task<bool> RequestPermissions(List<Permission> permissionList)
         {
-            //List<Permission> permissionList = new List<Permission> { Permission.Camera, Permission.Storage, Permission.MediaLibrary };
-
             List<PermissionStatus> permissionStatuses = new List<PermissionStatus>();
             foreach (var permission in permissionList)
             {
@@ -141,6 +151,8 @@ namespace XFMediaPluginDemo
             if (requiresRequesst)
             {
                 var permissionRequestResult = await CrossPermissions.Current.RequestPermissionsAsync(permissionList.ToArray());
+                
+                return permissionRequestResult.All(x => x.Value != PermissionStatus.Denied);
             }
 
             return true;

@@ -12,11 +12,6 @@
 
     <ContentPage.Content>
         <StackLayout Padding="10,10,10,10">
-            <!--  Place new controls here  -->
-            <Label
-                HorizontalOptions="FillAndExpand"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="Start" />
 
             <Image
                 x:Name="viewPhotoImage"
@@ -28,7 +23,7 @@
             <StackLayout Orientation="Horizontal" VerticalOptions="End">
                 <Button
                     x:Name="TakePhotoButton"
-                    BackgroundColor="Red"
+                    BackgroundColor="#2196F3"
                     Clicked="TakePhotoButton_Clicked"
                     HorizontalOptions="FillAndExpand"
                     Text="Take Photo"
