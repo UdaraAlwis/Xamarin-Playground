@@ -28,12 +28,19 @@
                 BackgroundColor="#2196F3"
                 HasShadow="False"
                 VerticalOptions="End">
-                <Label
-                    x:Name="statusLabel"
-                    FontSize="Medium"
-                    Text="Waiting for requests from Javascript in the WebView..."
-                    TextColor="White"
-                    VerticalOptions="End" />
+                <StackLayout Orientation="Horizontal">
+                    <ActivityIndicator
+                        x:Name="statusActivityIndicator"
+                        IsRunning="True"
+                        IsVisible="False"
+                        Color="White" />
+                    <Label
+                        x:Name="statusLabel"
+                        FontSize="Medium"
+                        Text="Waiting for requests from Javascript in the WebView..."
+                        TextColor="White"
+                        VerticalOptions="End" />
+                </StackLayout>
             </Frame>
 
         </StackLayout>

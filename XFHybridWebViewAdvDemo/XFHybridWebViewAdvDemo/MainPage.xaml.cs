@@ -46,6 +46,10 @@ namespace XFHybridWebViewAdvDemo
                             "    document.getElementById(\"deviceInfo_ResultElement\").innerHTML = value;" +
                             "    document.getElementById(\"deviceInfo_placeholderElement\").remove();" +
                             "}" +
+                            "function setresult_getgpslocation(value) {" +
+                            "    document.getElementById(\"gps_ResultElement\").innerHTML = value;" +
+                            "    document.getElementById(\"gps_placeholderElement\").remove();" +
+                            "}" +
                             "function invokexamarinforms(param){" +
                             "    try{" +
                             "        invokeXamarinFormsAction(param);" +
@@ -91,20 +95,6 @@ namespace XFHybridWebViewAdvDemo
                         "</div>" +
 
                         "<div class=\"card border-primary mb-3\">" +
-                            "<h5 class=\"card-header\">GPS Location</h5>" +
-                            "<div class=\"card-body\">" +
-                                "<div class=\"shadow-sm p-2 mb-3 bg-white rounded\">" +
-                                    "<div id=\"gps_placeholderElement\" >" +
-                                        "<span class=\"spinner-grow spinner-grow-sm\" role=\"status\" aria-hidden=\"true\" ></span>" +
-                                        "<span style=\"padding-left:10px;\">Waiting for data...</span>" +
-                                    "</div>" +
-                                    "<img class=\"card-img-top\" id=\"gps_ResultElement\" />" +
-                                "</div>" +
-                                "<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" onclick=\"invokexamarinforms('GPS')\">Get from Xamarin.Forms</button>" +
-                            "</div>" +
-                        "</div>" +
-
-                        "<div class=\"card border-primary mb-3\">" +
                             "<h5 class=\"card-header\">Device Info</h5>" +
                             "<div class=\"card-body\">" +
                                 "<div class=\"shadow-sm p-2 mb-3 bg-white rounded\">" +
@@ -115,6 +105,20 @@ namespace XFHybridWebViewAdvDemo
                                     "<p class=\"text-uppercase\" id=\"deviceInfo_ResultElement\" />" +
                                 "</div>" +
                                 "<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" onclick=\"invokexamarinforms('INFO')\">Get from Xamarin.Forms</button>" +
+                            "</div>" +
+                        "</div>" +
+
+                        "<div class=\"card border-primary mb-3\">" +
+                            "<h5 class=\"card-header\">GPS Location</h5>" +
+                            "<div class=\"card-body\">" +
+                                "<div class=\"shadow-sm p-2 mb-3 bg-white rounded\">" +
+                                    "<div id=\"gps_placeholderElement\" >" +
+                                        "<span class=\"spinner-grow spinner-grow-sm\" role=\"status\" aria-hidden=\"true\" ></span>" +
+                                        "<span style=\"padding-left:10px;\">Waiting for data...</span>" +
+                                    "</div>" +
+                                    "<p class=\"text-uppercase\" id=\"gps_ResultElement\" />" +
+                                "</div>" +
+                                "<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" onclick=\"invokexamarinforms('GPS')\">Get from Xamarin.Forms</button>" +
                             "</div>" +
                         "</div>" +
 
@@ -134,6 +138,7 @@ namespace XFHybridWebViewAdvDemo
 
         private async void DisplayDataFromJavascript(string data1, string data2)
         {
+            statusActivityIndicator.IsVisible = true;
             statusLabel.Text = $"Received request: {data1} {data2}";
 
             if (data1 != null && data1.Equals("PHOTO") && data2.Equals("CAMERA"))
@@ -160,6 +165,17 @@ namespace XFHybridWebViewAdvDemo
                     await webViewElement.EvaluateJavaScriptAsync($"setresult_getdeviceinfo('{result}')");
                 }
             }
+            else if (data1 != null && data1.Equals("GPS"))
+            {
+                var result = await _deviceFeaturesHelper.GetGpsLocation();
+                if (result != null)
+                {
+                    await webViewElement.EvaluateJavaScriptAsync($"setresult_getgpslocation('{result}')");
+                }
+            }
+
+            statusActivityIndicator.IsVisible = false;
+            statusLabel.Text = $"Waiting for requests from Javascript in the WebView...";
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Location = Xamarin.Essentials.Location;
 
 namespace XFHybridWebViewAdvDemo
 {
@@ -83,7 +84,7 @@ namespace XFHybridWebViewAdvDemo
 
         private async Task<bool> CheckForCameraAndGalleryPermission() 
         {
-            List<Permission> permissionList = new List<Permission>{ Permission.Camera, Permission.Storage, Permission.MediaLibrary };
+            List<Permission> permissionList = new List<Permission>{ Permission.Camera, Permission.Storage, Permission.Photos };
 
             List<PermissionStatus> permissionStatuses = new List<PermissionStatus>();
             foreach (var permission in permissionList)
@@ -132,6 +133,21 @@ namespace XFHybridWebViewAdvDemo
                 $"{nameof(DeviceInfo.Platform)}: {platform}<br />" +
                 $"{nameof(DeviceInfo.Idiom)}: {idiom}<br />" +
                 $"{nameof(DeviceInfo.DeviceType)}: {deviceType}";
+        }
+
+        public async Task<string> GetGpsLocation()
+        {
+            var request = new GeolocationRequest(GeolocationAccuracy.High);
+            var location = await Geolocation.GetLocationAsync(request);
+
+            if (location != null)
+            {
+                return $"{nameof(Location.Latitude)}: {location.Latitude}<br />" +
+                       $"{nameof(Location.Longitude)}: {location.Longitude}<br />" +
+                       $"{nameof(Location.Altitude)}: { location.Altitude ?? 0.00 }";
+            }
+
+            return null;
         }
     }
 }
