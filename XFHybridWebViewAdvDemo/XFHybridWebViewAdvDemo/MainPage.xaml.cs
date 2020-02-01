@@ -103,7 +103,7 @@ namespace XFHybridWebViewAdvDemo
 									"</div>" +
 									"<p class=\"text-uppercase\" id=\"deviceInfo_ResultElement\" />" +
 								"</div>" +
-								"<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" onclick=\"invokexamarinforms('INFO')\">Get from Xamarin.Forms</button>" +
+								"<button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" onclick=\"invokexamarinforms('DEVICEINFO')\">Get from Xamarin.Forms</button>" +
 							"</div>" +
 						"</div>" +
 
@@ -129,16 +129,14 @@ namespace XFHybridWebViewAdvDemo
                 Html = htmlContent
             };
 
-            webViewElement.RegisterAction(DisplayDataFromJavascript);
+            webViewElement.RegisterAction(ExecuteActionFromJavascript);
             
-            var isInit = await Plugin.Media.CrossMedia.Current.Initialize();
-
             _deviceFeaturesHelper = new DeviceFeaturesHelper();
 
             _isHtmlSet = true;
         }
 
-        private async void DisplayDataFromJavascript(string param1, string param2)
+        private async void ExecuteActionFromJavascript(string param1, string param2)
         {
             statusActivityIndicator.IsVisible = true;
             statusLabel.Text = $"Received request: {param1} {param2}";
@@ -159,7 +157,7 @@ namespace XFHybridWebViewAdvDemo
                     await webViewElement.EvaluateJavaScriptAsync($"setresult_selectphoto('{result}')");
                 }
             }
-            else if (param1 != null && param1.Equals("INFO"))
+            else if (param1 != null && param1.Equals("DEVICEINFO"))
             {
                 var result = await _deviceFeaturesHelper.GetDeviceData();
                 if (result != null)

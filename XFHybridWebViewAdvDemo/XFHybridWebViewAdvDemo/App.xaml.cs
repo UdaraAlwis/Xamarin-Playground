@@ -10,6 +10,8 @@ namespace XFHybridWebViewAdvDemo
         {
             InitializeComponent();
 
+            Plugin.Media.CrossMedia.Current.Initialize();
+
             MainPage = new NavigationPage(new MainPage());
         }
 

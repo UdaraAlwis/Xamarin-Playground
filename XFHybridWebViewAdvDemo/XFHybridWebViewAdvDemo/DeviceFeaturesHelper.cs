@@ -39,9 +39,9 @@ namespace XFHybridWebViewAdvDemo
                 return null;
 
             // Convert bytes to base64 content
-            var imageAsBytesBase64 = Convert.ToBase64String(ConvertFileToByteArray(file));
+            var imageAsBase64String = Convert.ToBase64String(ConvertFileToByteArray(file));
 
-            return imageAsBytesBase64;
+            return imageAsBase64String;
         }
 
         public async Task<string> SelectPhoto(ContentPage pageContext)
@@ -63,9 +63,9 @@ namespace XFHybridWebViewAdvDemo
                 return null;
 
             // Convert bytes to base64 content
-            var imageAsBytesBase64 = Convert.ToBase64String(ConvertFileToByteArray(file));
+            var imageAsBase64String = Convert.ToBase64String(ConvertFileToByteArray(file));
 
-            return imageAsBytesBase64;
+            return imageAsBase64String;
         }
 
         private byte[] ConvertFileToByteArray(MediaFile imageFile)
