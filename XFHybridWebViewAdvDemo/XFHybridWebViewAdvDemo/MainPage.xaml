@@ -19,6 +19,7 @@
                 Text="Uni-directional communication from Xamarin.Forms to WebView interoperability..."
                 VerticalOptions="Start" />
 
+            <!--  Web hosted demo source: https://testwebpage.htmlsave.com/  -->
             <controls:HybridWebView
                 x:Name="webViewElement"
                 HorizontalOptions="FillAndExpand"
@@ -33,13 +34,14 @@
                         x:Name="statusActivityIndicator"
                         IsRunning="True"
                         IsVisible="False"
+                        VerticalOptions="CenterAndExpand"
                         Color="White" />
                     <Label
                         x:Name="statusLabel"
                         FontSize="Medium"
                         Text="Waiting for requests from Javascript in the WebView..."
                         TextColor="White"
-                        VerticalOptions="End" />
+                        VerticalOptions="CenterAndExpand" />
                 </StackLayout>
             </Frame>
 
