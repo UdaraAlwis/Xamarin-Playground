@@ -50,10 +50,10 @@ namespace XFHybridWebViewAdvDemo.iOS.Renderer
             var dataBody = message.Body.ToString();
             if (dataBody.Contains("|"))
             {
-                var dataArray = dataBody.Split("|");
-                var data1 = dataArray[0];
-                var data2 = dataArray[1];
-                ((HybridWebView)Element).InvokeAction(data1, data2);
+                var paramArray = dataBody.Split("|");
+                var param1 = paramArray[0];
+                var param2 = paramArray[1];
+                ((HybridWebView)Element).InvokeAction(param1, param2);
             }
             else
             {

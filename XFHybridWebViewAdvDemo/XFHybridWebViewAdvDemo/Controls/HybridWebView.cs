@@ -20,17 +20,17 @@ namespace XFHybridWebViewAdvDemo.Controls
             _action = null;
         }
 
-        public void InvokeAction(string data1, string data2)
+        public void InvokeAction(string param1, string param2)
         {
-            if (_action == null || (data1 == null && data2 == null))
+            if (_action == null || (param1 == null && param2 == null))
             {
                 return;
             }
 
             if (MainThread.IsMainThread)
-                _action.Invoke(data1, data2);
+                _action.Invoke(param1, param2);
             else
-                MainThread.BeginInvokeOnMainThread(() => _action.Invoke(data1, data2));
+                MainThread.BeginInvokeOnMainThread(() => _action.Invoke(param1, param2));
         }
     }
 }

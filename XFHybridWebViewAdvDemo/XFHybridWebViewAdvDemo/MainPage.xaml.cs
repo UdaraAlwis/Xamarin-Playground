@@ -138,12 +138,12 @@ namespace XFHybridWebViewAdvDemo
             _isHtmlSet = true;
         }
 
-        private async void DisplayDataFromJavascript(string data1, string data2)
+        private async void DisplayDataFromJavascript(string param1, string param2)
         {
             statusActivityIndicator.IsVisible = true;
-            statusLabel.Text = $"Received request: {data1} {data2}";
+            statusLabel.Text = $"Received request: {param1} {param2}";
 
-            if (data1 != null && data1.Equals("PHOTO") && data2.Equals("CAMERA"))
+            if (param1 != null && param1.Equals("PHOTO") && param2.Equals("CAMERA"))
             {
                 var result = await _deviceFeaturesHelper.TakePhoto(this);
                 if (result != null)
@@ -151,7 +151,7 @@ namespace XFHybridWebViewAdvDemo
                     await webViewElement.EvaluateJavaScriptAsync($"setresult_takephoto('{result}')");
                 }
             }
-            else if (data1 != null && data1.Equals("PHOTO") && data2.Equals("GALLERY"))
+            else if (param1 != null && param1.Equals("PHOTO") && param2.Equals("GALLERY"))
             {
                 var result = await _deviceFeaturesHelper.SelectPhoto(this);
                 if (result != null)
@@ -159,7 +159,7 @@ namespace XFHybridWebViewAdvDemo
                     await webViewElement.EvaluateJavaScriptAsync($"setresult_selectphoto('{result}')");
                 }
             }
-            else if (data1 != null && data1.Equals("INFO"))
+            else if (param1 != null && param1.Equals("INFO"))
             {
                 var result = await _deviceFeaturesHelper.GetDeviceData();
                 if (result != null)
@@ -167,7 +167,7 @@ namespace XFHybridWebViewAdvDemo
                     await webViewElement.EvaluateJavaScriptAsync($"setresult_getdeviceinfo('{result}')");
                 }
             }
-            else if (data1 != null && data1.Equals("GPS"))
+            else if (param1 != null && param1.Equals("GPS"))
             {
                 var result = await _deviceFeaturesHelper.GetGpsLocation();
                 if (result != null)
