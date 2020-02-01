@@ -62,7 +62,7 @@ namespace XFHybridWebViewAdvDemo
 
 					"<body style=\"background-color: #d4ecff;padding: 20px; border: 1px solid #2196F3;border-radius: 5px;\">" +
 						"<div>" +
-							"<p class=\"h4\">This is a simple bootstrap HTML Web page!</p><br />" +
+							"<p class=\"h4\">This is a simple bootstrap based HTML Web page!</p><br />" +
 						"</div>" +
 
 						"<div class=\"card border-primary mb-3\">" +

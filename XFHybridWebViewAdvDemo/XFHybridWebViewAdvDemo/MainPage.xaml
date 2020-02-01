@@ -16,7 +16,7 @@
             <!--  Place new controls here  -->
             <Label
                 FontSize="Medium"
-                Text="Uni-directional communication from Xamarin.Forms to WebView interoperability..."
+                Text="Bi-directional communication bridge between Xamarin.Forms and Javascript-HTML interoperability using Hybrid WebView..."
                 VerticalOptions="Start" />
 
             <!--  Web hosted demo source: https://testwebpage.htmlsave.com/  -->
