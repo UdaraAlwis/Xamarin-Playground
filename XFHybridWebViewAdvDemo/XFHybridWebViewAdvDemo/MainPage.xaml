@@ -45,6 +45,35 @@
                 </StackLayout>
             </Frame>
 
+            <!--<Frame
+                BackgroundColor="#2196F3"
+                HasShadow="False"
+                VerticalOptions="End">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    --><!--  Local generated Web content  -->
+                    <!--  Online hosted Web content  --><!--
+                    <Label
+                        x:Name="webSourceStatusLabel"
+                        Grid.Column="0"
+                        FontSize="Medium"
+                        HorizontalOptions="StartAndExpand"
+                        Text="HTML Source: Local generated Web content."
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                    <Switch
+                        x:Name="htmlSourceSwitch"
+                        Grid.Column="1"
+                        HorizontalOptions="End"
+                        IsToggled="False"
+                        OnColor="#0f426b"
+                        Toggled="htmlSourceSwitch_Toggled"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Frame>-->
         </StackLayout>
     </ContentPage.Content>
 
