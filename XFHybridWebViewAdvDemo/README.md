@@ -15,5 +15,5 @@ Here'a this awesomeness action in Android:  <br /><br />
 <img src="/XFHybridWebViewAdvDemo/screenshots/AndroidDemoCamera.gif" height="300"/> <img src="/XFHybridWebViewAdvDemo/screenshots/AndroidDemoGallery.gif" height="300"/> <img src="/XFHybridWebViewAdvDemo/screenshots/AndroidDemoDeviceInfoGps.gif" height="300"/>
 
 Look at em on fire, Android, UWP and iOS side by side…  <br /><br />
-<img src="/XFHybridWebViewAdvDemo/screenshots/AndroidDemoCamera.gif" height="300"/> <img src="/XFHybridWebViewAdvDemo/screenshots/UwpDemoGallery.gif" height="300"/> <img src="/XFHybridWebViewAdvDemo/screenshots/iOSDeviceInfoGps.gif" height="300"/>
+<img src="/XFHybridWebViewAdvDemo/screenshots/AndroidDemoCamera.gif" height="300"/> <img src="/XFHybridWebViewAdvDemo/screenshots/UwpDemoGallery.gif" height="300"/> <img src="/XFHybridWebViewAdvDemo/screenshots/IosDeviceInfoGps.gif" height="300"/>
 
