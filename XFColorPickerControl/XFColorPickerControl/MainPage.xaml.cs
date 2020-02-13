@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using SkiaSharp;
@@ -39,12 +40,16 @@ namespace XFColorPickerControl
 				paint.IsAntialias = true;
 
 				// Initiate the darkened primary color list
+				// picked from Google search "online color picker"
 				var colors = new SKColor[]
 				{
-					new SKColor(18, 154, 154),
-					new SKColor(167, 0, 158),
-					new SKColor(153, 153, 0),
-					new SKColor(0, 157, 155),
+                    new SKColor(255, 0, 0),
+                    new SKColor(255, 255, 0),
+                    new SKColor(0, 255, 0),
+                    new SKColor(0, 255, 255),
+                    new SKColor(0, 0, 255),
+                    new SKColor(255, 0, 255),
+                    new SKColor(255, 0, 0),
 				};
 
 				// create the gradient shader 
@@ -86,17 +91,39 @@ namespace XFColorPickerControl
 			}
 
 			// retrieve the color of the current Touch point
-			SKColor touchPointColor;
-			using (var skImage = skSurface.Snapshot())
-			{
-				using (var skData = skImage.Encode(SKEncodedImageFormat.Jpeg, 100))
-				{
-					using (SKBitmap bitmap = SKBitmap.Decode(skData))
-					{
-						touchPointColor = bitmap.GetPixel((int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
-					}
-				}
-			}
+            SKColor touchPointColor;
+
+			// Inefficient : causes memory overload errors
+			//using (var skImage = skSurface.Snapshot())
+			//{
+			//	using (var skData = skImage.Encode(SKEncodedImageFormat.Webp, 100))
+			//	{
+			//                 if (skData != null)
+			//                 {
+			//		    using (SKBitmap bitmap = SKBitmap.Decode(skData))
+			//		    {
+			//			    touchPointColor = bitmap.GetPixel((int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
+			//                     }
+			//                 }
+			//	}
+			//}
+
+
+			// this is more efficent
+			// https://forums.xamarin.com/discussion/92899/read-a-pixel-info-from-a-canvas
+			// create the 1x1 bitmap (auto allocates the pixel buffer)
+			SKBitmap bitmap = new SKBitmap(skImageInfo);
+
+            // get the pixel buffer for the bitmap
+            IntPtr dstpixels = bitmap.GetPixels();
+
+			// read the surface into the bitmap
+            skSurface.ReadPixels(skImageInfo, dstpixels, skImageInfo.RowBytes, (int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
+
+			// access the color
+            touchPointColor = bitmap.GetPixel(0, 0);
+
+
 
 			// painting the Touch point
 			using (SKPaint paintTouchPoint = new SKPaint())
