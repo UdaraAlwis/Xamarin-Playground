@@ -12,11 +12,13 @@
         <Frame
             BackgroundColor="White"
             CornerRadius="8"
+            HeightRequest="200"
             HorizontalOptions="Center"
             VerticalOptions="Center"
             WidthRequest="350">
             <skia:SKCanvasView
                 x:Name="SkCanvasView"
+                EnableTouchEvents="True"
                 PaintSurface="SkCanvasView_OnPaintSurface"
                 Touch="SkCanvasView_OnTouch" />
         </Frame>

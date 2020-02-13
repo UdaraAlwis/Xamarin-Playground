@@ -119,23 +119,24 @@ namespace XFColorPickerControl
 			}
 
 			// Set selected color
-			//SetCurrentColor(touchPointColor.ToFormsColor());
-		}
+            var colorInXamarinForms = touchPointColor.ToFormsColor();
+			
+			// set page background color
+            this.BackgroundColor = colorInXamarinForms;
+        }
 
-        private void SkCanvasView_OnTouch(object sender, SKTouchEventArgs e)
+		private void SkCanvasView_OnTouch(object sender, SKTouchEventArgs e)
         {
+            if (e.ActionType == SkiaSharp.Views.Forms.SKTouchAction.Pressed)
+            {
+                _lastTouchPoint = e.Location;
+                e.Handled = true;
+            }
 
-            float scale = SkCanvasView.CanvasSize.Width / (float)SkCanvasView.Width;
-
-            //if (args.Type == TouchActionType.Pressed)
-            //{
-            //    _lastTouchPoint = new SKPoint(scale * (float)args.Location.X, scale * (float)args.Location.Y);
-            //}
-
-            //_lastTouchPoint = new SKPoint(scale * (float)args.Location.X, scale * (float)args.Location.Y);
+            _lastTouchPoint = e.Location;
 
 			// update the Canvas as you wish
-            SkCanvasView.InvalidateSurface();
+			SkCanvasView.InvalidateSurface();
 		}
-    }
+	}
 }
