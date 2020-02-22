@@ -9,19 +9,25 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Frame
-            BackgroundColor="White"
-            CornerRadius="8"
-            HeightRequest="200"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            WidthRequest="350">
-            <skia:SKCanvasView
-                x:Name="SkCanvasView"
-                EnableTouchEvents="True"
-                PaintSurface="SkCanvasView_OnPaintSurface"
-                Touch="SkCanvasView_OnTouch" />
-        </Frame>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label
+            Grid.Row="0"
+            HorizontalTextAlignment="Center"
+            Text="Welcome to Xamarin.Forms" />
+        <Label
+            Grid.Row="1"
+            HorizontalTextAlignment="Center"
+            Text="Pick a Color from here..." />
+        <Button
+            x:Name="GotoColorPickerButton"
+            Grid.Row="2"
+            Clicked="GotoColorPickerButton_Clicked"
+            Text="Pick the Color"
+            VerticalOptions="Center" />
     </Grid>
 
 </ContentPage>
