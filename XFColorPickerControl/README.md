@@ -1,8 +1,10 @@
 # XFColorPickerControl
 
-### Color Picker Control for Xamarin.Forms!
+### Interactive Color Picker Control for Xamarin.Forms!
 
-Watch me build a Color Picker UI Control for Xamarin.Forms using SkiaSharp...
+Watch me build an awesome interactive Color Picker UI Control for Xamarin.Forms using SkiaSharp...
+
+This is an essintial control that's well missed in Xamarin.Forms out of the box, though there are few non-interactive dull looking simple 3rd party Color picker UI elements or controls out there, no one has come up with an actual interactive fun to use Color picker similar to what you have in Ms Paint or Google Web Color picker. So this is my attempt at solving this requirement in Xamarin.Forms...
 
 The special implementation of this Control in a gist:
 
