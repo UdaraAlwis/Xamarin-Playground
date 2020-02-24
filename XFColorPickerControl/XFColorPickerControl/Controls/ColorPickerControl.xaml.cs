@@ -13,11 +13,27 @@ using Xamarin.Forms.Xaml;
 namespace XFColorPickerControl.Controls
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ColorPickerPage : ContentPage
-    {
+    public partial class ColorPickerControl : ContentView
+	{
+		public event EventHandler<Color> PickedColorChanged;
+
+		public static readonly BindableProperty PickedColorProperty
+			= BindableProperty.Create(
+				nameof(PickedColor),
+				typeof(Color),
+				typeof(ColorPickerControl),
+				null,
+		defaultBindingMode: BindingMode.TwoWay);
+
+		public Color PickedColor
+		{
+			get { return (Color)GetValue(PickedColorProperty); }
+			set { SetValue(PickedColorProperty, value); }
+		}
+
 		private SKPoint _lastTouchPoint = new SKPoint();
 
-		public ColorPickerPage()
+		public ColorPickerControl()
 		{
 			InitializeComponent();
 		}
@@ -145,13 +161,8 @@ namespace XFColorPickerControl.Controls
 			}
 
 			// Set selected color
-			var colorInXamarinForms = touchPointColor.ToFormsColor();
-
-			// set page background color
-			//this.BackgroundColor = colorInXamarinForms;
-			SelectedColorDisplayFrame.BackgroundColor = colorInXamarinForms;
-			SelectedColorValueLabel.Text = colorInXamarinForms.ToHex();
-			xxxx.BackgroundColor = colorInXamarinForms;
+			PickedColor = touchPointColor.ToFormsColor();
+			PickedColorChanged?.Invoke(this, PickedColor);
 		}
 
 		private void SkCanvasView_OnTouch(object sender, SKTouchEventArgs e)
@@ -169,11 +180,6 @@ namespace XFColorPickerControl.Controls
 				// update the Canvas as you wish
 				SkCanvasView.InvalidateSurface();
 			}
-		}
-
-		private async void DoneButton_Clicked(object sender, EventArgs e)
-		{
-			await Navigation.PopModalAsync();
 		}
 	}
 }

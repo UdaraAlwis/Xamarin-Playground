@@ -1,10 +1,6 @@
-﻿using System;
-using System.ComponentModel;
-using SkiaSharp;
-using SkiaSharp.Views.Forms;
+﻿using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XFColorPickerControl.Controls;
 
 namespace XFColorPickerControl
 {
@@ -18,10 +14,18 @@ namespace XFColorPickerControl
         {
             InitializeComponent();
         }
-
-		private void GotoColorPickerButton_Clicked(object sender, EventArgs e)
+		
+		private void ColorPicker_PickedColorChanged(object sender, Color colorPicked)
 		{
-			Navigation.PushModalAsync(new ColorPickerPage());
+			// Use the selected color
+			SelectedColorDisplayFrame.BackgroundColor = colorPicked;
+			SelectedColorValueLabel.Text = colorPicked.ToHex();
+			SkCanvasViewHolderFrame.BackgroundColor = colorPicked;
+
+			if (colorPicked.Luminosity < 0.5)
+				SelectedColorValueLabel.TextColor = Xamarin.Forms.Color.White;
+			else
+				SelectedColorValueLabel.TextColor = Xamarin.Forms.Color.SlateGray;
 		}
 	}
 }

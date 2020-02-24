@@ -3,31 +3,66 @@
     x:Class="XFColorPickerControl.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:XFColorPickerControl.Controls;assembly=XFColorPickerControl"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
     mc:Ignorable="d">
 
-    <Grid>
+    <Grid Padding="20">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Label
+
+        <StackLayout
             Grid.Row="0"
-            HorizontalTextAlignment="Center"
-            Text="Welcome to Xamarin.Forms" />
-        <Label
+            Orientation="Vertical"
+            VerticalOptions="Start">
+            <Label
+                Grid.Row="0"
+                FontSize="Medium"
+                HorizontalTextAlignment="Center"
+                Text="Welcome to Xamarin.Forms!" />
+            <Label
+                Grid.Row="1"
+                FontSize="Medium"
+                HorizontalTextAlignment="Center"
+                Text="This is my Interactive and Responsive Color Picker Control based on SkiaSharp!" />
+        </StackLayout>
+
+        <StackLayout
             Grid.Row="1"
-            HorizontalTextAlignment="Center"
-            Text="Pick a Color from here..." />
-        <Button
-            x:Name="GotoColorPickerButton"
-            Grid.Row="2"
-            Clicked="GotoColorPickerButton_Clicked"
-            Text="Pick the Color"
-            VerticalOptions="Center" />
+            Orientation="Vertical"
+            Spacing="15"
+            VerticalOptions="Center">
+            <Frame
+                x:Name="SelectedColorDisplayFrame"
+                BackgroundColor="White"
+                CornerRadius="8"
+                HeightRequest="70"
+                HorizontalOptions="Center"
+                WidthRequest="350">
+                <Label
+                    x:Name="SelectedColorValueLabel"
+                    FontAttributes="Bold"
+                    FontSize="Title"
+                    HorizontalTextAlignment="Center"
+                    Text="#COLOR"
+                    TextColor="SlateGray"
+                    VerticalTextAlignment="Center" />
+            </Frame>
+            <Frame
+                x:Name="SkCanvasViewHolderFrame"
+                CornerRadius="8"
+                HeightRequest="200"
+                HorizontalOptions="Center"
+                WidthRequest="350">
+                <controls:ColorPickerControl x:Name="ColorPicker" PickedColorChanged="ColorPicker_PickedColorChanged" />
+            </Frame>
+        </StackLayout>
+
+
     </Grid>
 
 </ContentPage>
