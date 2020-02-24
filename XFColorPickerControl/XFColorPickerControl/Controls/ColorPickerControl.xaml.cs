@@ -15,9 +15,7 @@ namespace XFColorPickerControl.Controls
 			= BindableProperty.Create(
 				nameof(PickedColor),
 				typeof(Color),
-				typeof(ColorPickerControl),
-				null,
-		defaultBindingMode: BindingMode.TwoWay);
+				typeof(ColorPickerControl));
 
 		public Color PickedColor
 		{
