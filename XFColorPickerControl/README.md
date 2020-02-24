@@ -24,4 +24,4 @@ The special implementation of this Control in a gist:
 
 Still WIP though, stay in touch! ;) 
 
-<img src="/XFHybridWebViewAdvDemo/screenshots/ScreenshotiOS.png" height="300"/> <img src="/XFHybridWebViewAdvDemo/screenshots/ScreenshotUWP.png" height="300"/>
+<img src="/XFColorPickerControl/screenshots/ScreenshotiOS.png" height="300"/> <img src="/XFColorPickerControl/screenshots/ScreenshotUWP.png" height="300"/>
