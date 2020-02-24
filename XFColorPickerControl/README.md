@@ -6,7 +6,7 @@ Watch me build an awesome interactive Color Picker UI Control for Xamarin.Forms 
 
 
 Here'a this awesomeness in action:  <br /><br />
-<img src="/XFColorPickerControl/screenshots/Color Picker Control for Xamarin.Forms by Udara Alwis.png"/>
+<img src="/XFColorPickerControl/screenshots/Color Picker Control for Xamarin.Forms by Udara Alwis.png" height="300"/> <img src="/XFColorPickerControl/screenshots/ScreenshotAndroid.png" height="300"/> 
 
 This is an essintial control that's well missed in Xamarin.Forms out of the box, though there are few non-interactive dull looking simple 3rd party Color picker UI elements or controls out there, no one has come up with an actual interactive fun to use Color picker similar to what you have in Ms Paint or Google Web Color picker. So this is my attempt at solving this requirement in Xamarin.Forms...
 
