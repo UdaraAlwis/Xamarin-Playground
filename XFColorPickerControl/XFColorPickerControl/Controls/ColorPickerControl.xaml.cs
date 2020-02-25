@@ -136,15 +136,14 @@ namespace XFColorPickerControl.Controls
                 touchPointColor = bitmap.GetPixel(0, 0);
             }
 
-			
-
-            // painting the Touch point
+            // Painting the Touch point
             using (SKPaint paintTouchPoint = new SKPaint())
 			{
 				paintTouchPoint.Style = SKPaintStyle.Fill;
 				paintTouchPoint.Color = SKColors.White;
 				paintTouchPoint.IsAntialias = true;
 
+				// Outer circle (Ring)
 				var outerRingRadius = 
 					((float)skCanvasWidth/(float)skCanvasHeight) * (float)18;
 				skCanvas.DrawCircle(
@@ -152,8 +151,10 @@ namespace XFColorPickerControl.Controls
 					_lastTouchPoint.Y,
 					outerRingRadius, paintTouchPoint);
 
+				// Draw another circle with picked color
 				paintTouchPoint.Color = touchPointColor;
 
+				// Outer circle (Ring)
 				var innerRingRadius = 
 					((float)skCanvasWidth/(float)skCanvasHeight) * (float)12;
 				skCanvas.DrawCircle(
