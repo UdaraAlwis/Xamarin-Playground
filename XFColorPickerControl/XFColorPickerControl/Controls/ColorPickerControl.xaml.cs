@@ -102,60 +102,64 @@ namespace XFColorPickerControl.Controls
 			// Represent the color of the current Touch point
 			SKColor touchPointColor;
 
-			//// Inefficient: causes memory overload errors
-			//using (var skImage = skSurface.Snapshot())
-			//{
-			//	using (var skData = skImage.Encode(SKEncodedImageFormat.Webp, 100))
-			//	{
-			//		if (skData != null)
-			//		{
-			//			using (SKBitmap bitmap = SKBitmap.Decode(skData))
-			//			{
-			//				touchPointColor = bitmap.GetPixel(
-			//									(int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
-			//			}
-			//		}
-			//	}
-			//}
+            //// Inefficient: causes memory overload errors
+            //using (var skImage = skSurface.Snapshot())
+            //{
+            //	using (var skData = skImage.Encode(SKEncodedImageFormat.Webp, 100))
+            //	{
+            //		if (skData != null)
+            //		{
+            //			using (SKBitmap bitmap = SKBitmap.Decode(skData))
+            //			{
+            //				touchPointColor = bitmap.GetPixel(
+            //									(int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
+            //			}
+            //		}
+            //	}
+            //}
 
-			// Efficient and fast
-			// https://forums.xamarin.com/discussion/92899/read-a-pixel-info-from-a-canvas
-			// create the 1x1 bitmap (auto allocates the pixel buffer)
-			using (SKBitmap bitmap = new SKBitmap(skImageInfo))
-			{
-				// get the pixel buffer for the bitmap
-				IntPtr dstpixels = bitmap.GetPixels();
+            // Efficient and fast
+            // https://forums.xamarin.com/discussion/92899/read-a-pixel-info-from-a-canvas
+            // create the 1x1 bitmap (auto allocates the pixel buffer)
+            using (SKBitmap bitmap = new SKBitmap(skImageInfo))
+            {
+                // get the pixel buffer for the bitmap
+                IntPtr dstpixels = bitmap.GetPixels();
 
-				// read the surface into the bitmap
-				skSurface.ReadPixels(skImageInfo,
-					dstpixels,
-					skImageInfo.RowBytes,
-					(int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
+                // read the surface into the bitmap
+                skSurface.ReadPixels(skImageInfo,
+                    dstpixels,
+                    skImageInfo.RowBytes,
+                    (int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
 
-				// access the color
-				touchPointColor = bitmap.GetPixel(0, 0);
-			}
+                // access the color
+                touchPointColor = bitmap.GetPixel(0, 0);
+            }
 
+			
 
-
-			// painting the Touch point
-			using (SKPaint paintTouchPoint = new SKPaint())
+            // painting the Touch point
+            using (SKPaint paintTouchPoint = new SKPaint())
 			{
 				paintTouchPoint.Style = SKPaintStyle.Fill;
 				paintTouchPoint.Color = SKColors.White;
 				paintTouchPoint.IsAntialias = true;
 
+				var outerRingRadius = 
+					((float)skCanvasWidth/(float)skCanvasHeight) * (float)18;
 				skCanvas.DrawCircle(
 					_lastTouchPoint.X,
 					_lastTouchPoint.Y,
-					30, paintTouchPoint);
+					outerRingRadius, paintTouchPoint);
 
 				paintTouchPoint.Color = touchPointColor;
 
+				var innerRingRadius = 
+					((float)skCanvasWidth/(float)skCanvasHeight) * (float)12;
 				skCanvas.DrawCircle(
 					_lastTouchPoint.X,
 					_lastTouchPoint.Y,
-					20, paintTouchPoint);
+					innerRingRadius, paintTouchPoint);
 			}
 
 			// Set selected color
