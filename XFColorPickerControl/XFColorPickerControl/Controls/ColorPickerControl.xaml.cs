@@ -41,25 +41,25 @@ namespace XFColorPickerControl.Controls
 
 			skCanvas.Clear(SKColors.White);
 
-			// Draw colorful gradient spectrum
+			// Draw gradient rainbow Color spectrum
 			using (var paint = new SKPaint())
 			{
 				paint.IsAntialias = true;
 
-				// Initiate the darkened primary color list
-				// picked from Google search "online color picker"
+				// Initiate the primary Color list
+				// picked up from Google Web Color Picker
 				var colors = new SKColor[]
 				{
-					new SKColor(255, 0, 0),
-					new SKColor(255, 255, 0),
-					new SKColor(0, 255, 0),
-					new SKColor(0, 255, 255),
-					new SKColor(0, 0, 255),
-					new SKColor(255, 0, 255),
-					new SKColor(255, 0, 0),
+					new SKColor(255, 0, 0), // Red
+					new SKColor(255, 255, 0), // Yellow
+					new SKColor(0, 255, 0), // Green (Lime)
+					new SKColor(0, 255, 255), // Aqua
+					new SKColor(0, 0, 255), // Blue
+					new SKColor(255, 0, 255), // Fuchsia
+					new SKColor(255, 0, 0), // Red
 				};
 
-				// create the gradient shader 
+				// create the gradient shader between Colors
 				using (var shader = SKShader.CreateLinearGradient(
 					new SKPoint(0, 0),
 					new SKPoint(skCanvasWidth, 0),
@@ -97,38 +97,44 @@ namespace XFColorPickerControl.Controls
 				}
 			}
 
-			// retrieve the color of the current Touch point
+			// Picking the Pixel Color values on the Touch Point
+
+			// Represent the color of the current Touch point
 			SKColor touchPointColor;
 
-			// Inefficient : causes memory overload errors
+			//// Inefficient: causes memory overload errors
 			//using (var skImage = skSurface.Snapshot())
 			//{
 			//	using (var skData = skImage.Encode(SKEncodedImageFormat.Webp, 100))
 			//	{
-			//                 if (skData != null)
-			//                 {
-			//		    using (SKBitmap bitmap = SKBitmap.Decode(skData))
-			//		    {
-			//			    touchPointColor = bitmap.GetPixel((int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
-			//                     }
-			//                 }
+			//		if (skData != null)
+			//		{
+			//			using (SKBitmap bitmap = SKBitmap.Decode(skData))
+			//			{
+			//				touchPointColor = bitmap.GetPixel(
+			//									(int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
+			//			}
+			//		}
 			//	}
 			//}
 
-
-			// this is more efficent
+			// Efficient and fast
 			// https://forums.xamarin.com/discussion/92899/read-a-pixel-info-from-a-canvas
 			// create the 1x1 bitmap (auto allocates the pixel buffer)
-			SKBitmap bitmap = new SKBitmap(skImageInfo);
+			using (SKBitmap bitmap = new SKBitmap(skImageInfo))
+			{
+				// get the pixel buffer for the bitmap
+				IntPtr dstpixels = bitmap.GetPixels();
 
-			// get the pixel buffer for the bitmap
-			IntPtr dstpixels = bitmap.GetPixels();
+				// read the surface into the bitmap
+				skSurface.ReadPixels(skImageInfo,
+					dstpixels,
+					skImageInfo.RowBytes,
+					(int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
 
-			// read the surface into the bitmap
-			skSurface.ReadPixels(skImageInfo, dstpixels, skImageInfo.RowBytes, (int)_lastTouchPoint.X, (int)_lastTouchPoint.Y);
-
-			// access the color
-			touchPointColor = bitmap.GetPixel(0, 0);
+				// access the color
+				touchPointColor = bitmap.GetPixel(0, 0);
+			}
 
 
 
@@ -163,7 +169,8 @@ namespace XFColorPickerControl.Controls
 
 			var canvasSize = SkCanvasView.CanvasSize;
 
-			// Ignore Touch Move events that drags the cursor outside the canvas surface region
+			// Check for each touch point XY position to be inside Canvas
+			// Ignore any Touch event ocurred outside the Canvas region 
 			if ((e.Location.X > 0 && e.Location.X < canvasSize.Width) &&
 				(e.Location.Y > 0 && e.Location.Y < canvasSize.Height))
 			{
