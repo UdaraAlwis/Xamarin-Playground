@@ -20,7 +20,7 @@ namespace XFColorPickerControl
 			// Use the selected color
 			SelectedColorDisplayFrame.BackgroundColor = colorPicked;
 			SelectedColorValueLabel.Text = colorPicked.ToHex();
-			SkCanvasViewHolderFrame.BackgroundColor = colorPicked;
+			ColorPickerHolderFrame.BackgroundColor = colorPicked;
 
 			if (colorPicked.Luminosity < 0.5)
 				SelectedColorValueLabel.TextColor = Xamarin.Forms.Color.White;

@@ -54,7 +54,7 @@
                     VerticalTextAlignment="Center" />
             </Frame>
             <Frame
-                x:Name="SkCanvasViewHolderFrame"
+                x:Name="ColorPickerHolderFrame"
                 CornerRadius="8"
                 HeightRequest="200"
                 HorizontalOptions="Center"
