@@ -167,9 +167,17 @@ namespace XFColorPickerControl.Controls
 			PickedColor = touchPointColor.ToFormsColor();
 			PickedColorChanged?.Invoke(this, PickedColor);
 		}
-
+		
 		private void SkCanvasView_OnTouch(object sender, SKTouchEventArgs e)
 		{
+			// to fix the UWP touch bevaior
+			if (Device.RuntimePlatform == Device.UWP)
+			{
+				// avoid mouse over touch events
+				if (!e.InContact) 
+					return;
+			}
+
 			_lastTouchPoint = e.Location;
 
 			var canvasSize = SkCanvasView.CanvasSize;
