@@ -22,6 +22,13 @@ The special implementation of this Control in a gist:
 - Extract out the dominant color of that pixel point
 - Return the Color object back to Xamarin.Forms
 
-Still WIP though, stay in touch! ;) 
-
+Works out of the box on Android, iOS, and UWP: <br /><br />
 <img src="/XFColorPickerControl/screenshots/ScreenshotAndroid.png" height="300"/> <img src="/XFColorPickerControl/screenshots/ScreenshotiOS.png" height="300"/> <img src="/XFColorPickerControl/screenshots/ScreenshotUWP.png" height="300"/>
+
+I've published a Nuget Packages out of this implementation, with a whole bunch of added extra features,
+https://www.nuget.org/packages/Udara.Plugin.XFColorPickerControl/ [![NuGet](https://img.shields.io/nuget/v/Udara.Plugin.XFColorPickerControl.svg?label=NuGet)](https://www.nuget.org/packages/Udara.Plugin.XFColorPickerControl/)
+
+Therefore this project will no longer be maintaned here, I've moved to its own repository, 
+**https://github.com/UdaraAlwis/XFColorPickerControl**
+
+Please track the latest updates there. Cheers! :) 
