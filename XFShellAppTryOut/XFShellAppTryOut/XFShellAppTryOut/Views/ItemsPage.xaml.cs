@@ -18,13 +18,11 @@ namespace XFShellAppTryOut.Views
     [DesignTimeVisible(false)]
     public partial class ItemsPage : ContentPage
     {
-        readonly ItemsViewModel _viewModel;
+        private ItemsViewModel _viewModel;
 
         public ItemsPage()
         {
             InitializeComponent();
-
-            BindingContext = _viewModel = new ItemsViewModel();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -48,6 +46,9 @@ namespace XFShellAppTryOut.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
+            if (_viewModel == null)
+                BindingContext = _viewModel = new ItemsViewModel();
 
             if (_viewModel.Items.Count == 0)
                 _viewModel.LoadItemsCommand.Execute(null);

@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using XFShellAppTryOut.Models;
+using XFShellAppTryOut.ViewModels;
 
 namespace XFShellAppTryOut.Views
 {
@@ -13,25 +14,24 @@ namespace XFShellAppTryOut.Views
     [DesignTimeVisible(false)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        private NewItemViewModel _viewModel;
 
         public NewItemPage()
         {
             InitializeComponent();
+        }
 
-            Item = new Item
-            {
-                Id = Guid.NewGuid().ToString(),
-                Text = "Item name",
-                Description = "This is an item description."
-            };
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
 
-            BindingContext = this;
+            _viewModel = new NewItemViewModel();
+            BindingContext = _viewModel;
         }
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            MessagingCenter.Send(this, "AddItem", _viewModel.Item);
             await Shell.Current.Navigation.PopAsync();
         }
 
