@@ -15,10 +15,5 @@ namespace XFShellAppTryOut
             Routing.RegisterRoute("itemdetailpage", typeof(ItemDetailPage));
             Routing.RegisterRoute("newitempage", typeof(NewItemPage));
         }
-
-        protected override bool OnBackButtonPressed()
-        {
-            return true;
-        }
     }
 }
