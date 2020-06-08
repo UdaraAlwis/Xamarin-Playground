@@ -5,9 +5,9 @@ using XFShellBackButtonOverride.ViewModels;
 namespace XFShellBackButtonOverride.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SecondPage : ContentPage
+    public partial class ThirdPage : ContentPage
     {
-        public SecondPage()
+        public ThirdPage()
         {
             InitializeComponent();
         }
@@ -18,9 +18,9 @@ namespace XFShellBackButtonOverride.Views
 
             if (this.BindingContext != null)
             {
-                if (((SecondPageViewModel)this.BindingContext).OnAppearingCommand.CanExecute(null))
+                if (((ThirdPageViewModel)this.BindingContext).OnAppearingCommand.CanExecute(null))
                 {
-                    ((SecondPageViewModel)this.BindingContext).OnAppearingCommand.Execute(null);
+                    ((ThirdPageViewModel)this.BindingContext).OnAppearingCommand.Execute(null);
                 }
             }
         }
@@ -31,9 +31,9 @@ namespace XFShellBackButtonOverride.Views
 
             if (this.BindingContext != null)
             {
-                if (((SecondPageViewModel)this.BindingContext).OnDisappearingCommand.CanExecute(null))
+                if (((ThirdPageViewModel)this.BindingContext).OnDisappearingCommand.CanExecute(null))
                 {
-                    ((SecondPageViewModel)this.BindingContext).OnDisappearingCommand.Execute(null);
+                    ((ThirdPageViewModel)this.BindingContext).OnDisappearingCommand.Execute(null);
                 }
             }
         }

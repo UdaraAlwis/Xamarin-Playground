@@ -14,13 +14,13 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20">
 
             <Label
                 FontSize="Title"
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
-                Text="Welcome to Xamarin.Forms!"
+                Text="Welcome Xamarin.Forms Shell Back Button Override Demo!"
                 VerticalOptions="CenterAndExpand" />
 
             <Button
@@ -38,6 +38,15 @@
                 Text="Go to Second Page"
                 TextColor="White"
                 VerticalOptions="End" />
+
+            <Button
+                BackgroundColor="{StaticResource Primary}"
+                Command="{Binding GoToThirdPageCommand}"
+                HorizontalOptions="FillAndExpand"
+                Text="Go to Third Page"
+                TextColor="White"
+                VerticalOptions="End" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

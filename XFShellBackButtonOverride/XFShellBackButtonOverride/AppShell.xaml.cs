@@ -14,6 +14,7 @@ namespace XFShellBackButtonOverride
 
             Routing.RegisterRoute(nameof(FirstPage), typeof(FirstPage));
             Routing.RegisterRoute(nameof(SecondPage), typeof(SecondPage));
+            Routing.RegisterRoute(nameof(ThirdPage), typeof(ThirdPage));
         }
 
         // This also works for overriding Android on-screen back button

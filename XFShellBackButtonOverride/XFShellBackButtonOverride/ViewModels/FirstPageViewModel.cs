@@ -19,7 +19,7 @@ namespace XFShellBackButtonOverride.ViewModels
             var result = await Shell.Current.DisplayAlert(
                 "Going Back?",
                 "Are you sure you want to go back?",
-                "Ok", "Cancel");
+                "Yes, Please!", "Nope!");
 
             if (result)
             {

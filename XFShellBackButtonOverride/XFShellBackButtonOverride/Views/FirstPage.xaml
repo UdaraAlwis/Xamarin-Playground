@@ -18,11 +18,18 @@
     </Shell.BackButtonBehavior>
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="20">
             <Label
                 FontSize="Title"
                 HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
                 Text="1st Page"
+                VerticalOptions="CenterAndExpand" />
+            <Label
+                FontSize="Title"
+                HorizontalOptions="CenterAndExpand"
+                HorizontalTextAlignment="Center"
+                Text="Here we're overriding the Navigation bar Back Button!"
                 VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

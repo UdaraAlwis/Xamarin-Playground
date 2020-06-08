@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XFShellBackButtonOverride.Views.SecondPage"
+    x:Class="XFShellBackButtonOverride.Views.ThirdPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -10,7 +10,7 @@
     mc:Ignorable="d">
 
     <ContentPage.BindingContext>
-        <vm:SecondPageViewModel />
+        <vm:ThirdPageViewModel />
     </ContentPage.BindingContext>
 
     <Shell.BackButtonBehavior>
@@ -23,13 +23,13 @@
                 FontSize="Title"
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
-                Text="2nd Page"
+                Text="3rd Page"
                 VerticalOptions="CenterAndExpand" />
             <Label
                 FontSize="Title"
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
-                Text="Here we're overriding Android on-screen Back Button!"
+                Text="Here we're overriding both Navigation Bar and Android on-screen Back Buttons!"
                 VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

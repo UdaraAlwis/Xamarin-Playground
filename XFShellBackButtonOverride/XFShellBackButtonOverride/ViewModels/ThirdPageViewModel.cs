@@ -3,24 +3,18 @@ using Xamarin.Forms;
 
 namespace XFShellBackButtonOverride.ViewModels
 {
-    public class SecondPageViewModel : BaseViewModel
+    public class ThirdPageViewModel : BaseViewModel
     {
         public Command GoBackCommand { get; set; }
-
-        public bool IsBackwardNavAllowed { get; set; } = false;
 
         public Command OnAppearingCommand { get; set; }
 
         public Command OnDisappearingCommand { get; set; }
 
-        public SecondPageViewModel()
+        public ThirdPageViewModel()
         {
-            Title = "Second Page";
-            GoBackCommand = new Command(async () => 
-            {
-                IsBackwardNavAllowed = true;
-                await Shell.Current.GoToAsync("..", true);
-            });
+            Title = "Third Page";
+            GoBackCommand = new Command(async () => await GoBack());
             OnAppearingCommand = new Command(() => OnAppearing());
             OnDisappearingCommand = new Command(() => OnDisappearing());
         }
@@ -37,11 +31,8 @@ namespace XFShellBackButtonOverride.ViewModels
 
         private async void Current_Navigating(object sender, ShellNavigatingEventArgs e)
         {
-            if (e.CanCancel && !IsBackwardNavAllowed)
-            {
-                e.Cancel();
-                await GoBack();
-            }
+            e.Cancel();
+            await GoBack();
         }
 
         private async Task GoBack()

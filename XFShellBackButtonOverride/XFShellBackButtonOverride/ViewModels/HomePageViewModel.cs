@@ -10,11 +10,14 @@ namespace XFShellBackButtonOverride.ViewModels
 
         public Command GoToSecondPageCommand { get; set; }
 
+        public Command GoToThirdPageCommand { get; set; }
+
         public HomePageViewModel()
         {
             Title = "Home Page";
             GoToFirstPageCommand = new Command(async () => await GoToFirstPage());
             GoToSecondPageCommand = new Command(async () => await GoToSecondPage());
+            GoToThirdPageCommand = new Command(async () => await GoToThirdPage());
         }
 
         private async Task GoToFirstPage()
@@ -25,6 +28,11 @@ namespace XFShellBackButtonOverride.ViewModels
         private async Task GoToSecondPage()
         {
             await Shell.Current.GoToAsync(nameof(SecondPage));
+        }
+
+        private async Task GoToThirdPage()
+        {
+            await Shell.Current.GoToAsync(nameof(ThirdPage));
         }
     }
 }
