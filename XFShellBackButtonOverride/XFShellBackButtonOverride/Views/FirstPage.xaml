@@ -14,7 +14,15 @@
     </ContentPage.BindingContext>
 
     <Shell.BackButtonBehavior>
-        <BackButtonBehavior Command="{Binding GoBackCommand}" />
+        <BackButtonBehavior Command="{Binding GoBackCommand}">
+            <BackButtonBehavior.TextOverride>
+                <OnPlatform x:TypeArguments="x:String">
+                    <OnPlatform.Platforms>
+                        <On Platform="iOS" Value="Go Back" />
+                    </OnPlatform.Platforms>
+                </OnPlatform>
+            </BackButtonBehavior.TextOverride>
+        </BackButtonBehavior>
     </Shell.BackButtonBehavior>
 
     <ContentPage.Content>
@@ -24,12 +32,14 @@
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
                 Text="1st Page"
+                TextColor="#757575"
                 VerticalOptions="CenterAndExpand" />
             <Label
                 FontSize="Title"
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
                 Text="Here we're overriding the Navigation bar Back Button!"
+                TextColor="#757575"
                 VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

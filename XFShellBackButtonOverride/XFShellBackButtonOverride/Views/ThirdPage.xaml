@@ -13,10 +13,6 @@
         <vm:ThirdPageViewModel />
     </ContentPage.BindingContext>
 
-    <Shell.BackButtonBehavior>
-        <BackButtonBehavior Command="{Binding GoBackCommand}" />
-    </Shell.BackButtonBehavior>
-
     <ContentPage.Content>
         <StackLayout Padding="20">
             <Label
@@ -24,12 +20,14 @@
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
                 Text="3rd Page"
+                TextColor="#757575"
                 VerticalOptions="CenterAndExpand" />
             <Label
                 FontSize="Title"
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
                 Text="Here we're overriding both Navigation Bar and Android on-screen Back Buttons!"
+                TextColor="#757575"
                 VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

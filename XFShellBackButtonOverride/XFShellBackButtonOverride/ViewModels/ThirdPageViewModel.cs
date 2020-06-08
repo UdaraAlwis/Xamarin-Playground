@@ -5,8 +5,6 @@ namespace XFShellBackButtonOverride.ViewModels
 {
     public class ThirdPageViewModel : BaseViewModel
     {
-        public Command GoBackCommand { get; set; }
-
         public Command OnAppearingCommand { get; set; }
 
         public Command OnDisappearingCommand { get; set; }
@@ -14,7 +12,6 @@ namespace XFShellBackButtonOverride.ViewModels
         public ThirdPageViewModel()
         {
             Title = "Third Page";
-            GoBackCommand = new Command(async () => await GoBack());
             OnAppearingCommand = new Command(() => OnAppearing());
             OnDisappearingCommand = new Command(() => OnDisappearing());
         }

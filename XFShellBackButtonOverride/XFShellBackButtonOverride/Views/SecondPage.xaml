@@ -24,12 +24,14 @@
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
                 Text="2nd Page"
+                TextColor="#757575"
                 VerticalOptions="CenterAndExpand" />
             <Label
                 FontSize="Title"
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
                 Text="Here we're overriding Android on-screen Back Button!"
+                TextColor="#757575"
                 VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

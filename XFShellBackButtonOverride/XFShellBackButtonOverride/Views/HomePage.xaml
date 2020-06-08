@@ -21,6 +21,7 @@
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
                 Text="Welcome to Xamarin.Forms Shell Back Button Override Demo!"
+                TextColor="#757575"
                 VerticalOptions="CenterAndExpand" />
 
             <Button
