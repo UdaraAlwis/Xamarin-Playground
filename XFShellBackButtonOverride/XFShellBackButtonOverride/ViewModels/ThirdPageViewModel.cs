@@ -31,8 +31,11 @@ namespace XFShellBackButtonOverride.ViewModels
 
         private async void Current_Navigating(object sender, ShellNavigatingEventArgs e)
         {
-            e.Cancel();
-            await GoBack();
+            if (e.CanCancel)
+            {
+                e.Cancel();
+                await GoBack();
+            }
         }
 
         private async Task GoBack()

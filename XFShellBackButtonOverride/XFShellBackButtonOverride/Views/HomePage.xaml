@@ -20,7 +20,7 @@
                 FontSize="Title"
                 HorizontalOptions="CenterAndExpand"
                 HorizontalTextAlignment="Center"
-                Text="Welcome Xamarin.Forms Shell Back Button Override Demo!"
+                Text="Welcome to Xamarin.Forms Shell Back Button Override Demo!"
                 VerticalOptions="CenterAndExpand" />
 
             <Button

@@ -19,7 +19,7 @@ namespace XFShellBackButtonOverride.ViewModels
             GoBackCommand = new Command(async () => 
             {
                 IsBackwardNavAllowed = true;
-                await Shell.Current.GoToAsync("..", true);
+                await GoBack(false);
             });
             OnAppearingCommand = new Command(() => OnAppearing());
             OnDisappearingCommand = new Command(() => OnDisappearing());
@@ -27,12 +27,14 @@ namespace XFShellBackButtonOverride.ViewModels
 
         private void OnAppearing()
         {
-            Shell.Current.Navigating += Current_Navigating;
+            if(Device.RuntimePlatform == Device.Android)
+                Shell.Current.Navigating += Current_Navigating;
         }
 
         private void OnDisappearing()
         {
-            Shell.Current.Navigating -= Current_Navigating;
+            if (Device.RuntimePlatform == Device.Android)
+                Shell.Current.Navigating -= Current_Navigating;
         }
 
         private async void Current_Navigating(object sender, ShellNavigatingEventArgs e)
@@ -40,20 +42,27 @@ namespace XFShellBackButtonOverride.ViewModels
             if (e.CanCancel && !IsBackwardNavAllowed)
             {
                 e.Cancel();
-                await GoBack();
+                await GoBack(true);
             }
         }
 
-        private async Task GoBack()
+        private async Task GoBack(bool isConfirmationNeeded = true)
         {
-            var result = await Shell.Current.DisplayAlert(
-                "Going Back?",
-                "Are you sure you want to go back?",
-                "Yes, Please!", "Nope!");
-
-            if (result)
+            if (isConfirmationNeeded)
             {
-                Shell.Current.Navigating -= Current_Navigating;
+                var result = await Shell.Current.DisplayAlert(
+                    "Going Back?",
+                    "Are you sure you want to go back?",
+                    "Yes, Please!", "Nope!");
+
+                if (result)
+                {
+                    Shell.Current.Navigating -= Current_Navigating;
+                    await Shell.Current.GoToAsync("..", true);
+                }
+            }
+            else
+            {
                 await Shell.Current.GoToAsync("..", true);
             }
         }
