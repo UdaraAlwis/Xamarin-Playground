@@ -3,8 +3,8 @@ Overriding Back Button in Xamarin.Forms Shell...
 Let me share all about overriding the Back Button navigation in Xamarin.Forms Shell applications, oh and yes! it includes handling the Android on-screen Back Button as well! :wink:
 
 Here'a this awesomeness in action:  <br /><br />
-<img src="/XFShellBackButtonOverride/screenshots/Xamarin.Forms Shell Back Button Override Android.png" height="400"/> <img src="/XFShellBackButtonOverride/screenshots/XFShellBackButtonOverride Android Page3.gif" height="400"/> <img src="/XFShellBackButtonOverride/screenshots/Xamarin.Forms Shell Back Button Override iOS.png" height="400"/> <img src="/XFShellBackButtonOverride/screenshots/XFShellBackButtonOverride iOS Page3.gif" height="400"/> 
-<br /><br />
+<img src="/XFShellBackButtonOverride/screenshots/Xamarin.Forms Shell Back Button Override Android.png" height="425"/> <img src="/XFShellBackButtonOverride/screenshots/XFShellBackButtonOverride Android Page3.gif" height="425"/> <img src="/XFShellBackButtonOverride/screenshots/Xamarin.Forms Shell Back Button Override iOS.png" height="425"/> <img src="/XFShellBackButtonOverride/screenshots/XFShellBackButtonOverride iOS Page3.gif" height="425"/> 
+<br />
  
 Blog post: https://theconfuzedsourcecode.wordpress.com
 
