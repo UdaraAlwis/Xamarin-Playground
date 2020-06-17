@@ -22,13 +22,19 @@ namespace XFAudioPlayer
             CrossMediaManager.Current.BufferedChanged += CurrentOnBufferedChanged;
             CrossMediaManager.Current.StateChanged += CurrentOnStateChanged;
             CrossMediaManager.Current.PositionChanged += Current_PositionChanged;
+            CrossMediaManager.Current.MediaItemChanged += Current_MediaItemChanged;
+        }
+
+        private void Current_MediaItemChanged(object sender, MediaManager.Media.MediaItemEventArgs e)
+        {
+            // Media item details
         }
 
         private void Current_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                var fullLengthString = CrossMediaManager.Current.Buffered.ToString(@"hh\:mm\:ss");
+                var fullLengthString = CrossMediaManager.Current.Duration.ToString(@"hh\:mm\:ss");
                 LabelPositionStatus.Text = $"position: {e.Position.ToString(@"hh\:mm\:ss")} / {fullLengthString}";
             });
         }
