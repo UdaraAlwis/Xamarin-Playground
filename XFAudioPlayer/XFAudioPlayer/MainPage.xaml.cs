@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Playback;
+using MediaManager.Queue;
 using Xamarin.Forms;
 
 namespace XFAudioPlayer
@@ -36,6 +37,11 @@ namespace XFAudioPlayer
             {
                 var fullLengthString = CrossMediaManager.Current.Duration.ToString(@"hh\:mm\:ss");
                 LabelPositionStatus.Text = $"position: {e.Position.ToString(@"hh\:mm\:ss")} / {fullLengthString}";
+
+                SliderSongPlayDisplay.Minimum = 0;
+                if(CrossMediaManager.Current.Duration.Ticks > 0)
+                    SliderSongPlayDisplay.Maximum = Convert.ToDouble(CrossMediaManager.Current.Duration.Ticks);
+                SliderSongPlayDisplay.Value = Convert.ToDouble(e.Position.Ticks);
             });
         }
 
@@ -44,6 +50,11 @@ namespace XFAudioPlayer
             Device.BeginInvokeOnMainThread(() =>
             {
                 LabelPlayerStatus.Text = $"{e.State}";
+
+                if (e.State == MediaManager.Player.MediaPlayerState.Loading)
+                {
+                    SliderSongPlayDisplay.Value = 0;
+                }
             });
         }
 
@@ -62,12 +73,45 @@ namespace XFAudioPlayer
             if (!isAudioLoaded)
             {
                 isAudioLoaded = true;
-                await CrossMediaManager.Current.Play("https://ia800806.us.archive.org/15/items/Mp3Playlist_555/AaronNeville-CrazyLove.mp3");
+
+                var songList = new List<string>() {
+                    "https://www.youtube.com/audiolibrary_download?vid=a5cfdce9cccb6bee",
+                    "https://www.youtube.com/audiolibrary_download?vid=8de4cd68f392df17",
+                    "https://www.youtube.com/audiolibrary_download?vid=d912d6857fe2a2d3",
+                    "https://www.youtube.com/audiolibrary_download?vid=14d17c8a07ae2c51",
+                    "https://www.youtube.com/audiolibrary_download?vid=191194a6ae406279",
+                    "https://www.youtube.com/audiolibrary_download?vid=28fdb076e79a2214",
+                    "https://www.youtube.com/audiolibrary_download?vid=f373cf6d4c94f010",
+                    "https://www.youtube.com/audiolibrary_download?vid=334497947e2707b0",
+                };
+
+                await CrossMediaManager.Current.Play(songList);
+                CrossMediaManager.Current.ToggleShuffle();
             }
             else
             {
                 await CrossMediaManager.Current.PlayPause();
             }
+        }
+
+        private async void PreviusButton_Clicked(object sender, EventArgs e) 
+        {
+            await CrossMediaManager.Current.PlayPreviousOrSeekToStart();            
+        }
+
+        private async void NextButton_Clicked(object sender, EventArgs e) 
+        {
+            await CrossMediaManager.Current.PlayNext();            
+        }
+
+        private async void ForwardButton_Clicked(object sender, EventArgs e)
+        {
+            await CrossMediaManager.Current.StepForward();
+        }
+
+        private async void RewindButton_Clicked(object sender, EventArgs e)
+        {
+            await CrossMediaManager.Current.StepBackward();
         }
     }
 }

@@ -10,7 +10,7 @@
     ios:Page.UseSafeArea="true"
     mc:Ignorable="d">
 
-    <StackLayout>
+    <StackLayout Padding="1">
         <!--  Place new controls here  -->
         <Label
             HorizontalOptions="Center"
@@ -32,12 +32,61 @@
             HorizontalTextAlignment="Center"
             Text="- position status -" />
 
-        <Button
-            x:Name="PlayPauseButton"
-            BackgroundColor="HotPink"
-            Clicked="PlayPauseButton_Clicked"
-            Text="Play/Pause"
-            TextColor="White" />
+        <Slider
+            x:Name="SliderSongPlayDisplay"
+            HorizontalOptions="FillAndExpand"
+            Minimum="0"
+            MinimumTrackColor="LightPink"
+            Value="0" />
+
+        <Grid ColumnSpacing="1" RowSpacing="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                x:Name="RewindButton"
+                Grid.Row="0"
+                Grid.Column="0"
+                BackgroundColor="HotPink"
+                Clicked="RewindButton_Clicked"
+                Text="REVD"
+                TextColor="White" />
+            <Button
+                x:Name="ForwardButton"
+                Grid.Row="0"
+                Grid.Column="2"
+                BackgroundColor="HotPink"
+                Clicked="ForwardButton_Clicked"
+                Text="FFWD"
+                TextColor="White" />
+
+            <Button
+                x:Name="PreviusButton"
+                Grid.Row="1"
+                Grid.Column="0"
+                BackgroundColor="HotPink"
+                Clicked="PreviusButton_Clicked"
+                Text="Previous"
+                TextColor="White" />
+            <Button
+                x:Name="PlayPauseButton"
+                Grid.Row="1"
+                Grid.Column="1"
+                BackgroundColor="HotPink"
+                Clicked="PlayPauseButton_Clicked"
+                Text="Play/Pause"
+                TextColor="White" />
+            <Button
+                x:Name="NextButton"
+                Grid.Row="1"
+                Grid.Column="2"
+                BackgroundColor="HotPink"
+                Clicked="NextButton_Clicked"
+                Text="Next"
+                TextColor="White" />
+        </Grid>
     </StackLayout>
 
 </ContentPage>
