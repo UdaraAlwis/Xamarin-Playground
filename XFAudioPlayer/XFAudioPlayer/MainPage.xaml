@@ -17,19 +17,26 @@
             Text="Welcome to Xamarin.Forms!"
             VerticalOptions="CenterAndExpand" />
         <Label
-            x:Name="playerStatus"
+            x:Name="LabelPlayerStatus"
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center"
-            Text="-" />
+            Text="- status -" />
         <Label
-            x:Name="bufferStatus"
+            x:Name="LabelBufferStatus"
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center"
             Text="- buffered -" />
+        <Label
+            x:Name="LabelPositionStatus"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="- position -" />
+
         <Button
-            BackgroundColor="DodgerBlue"
-            Clicked="Button_Clicked"
-            Text="Play"
+            x:Name="PlayPauseButton"
+            BackgroundColor="HotPink"
+            Clicked="PlayPauseButton_Clicked"
+            Text="Play/Pause"
             TextColor="White" />
     </StackLayout>
 

@@ -21,13 +21,23 @@ namespace XFAudioPlayer
 
             CrossMediaManager.Current.BufferedChanged += CurrentOnBufferedChanged;
             CrossMediaManager.Current.StateChanged += CurrentOnStateChanged;
+            CrossMediaManager.Current.PositionChanged += Current_PositionChanged;
+        }
+
+        private void Current_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
+        {
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                var fullLengthString = CrossMediaManager.Current.Buffered.ToString(@"hh\:mm\:ss");
+                LabelPositionStatus.Text = $"position: {e.Position.ToString(@"hh\:mm\:ss")} / {fullLengthString}";
+            });
         }
 
         private void CurrentOnStateChanged(object sender, StateChangedEventArgs e)
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                playerStatus.Text = $"{e.State}";
+                LabelPlayerStatus.Text = $"{e.State}";
             });
         }
 
@@ -35,13 +45,13 @@ namespace XFAudioPlayer
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                bufferStatus.Text = $"buffered: {e.Buffered.ToString()}";
+                LabelBufferStatus.Text = $"buffered: {e.Buffered.ToString(@"hh\:mm\:ss")}";
             });
         }
 
         private bool isAudioLoaded;
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void PlayPauseButton_Clicked(object sender, EventArgs e)
         {
             if (!isAudioLoaded)
             {
