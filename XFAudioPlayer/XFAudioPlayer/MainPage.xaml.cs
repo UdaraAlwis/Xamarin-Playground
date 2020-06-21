@@ -20,7 +20,6 @@ namespace XFAudioPlayer
         {
             InitializeComponent();
 
-            CrossMediaManager.Current.BufferedChanged += CurrentOnBufferedChanged;
             CrossMediaManager.Current.StateChanged += CurrentOnStateChanged;
             CrossMediaManager.Current.PositionChanged += Current_PositionChanged;
             CrossMediaManager.Current.MediaItemChanged += Current_MediaItemChanged;
@@ -29,19 +28,36 @@ namespace XFAudioPlayer
         private void Current_MediaItemChanged(object sender, MediaManager.Media.MediaItemEventArgs e)
         {
             // Media item details
+            var displayDetails = string.Empty;
+            if (!string.IsNullOrEmpty(e.MediaItem.DisplayTitle))
+                displayDetails = e.MediaItem.DisplayTitle;
+
+            if (!string.IsNullOrEmpty(e.MediaItem.Artist))
+                displayDetails = $"{displayDetails} - {e.MediaItem.Artist}";
+
+            LabelMediaDetails.Text = displayDetails.ToUpper();
         }
 
         private void Current_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                var fullLengthString = CrossMediaManager.Current.Duration.ToString(@"hh\:mm\:ss");
-                LabelPositionStatus.Text = $"position: {e.Position.ToString(@"hh\:mm\:ss")} / {fullLengthString}";
+                var formattingPattern = @"hh\:mm\:ss";
+                if (CrossMediaManager.Current.Duration.Hours <= 0)
+                    formattingPattern = @"mm\:ss";
+                
+                var fullLengthString = CrossMediaManager.Current.Duration.ToString(formattingPattern);
+                LabelPositionStatus.Text = $"{e.Position.ToString(formattingPattern)}/{fullLengthString}";
 
-                SliderSongPlayDisplay.Minimum = 0;
-                if(CrossMediaManager.Current.Duration.Ticks > 0)
-                    SliderSongPlayDisplay.Maximum = Convert.ToDouble(CrossMediaManager.Current.Duration.Ticks);
-                SliderSongPlayDisplay.Value = Convert.ToDouble(e.Position.Ticks);
+                if (Convert.ToDouble(e.Position.Ticks) != 0)
+                {
+                    SliderSongPlayDisplay.Progress = (double)(Convert.ToDouble(e.Position.Ticks) /
+                    Convert.ToDouble(CrossMediaManager.Current.Duration.Ticks));
+                }
+                else
+                {
+                    SliderSongPlayDisplay.Progress = 0;
+                }
             });
         }
 
@@ -49,20 +65,12 @@ namespace XFAudioPlayer
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                LabelPlayerStatus.Text = $"{e.State}";
+                LabelPlayerStatus.Text = $"{e.State.ToString().ToUpper()}";
 
                 if (e.State == MediaManager.Player.MediaPlayerState.Loading)
                 {
-                    SliderSongPlayDisplay.Value = 0;
+                    SliderSongPlayDisplay.Progress = 0;
                 }
-            });
-        }
-
-        private void CurrentOnBufferedChanged(object sender, BufferedChangedEventArgs e)
-        {
-            Device.BeginInvokeOnMainThread(() =>
-            {
-                LabelBufferStatus.Text = $"buffered: {e.Buffered.ToString(@"hh\:mm\:ss")}";
             });
         }
 
@@ -76,17 +84,18 @@ namespace XFAudioPlayer
 
                 var songList = new List<string>() {
                     "https://www.youtube.com/audiolibrary_download?vid=a5cfdce9cccb6bee",
-                    "https://www.youtube.com/audiolibrary_download?vid=8de4cd68f392df17",
                     "https://www.youtube.com/audiolibrary_download?vid=d912d6857fe2a2d3",
                     "https://www.youtube.com/audiolibrary_download?vid=14d17c8a07ae2c51",
                     "https://www.youtube.com/audiolibrary_download?vid=191194a6ae406279",
                     "https://www.youtube.com/audiolibrary_download?vid=28fdb076e79a2214",
                     "https://www.youtube.com/audiolibrary_download?vid=f373cf6d4c94f010",
-                    "https://www.youtube.com/audiolibrary_download?vid=334497947e2707b0",
                 };
 
                 await CrossMediaManager.Current.Play(songList);
-                CrossMediaManager.Current.ToggleShuffle();
+                CrossMediaManager.Current.ShuffleMode = ShuffleMode.All;
+                CrossMediaManager.Current.PlayNextOnFailed = true;
+                CrossMediaManager.Current.RepeatMode = RepeatMode.All;
+                CrossMediaManager.Current.AutoPlay = true;
             }
             else
             {
@@ -96,7 +105,7 @@ namespace XFAudioPlayer
 
         private async void PreviusButton_Clicked(object sender, EventArgs e) 
         {
-            await CrossMediaManager.Current.PlayPreviousOrSeekToStart();            
+            await CrossMediaManager.Current.PlayPrevious();            
         }
 
         private async void NextButton_Clicked(object sender, EventArgs e) 
