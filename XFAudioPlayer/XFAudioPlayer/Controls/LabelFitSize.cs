@@ -12,7 +12,6 @@ namespace XFAudioPlayer.Controls
     /// </summary>
     public class LabelFitSize : ContentView
     {
-
         #region TextColorProperty
         public static readonly BindableProperty TextColorProperty
             = BindableProperty.Create(
@@ -59,22 +58,6 @@ namespace XFAudioPlayer.Controls
             set
             {
                 SetValue(TextProperty, value);
-            }
-        }
-        #endregion
-
-        #region BoldProperty
-        public static readonly BindableProperty BoldProperty = BindableProperty.Create(nameof(Bold), typeof(bool), typeof(LabelFitSize), default(bool));
-
-        public bool Bold
-        {
-            get
-            {
-                return (bool)GetValue(BoldProperty);
-            }
-            set
-            {
-                SetValue(BoldProperty, value);
             }
         }
         #endregion

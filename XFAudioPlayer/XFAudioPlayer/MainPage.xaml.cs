@@ -49,14 +49,9 @@ namespace XFAudioPlayer
                 var fullLengthString = CrossMediaManager.Current.Duration.ToString(formattingPattern);
                 LabelPositionStatus.Text = $"{e.Position.ToString(formattingPattern)}/{fullLengthString}";
 
-                if (Convert.ToDouble(e.Position.Ticks) != 0)
+                if (CrossMediaManager.Current.Duration.Ticks >= 0)
                 {
-                    SliderSongPlayDisplay.Progress = (double)(Convert.ToDouble(e.Position.Ticks) /
-                    Convert.ToDouble(CrossMediaManager.Current.Duration.Ticks));
-                }
-                else
-                {
-                    SliderSongPlayDisplay.Progress = 0;
+                    SliderSongPlayDisplay.Value = e.Position.Ticks;
                 }
             });
         }
@@ -69,19 +64,19 @@ namespace XFAudioPlayer
 
                 if (e.State == MediaManager.Player.MediaPlayerState.Loading)
                 {
-                    SliderSongPlayDisplay.Progress = 0;
+                    SliderSongPlayDisplay.Value = 0;
+                }
+                else if(e.State == MediaManager.Player.MediaPlayerState.Playing)
+                {
+                    SliderSongPlayDisplay.Maximum = CrossMediaManager.Current.Duration.Ticks;
                 }
             });
         }
 
-        private bool isAudioLoaded;
-
         private async void PlayPauseButton_Clicked(object sender, EventArgs e)
         {
-            if (!isAudioLoaded)
+            if (!CrossMediaManager.Current.IsPrepared())
             {
-                isAudioLoaded = true;
-
                 var songList = new List<string>() {
                     "https://www.youtube.com/audiolibrary_download?vid=a5cfdce9cccb6bee",
                     "https://www.youtube.com/audiolibrary_download?vid=d912d6857fe2a2d3",

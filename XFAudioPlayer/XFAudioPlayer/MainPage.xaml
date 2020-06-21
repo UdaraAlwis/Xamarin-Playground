@@ -46,11 +46,13 @@
             Text="- POSITION -"
             TextColor="HotPink" />
 
-        <ProgressBar
+        <Slider
             x:Name="SliderSongPlayDisplay"
             HorizontalOptions="FillAndExpand"
-            Progress="0"
-            ProgressColor="HotPink" />
+            Minimum="0"
+            MinimumTrackColor="HotPink"
+            ThumbColor="HotPink"
+            Value="0" />
 
         <Grid ColumnSpacing="1" RowSpacing="1">
             <Grid.ColumnDefinitions>
