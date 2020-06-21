@@ -12,7 +12,7 @@
     mc:Ignorable="d">
 
     <StackLayout Padding="1">
-        <!--  Place new controls here  -->
+
         <Label
             FontSize="Medium"
             HorizontalOptions="Center"
