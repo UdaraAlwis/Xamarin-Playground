@@ -11,6 +11,20 @@
     ios:Page.UseSafeArea="true"
     mc:Ignorable="d">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Clicked="GoToPlaylist_Clicked"
+            Order="Primary"
+            Text="Playlist">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="{StaticResource IconFont}"
+                    Glyph="&#xF0CB8;"
+                    Size="27" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <StackLayout Padding="1">
 
         <Label
@@ -19,18 +33,6 @@
             HorizontalTextAlignment="Center"
             Text="Welcome to Xamarin.Forms Audio Player!"
             VerticalOptions="CenterAndExpand" />
-
-        <Label
-            x:Name="LabelMediaDetails"
-            FontSize="Medium"
-            HeightRequest="35"
-            HorizontalOptions="FillAndExpand"
-            HorizontalTextAlignment="Center"
-            LineBreakMode="TailTruncation"
-            MaxLines="1"
-            Text="- MEDIA DETAILS -"
-            TextColor="HotPink"
-            VerticalTextAlignment="Center" />
 
         <controls:LabelFitSize
             x:Name="LabelPlayerStatus"
@@ -74,6 +76,20 @@
                 Clicked="RewindButton_Clicked"
                 Text="REVD"
                 TextColor="White" />
+            <Label
+                x:Name="LabelMediaDetails"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="5,0,5,0"
+                FontSize="Medium"
+                HeightRequest="35"
+                HorizontalOptions="FillAndExpand"
+                HorizontalTextAlignment="Center"
+                LineBreakMode="TailTruncation"
+                MaxLines="1"
+                Text="- MEDIA DETAILS -"
+                TextColor="HotPink"
+                VerticalTextAlignment="Center" />
             <Button
                 x:Name="ForwardButton"
                 Grid.Row="1"

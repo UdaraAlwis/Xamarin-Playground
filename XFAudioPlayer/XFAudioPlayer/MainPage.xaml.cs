@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MediaManager;
+using MediaManager.Library;
+using MediaManager.Media;
 using MediaManager.Playback;
 using MediaManager.Queue;
 using Xamarin.Forms;
@@ -20,7 +22,7 @@ namespace XFAudioPlayer
         {
             InitializeComponent();
 
-            CrossMediaManager.Current.StateChanged += CurrentOnStateChanged;
+            CrossMediaManager.Current.StateChanged += Current_OnStateChanged;
             CrossMediaManager.Current.PositionChanged += Current_PositionChanged;
             CrossMediaManager.Current.MediaItemChanged += Current_MediaItemChanged;
         }
@@ -56,7 +58,7 @@ namespace XFAudioPlayer
             });
         }
 
-        private void CurrentOnStateChanged(object sender, StateChangedEventArgs e)
+        private void Current_OnStateChanged(object sender, StateChangedEventArgs e)
         {
             Device.BeginInvokeOnMainThread(() =>
             {
@@ -79,6 +81,7 @@ namespace XFAudioPlayer
             {
                 var songList = new List<string>() {
                     "https://www.youtube.com/audiolibrary_download?vid=a5cfdce9cccb6bee",
+                    "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Yung_Kartz/July_2019/Yung_Kartz_-_02_-_Levels.mp3",
                     "https://www.youtube.com/audiolibrary_download?vid=d912d6857fe2a2d3",
                     "https://www.youtube.com/audiolibrary_download?vid=14d17c8a07ae2c51",
                     "https://www.youtube.com/audiolibrary_download?vid=191194a6ae406279",
@@ -86,11 +89,15 @@ namespace XFAudioPlayer
                     "https://www.youtube.com/audiolibrary_download?vid=f373cf6d4c94f010",
                 };
 
-                await CrossMediaManager.Current.Play(songList);
+                var currentMediaItem = await CrossMediaManager.Current.Play(songList);
                 CrossMediaManager.Current.ShuffleMode = ShuffleMode.All;
                 CrossMediaManager.Current.PlayNextOnFailed = true;
                 CrossMediaManager.Current.RepeatMode = RepeatMode.All;
                 CrossMediaManager.Current.AutoPlay = true;
+
+                var queue = CrossMediaManager.Current.Queue;
+                var queueList = queue.ToList<IMediaItem>();
+                // CollectionView.ItemsSource = queueList;
             }
             else
             {
@@ -116,6 +123,11 @@ namespace XFAudioPlayer
         private async void RewindButton_Clicked(object sender, EventArgs e)
         {
             await CrossMediaManager.Current.StepBackward();
+        }
+
+        private async void GoToPlaylist_Clicked(object sender, EventArgs e) 
+        {
+            await Navigation.PushModalAsync(new MediaListPage());
         }
     }
 }

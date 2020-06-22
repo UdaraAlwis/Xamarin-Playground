@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFAudioPlayer.MediaListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Button
+                x:Name="CloseButton"
+                Grid.Row="0"
+                BackgroundColor="HotPink"
+                Clicked="CloseButton_Clicked"
+                Text="Close"
+                TextColor="White" />
+
+            <CollectionView
+                x:Name="CollectionView"
+                Grid.Row="1"
+                ItemsLayout="VerticalList"
+                VerticalScrollBarVisibility="Never">
+                <CollectionView.Header>
+                    <Grid Padding="1">
+                        <Frame
+                            BackgroundColor="Transparent"
+                            BorderColor="HotPink"
+                            HasShadow="True">
+                            <Grid RowSpacing="0">
+                                <Label
+                                    Grid.Row="0"
+                                    FontAttributes="Bold"
+                                    FontSize="Medium"
+                                    MaxLines="1"
+                                    Text="Current Track: 3/10"
+                                    TextColor="HotPink" />
+                                <Label
+                                    Grid.Row="1"
+                                    FontSize="Medium"
+                                    MaxLines="1"
+                                    Text="PickJ Iuiase"
+                                    TextColor="HotPink" />
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BackgroundColor="Aqua" RowSpacing="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="70" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                BackgroundColor="Red"
+                                Text="{Binding DisplayTitle, Mode=TwoWay}"
+                                TextColor="HotPink"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                BackgroundColor="Blue"
+                                Text="{Binding DisplaySubtitle, Mode=TwoWay}"
+                                TextColor="HotPink"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
+                            <Button
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
+                                Grid.Column="1"
+                                Margin="0"
+                                Text="PLAY"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

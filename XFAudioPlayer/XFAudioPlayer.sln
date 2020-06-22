@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFAudioPlayer.Android", "XF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFAudioPlayer.iOS", "XFAudioPlayer.iOS\XFAudioPlayer.iOS.csproj", "{5DFF22B3-B5C3-4AF8-A117-B1A02C1B98C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFAudioPlayer", "XFAudioPlayer\XFAudioPlayer.csproj", "{FFE4BECD-F5F6-4554-9DF3-58D9073D44E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XFAudioPlayer", "XFAudioPlayer\XFAudioPlayer.csproj", "{FFE4BECD-F5F6-4554-9DF3-58D9073D44E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

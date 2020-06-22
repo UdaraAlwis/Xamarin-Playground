@@ -16,6 +16,12 @@
             </Style>
             <!--  Styles  -->
 
+            <OnPlatform x:Key="IconFont" x:TypeArguments="x:String">
+                <On Platform="Android" Value="materialdesignicons-webfont.ttf#Material Design Icons" />
+                <On Platform="iOS" Value="Material Design Icons" />
+                <On Platform="UWP" Value="/Assets/materialdesignicons-webfont.ttf#Material Design Icons" />
+            </OnPlatform>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

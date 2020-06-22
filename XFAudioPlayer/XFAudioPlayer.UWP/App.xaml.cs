@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using MediaManager;
+using Windows.UI.ViewManagement;
 
 namespace XFAudioPlayer.UWP
 {
@@ -60,6 +61,9 @@ namespace XFAudioPlayer.UWP
 
                 Xamarin.Forms.Forms.Init(e);
 
+                ApplicationView.PreferredLaunchViewSize = new Size(627, 993); 
+                ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+                
                 CrossMediaManager.Current.Init();
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
