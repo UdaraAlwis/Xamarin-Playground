@@ -29,7 +29,7 @@
                 <CollectionView.Header>
                     <Grid Padding="1">
                         <Frame
-                            BackgroundColor="Transparent"
+                            BackgroundColor="HotPink"
                             BorderColor="HotPink"
                             HasShadow="True">
                             <Grid RowSpacing="0">
@@ -39,52 +39,82 @@
                                     FontSize="Medium"
                                     MaxLines="1"
                                     Text="Current Track: 3/10"
-                                    TextColor="HotPink" />
+                                    TextColor="White" />
                                 <Label
                                     Grid.Row="1"
                                     FontSize="Medium"
                                     MaxLines="1"
                                     Text="PickJ Iuiase"
-                                    TextColor="HotPink" />
+                                    TextColor="White" />
                             </Grid>
                         </Frame>
                     </Grid>
                 </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid BackgroundColor="Aqua" RowSpacing="0">
+                        <Grid
+                            Padding="1,0.5,1,0.5"
+                            ColumnSpacing="0"
+                            RowSpacing="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="1" />
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="70" />
+                                <ColumnDefinition Width="60" />
                             </Grid.ColumnDefinitions>
-
                             <Label
                                 Grid.Row="0"
+                                Grid.RowSpan="2"
                                 Grid.Column="0"
-                                BackgroundColor="Red"
-                                Text="{Binding DisplayTitle, Mode=TwoWay}"
+                                Margin="20,0,20,0"
+                                FontAttributes="Bold"
+                                FontSize="Medium"
+                                HeightRequest="60"
+                                HorizontalOptions="Start"
+                                Text="{Binding Index}"
                                 TextColor="HotPink"
-                                VerticalOptions="Center"
+                                VerticalOptions="CenterAndExpand"
                                 VerticalTextAlignment="Center" />
-                            <Label
-                                Grid.Row="1"
-                                Grid.Column="0"
-                                BackgroundColor="Blue"
-                                Text="{Binding DisplaySubtitle, Mode=TwoWay}"
-                                TextColor="HotPink"
-                                VerticalOptions="Center"
-                                VerticalTextAlignment="Center" />
-                            <Button
+                            <BoxView
                                 Grid.Row="0"
                                 Grid.RowSpan="2"
                                 Grid.Column="1"
-                                Margin="0"
+                                Margin="0,5,0,5"
+                                WidthRequest="1"
+                                Color="HotPink" />
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Margin="20,0,0,0"
+                                FontSize="Medium"
+                                HorizontalOptions="Start"
+                                LineBreakMode="TailTruncation"
+                                MaxLines="1"
+                                Text="{Binding Title}"
+                                TextColor="HotPink"
+                                VerticalOptions="End" />
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Margin="20,0,0,0"
+                                BackgroundColor="Aqua"
+                                FontSize="Medium"
+                                HorizontalOptions="Start"
+                                MaxLines="1"
+                                Text="{Binding Artist}"
+                                TextColor="HotPink"
+                                VerticalOptions="Start" />
+                            <Button
+                                Grid.RowSpan="2"
+                                Grid.Column="3"
+                                BackgroundColor="HotPink"
+                                HeightRequest="60"
                                 Text="PLAY"
-                                VerticalOptions="Center" />
+                                TextColor="White" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

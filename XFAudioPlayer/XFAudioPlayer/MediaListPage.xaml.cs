@@ -2,6 +2,7 @@
 using MediaManager.Library;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,9 +26,30 @@ namespace XFAudioPlayer
 
             Device.BeginInvokeOnMainThread(() => {
 
-
                 List<IMediaItem> queueList = CrossMediaManager.Current.Queue.ToList();
-                CollectionView.ItemsSource = queueList;
+
+                ObservableCollection<AudioItem> list = new ObservableCollection<AudioItem>();
+                for (int i = 0; i < queueList.Count; i++)
+                {
+                    IMediaItem item = queueList[i];
+
+                    string title = "-"; string artist = "-";
+
+                    if (!string.IsNullOrEmpty(item.DisplayTitle))
+                        title = $"{item.DisplayTitle.ToUpper()}";
+
+                    if (!string.IsNullOrEmpty(item.Artist))
+                        artist = $"{item.Artist.ToUpper()}";
+
+                    list.Add(new AudioItem()
+                    {
+                        Title = title,
+                        Artist = artist,
+                        Index = i + 1
+                    });
+                }
+
+                CollectionView.ItemsSource = list;
 
             });
 
@@ -37,5 +59,12 @@ namespace XFAudioPlayer
         {
             await Navigation.PopModalAsync();
         }
+    }
+
+    public class AudioItem 
+    {
+        public string Title { get; set; }
+        public string Artist { get; set; }
+        public int Index { get; set; }
     }
 }
