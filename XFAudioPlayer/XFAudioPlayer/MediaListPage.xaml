@@ -4,21 +4,23 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    ios:Page.UseSafeArea="true"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <Grid RowSpacing="0">
+        <Grid Padding="1" RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <Button
-                x:Name="CloseButton"
+                x:Name="ButtonClose"
                 Grid.Row="0"
                 BackgroundColor="HotPink"
-                Clicked="CloseButton_Clicked"
-                Text="Close"
+                Clicked="ButtonClose_Clicked"
+                Text="CLOSE"
                 TextColor="White" />
 
             <CollectionView
@@ -27,25 +29,62 @@
                 ItemsLayout="VerticalList"
                 VerticalScrollBarVisibility="Never">
                 <CollectionView.Header>
-                    <Grid Padding="1">
+                    <Grid>
+                        <Grid.Padding>
+                            <OnPlatform x:TypeArguments="Thickness">
+                                <On Platform="iOS" Value="-2,0,1,10" />
+                                <On Platform="Windows" Value="-2,0,1,10" />
+                            </OnPlatform>
+                        </Grid.Padding>
                         <Frame
+                            Margin="0,0,0,0"
                             BackgroundColor="HotPink"
-                            BorderColor="HotPink"
-                            HasShadow="True">
-                            <Grid RowSpacing="0">
+                            CornerRadius="2"
+                            HasShadow="False">
+                            <Grid ColumnSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
                                 <Label
+                                    x:Name="LabelCurrentTrackIndex"
                                     Grid.Row="0"
+                                    Grid.Column="0"
                                     FontAttributes="Bold"
                                     FontSize="Medium"
+                                    LineBreakMode="TailTruncation"
                                     MaxLines="1"
-                                    Text="Current Track: 3/10"
+                                    Text="CURRENT TRACK: -/-"
                                     TextColor="White" />
                                 <Label
+                                    x:Name="LabelCurrentTrackTitle"
                                     Grid.Row="1"
+                                    Grid.Column="0"
                                     FontSize="Medium"
+                                    LineBreakMode="TailTruncation"
                                     MaxLines="1"
-                                    Text="PickJ Iuiase"
+                                    Text="-"
                                     TextColor="White" />
+
+                                <Button
+                                    x:Name="ButtonPlayPause"
+                                    Grid.Row="0"
+                                    Grid.RowSpan="2"
+                                    Grid.Column="1"
+                                    BackgroundColor="HotPink"
+                                    Clicked="ButtonPlayPause_Clicked"
+                                    FontFamily="{StaticResource IconFont}"
+                                    FontSize="60"
+                                    HeightRequest="80"
+                                    HorizontalOptions="End"
+                                    TextColor="White"
+                                    VerticalOptions="Center"
+                                    WidthRequest="80" />
                             </Grid>
                         </Frame>
                     </Grid>
@@ -53,19 +92,20 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid
-                            Padding="1,0.5,1,0.5"
+                            Padding="1,10,1,10"
                             ColumnSpacing="0"
                             RowSpacing="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="70" />
                                 <ColumnDefinition Width="1" />
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="60" />
+                                <ColumnDefinition Width="100" />
                             </Grid.ColumnDefinitions>
+
                             <Label
                                 Grid.Row="0"
                                 Grid.RowSpan="2"
@@ -77,8 +117,9 @@
                                 HorizontalOptions="Start"
                                 Text="{Binding Index}"
                                 TextColor="HotPink"
-                                VerticalOptions="CenterAndExpand"
+                                VerticalOptions="Center"
                                 VerticalTextAlignment="Center" />
+
                             <BoxView
                                 Grid.Row="0"
                                 Grid.RowSpan="2"
@@ -86,6 +127,7 @@
                                 Margin="0,5,0,5"
                                 WidthRequest="1"
                                 Color="HotPink" />
+
                             <Label
                                 Grid.Row="0"
                                 Grid.Column="2"
@@ -95,23 +137,24 @@
                                 LineBreakMode="TailTruncation"
                                 MaxLines="1"
                                 Text="{Binding Title}"
-                                TextColor="HotPink"
-                                VerticalOptions="End" />
+                                TextColor="HotPink" />
                             <Label
                                 Grid.Row="1"
                                 Grid.Column="2"
                                 Margin="20,0,0,0"
-                                BackgroundColor="Aqua"
                                 FontSize="Medium"
                                 HorizontalOptions="Start"
+                                LineBreakMode="TailTruncation"
                                 MaxLines="1"
                                 Text="{Binding Artist}"
-                                TextColor="HotPink"
-                                VerticalOptions="Start" />
+                                TextColor="HotPink" />
+
                             <Button
+                                Grid.Row="0"
                                 Grid.RowSpan="2"
                                 Grid.Column="3"
                                 BackgroundColor="HotPink"
+                                Clicked="ButtonPlaySong_Clicked"
                                 HeightRequest="60"
                                 Text="PLAY"
                                 TextColor="White" />

@@ -22,6 +22,11 @@ namespace XFAudioPlayer
         {
             InitializeComponent();
 
+            CrossMediaManager.Current.ShuffleMode = ShuffleMode.All;
+            CrossMediaManager.Current.PlayNextOnFailed = true;
+            CrossMediaManager.Current.RepeatMode = RepeatMode.All;
+            CrossMediaManager.Current.AutoPlay = true;
+
             CrossMediaManager.Current.StateChanged += Current_OnStateChanged;
             CrossMediaManager.Current.PositionChanged += Current_PositionChanged;
             CrossMediaManager.Current.MediaItemChanged += Current_MediaItemChanged;
@@ -84,20 +89,16 @@ namespace XFAudioPlayer
                     "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Yung_Kartz/July_2019/Yung_Kartz_-_02_-_Levels.mp3",
                     "https://www.youtube.com/audiolibrary_download?vid=d912d6857fe2a2d3",
                     "https://www.youtube.com/audiolibrary_download?vid=14d17c8a07ae2c51",
+                    "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Creative_Commons/Ketsa/Raising_Frequency/Ketsa_-_08_-_Multiverse.mp3",
+                    "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/Oddio_Overplay/Carl_Phaser/End_Of_The_Dark/Carl_Phaser_-_02_-_Porcelain.mp3",
                     "https://www.youtube.com/audiolibrary_download?vid=191194a6ae406279",
+                    "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/blocSonic/Flex_Vector/Born_Ready/Flex_Vector_-_Born_Ready.mp3",
                     "https://www.youtube.com/audiolibrary_download?vid=28fdb076e79a2214",
+                    "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Elephant/The_Art_of_Living_Part_2/Elephant_-_09_-_The_Final_Crusade.mp3",
                     "https://www.youtube.com/audiolibrary_download?vid=f373cf6d4c94f010",
                 };
 
                 var currentMediaItem = await CrossMediaManager.Current.Play(songList);
-                CrossMediaManager.Current.ShuffleMode = ShuffleMode.All;
-                CrossMediaManager.Current.PlayNextOnFailed = true;
-                CrossMediaManager.Current.RepeatMode = RepeatMode.All;
-                CrossMediaManager.Current.AutoPlay = true;
-
-                var queue = CrossMediaManager.Current.Queue;
-                var queueList = queue.ToList<IMediaItem>();
-                // CollectionView.ItemsSource = queueList;
             }
             else
             {
