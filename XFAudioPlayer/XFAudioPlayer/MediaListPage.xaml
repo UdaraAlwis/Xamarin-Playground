@@ -6,6 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:system="clr-namespace:System;assembly=netstandard"
     ios:Page.UseSafeArea="true"
     mc:Ignorable="d">
     <ContentPage.Content>
@@ -80,11 +81,22 @@
                                     Clicked="ButtonPlayPause_Clicked"
                                     FontFamily="{StaticResource IconFont}"
                                     FontSize="60"
-                                    HeightRequest="80"
                                     HorizontalOptions="End"
                                     TextColor="White"
-                                    VerticalOptions="Center"
-                                    WidthRequest="80" />
+                                    VerticalOptions="Center">
+                                    <Button.WidthRequest>
+                                        <OnPlatform x:TypeArguments="system:Double">
+                                            <On Platform="Windows" Value="80" />
+                                            <On Platform="Android,iOS" Value="60" />
+                                        </OnPlatform>
+                                    </Button.WidthRequest>
+                                    <Button.HeightRequest>
+                                        <OnPlatform x:TypeArguments="system:Double">
+                                            <On Platform="Windows" Value="80" />
+                                            <On Platform="Android,iOS" Value="60" />
+                                        </OnPlatform>
+                                    </Button.HeightRequest>
+                                </Button>
                             </Grid>
                         </Frame>
                     </Grid>

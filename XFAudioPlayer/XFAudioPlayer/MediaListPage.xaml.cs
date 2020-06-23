@@ -31,8 +31,6 @@ namespace XFAudioPlayer
             {
                 if (CrossMediaManager.Current.Queue.Count > 0)
                     SetupData();
-
-                ButtonPlayPause.Text = CrossMediaManager.Current.IsPlaying() ? PauseCircleOutline : PlayCircleOutline;
             });
         }
 
@@ -44,7 +42,8 @@ namespace XFAudioPlayer
         private async void ButtonPlayPause_Clicked(object sender, EventArgs e)
         {
             await CrossMediaManager.Current.PlayPause();
-            ButtonPlayPause.Text = CrossMediaManager.Current.IsPlaying() ? PauseCircleOutline : PlayCircleOutline;
+
+            SetupData();
         }
 
         private async void ButtonPlaySong_Clicked(object sender, EventArgs e)
@@ -96,6 +95,8 @@ namespace XFAudioPlayer
             LabelCurrentTrackTitle.Text = displayDetails.ToUpper();
 
             LabelCurrentTrackIndex.Text = $"CURRENT TRACK: {CrossMediaManager.Current.Queue.CurrentIndex+1}/{CrossMediaManager.Current.Queue.Count}";
+
+            ButtonPlayPause.Text = CrossMediaManager.Current.IsPlaying() ? PauseCircleOutline : PlayCircleOutline;
         }
     }
 
