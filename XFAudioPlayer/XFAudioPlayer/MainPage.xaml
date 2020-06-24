@@ -34,6 +34,8 @@
             Text="Welcome to Xamarin.Forms Audio Player!"
             VerticalOptions="CenterAndExpand" />
 
+        <Button Clicked="Button_Clicked" Text="Pick File" />
+
         <controls:LabelFitSize
             x:Name="LabelPlayerStatus"
             HeightRequest="100"

@@ -9,6 +9,7 @@ using MediaManager.Library;
 using MediaManager.Media;
 using MediaManager.Playback;
 using MediaManager.Queue;
+using Plugin.FilePicker;
 using Xamarin.Forms;
 
 namespace XFAudioPlayer
@@ -39,6 +40,40 @@ namespace XFAudioPlayer
             if (!CrossMediaManager.Current.IsPrepared())
             {
                 await BeginPlay();
+            }
+        }
+
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] fileTypes = null;
+                if (Device.RuntimePlatform == Device.Android)
+                {
+                    fileTypes = new string[] { "music/mp3" };
+                }
+
+                if (Device.RuntimePlatform == Device.iOS)
+                {
+                    fileTypes = new string[] { "public.audio" };
+                }
+
+                if (Device.RuntimePlatform == Device.UWP)
+                {
+                    fileTypes = new string[] { ".mp3" };
+                }
+
+                var pickedFile = await CrossFilePicker.Current.PickFile(fileTypes);
+                if (pickedFile != null)
+                {
+                    var generatedMediaItem = await CrossMediaManager.Current.Extractor.CreateMediaItem(pickedFile.FilePath);
+                    CrossMediaManager.Current.Queue.Add(generatedMediaItem);
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
