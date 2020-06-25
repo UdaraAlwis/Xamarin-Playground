@@ -193,7 +193,7 @@
                             Grid.Row="0"
                             BackgroundColor="HotPink"
                             Clicked="ButtonAddMoreSongs_OnClicked"
-                            Text="ADD MORE SONGS"
+                            Text="ADD MORE..."
                             TextColor="White" />
                     </Grid>
                 </Frame>

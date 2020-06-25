@@ -29,7 +29,7 @@
 
         <Label
             Margin="25,0,25,0"
-            FontSize="Medium"
+            FontSize="Large"
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center"
             Text="Welcome to Xamarin.Forms Audio Player!"
