@@ -3,10 +3,13 @@ using MediaManager.Library;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MediaManager.Player;
+using Plugin.FilePicker;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -57,10 +60,57 @@ namespace XFAudioPlayer
         {
             var selectedAudioItem = (((Button) sender).BindingContext as AudioItem);
             var result = await CrossMediaManager.Current.PlayQueueItem(CrossMediaManager.Current.Queue[selectedAudioItem.Index - 1]);
+            
             SetupCurrentItemDetails();
 
-            var isPlaying = CrossMediaManager.Current.IsPlaying();
+            if (!CrossMediaManager.Current.IsPlaying())
+                await CrossMediaManager.Current.Play();
+
             ButtonPlayPause.Text = PauseCircleOutline;
+        }
+
+        private async void ButtonAddMoreSongs_OnClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                string[] fileTypes = null;
+                if (Device.RuntimePlatform == Device.Android)
+                {
+                    fileTypes = new string[] { "audio/mpeg" };
+                }
+
+                if (Device.RuntimePlatform == Device.iOS)
+                {
+                    fileTypes = new string[] { "public.audio" };
+                }
+
+                if (Device.RuntimePlatform == Device.UWP)
+                {
+                    fileTypes = new string[] { ".mp3" };
+                }
+
+                var pickedFile = await CrossFilePicker.Current.PickFile(fileTypes);
+                if (pickedFile != null)
+                {
+                    var cachedFilePathName = Path.Combine(FileSystem.CacheDirectory, pickedFile.FileName);
+
+                    if (!File.Exists(cachedFilePathName))
+                        File.WriteAllBytes(cachedFilePathName, pickedFile.DataArray);
+
+                    if (File.Exists(cachedFilePathName))
+                    {
+                        var generatedMediaItem =
+                            await CrossMediaManager.Current.Extractor.CreateMediaItem(cachedFilePathName);
+                        CrossMediaManager.Current.Queue.Add(generatedMediaItem);
+
+                        SetupPlaylist(true);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         private void SetupPlaylist(bool isListRefresh)
@@ -119,6 +169,7 @@ namespace XFAudioPlayer
             var isPlaying = CrossMediaManager.Current.IsPlaying();
             ButtonPlayPause.Text = isPlaying ? PauseCircleOutline : PlayCircleOutline;
         }
+
     }
 
     public class AudioItem 

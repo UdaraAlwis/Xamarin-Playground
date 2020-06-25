@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ using MediaManager.Media;
 using MediaManager.Playback;
 using MediaManager.Queue;
 using Plugin.FilePicker;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace XFAudioPlayer
@@ -40,40 +42,6 @@ namespace XFAudioPlayer
             if (!CrossMediaManager.Current.IsPrepared())
             {
                 await BeginPlay();
-            }
-        }
-
-
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                string[] fileTypes = null;
-                if (Device.RuntimePlatform == Device.Android)
-                {
-                    fileTypes = new string[] { "audio/mpeg" };
-                }
-
-                if (Device.RuntimePlatform == Device.iOS)
-                {
-                    fileTypes = new string[] { "public.audio" };
-                }
-
-                if (Device.RuntimePlatform == Device.UWP)
-                {
-                    fileTypes = new string[] { ".mp3" };
-                }
-
-                var pickedFile = await CrossFilePicker.Current.PickFile(fileTypes);
-                if (pickedFile != null)
-                {
-                    var generatedMediaItem = await CrossMediaManager.Current.Extractor.CreateMediaItem(pickedFile.FilePath);
-                    CrossMediaManager.Current.Queue.Add(generatedMediaItem);
-                }
-            }
-            catch (Exception ex)
-            {
-
             }
         }
 
@@ -120,7 +88,7 @@ namespace XFAudioPlayer
                 var fullLengthString = CrossMediaManager.Current.Duration.ToString(formattingPattern);
                 LabelPositionStatus.Text = $"{e.Position.ToString(formattingPattern)}/{fullLengthString}";
 
-                if (CrossMediaManager.Current.Duration.Ticks >= 0)
+                if (CrossMediaManager.Current.Duration.Ticks > 0)
                 {
                     SliderSongPlayDisplay.Value = e.Position.Ticks;
                 }
@@ -137,7 +105,8 @@ namespace XFAudioPlayer
                 {
                     SliderSongPlayDisplay.Value = 0;
                 }
-                else if(e.State == MediaManager.Player.MediaPlayerState.Playing)
+                else if (e.State == MediaManager.Player.MediaPlayerState.Playing 
+                        && CrossMediaManager.Current.Duration.Ticks > 0)
                 {
                     SliderSongPlayDisplay.Maximum = CrossMediaManager.Current.Duration.Ticks;
                 }

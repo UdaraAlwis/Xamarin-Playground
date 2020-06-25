@@ -28,13 +28,12 @@
     <StackLayout Padding="1">
 
         <Label
+            Margin="25,0,25,0"
             FontSize="Medium"
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center"
             Text="Welcome to Xamarin.Forms Audio Player!"
             VerticalOptions="CenterAndExpand" />
-
-        <Button Clicked="Button_Clicked" Text="Pick File" />
 
         <controls:LabelFitSize
             x:Name="LabelPlayerStatus"
