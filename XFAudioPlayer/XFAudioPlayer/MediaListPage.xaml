@@ -13,7 +13,9 @@
         <Grid Padding="1" RowSpacing="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
             <Button
@@ -24,83 +26,88 @@
                 Text="CLOSE"
                 TextColor="White" />
 
+            <Grid Grid.Row="1">
+                <Grid.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="-2,0,1,10" />
+                        <On Platform="Windows" Value="-2,0,1,10" />
+                    </OnPlatform>
+                </Grid.Padding>
+                <Frame
+                    Margin="0,0,0,0"
+                    BackgroundColor="HotPink"
+                    CornerRadius="2"
+                    HasShadow="False">
+                    <Grid ColumnSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            x:Name="LabelCurrentTrackIndex"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            BackgroundColor="Purple"
+                            FontAttributes="Bold"
+                            FontSize="Medium"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="1"
+                            Text="CURRENT TRACK: -/-"
+                            TextColor="White"
+                            VerticalOptions="End" />
+                        <Label
+                            x:Name="LabelCurrentTrackTitle"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            BackgroundColor="Orange"
+                            FontSize="Medium"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="1"
+                            Text="-"
+                            TextColor="White"
+                            VerticalOptions="Start" />
+
+                        <Button
+                            x:Name="ButtonPlayPause"
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="1"
+                            BackgroundColor="Blue"
+                            Clicked="ButtonPlayPause_Clicked"
+                            FontFamily="{StaticResource IconFont}"
+                            FontSize="60"
+                            HorizontalOptions="End"
+                            TextColor="White"
+                            VerticalOptions="CenterAndExpand">
+                            <Button.WidthRequest>
+                                <OnPlatform x:TypeArguments="system:Double">
+                                    <On Platform="UWP" Value="80" />
+                                    <On Platform="iOS" Value="60" />
+                                    <On Platform="Android" Value="80" />
+                                </OnPlatform>
+                            </Button.WidthRequest>
+                            <Button.HeightRequest>
+                                <OnPlatform x:TypeArguments="system:Double">
+                                    <On Platform="UWP" Value="80" />
+                                    <On Platform="iOS" Value="60" />
+                                    <On Platform="Android" Value="80" />
+                                </OnPlatform>
+                            </Button.HeightRequest>
+                        </Button>
+                    </Grid>
+                </Frame>
+            </Grid>
+
             <CollectionView
                 x:Name="CollectionView"
-                Grid.Row="1"
+                Grid.Row="2"
                 ItemsLayout="VerticalList"
                 VerticalScrollBarVisibility="Never">
-                <CollectionView.Header>
-                    <Grid>
-                        <Grid.Padding>
-                            <OnPlatform x:TypeArguments="Thickness">
-                                <On Platform="iOS" Value="-2,0,1,10" />
-                                <On Platform="Windows" Value="-2,0,1,10" />
-                            </OnPlatform>
-                        </Grid.Padding>
-                        <Frame
-                            Margin="0,0,0,0"
-                            BackgroundColor="HotPink"
-                            CornerRadius="2"
-                            HasShadow="False">
-                            <Grid ColumnSpacing="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-
-                                <Label
-                                    x:Name="LabelCurrentTrackIndex"
-                                    Grid.Row="0"
-                                    Grid.Column="0"
-                                    FontAttributes="Bold"
-                                    FontSize="Medium"
-                                    LineBreakMode="TailTruncation"
-                                    MaxLines="1"
-                                    Text="CURRENT TRACK: -/-"
-                                    TextColor="White" />
-                                <Label
-                                    x:Name="LabelCurrentTrackTitle"
-                                    Grid.Row="1"
-                                    Grid.Column="0"
-                                    FontSize="Medium"
-                                    LineBreakMode="TailTruncation"
-                                    MaxLines="1"
-                                    Text="-"
-                                    TextColor="White" />
-
-                                <Button
-                                    x:Name="ButtonPlayPause"
-                                    Grid.Row="0"
-                                    Grid.RowSpan="2"
-                                    Grid.Column="1"
-                                    BackgroundColor="HotPink"
-                                    Clicked="ButtonPlayPause_Clicked"
-                                    FontFamily="{StaticResource IconFont}"
-                                    FontSize="60"
-                                    HorizontalOptions="End"
-                                    TextColor="White"
-                                    VerticalOptions="Center">
-                                    <Button.WidthRequest>
-                                        <OnPlatform x:TypeArguments="system:Double">
-                                            <On Platform="Windows" Value="80" />
-                                            <On Platform="Android,iOS" Value="60" />
-                                        </OnPlatform>
-                                    </Button.WidthRequest>
-                                    <Button.HeightRequest>
-                                        <OnPlatform x:TypeArguments="system:Double">
-                                            <On Platform="Windows" Value="80" />
-                                            <On Platform="Android,iOS" Value="60" />
-                                        </OnPlatform>
-                                    </Button.HeightRequest>
-                                </Button>
-                            </Grid>
-                        </Frame>
-                    </Grid>
-                </CollectionView.Header>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid
@@ -108,11 +115,11 @@
                             ColumnSpacing="0"
                             RowSpacing="0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="*" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="70" />
+                                <ColumnDefinition Width="60" />
                                 <ColumnDefinition Width="1" />
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="100" />
@@ -122,14 +129,14 @@
                                 Grid.Row="0"
                                 Grid.RowSpan="2"
                                 Grid.Column="0"
-                                Margin="20,0,20,0"
+                                Margin="20,0,0,0"
                                 FontAttributes="Bold"
                                 FontSize="Medium"
                                 HeightRequest="60"
                                 HorizontalOptions="Start"
                                 Text="{Binding Index}"
                                 TextColor="HotPink"
-                                VerticalOptions="Center"
+                                VerticalOptions="CenterAndExpand"
                                 VerticalTextAlignment="Center" />
 
                             <BoxView
@@ -167,13 +174,56 @@
                                 Grid.Column="3"
                                 BackgroundColor="HotPink"
                                 Clicked="ButtonPlaySong_Clicked"
-                                HeightRequest="60"
                                 Text="PLAY"
                                 TextColor="White" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+
+            <Grid Grid.Row="3">
+                <Grid.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="iOS" Value="-2,0,1,10" />
+                        <On Platform="Windows" Value="-2,0,1,10" />
+                    </OnPlatform>
+                </Grid.Padding>
+                <Frame
+                    Margin="0"
+                    Padding="0"
+                    BackgroundColor="HotPink"
+                    CornerRadius="2"
+                    HasShadow="False">
+                    <Grid ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            BackgroundColor="Orange"
+                            FontSize="Medium"
+                            HeightRequest="35"
+                            LineBreakMode="TailTruncation"
+                            MaxLines="1"
+                            Text="WANT ADD MORE SONGS?"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            BackgroundColor="HotPink"
+                            Text="ADD"
+                            TextColor="White" />
+                    </Grid>
+                </Frame>
+            </Grid>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
