@@ -51,7 +51,7 @@ namespace XFAudioPlayer
                 string[] fileTypes = null;
                 if (Device.RuntimePlatform == Device.Android)
                 {
-                    fileTypes = new string[] { "music/mp3" };
+                    fileTypes = new string[] { "audio/mpeg" };
                 }
 
                 if (Device.RuntimePlatform == Device.iOS)

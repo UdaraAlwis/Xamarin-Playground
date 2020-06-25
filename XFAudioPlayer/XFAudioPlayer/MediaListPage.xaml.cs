@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using MediaManager.Player;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -30,7 +30,7 @@ namespace XFAudioPlayer
             Device.BeginInvokeOnMainThread(() =>
             {
                 if (CrossMediaManager.Current.Queue.Count > 0)
-                    SetupData();
+                    SetupInitData();
             });
         }
 
@@ -41,20 +41,29 @@ namespace XFAudioPlayer
 
         private async void ButtonPlayPause_Clicked(object sender, EventArgs e)
         {
-            await CrossMediaManager.Current.PlayPause();
-
-            SetupData();
+            if (CrossMediaManager.Current.IsPlaying())
+            {
+                await CrossMediaManager.Current.Pause();
+                ButtonPlayPause.Text = PlayCircleOutline;
+            }
+            else
+            {
+                await CrossMediaManager.Current.Play();
+                ButtonPlayPause.Text = PauseCircleOutline;
+            }
         }
 
         private async void ButtonPlaySong_Clicked(object sender, EventArgs e)
         {
             var selectedAudioItem = (((Button) sender).BindingContext as AudioItem);
             var result = await CrossMediaManager.Current.PlayQueueItem(CrossMediaManager.Current.Queue[selectedAudioItem.Index - 1]);
-            if (result)
-                SetupData();
+            SetupCurrentItemDetails();
+
+            var isPlaying = CrossMediaManager.Current.IsPlaying();
+            ButtonPlayPause.Text = PauseCircleOutline;
         }
 
-        private void SetupData()
+        private void SetupPlaylist(bool isListRefresh)
         {
             List<IMediaItem> queueList = CrossMediaManager.Current.Queue.ToList();
 
@@ -81,7 +90,12 @@ namespace XFAudioPlayer
 
             CollectionView.ItemsSource = list;
 
+            if (isListRefresh)
+                CollectionView.ScrollTo(list.Last());
+        }
 
+        private void SetupCurrentItemDetails()
+        {
             IMediaItem currentAudioItem = CrossMediaManager.Current.Queue.Current;
 
             // Media item details
@@ -94,9 +108,16 @@ namespace XFAudioPlayer
 
             LabelCurrentTrackTitle.Text = displayDetails.ToUpper();
 
-            LabelCurrentTrackIndex.Text = $"CURRENT TRACK: {CrossMediaManager.Current.Queue.CurrentIndex+1}/{CrossMediaManager.Current.Queue.Count}";
+            LabelCurrentTrackIndex.Text = $"CURRENT TRACK: {CrossMediaManager.Current.Queue.CurrentIndex + 1}/{CrossMediaManager.Current.Queue.Count}";
+        }
 
-            ButtonPlayPause.Text = CrossMediaManager.Current.IsPlaying() ? PauseCircleOutline : PlayCircleOutline;
+        private void SetupInitData()
+        {
+            SetupPlaylist(false);
+            SetupCurrentItemDetails();
+
+            var isPlaying = CrossMediaManager.Current.IsPlaying();
+            ButtonPlayPause.Text = isPlaying ? PauseCircleOutline : PlayCircleOutline;
         }
     }
 
