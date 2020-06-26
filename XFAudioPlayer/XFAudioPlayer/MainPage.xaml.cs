@@ -77,6 +77,7 @@ namespace XFAudioPlayer
                 displayDetails = $"{displayDetails} - {mediaItem.Artist}";
 
             LabelMediaDetails.Text = displayDetails.ToUpper();
+
         }
 
         private void Current_MediaItemChanged(object sender, MediaManager.Media.MediaItemEventArgs e)

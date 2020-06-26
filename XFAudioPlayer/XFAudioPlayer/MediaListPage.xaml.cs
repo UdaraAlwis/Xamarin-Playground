@@ -115,7 +115,7 @@ namespace XFAudioPlayer
 
         private void SetupPlaylist(bool isListRefresh)
         {
-            List<IMediaItem> queueList = CrossMediaManager.Current.Queue.ToList();
+            List<IMediaItem> queueList = CrossMediaManager.Current.Queue.MediaItems.ToList();
 
             ObservableCollection<AudioItem> list = new ObservableCollection<AudioItem>();
             for (int i = 0; i < queueList.Count; i++)
