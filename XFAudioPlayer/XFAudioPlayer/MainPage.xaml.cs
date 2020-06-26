@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using MediaManager;
 using MediaManager.Library;
 using MediaManager.Media;
 using MediaManager.Playback;
+using MediaManager.Player;
 using MediaManager.Queue;
-using Plugin.FilePicker;
-using Xamarin.Essentials;
 using Xamarin.Forms;
+using PositionChangedEventArgs = MediaManager.Playback.PositionChangedEventArgs;
 
 namespace XFAudioPlayer
 {
@@ -43,6 +40,10 @@ namespace XFAudioPlayer
                 CrossMediaManager.Current.PlayNextOnFailed = true;
                 CrossMediaManager.Current.RepeatMode = RepeatMode.All;
                 CrossMediaManager.Current.AutoPlay = true;
+            }
+            else
+            {
+
             }
         }
 
@@ -77,47 +78,53 @@ namespace XFAudioPlayer
                 displayDetails = $"{displayDetails} - {mediaItem.Artist}";
 
             LabelMediaDetails.Text = displayDetails.ToUpper();
-
         }
 
-        private void Current_MediaItemChanged(object sender, MediaManager.Media.MediaItemEventArgs e)
+        private void SetupCurrentMediaPositionData(TimeSpan playbackPosition)
+        {
+            var formattingPattern = @"hh\:mm\:ss";
+            if (CrossMediaManager.Current.Duration.Hours <= 0)
+                formattingPattern = @"mm\:ss";
+
+            var fullLengthString = CrossMediaManager.Current.Duration.ToString(formattingPattern);
+            LabelPositionStatus.Text = $"{playbackPosition.ToString(formattingPattern)}/{fullLengthString}";
+
+            SliderSongPlayDisplay.Value = playbackPosition.Ticks;
+        }
+
+        private void SetupCurrentMediaStatusData(MediaPlayerState state)
+        {
+            LabelPlayerStatus.Text = $"{state.ToString().ToUpper()}";
+
+            if (state == MediaManager.Player.MediaPlayerState.Loading)
+            {
+                SliderSongPlayDisplay.Value = 0;
+            }
+            else if (state == MediaManager.Player.MediaPlayerState.Playing
+                    && CrossMediaManager.Current.Duration.Ticks > 0)
+            {
+                SliderSongPlayDisplay.Maximum = CrossMediaManager.Current.Duration.Ticks;
+            }
+        }
+
+        private void Current_MediaItemChanged(object sender, MediaItemEventArgs e)
         {
             SetupCurrentMediaDetails(e.MediaItem);
         }
 
-        private void Current_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
+        private void Current_PositionChanged(object sender, PositionChangedEventArgs e)
         {
             Device.BeginInvokeOnMainThread(() =>
             {
-                var formattingPattern = @"hh\:mm\:ss";
-                if (CrossMediaManager.Current.Duration.Hours <= 0)
-                    formattingPattern = @"mm\:ss";
-                
-                var fullLengthString = CrossMediaManager.Current.Duration.ToString(formattingPattern);
-                LabelPositionStatus.Text = $"{e.Position.ToString(formattingPattern)}/{fullLengthString}";
-
-                if (CrossMediaManager.Current.Duration.Ticks > 0)
-                {
-                    SliderSongPlayDisplay.Value = e.Position.Ticks;
-                }
+                SetupCurrentMediaPositionData(e.Position);
             });
         }
 
         private void Current_OnStateChanged(object sender, StateChangedEventArgs e)
         {
-            Device.BeginInvokeOnMainThread(() =>
+            Device.BeginInvokeOnMainThread(() => 
             {
-                LabelPlayerStatus.Text = $"{e.State.ToString().ToUpper()}";
-
-                if (e.State == MediaManager.Player.MediaPlayerState.Loading)
-                {
-                    SliderSongPlayDisplay.Value = 0;
-                }
-                else if (e.State == MediaManager.Player.MediaPlayerState.Playing 
-                        && CrossMediaManager.Current.Duration.Ticks > 0)
-                {
-                    SliderSongPlayDisplay.Maximum = CrossMediaManager.Current.Duration.Ticks;
-                }
+                SetupCurrentMediaStatusData(e.State); 
             });
         }
 
