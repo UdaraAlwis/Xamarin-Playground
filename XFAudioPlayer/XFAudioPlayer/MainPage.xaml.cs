@@ -25,11 +25,6 @@ namespace XFAudioPlayer
         {
             InitializeComponent();
 
-            CrossMediaManager.Current.ShuffleMode = ShuffleMode.All;
-            CrossMediaManager.Current.PlayNextOnFailed = true;
-            CrossMediaManager.Current.RepeatMode = RepeatMode.All;
-            CrossMediaManager.Current.AutoPlay = true;
-
             CrossMediaManager.Current.StateChanged += Current_OnStateChanged;
             CrossMediaManager.Current.PositionChanged += Current_PositionChanged;
             CrossMediaManager.Current.MediaItemChanged += Current_MediaItemChanged;
@@ -42,6 +37,12 @@ namespace XFAudioPlayer
             if (!CrossMediaManager.Current.IsPrepared())
             {
                 await BeginPlay();
+
+                // Set up Player Preferences
+                CrossMediaManager.Current.ShuffleMode = ShuffleMode.All;
+                CrossMediaManager.Current.PlayNextOnFailed = true;
+                CrossMediaManager.Current.RepeatMode = RepeatMode.All;
+                CrossMediaManager.Current.AutoPlay = true;
             }
         }
 
@@ -62,19 +63,25 @@ namespace XFAudioPlayer
             };
 
             var currentMediaItem = await CrossMediaManager.Current.Play(songList);
+            SetupCurrentMediaDetails(currentMediaItem);
+        }
+
+        private void SetupCurrentMediaDetails(IMediaItem mediaItem)
+        {
+            // Set up Media item details in UI
+            var displayDetails = string.Empty;
+            if (!string.IsNullOrEmpty(mediaItem.DisplayTitle))
+                displayDetails = mediaItem.DisplayTitle;
+
+            if (!string.IsNullOrEmpty(mediaItem.Artist))
+                displayDetails = $"{displayDetails} - {mediaItem.Artist}";
+
+            LabelMediaDetails.Text = displayDetails.ToUpper();
         }
 
         private void Current_MediaItemChanged(object sender, MediaManager.Media.MediaItemEventArgs e)
         {
-            // Media item details
-            var displayDetails = string.Empty;
-            if (!string.IsNullOrEmpty(e.MediaItem.DisplayTitle))
-                displayDetails = e.MediaItem.DisplayTitle;
-
-            if (!string.IsNullOrEmpty(e.MediaItem.Artist))
-                displayDetails = $"{displayDetails} - {e.MediaItem.Artist}";
-
-            LabelMediaDetails.Text = displayDetails.ToUpper();
+            SetupCurrentMediaDetails(e.MediaItem);
         }
 
         private void Current_PositionChanged(object sender, MediaManager.Playback.PositionChangedEventArgs e)
@@ -125,7 +132,7 @@ namespace XFAudioPlayer
             }
         }
 
-        private async void PreviusButton_Clicked(object sender, EventArgs e) 
+        private async void PreviousButton_Clicked(object sender, EventArgs e) 
         {
             await CrossMediaManager.Current.PlayPrevious();            
         }

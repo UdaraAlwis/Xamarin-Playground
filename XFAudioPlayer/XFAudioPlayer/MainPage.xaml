@@ -105,7 +105,7 @@
                 Grid.Row="2"
                 Grid.Column="0"
                 BackgroundColor="HotPink"
-                Clicked="PreviusButton_Clicked"
+                Clicked="PreviousButton_Clicked"
                 Text="PREVIOUS"
                 TextColor="White" />
             <Button
