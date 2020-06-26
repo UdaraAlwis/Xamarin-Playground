@@ -25,8 +25,6 @@ namespace XFAudioPlayer.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            CrossMediaManager.Current.Init();
-
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

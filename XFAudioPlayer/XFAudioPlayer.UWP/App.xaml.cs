@@ -64,8 +64,6 @@ namespace XFAudioPlayer.UWP
                 ApplicationView.PreferredLaunchViewSize = new Size(627, 993); 
                 ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
                 
-                CrossMediaManager.Current.Init();
-
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application

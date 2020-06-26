@@ -1,4 +1,5 @@
 ﻿using System;
+using MediaManager;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,6 +10,8 @@ namespace XFAudioPlayer
         public App()
         {
             InitializeComponent();
+
+            CrossMediaManager.Current.Init();
 
             MainPage = new NavigationPage(new MainPage());
         }
