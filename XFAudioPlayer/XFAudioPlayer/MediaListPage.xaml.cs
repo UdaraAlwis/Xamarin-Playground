@@ -59,7 +59,10 @@ namespace XFAudioPlayer
         private async void ButtonPlaySong_Clicked(object sender, EventArgs e)
         {
             var selectedAudioItem = (((Button) sender).BindingContext as AudioItem);
-            var result = await CrossMediaManager.Current.PlayQueueItem(CrossMediaManager.Current.Queue[selectedAudioItem.Index - 1]);
+            if (selectedAudioItem == null)
+                return;
+
+            var result = await CrossMediaManager.Current.PlayQueueItem(selectedAudioItem.Number - 1);
             
             SetupCurrentItemDetails();
 
@@ -134,7 +137,7 @@ namespace XFAudioPlayer
                 {
                     Title = title,
                     Artist = artist,
-                    Index = i + 1
+                    Number = i + 1
                 });
             }
 
@@ -176,6 +179,6 @@ namespace XFAudioPlayer
     {
         public string Title { get; set; }
         public string Artist { get; set; }
-        public int Index { get; set; }
+        public int Number { get; set; }
     }
 }

@@ -126,7 +126,7 @@
                                 FontSize="Medium"
                                 HeightRequest="60"
                                 HorizontalOptions="Start"
-                                Text="{Binding Index}"
+                                Text="{Binding Number}"
                                 TextColor="HotPink"
                                 VerticalOptions="CenterAndExpand"
                                 VerticalTextAlignment="Center" />

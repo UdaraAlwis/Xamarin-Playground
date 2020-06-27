@@ -33,7 +33,7 @@ namespace XFAudioPlayer
 
             if (!CrossMediaManager.Current.IsPrepared())
             {
-                await BeginPlay();
+                await InitPlay();
 
                 // Set up Player Preferences
                 CrossMediaManager.Current.ShuffleMode = ShuffleMode.All;
@@ -49,7 +49,7 @@ namespace XFAudioPlayer
             }
         }
 
-        private async Task BeginPlay()
+        private async Task InitPlay()
         {
             var songList = new List<string>() {
                 "https://www.youtube.com/audiolibrary_download?vid=a5cfdce9cccb6bee",
