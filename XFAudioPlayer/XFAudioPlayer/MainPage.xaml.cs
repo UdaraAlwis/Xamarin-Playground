@@ -43,7 +43,9 @@ namespace XFAudioPlayer
             }
             else
             {
-
+                SetupCurrentMediaDetails(CrossMediaManager.Current.Queue.Current);
+                SetupCurrentMediaPositionData(CrossMediaManager.Current.Position);
+                SetupCurrentMediaPlayerState(CrossMediaManager.Current.State);
             }
         }
 
@@ -67,40 +69,40 @@ namespace XFAudioPlayer
             SetupCurrentMediaDetails(currentMediaItem);
         }
 
-        private void SetupCurrentMediaDetails(IMediaItem mediaItem)
+        private void SetupCurrentMediaDetails(IMediaItem currentMediaItem)
         {
             // Set up Media item details in UI
             var displayDetails = string.Empty;
-            if (!string.IsNullOrEmpty(mediaItem.DisplayTitle))
-                displayDetails = mediaItem.DisplayTitle;
+            if (!string.IsNullOrEmpty(currentMediaItem.DisplayTitle))
+                displayDetails = currentMediaItem.DisplayTitle;
 
-            if (!string.IsNullOrEmpty(mediaItem.Artist))
-                displayDetails = $"{displayDetails} - {mediaItem.Artist}";
+            if (!string.IsNullOrEmpty(currentMediaItem.Artist))
+                displayDetails = $"{displayDetails} - {currentMediaItem.Artist}";
 
             LabelMediaDetails.Text = displayDetails.ToUpper();
         }
 
-        private void SetupCurrentMediaPositionData(TimeSpan playbackPosition)
+        private void SetupCurrentMediaPositionData(TimeSpan currentPlaybackPosition)
         {
             var formattingPattern = @"hh\:mm\:ss";
             if (CrossMediaManager.Current.Duration.Hours <= 0)
                 formattingPattern = @"mm\:ss";
 
             var fullLengthString = CrossMediaManager.Current.Duration.ToString(formattingPattern);
-            LabelPositionStatus.Text = $"{playbackPosition.ToString(formattingPattern)}/{fullLengthString}";
+            LabelPositionStatus.Text = $"{currentPlaybackPosition.ToString(formattingPattern)}/{fullLengthString}";
 
-            SliderSongPlayDisplay.Value = playbackPosition.Ticks;
+            SliderSongPlayDisplay.Value = currentPlaybackPosition.Ticks;
         }
 
-        private void SetupCurrentMediaStatusData(MediaPlayerState state)
+        private void SetupCurrentMediaPlayerState(MediaPlayerState currentPlayerState)
         {
-            LabelPlayerStatus.Text = $"{state.ToString().ToUpper()}";
+            LabelPlayerStatus.Text = $"{currentPlayerState.ToString().ToUpper()}";
 
-            if (state == MediaManager.Player.MediaPlayerState.Loading)
+            if (currentPlayerState == MediaManager.Player.MediaPlayerState.Loading)
             {
                 SliderSongPlayDisplay.Value = 0;
             }
-            else if (state == MediaManager.Player.MediaPlayerState.Playing
+            else if (currentPlayerState == MediaManager.Player.MediaPlayerState.Playing
                     && CrossMediaManager.Current.Duration.Ticks > 0)
             {
                 SliderSongPlayDisplay.Maximum = CrossMediaManager.Current.Duration.Ticks;
@@ -124,7 +126,7 @@ namespace XFAudioPlayer
         {
             Device.BeginInvokeOnMainThread(() => 
             {
-                SetupCurrentMediaStatusData(e.State); 
+                SetupCurrentMediaPlayerState(e.State); 
             });
         }
 
