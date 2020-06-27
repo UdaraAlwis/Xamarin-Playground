@@ -134,7 +134,7 @@ namespace XFAudioPlayer
         {
             if (!CrossMediaManager.Current.IsPrepared())
             {
-                await BeginPlay();
+                await InitPlay();
             }
             else
             {
