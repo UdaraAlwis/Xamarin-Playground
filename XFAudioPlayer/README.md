@@ -17,20 +17,20 @@ In this little demo, I've explored:
 - Maintain Audio playback even during app backgrounding/minimizing/lock screen
 
 Here'a this awesomeness in action:  <br /><br />
-iOS: <br />
+iOS: <br /><br />
 <img src="/XFAudioPlayer/screenshots/Full Functionality iOS.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page iOS.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page iOS.png" height="425"/> <br />
 
-Android: <br />
+Android: <br /><br />
 <img src="/XFAudioPlayer/screenshots/Full Functionality Android.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page Android.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page Android.png" height="425"/> <br />
 
-UWP: <br />
+UWP: <br /><br />
 <img src="/XFAudioPlayer/screenshots/Full Functionality UWP.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page UWP.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page UWP.png" height="425"/> <br />
 
-Loading local Audio files: <br />
+Loading local Audio files in (iOS, Android, UWP): <br /><br />
 <img src="/XFAudioPlayer/screenshots/File Picking iOS.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/File Picking Android.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/File Picking UWP.gif" height="425"/> <br />
 
-Continous playback activity: <br />
+Continous playback activity: <br /><br />
 <img src="/XFAudioPlayer/screenshots/Android Status Bar.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Android Lock Screen.png" height="425"/> 
 
-<img src="/XFAudioPlayer/screenshots/UWP Windows Desktop Preview Player.png" height="425"/> <img src="/XFAudioPlayer/screenshots/UWP Lock Screen.png" height="425"/> 
+<img src="/XFAudioPlayer/screenshots/UWP Windows Desktop Preview Player.png" width="425"/> <img src="/XFAudioPlayer/screenshots/UWP Lock Screen.png" width="425"/> 
 <br />
