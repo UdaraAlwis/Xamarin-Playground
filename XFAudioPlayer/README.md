@@ -30,7 +30,7 @@ Loading local Audio files in (iOS, Android, UWP): <br /><br />
 <img src="/XFAudioPlayer/screenshots/File Picking iOS.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/File Picking Android.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/File Picking UWP.gif" height="425"/> <br />
 
 Continous playback activity: <br /><br />
-<img src="/XFAudioPlayer/screenshots/Android Status Bar.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Android Lock Screen.png" height="425"/> 
+| Android  | UWP Windows |
+| ------------- | ------------- |
+| <img src="/XFAudioPlayer/screenshots/Android Status Bar.png" height=425/> <img src="/XFAudioPlayer/screenshots/Android Lock Screen.png" height=425/> | <img src="/XFAudioPlayer/screenshots/UWP Windows Desktop Preview Player.png" height=212.5 /> <br /><img src="/XFAudioPlayer/screenshots/UWP Lock Screen.png" height=212.5 />|
 
-<img src="/XFAudioPlayer/screenshots/UWP Windows Desktop Preview Player.png" width="425"/> <img src="/XFAudioPlayer/screenshots/UWP Lock Screen.png" width="425"/> 
-<br />
