@@ -17,25 +17,19 @@ In this little demo, I've explored:
 - Maintain Audio playback even during app backgrounding/minimizing/lock screen
 
 Here'a this awesomeness in action:  <br /><br />
-iOS:
-<img src="/XFAudioPlayer/screenshots/Full Functionality iOS.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page iOS.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page iOS.png" height="425"/>
+iOS: <br />
+<img src="/XFAudioPlayer/screenshots/Full Functionality iOS.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page iOS.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page iOS.png" height="425"/> <br />
 
-<br /><br />
-Android:
-<img src="/XFAudioPlayer/screenshots/Full Functionality Android.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page Android.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page Android.png" height="425"/>
+Android: <br />
+<img src="/XFAudioPlayer/screenshots/Full Functionality Android.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page Android.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page Android.png" height="425"/> <br />
 
-<br /><br />
-UWP:
-<img src="/XFAudioPlayer/screenshots/Full Functionality UWP.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page UWP.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page UWP.png" height="425"/>
-<br />
+UWP: <br />
+<img src="/XFAudioPlayer/screenshots/Full Functionality UWP.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page UWP.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page UWP.png" height="425"/> <br />
 
-<br /><br />
-Loading local Audio files:
-<img src="/XFAudioPlayer/screenshots/File Picking iOS.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/File Picking Android.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/File Picking UWP.gif" height="425"/>
-<br />
+Loading local Audio files: <br />
+<img src="/XFAudioPlayer/screenshots/File Picking iOS.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/File Picking Android.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/File Picking UWP.gif" height="425"/> <br />
 
-<br /><br />
-Continous playback activity:
+Continous playback activity: <br />
 <img src="/XFAudioPlayer/screenshots/Android Status Bar.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Android Lock Screen.png" height="425"/> 
 
 <img src="/XFAudioPlayer/screenshots/UWP Windows Desktop Preview Player.png" height="425"/> <img src="/XFAudioPlayer/screenshots/UWP Lock Screen.png" height="425"/> 
