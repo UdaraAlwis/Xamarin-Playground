@@ -18,13 +18,13 @@ In this little demo, I've explored:
 
 Here'a this awesomeness in action:  <br /><br />
 iOS: <br /><br />
-<img src="/XFAudioPlayer/screenshots/Full Functionality iOS.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page iOS.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page iOS.png" height="425"/> <br />
+<img src="/XFAudioPlayer/screenshots/Full Functionality iOS.gif" width="203"/> <img src="/XFAudioPlayer/screenshots/Home Page iOS.png" width="203"/> <img src="/XFAudioPlayer/screenshots/Audio List Page iOS.png" width="203"/> <br />
 
 Android: <br /><br />
-<img src="/XFAudioPlayer/screenshots/Full Functionality Android.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page Android.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page Android.png" height="425"/> <br />
+<img src="/XFAudioPlayer/screenshots/Full Functionality Android.gif" width="203"/> <img src="/XFAudioPlayer/screenshots/Home Page Android.png" width="203"/> <img src="/XFAudioPlayer/screenshots/Audio List Page Android.png" width="203"/> <br />
 
 UWP: <br /><br />
-<img src="/XFAudioPlayer/screenshots/Full Functionality UWP.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/Home Page UWP.png" height="425"/> <img src="/XFAudioPlayer/screenshots/Audio List Page UWP.png" height="425"/> <br />
+<img src="/XFAudioPlayer/screenshots/Full Functionality UWP.gif" width="203"/> <img src="/XFAudioPlayer/screenshots/Home Page UWP.png" width="203"/> <img src="/XFAudioPlayer/screenshots/Audio List Page UWP.png" width="203"/> <br />
 
 Loading local Audio files in (iOS, Android, UWP): <br /><br />
 <img src="/XFAudioPlayer/screenshots/File Picking iOS.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/File Picking Android.gif" height="425"/> <img src="/XFAudioPlayer/screenshots/File Picking UWP.gif" height="425"/> <br />
