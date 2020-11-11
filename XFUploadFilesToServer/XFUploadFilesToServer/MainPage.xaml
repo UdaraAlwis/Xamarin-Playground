@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFUploadFilesToServer.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Frame
+            Grid.Row="0"
+            Padding="24"
+            BackgroundColor="#2196F3"
+            CornerRadius="0">
+            <Label
+                FontSize="36"
+                HorizontalTextAlignment="Center"
+                Text="Uploading files from a Xamarin.Forms app to an ASP.NET Web API!"
+                TextColor="White" />
+        </Frame>
+
+        <Label
+            x:Name="LabelFileName"
+            Grid.Row="1"
+            Padding="30,10,30,10"
+            FontSize="Title"
+            LineBreakMode="WordWrap"
+            Text="Select a file now..."
+            VerticalOptions="FillAndExpand" />
+
+        <StackLayout Grid.Row="2" VerticalOptions="EndAndExpand">
+            <ActivityIndicator
+                x:Name="ActivityIndicator"
+                IsRunning="False"
+                VerticalOptions="End" />
+
+            <Button
+                x:Name="ButtonSelectFile"
+                BackgroundColor="#2196F3"
+                Clicked="ButtonSelectFile_Clicked"
+                Text="Select File"
+                TextColor="White" />
+
+            <Button
+                x:Name="ButtonUploadFile"
+                BackgroundColor="#2196F3"
+                Clicked="ButtonUploadFile_Clicked"
+                IsEnabled="False"
+                Text="Upload File"
+                TextColor="White" />
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>
