@@ -1,5 +1,4 @@
 # XFUploadFilesToServer
-========
 
 ## Uploading files to an API endpoint from Xamarin.Forms App
 
