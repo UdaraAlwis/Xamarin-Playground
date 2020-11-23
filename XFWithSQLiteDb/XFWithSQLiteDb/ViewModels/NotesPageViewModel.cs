@@ -18,7 +18,7 @@ namespace XFWithSQLiteDb.ViewModels
 
         public NotesPageViewModel()
         {
-            Title = "Notes";
+            Title = "Notes List Page";
 
             NotesList = new ObservableCollection<Note>();
 
@@ -35,6 +35,9 @@ namespace XFWithSQLiteDb.ViewModels
 
         private async Task ViewNote(Note note)
         {
+            if (note == null)
+                return;
+
             await Application.Current.MainPage.Navigation.PushModalAsync(new ViewNotePage(note.NoteId));
         }
 

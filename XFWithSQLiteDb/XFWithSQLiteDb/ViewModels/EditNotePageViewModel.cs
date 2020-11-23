@@ -21,7 +21,7 @@ namespace XFWithSQLiteDb.ViewModels
 
         public EditNotePageViewModel()
         {
-            Title = "Notes";
+            Title = "Edit Note Page";
 
             Note = new Note();
 

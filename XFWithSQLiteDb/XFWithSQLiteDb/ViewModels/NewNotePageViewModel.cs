@@ -16,7 +16,7 @@ namespace XFWithSQLiteDb.ViewModels
 
         public NewNotePageViewModel()
         {
-            Title = "Notes";
+            Title = "New Note Page";
 
             Note = new Note();
             Note.NoteTitle = new Faker().Lorem.Sentence();

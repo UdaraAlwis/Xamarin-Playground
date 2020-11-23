@@ -24,7 +24,7 @@ namespace XFWithSQLiteDb.Services
 
         protected static async Task<SQLiteAsyncConnection> GetDatabaseConnection<T>() where T : class, new()
         {
-            if (!DatabaseConnection.TableMappings.Any(x => x.MappedType.Name == typeof(T).Name))
+            if (DatabaseConnection.TableMappings.All(x => x.MappedType.Name != typeof(T).Name))
             {
                 await DatabaseConnection.EnableWriteAheadLoggingAsync();
                 await DatabaseConnection.CreateTableAsync<T>();

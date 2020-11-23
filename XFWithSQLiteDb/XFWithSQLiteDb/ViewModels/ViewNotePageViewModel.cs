@@ -22,7 +22,7 @@ namespace XFWithSQLiteDb.ViewModels
 
         public ViewNotePageViewModel()
         {
-            Title = "Note";
+            Title = "View Note Page";
 
             Note = new Note();
 

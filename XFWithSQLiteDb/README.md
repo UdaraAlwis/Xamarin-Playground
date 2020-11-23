@@ -32,4 +32,17 @@ public class DatabaseService
 }
 ```
 
-<img src="Screenshots/Notes List Page iOS.png" width="200" /> <img src="Screenshots/New Note Page iOS.png" width="200" /> 
+Note model class is defined as a simple table in the database
+
+```csharp
+[Table("note")]
+public class Note
+{
+	[PrimaryKey]
+	public Guid NoteId { get; set; }
+
+	...
+}
+```
+
+<img src="Screenshots/Screenshot1.jpg" /> 
