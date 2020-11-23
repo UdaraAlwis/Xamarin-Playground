@@ -37,7 +37,8 @@
                     Margin="0"
                     d:Text="Item description"
                     FontSize="16"
-                    Text="{Binding Note.NoteText}" />
+                    Text="{Binding Note.NoteText}"
+                    VerticalOptions="FillAndExpand" />
             </StackLayout>
 
             <Button

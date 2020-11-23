@@ -11,9 +11,14 @@ namespace XFWithSQLiteDb.Services
 {
     public class DatabaseService
     {
-        public static readonly string DatabasePath = Path.Combine(FileSystem.AppDataDirectory, $"{nameof(XFWithSQLiteDb)}.db3");
+        public static readonly string DatabasePath 
+            = Path.Combine(FileSystem.AppDataDirectory, $"{nameof(XFWithSQLiteDb)}.db3");
 
-        private static readonly Lazy<SQLiteAsyncConnection> DatabaseConnectionHolder = new Lazy<SQLiteAsyncConnection>(() => new SQLiteAsyncConnection(DatabasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache));
+        private static readonly Lazy<SQLiteAsyncConnection> DatabaseConnectionHolder 
+            = new Lazy<SQLiteAsyncConnection>(
+                () => new SQLiteAsyncConnection(
+                        DatabasePath, 
+                        SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache));
 
         private static SQLiteAsyncConnection DatabaseConnection => DatabaseConnectionHolder.Value;
 
