@@ -6,4 +6,4 @@ A little demo on how to upload files to an API endpoint from a Xamarin.Forms app
 
 Based on: https://www.youtube.com/watch?v=KPDGtLeNClQ&ab_channel=GeraldVersluis
 
-<img src="https://github.com/UdaraAlwis/Xamarin-Playground/raw/master/XFUploadFilesToServer/Screenshots/Screenshot1.jpg" /> 
+<img src="Screenshots/Screenshot1.jpg" /> 
