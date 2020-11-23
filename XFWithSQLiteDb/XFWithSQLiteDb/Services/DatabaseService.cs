@@ -39,10 +39,28 @@ namespace XFWithSQLiteDb.Services
             return await databaseConnection.Table<Note>().ToListAsync();
         }
 
+        public static async Task<Note> GetNote(Guid noteId)
+        {
+            var databaseConnection = await GetDatabaseConnection<Note>();
+            return await databaseConnection.GetAsync<Note>(noteId);
+        }
+
         public static async Task<int> SaveNote(Note note)
         {
             var databaseConnection = await GetDatabaseConnection<Note>();
             return await databaseConnection.InsertOrReplaceAsync(note);
+        }
+
+        public static async Task<int> UpdateNote(Note note)
+        {
+            var databaseConnection = await GetDatabaseConnection<Note>();
+            return await databaseConnection.UpdateAsync(note);
+        }
+
+        public static async Task<int> DeleteNote(Note note)
+        {
+            var databaseConnection = await GetDatabaseConnection<Note>();
+            return await databaseConnection.DeleteAsync(note);
         }
     }
 }

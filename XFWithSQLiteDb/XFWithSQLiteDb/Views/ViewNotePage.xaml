@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XFWithSQLiteDb.Views.NewNotePage"
+    x:Class="XFWithSQLiteDb.Views.ViewNotePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -28,17 +28,24 @@
                 Padding="15"
                 Spacing="20">
                 <Label FontSize="16" Text="Title" />
-                <Entry
-                    d:Text="Item name"
+                <Label
+                    d:Text="note Title"
                     FontSize="16"
+                    LineBreakMode="WordWrap"
                     Text="{Binding Note.NoteTitle}" />
                 <Label FontSize="16" Text="Note" />
-                <Editor
-                    Margin="0"
-                    d:Text="Item description"
+                <Label
+                    d:Text="note Text"
                     FontSize="16"
+                    LineBreakMode="WordWrap"
                     Text="{Binding Note.NoteText}"
                     VerticalOptions="FillAndExpand" />
+                <Label
+                    d:Text="Note timestamp"
+                    FontSize="13"
+                    LineBreakMode="TailTruncation"
+                    Text="{Binding Note.NoteTimeStamp}"
+                    TextColor="DarkGray" />
             </StackLayout>
 
             <Button
@@ -47,15 +54,15 @@
                 BackgroundColor="OrangeRed"
                 Command="{Binding GoBackCommand}"
                 HorizontalOptions="FillAndExpand"
-                Text="Cancel"
+                Text="Back"
                 TextColor="White" />
             <Button
                 Grid.Row="1"
                 Grid.Column="1"
                 BackgroundColor="DodgerBlue"
-                Command="{Binding SaveNoteCommand}"
+                Command="{Binding EditNoteCommand}"
                 HorizontalOptions="FillAndExpand"
-                Text="Save Note"
+                Text="Edit Note"
                 TextColor="White" />
         </Grid>
 

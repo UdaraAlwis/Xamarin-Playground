@@ -20,27 +20,49 @@
             Command="{Binding LoadNotesCommand}"
             IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
             RefreshColor="DodgerBlue">
-            <CollectionView x:Name="ItemsCollectionView" ItemsSource="{Binding NotesList}">
+            <CollectionView
+                x:Name="NotesListCollectionView"
+                ItemsSource="{Binding NotesList}"
+                SelectionChangedCommand="{Binding ViewNoteCommand}"
+                SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference NotesListCollectionView}}"
+                SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout Padding="10">
-                            <Label
-                                d:Text="Note title"
-                                FontSize="16"
-                                LineBreakMode="TailTruncation"
-                                Text="{Binding NoteTitle}" />
-                            <Label
-                                d:Text="Note descripton"
-                                FontSize="13"
-                                LineBreakMode="TailTruncation"
-                                Text="{Binding NoteText}" />
-                            <Label
-                                d:Text="Note timestamp"
-                                FontSize="13"
-                                LineBreakMode="TailTruncation"
-                                Text="{Binding NoteTimeStamp}"
-                                TextColor="DarkGray" />
-                        </StackLayout>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems>
+                                    <SwipeItem
+                                        BackgroundColor="DodgerBlue"
+                                        Command="{Binding Source={x:Reference NotesListCollectionView}, Path=BindingContext.ViewNoteCommand}"
+                                        CommandParameter="{Binding .}"
+                                        Text="View" />
+                                    <SwipeItem
+                                        BackgroundColor="OrangeRed"
+                                        Command="{Binding Source={x:Reference NotesListCollectionView}, Path=BindingContext.DeleteNoteCommand}"
+                                        CommandParameter="{Binding .}"
+                                        Text="Delete" />
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <!--  Content  -->
+                            <StackLayout Padding="10">
+                                <Label
+                                    d:Text="Note title"
+                                    FontSize="16"
+                                    LineBreakMode="TailTruncation"
+                                    Text="{Binding NoteTitle}" />
+                                <Label
+                                    d:Text="Note descripton"
+                                    FontSize="13"
+                                    LineBreakMode="TailTruncation"
+                                    Text="{Binding NoteText}" />
+                                <Label
+                                    d:Text="Note timestamp"
+                                    FontSize="13"
+                                    LineBreakMode="TailTruncation"
+                                    Text="{Binding NoteTimeStamp}"
+                                    TextColor="DarkGray" />
+                            </StackLayout>
+                        </SwipeView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
@@ -53,4 +75,5 @@
             Text="New Note"
             TextColor="White" />
     </Grid>
+
 </ContentPage>

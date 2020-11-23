@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XFWithSQLiteDb.Views.NewNotePage"
+    x:Class="XFWithSQLiteDb.Views.EditNotePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -53,9 +53,9 @@
                 Grid.Row="1"
                 Grid.Column="1"
                 BackgroundColor="DodgerBlue"
-                Command="{Binding SaveNoteCommand}"
+                Command="{Binding UpdateNoteCommand}"
                 HorizontalOptions="FillAndExpand"
-                Text="Save Note"
+                Text="Update Note"
                 TextColor="White" />
         </Grid>
 

@@ -5,7 +5,7 @@ namespace XFWithSQLiteDb.Views
 {
     public partial class NotesPage : ContentPage
     {
-        readonly NotesPageViewModel _viewModel;
+        private readonly NotesPageViewModel _viewModel;
 
         public NotesPage()
         {

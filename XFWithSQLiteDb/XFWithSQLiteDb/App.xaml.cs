@@ -9,6 +9,8 @@ namespace XFWithSQLiteDb
         {
             InitializeComponent();
 
+            Device.SetFlags(new string[] { "SwipeView_Experimental" });
+
             MainPage = new NotesPage();
         }
 
