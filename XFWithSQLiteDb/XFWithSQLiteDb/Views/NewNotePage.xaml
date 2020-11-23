@@ -4,7 +4,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    ios:Page.UseSafeArea="true"
     mc:Ignorable="d">
 
     <ContentPage.Content>
@@ -14,28 +16,46 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
 
             <StackLayout
                 Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Padding="15"
                 Spacing="20">
-                <Label FontSize="Medium" Text="Note" />
+                <Label FontSize="16" Text="Note" />
                 <Entry
                     d:Text="Item name"
-                    FontSize="Small"
+                    FontSize="16"
                     Text="{Binding Note.NoteTitle}" />
-                <Label FontSize="Medium" Text="Description" />
+                <Label FontSize="16" Text="Description" />
                 <Editor
                     Margin="0"
                     d:Text="Item description"
-                    FontSize="Small"
+                    FontSize="16"
                     Text="{Binding Note.NoteText}" />
             </StackLayout>
 
             <Button
                 Grid.Row="1"
+                Grid.Column="0"
+                BackgroundColor="OrangeRed"
+                Command="{Binding GoBackCommand}"
+                HorizontalOptions="FillAndExpand"
+                Text="Cancel"
+                TextColor="White" />
+            <Button
+                Grid.Row="1"
+                Grid.Column="1"
+                BackgroundColor="DodgerBlue"
                 Command="{Binding SaveNoteCommand}"
-                Text="Save Note" />
+                HorizontalOptions="FillAndExpand"
+                Text="Save Note"
+                TextColor="White" />
         </Grid>
     </ContentPage.Content>
 

@@ -4,7 +4,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    ios:Page.UseSafeArea="true"
     mc:Ignorable="d">
 
     <Grid>
@@ -16,44 +18,28 @@
         <RefreshView
             Grid.Row="0"
             Command="{Binding LoadNotesCommand}"
-            IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <CollectionView
-                x:Name="ItemsCollectionView"
-                ItemSizingStrategy="MeasureFirstItem"
-                ItemsSource="{Binding NotesList}">
-                <CollectionView.Header>
-                    <Grid Padding="10">
-                        <Frame Padding="10" HasShadow="True">
-                            <Label
-                                FontSize="16"
-                                HorizontalTextAlignment="Center"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemTextStyle}"
-                                Text="Notes" />
-                        </Frame>
-                    </Grid>
-                </CollectionView.Header>
+            IsRefreshing="{Binding IsBusy, Mode=TwoWay}"
+            RefreshColor="DodgerBlue">
+            <CollectionView x:Name="ItemsCollectionView" ItemsSource="{Binding NotesList}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="10">
                             <Label
                                 d:Text="Note title"
                                 FontSize="16"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemTextStyle}"
+                                LineBreakMode="TailTruncation"
                                 Text="{Binding NoteTitle}" />
                             <Label
                                 d:Text="Note descripton"
                                 FontSize="13"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                LineBreakMode="TailTruncation"
                                 Text="{Binding NoteText}" />
                             <Label
                                 d:Text="Note timestamp"
                                 FontSize="13"
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                Text="{Binding NoteTimeStamp}" />
+                                LineBreakMode="TailTruncation"
+                                Text="{Binding NoteTimeStamp}"
+                                TextColor="DarkGray" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
@@ -62,7 +48,9 @@
 
         <Button
             Grid.Row="1"
+            BackgroundColor="DodgerBlue"
             Command="{Binding NewNoteCommand}"
-            Text="New Note" />
+            Text="New Note"
+            TextColor="White" />
     </Grid>
 </ContentPage>

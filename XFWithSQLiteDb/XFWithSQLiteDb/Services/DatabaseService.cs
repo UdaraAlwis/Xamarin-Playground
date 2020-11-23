@@ -13,9 +13,9 @@ namespace XFWithSQLiteDb.Services
     {
         public static readonly string DatabasePath = Path.Combine(FileSystem.AppDataDirectory, $"{nameof(XFWithSQLiteDb)}.db3");
 
-        static readonly Lazy<SQLiteAsyncConnection> _databaseConnectionHolder = new Lazy<SQLiteAsyncConnection>(() => new SQLiteAsyncConnection(DatabasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache));
+        private static readonly Lazy<SQLiteAsyncConnection> DatabaseConnectionHolder = new Lazy<SQLiteAsyncConnection>(() => new SQLiteAsyncConnection(DatabasePath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache));
 
-        static SQLiteAsyncConnection DatabaseConnection => _databaseConnectionHolder.Value;
+        private static SQLiteAsyncConnection DatabaseConnection => DatabaseConnectionHolder.Value;
 
         protected static async Task<SQLiteAsyncConnection> GetDatabaseConnection<T>() where T : class, new()
         {

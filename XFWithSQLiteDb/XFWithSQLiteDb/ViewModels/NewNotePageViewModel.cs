@@ -12,6 +12,7 @@ namespace XFWithSQLiteDb.ViewModels
     {
         public Note Note { get; set; }
         public Command SaveNoteCommand { get; set; }
+        public Command GoBackCommand { get; set; }
 
         public NewNotePageViewModel()
         {
@@ -19,8 +20,9 @@ namespace XFWithSQLiteDb.ViewModels
 
             Note = new Note();
             Note.NoteTitle = new Faker().Lorem.Sentence();
-            Note.NoteText = new Faker().Lorem.Sentence();
+            Note.NoteText = new Faker().Lorem.Sentence(new Random().Next(10, 50));
             SaveNoteCommand = new Command(async () => await SaveNote());
+            GoBackCommand = new Command(async () => await GoBack());
         }
 
         private async Task SaveNote()
@@ -49,6 +51,11 @@ namespace XFWithSQLiteDb.ViewModels
 
                 await Application.Current.MainPage.Navigation.PopModalAsync();
             }
+        }
+
+        private async Task GoBack()
+        {
+            await Application.Current.MainPage.Navigation.PopModalAsync();
         }
     }
 }
