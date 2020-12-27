@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFNetworkConDemo.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="true">
+
+    <StackLayout Padding="20">
+        <Frame
+            Padding="24"
+            BackgroundColor="#2196F3"
+            CornerRadius="0">
+            <Label
+                FontSize="36"
+                HorizontalTextAlignment="Center"
+                Text="Welcome to Xamarin.Forms!"
+                TextColor="White" />
+        </Frame>
+
+        <Frame
+            Padding="24"
+            BackgroundColor="#2196F3"
+            CornerRadius="0">
+            <Label
+                x:Name="ConnectionStatusLabel"
+                FontSize="36"
+                HorizontalTextAlignment="Center"
+                Text="Obtaining Network state..."
+                TextColor="White" />
+        </Frame>
+
+        <Frame
+            Padding="24"
+            BackgroundColor="#2196F3"
+            CornerRadius="0">
+            <Label
+                x:Name="ConnectionProfileLabel"
+                FontSize="36"
+                HorizontalTextAlignment="Center"
+                Text="Obtaining Network state..."
+                TextColor="White" />
+        </Frame>
+
+    </StackLayout>
+
+</ContentPage>
