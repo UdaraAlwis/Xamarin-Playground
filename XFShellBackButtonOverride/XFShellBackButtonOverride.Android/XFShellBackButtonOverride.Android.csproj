@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -90,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XFShellBackButtonOverride\XFShellBackButtonOverride.csproj">
-      <Project>{FD25A57B-5F6C-4C3A-A803-1A34520D78F6}</Project>
+      <Project>{193B6F75-8BD0-4EE3-B1AD-65EAD4DB408C}</Project>
       <Name>XFShellBackButtonOverride</Name>
     </ProjectReference>
   </ItemGroup>
