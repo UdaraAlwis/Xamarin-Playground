@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFFillInAnswersLayout.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    Title="Main Page"
+    ios:Page.UseSafeArea="true">
+
+    <StackLayout>
+
+        <Frame
+            Padding="24"
+            BackgroundColor="#2196F3"
+            CornerRadius="0">
+            <Label
+                FontSize="36"
+                HorizontalTextAlignment="Center"
+                Text="Welcome to Fill In the Answers Layout in Xamarin.Forms!"
+                TextColor="White" />
+        </Frame>
+
+        <!--  Fill in the Blanks Layout  -->
+        <FlexLayout
+            x:Name="fillInTheBlanksQuestionPanel"
+            AlignContent="Stretch"
+            AlignItems="Center"
+            Direction="Row"
+            Wrap="Wrap" />
+
+    </StackLayout>
+
+</ContentPage>
