@@ -16,13 +16,14 @@
             <Label
                 FontSize="36"
                 HorizontalTextAlignment="Center"
-                Text="Welcome to Fill In the Answers Layout in Xamarin.Forms!"
+                Text="Fill in the Blanks Questionnaire Layout in Xamarin.Forms!"
                 TextColor="White" />
         </Frame>
 
         <!--  Fill in the Blanks Layout  -->
         <FlexLayout
             x:Name="fillInTheBlanksQuestionPanel"
+            Padding="20"
             AlignContent="Stretch"
             AlignItems="Center"
             Direction="Row"

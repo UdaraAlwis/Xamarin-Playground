@@ -21,7 +21,7 @@ namespace XFFillInAnswersLayout
             base.OnAppearing();
 
             string fillInTheBlanksQuestion =
-                "THERE IS A {MONKEY} EATING {PIZZA} WITH {BANANA SLICES} DRESSED UP IN A RED {JUMP SUITE}!";
+                "THERE IS A {MONKEY} EATING {PIZZA} WITH {BANANA SLICES} DRESSED UP IN A RED {JUMP SUITE!}.";
 
             // Extract the marked blanks fields from the input text
             var matches = Regex.Matches(fillInTheBlanksQuestion, "\\{(.*?)\\}", RegexOptions.IgnoreCase);
@@ -54,22 +54,25 @@ namespace XFFillInAnswersLayout
                     {
                         Placeholder = placeholderForAnswerField.Replace("{", "").Replace("}", ""),
                         FontSize = 20,
-                        HeightRequest = 45,
+                        HeightRequest = 47,
                         Margin = 2,
-                        BackgroundColor = Color.BurlyWood,
+                        //BackgroundColor = Color.BurlyWood,
                     });
+
+                    // TODO run through as split segmented loop and then populated the Entry fields
+                    var results = Regex.Split(word, "(\\{\\[[0-9]\\]\\})");
                 }
                 else
                 {
                     // This is a normal text segment
                     fillInTheBlanksQuestionPanel.Children.Add(new Label()
                     {
-                        Text = word + " ",
-                        BackgroundColor = Color.SkyBlue,
-                        VerticalTextAlignment = TextAlignment.Center,
+                        Text = word,
                         FontSize = 20,
-                        HeightRequest = 45,
+                        HeightRequest = 47,
                         Margin = 2,
+                        VerticalTextAlignment = TextAlignment.Center,
+                        //BackgroundColor = Color.SkyBlue,
                     });
                 }
             }
