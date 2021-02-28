@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XFSimpleDiDemo.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <StackLayout>
+        <Frame
+            Padding="24"
+            BackgroundColor="#2196F3"
+            CornerRadius="0">
+            <Label
+                FontSize="36"
+                HorizontalTextAlignment="Center"
+                Text="Welcome to Xamarin.Forms!"
+                TextColor="White" />
+        </Frame>
+        <Label
+            Padding="30,10,30,10"
+            FontSize="Title"
+            Text="Xamarin.Forms with ASP.NET HostBuilder!" />
+        <Label
+            Padding="30,0,30,0"
+            FontSize="16"
+            Text="Implementing IoC into Xamarin.Forms with ASP.NET HostBuilder using Microsoft.Extensions framework..." />
+        <Label Padding="30,24,30,0" FontSize="16">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Learn more at " />
+                        <Span FontAttributes="Bold" Text="https://aka.ms/xamarin-quickstart" />
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </StackLayout>
+
+</ContentPage>
